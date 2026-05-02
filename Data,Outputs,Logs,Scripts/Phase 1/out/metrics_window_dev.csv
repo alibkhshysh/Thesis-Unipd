@@ -1,0 +1,274 @@
+project_id,window_id,from_tag,to_tag,author_email,author_name,is_bot,commits,added,deleted,churn,binary_file_count,active_days,first_commit,last_commit
+click,click_W01,8.1.6,8.1.7,peter.dragun@espressif.com,Peter Dragun,False,2,16,15,31,0,1,2023-08-17 10:15:16 -0700,2023-08-17 10:16:26 -0700
+click,click_W01,8.1.6,8.1.7,51250849+superatomic@users.noreply.github.com,Olivia Kinnear,False,1,9,5,14,0,1,2023-08-17 10:08:07 -0700,2023-08-17 10:08:07 -0700
+click,click_W01,8.1.6,8.1.7,davidism@gmail.com,David Lord,False,3,10,4,14,0,1,2023-08-17 09:52:05 -0700,2023-08-17 10:24:49 -0700
+click,click_W01,8.1.6,8.1.7,66853113+pre-commit-ci[bot]@users.noreply.github.com,pre-commit-ci[bot],True,1,3,3,6,0,1,2023-08-01 08:45:33 +0000,2023-08-01 08:45:33 +0000
+click,click_W01,8.1.6,8.1.7,12621235+hauntsaninja@users.noreply.github.com,Shantanu,False,1,3,1,4,0,1,2023-08-17 09:58:22 -0700,2023-08-17 09:58:22 -0700
+click,click_W02,8.1.7,8.1.8,davidism@gmail.com,David Lord,False,16,724,726,1450,0,5,2024-04-24 11:17:44 -0700,2024-12-04 10:09:55 -0800
+click,click_W02,8.1.7,8.1.8,edward.g2013@gmail.com,Edward G,False,20,549,579,1128,0,12,2023-07-03 20:24:41 -0700,2024-12-04 23:08:51 -0800
+click,click_W02,8.1.7,8.1.8,kdeldycke@users.noreply.github.com,Kevin Deldycke,False,2,199,41,240,0,2,2024-11-02 14:44:23 +0000,2024-11-30 01:45:28 +0100
+click,click_W02,8.1.7,8.1.8,jwodder@users.noreply.github.com,John T. Wodder II,False,1,80,32,112,0,1,2024-11-30 19:23:12 +0000,2024-11-30 19:23:12 +0000
+click,click_W02,8.1.7,8.1.8,j7an@users.noreply.github.com,J Tan,False,1,28,15,43,0,1,2024-05-20 17:43:46 -0400,2024-05-20 17:43:46 -0400
+click,click_W02,8.1.7,8.1.8,kevin@deldycke.com,Kevin Deldycke,False,1,37,0,37,0,1,2024-12-07 11:01:00 +0400,2024-12-07 11:01:00 +0400
+click,click_W02,8.1.7,8.1.8,tpayne.dev@gmail.com,Taylor Payne,False,6,26,11,37,0,2,2024-05-20 23:13:30 +0000,2024-05-21 14:33:31 +0000
+click,click_W02,8.1.7,8.1.8,9089037+dzcode@users.noreply.github.com,Dan Ziring,False,1,30,1,31,0,1,2024-10-26 16:12:23 +0100,2024-10-26 16:12:23 +0100
+click,click_W02,8.1.7,8.1.8,66853113+pre-commit-ci[bot]@users.noreply.github.com,pre-commit-ci[bot],True,2,15,15,30,0,2,2023-08-14 07:36:52 +0000,2023-12-04 20:29:26 +0000
+click,click_W02,8.1.7,8.1.8,cpappala@gmail.com,Chris Pappalardo,False,1,28,1,29,0,1,2024-05-22 13:53:37 -0700,2024-05-22 13:53:37 -0700
+click,click_W02,8.1.7,8.1.8,33157532+krisztianloki@users.noreply.github.com,Krisztián Löki,False,1,14,8,22,0,1,2024-10-26 14:43:32 +0100,2024-10-26 14:43:32 +0100
+click,click_W02,8.1.7,8.1.8,nils.hjelte@gmail.com,Nils Hjelte,False,1,13,5,18,0,1,2024-11-09 21:57:12 +0000,2024-11-09 21:57:12 +0000
+click,click_W02,8.1.7,8.1.8,24376333+stefmolin@users.noreply.github.com,Stefanie Molin,False,1,12,0,12,0,1,2024-05-21 12:24:16 -0400,2024-05-21 12:24:16 -0400
+click,click_W02,8.1.7,8.1.8,kiwi.seed.allergy@gmail.com,danwusbu,False,1,9,2,11,0,1,2024-05-20 14:38:26 -0400,2024-05-20 14:38:26 -0400
+click,click_W02,8.1.7,8.1.8,trl75@pitt.edu,trl75,False,2,8,2,10,0,2,2024-05-21 19:15:42 -0400,2024-12-04 09:35:57 -0800
+click,click_W02,8.1.7,8.1.8,136313+jaseg@users.noreply.github.com,jaseg,False,1,4,2,6,0,1,2024-10-26 16:38:39 +0100,2024-10-26 16:38:39 +0100
+click,click_W02,8.1.7,8.1.8,andreas@backx.org,Andreas Backx,False,1,2,2,4,0,1,2024-12-19 18:04:12 +0100,2024-12-19 18:04:12 +0100
+click,click_W02,8.1.7,8.1.8,chestnutprog@outlook.com,Chestnut,False,1,2,2,4,0,1,2024-05-22 14:21:58 -0700,2024-05-22 14:21:58 -0700
+click,click_W02,8.1.7,8.1.8,827324+naglis@users.noreply.github.com,naglis,False,1,1,1,2,0,1,2024-05-22 14:17:55 -0700,2024-05-22 14:17:55 -0700
+click,click_W02,8.1.7,8.1.8,5091033+pbhuss@users.noreply.github.com,Peter Huss,False,1,1,0,1,0,1,2024-05-22 14:20:09 -0700,2024-05-22 14:20:09 -0700
+click,click_W03,8.1.8,8.2.0,davidism@gmail.com,David Lord,False,40,2892,3028,5920,0,19,2022-03-28 10:46:16 -0700,2025-05-10 15:04:47 -0700
+click,click_W03,8.1.8,8.2.0,edward.g2013@gmail.com,Edward G,False,23,1166,960,2126,0,18,2024-11-02 18:48:56 -0700,2025-05-10 15:18:25 -0700
+click,click_W03,8.1.8,8.2.0,67291205+rowlando13@users.noreply.github.com,Rowlando13,False,4,432,410,842,0,3,2024-12-23 23:10:57 -0800,2025-05-09 17:39:35 -0700
+click,click_W03,8.1.8,8.2.0,kevin@deldycke.com,Kevin Deldycke,False,10,238,338,576,0,3,2025-03-18 18:47:50 +0100,2025-03-27 18:54:59 +0400
+click,click_W03,8.1.8,8.2.0,andreasbackx@users.noreply.github.com,Andreas Backx,False,4,379,141,520,0,3,2024-11-03 20:38:31 +0000,2025-01-12 14:59:58 +0000
+click,click_W03,8.1.8,8.2.0,kdeldycke@users.noreply.github.com,Kevin Deldycke,False,3,374,98,472,0,2,2024-11-02 23:35:57 +0000,2024-11-03 12:35:15 +0000
+click,click_W03,8.1.8,8.2.0,grohe43@gmail.com,Brian Grohe,False,1,176,140,316,0,1,2023-08-20 09:39:26 -0700,2023-08-20 09:39:26 -0700
+click,click_W03,8.1.8,8.2.0,stefreak@gmail.com,Steffen Neubauer,False,1,198,33,231,0,1,2024-11-09 00:22:58 +0000,2024-11-09 00:22:58 +0000
+click,click_W03,8.1.8,8.2.0,49699333+dependabot[bot]@users.noreply.github.com,dependabot[bot],True,43,111,111,222,0,23,2022-04-01 16:04:08 +0000,2024-08-01 03:56:42 +0000
+click,click_W03,8.1.8,8.2.0,me@p3ac0ck.net,Peacock,False,1,198,14,212,0,1,2024-11-29 01:31:31 +0100,2024-11-29 01:31:31 +0100
+click,click_W03,8.1.8,8.2.0,edrogers@users.noreply.github.com,Ed Rogers,False,1,73,4,77,0,1,2024-11-03 14:11:58 +0000,2024-11-03 14:11:58 +0000
+click,click_W03,8.1.8,8.2.0,57002207+yashrathi-git@users.noreply.github.com,Yash Rathi,False,1,62,6,68,0,1,2024-11-07 22:42:59 +0000,2024-11-07 22:42:59 +0000
+click,click_W03,8.1.8,8.2.0,asottile@umich.edu,Anthony Sottile,False,1,67,0,67,0,1,2024-11-08 23:57:43 +0000,2024-11-08 23:57:43 +0000
+click,click_W03,8.1.8,8.2.0,40209416+bhuffman-usgs@users.noreply.github.com,bhuffman-usgs,False,1,36,12,48,0,1,2024-11-03 13:12:05 +0000,2024-11-03 13:12:05 +0000
+click,click_W03,8.1.8,8.2.0,matt@mups.tech,mrmups,False,1,46,1,47,0,1,2024-11-02 22:45:03 +0000,2024-11-02 22:45:03 +0000
+click,click_W03,8.1.8,8.2.0,eloi.rivard@nubla.fr,Éloi Rivard,False,1,38,2,40,0,1,2024-12-19 17:54:32 +0100,2024-12-19 17:54:32 +0100
+click,click_W03,8.1.8,8.2.0,miketheman@gmail.com,Mike Fiedler,False,1,0,37,37,0,1,2024-10-06 09:46:54 -0400,2024-10-06 09:46:54 -0400
+click,click_W03,8.1.8,8.2.0,fdavis@users.noreply.github.com,fdavis,False,1,20,13,33,0,1,2024-11-03 19:56:41 +0000,2024-11-03 19:56:41 +0000
+click,click_W03,8.1.8,8.2.0,jules@apeworx.io,antazoey,False,1,23,9,32,0,1,2024-11-03 14:54:02 +0000,2024-11-03 14:54:02 +0000
+click,click_W03,8.1.8,8.2.0,65446343+kotlinisland@users.noreply.github.com,KotlinIsland,False,1,26,2,28,0,1,2024-11-03 12:21:04 +0000,2024-11-03 12:21:04 +0000
+click,click_W03,8.1.8,8.2.0,77174327+chips-wq@users.noreply.github.com,chips-wq,False,1,25,3,28,0,1,2024-11-03 14:40:46 +0000,2024-11-03 14:40:46 +0000
+click,click_W03,8.1.8,8.2.0,andreas@backx.org,Andreas Backx,False,4,14,14,28,0,3,2024-11-03 12:22:25 +0000,2025-01-12 15:31:07 +0000
+click,click_W03,8.1.8,8.2.0,403100+pfhayes@users.noreply.github.com,Patrick Hayes,False,1,21,0,21,0,1,2024-11-02 23:11:55 +0000,2024-11-02 23:11:55 +0000
+click,click_W03,8.1.8,8.2.0,leo.p.singer@nasa.gov,Leo Singer,False,1,6,4,10,0,1,2024-12-22 21:25:57 +0100,2024-12-22 21:25:57 +0100
+click,click_W03,8.1.8,8.2.0,66853113+pre-commit-ci[bot]@users.noreply.github.com,pre-commit-ci[bot],True,3,3,3,6,0,3,2024-05-06 22:05:34 +0000,2024-08-05 23:09:18 +0000
+click,click_W03,8.1.8,8.2.0,117423508+pre-commit-ci-lite[bot]@users.noreply.github.com,pre-commit-ci-lite[bot],True,1,1,1,2,0,1,2025-04-12 08:07:00 +0000,2025-04-12 08:07:00 +0000
+click,click_W03,8.1.8,8.2.0,andybozhko@gmail.com,Andrey Bozhko,False,1,1,1,2,0,1,2023-07-18 23:00:07 -0500,2023-07-18 23:00:07 -0500
+click,click_W04,8.2.0,8.2.1,davidism@gmail.com,David Lord,False,3,1396,507,1903,0,2,2025-05-15 12:09:23 -0400,2025-05-20 19:09:49 -0400
+click,click_W04,8.2.0,8.2.1,edward.g2013@gmail.com,Edward G,False,7,500,358,858,0,3,2025-05-11 01:39:39 -0700,2025-05-19 00:53:06 -0700
+click,click_W04,8.2.0,8.2.1,kieranyangyu@gmail.com,kyu243,False,3,75,13,88,0,2,2025-05-19 13:33:29 -0400,2025-05-20 19:01:40 -0400
+click,click_W04,8.2.0,8.2.1,simon.gerber@vshn.ch,Simon Gerber,False,1,27,2,29,0,1,2025-05-20 16:13:35 -0400,2025-05-20 16:13:35 -0400
+click,click_W04,8.2.0,8.2.1,sirosen@globus.org,Stephen Rosen,False,1,23,0,23,0,1,2025-05-20 18:14:42 -0400,2025-05-20 18:14:42 -0400
+click,click_W04,8.2.0,8.2.1,adamdangoor@gmail.com,Adam Dangoor,False,1,3,2,5,0,1,2025-05-11 06:15:14 -0700,2025-05-11 06:15:14 -0700
+click,click_W04,8.2.0,8.2.1,meator.dev@gmail.com,meator,False,1,2,2,4,0,1,2025-05-16 10:48:36 +0200,2025-05-16 10:48:36 +0200
+click,click_W04,8.2.0,8.2.1,johnaziz269@gmail.com,John Aziz,False,1,1,1,2,0,1,2025-05-15 22:57:03 +0300,2025-05-15 22:57:03 +0300
+click,click_W05,8.2.1,8.2.2,jaron@rosenau.info,denuoweb,False,13,534,614,1148,0,6,2025-05-26 00:57:11 -0700,2025-06-04 10:03:35 -0700
+click,click_W05,8.2.1,8.2.2,kevin@deldycke.com,Kevin Deldycke,False,3,551,90,641,0,3,2025-07-01 18:44:11 +0400,2025-07-23 10:14:01 +0400
+click,click_W05,8.2.1,8.2.2,davidism@gmail.com,David Lord,False,7,299,329,628,3,5,2025-05-20 22:50:35 -0400,2025-06-12 13:55:01 -0700
+click,click_W05,8.2.1,8.2.2,funkyvish88@gmail.com,Veritia,False,4,126,129,255,0,3,2025-06-17 11:52:54 +0100,2025-06-23 11:10:11 +0100
+click,click_W05,8.2.1,8.2.2,edward.g2013@gmail.com,Edward G,False,9,87,138,225,0,5,2025-05-27 01:11:54 -0700,2025-07-29 21:32:01 -0700
+click,click_W05,8.2.1,8.2.2,the-13th-letter@users.noreply.github.com,Marco Ricci,False,1,98,1,99,0,1,2025-07-21 20:35:04 +0100,2025-07-21 20:35:04 +0100
+click,click_W05,8.2.1,8.2.2,sirosen@globus.org,Stephen Rosen,False,1,60,0,60,0,1,2025-05-20 21:56:49 -0400,2025-05-20 21:56:49 -0400
+click,click_W05,8.2.1,8.2.2,cr52@protonmail.com,Clément Robert,False,3,17,4,21,0,2,2025-07-05 09:26:56 +0200,2025-07-22 13:04:16 +0200
+click,click_W05,8.2.1,8.2.2,p.lannigan@gmail.com,Patrick Lannigan,False,1,15,1,16,0,1,2025-06-07 13:35:04 -0400,2025-06-07 13:35:04 -0400
+click,click_W05,8.2.1,8.2.2,jaron.rosenau@gmail.com,Jaron Rosenau,False,2,6,9,15,0,1,2025-06-17 10:55:54 -0700,2025-06-17 11:01:23 -0700
+click,click_W05,8.2.1,8.2.2,firelight.flagboy@gmail.com,Firelight Flagboy,False,1,6,3,9,0,1,2025-07-04 08:01:42 +0200,2025-07-04 08:01:42 +0200
+click,click_W05,8.2.1,8.2.2,safe.pen2857@rhizoome.ch,Jean-Louis Fuchs,False,1,6,1,7,0,1,2025-05-26 13:32:32 +0200,2025-05-26 13:32:32 +0200
+click,click_W05,8.2.1,8.2.2,1154903+bobkerns@users.noreply.github.com,Bob Kerns,False,1,2,2,4,0,1,2025-05-21 15:47:37 -0700,2025-05-21 15:47:37 -0700
+click,click_W05,8.2.1,8.2.2,forsuse@live.de,nudopnu,False,1,1,1,2,0,1,2025-05-23 16:12:36 +0200,2025-05-23 16:12:36 +0200
+click,click_W05,8.2.1,8.2.2,gabrian.nagy@gmail.com,Gabi Nagy,False,1,1,1,2,0,1,2025-06-13 16:02:57 +0200,2025-06-13 16:02:57 +0200
+click,click_W05,8.2.1,8.2.2,117423508+pre-commit-ci-lite[bot]@users.noreply.github.com,pre-commit-ci-lite[bot],True,1,0,1,1,0,1,2025-06-21 11:27:44 +0000,2025-06-21 11:27:44 +0000
+click,click_W06,8.2.2,8.3.0,kevin@deldycke.com,Kevin Deldycke,False,40,2363,930,3293,0,6,2025-08-16 14:17:51 +0400,2025-08-30 15:09:31 +0400
+click,click_W06,8.2.2,8.3.0,jaron@rosenau.info,denuoweb,False,9,328,371,699,0,4,2025-06-26 22:13:41 -0700,2025-08-09 21:46:26 -0700
+click,click_W06,8.2.2,8.3.0,edward.g2013@gmail.com,Edward G,False,3,215,14,229,0,3,2025-07-22 03:20:02 -0700,2025-09-12 22:41:31 -0700
+click,click_W06,8.2.2,8.3.0,67291205+rowlando13@users.noreply.github.com,Rowlando13,False,1,9,209,218,0,1,2025-07-22 03:04:08 -0700,2025-07-22 03:04:08 -0700
+click,click_W06,8.2.2,8.3.0,jazzinghen@gmail.com,Michele Bianchi,False,4,151,3,154,0,1,2025-09-12 13:23:37 +0900,2025-09-12 17:58:00 +0900
+click,click_W06,8.2.2,8.3.0,2506664+msaipraneeth@users.noreply.github.com,Saipraneeth,False,7,27,4,31,0,2,2024-12-22 22:11:18 +0100,2025-08-07 05:56:14 +0530
+click,click_W06,8.2.2,8.3.0,anlambert@softwareheritage.org,Antoine Lambert,False,1,15,11,26,0,1,2025-05-28 17:41:17 +0200,2025-05-28 17:41:17 +0200
+click,click_W06,8.2.2,8.3.0,ofekmeister@gmail.com,Ofek Lev,False,4,17,9,26,0,1,2025-08-08 13:37:47 -0400,2025-08-08 13:37:47 -0400
+click,click_W06,8.2.2,8.3.0,117423508+pre-commit-ci-lite[bot]@users.noreply.github.com,pre-commit-ci-lite[bot],True,3,3,3,6,0,3,2025-08-02 22:07:30 +0000,2025-08-10 04:38:38 +0000
+click,click_W06,8.2.2,8.3.0,andreas@backx.org,Andreas Backx,False,1,3,1,4,0,1,2025-08-16 14:29:28 +0200,2025-08-16 14:29:28 +0200
+click,click_W06,8.2.2,8.3.0,hans.lehnert@gmail.com,Hans Lehnert,False,1,3,0,3,0,1,2025-08-09 14:43:46 +0100,2025-08-09 14:43:46 +0100
+click,click_W06,8.2.2,8.3.0,ben.blank@gmail.com,"Ben ""535"" Blank",False,1,1,1,2,0,1,2025-08-06 13:47:03 -0700,2025-08-06 13:47:03 -0700
+click,click_W06,8.2.2,8.3.0,jaron.rosenau@gmail.com,Jaron Rosenau,False,1,1,1,2,0,1,2025-08-04 22:06:03 -0700,2025-08-04 22:06:03 -0700
+click,click_W06,8.2.2,8.3.0,mark.jansen@reactos.org,Mark Jansen,False,1,1,1,2,0,1,2025-07-22 18:35:19 +0200,2025-07-22 18:35:19 +0200
+click,click_W07,8.3.0,8.3.1,egirling@wallstreet.io,Edward Girling,False,10,650,414,1064,0,3,2025-10-20 12:32:01 -0700,2025-10-27 00:23:37 -0400
+click,click_W07,8.3.0,8.3.1,funkyvish88@gmail.com,Veritia,False,4,590,447,1037,0,4,2025-09-15 15:42:55 +0100,2025-09-27 19:21:02 +0100
+click,click_W07,8.3.0,8.3.1,jaron@rosenau.info,denuoweb,False,11,228,213,441,0,4,2025-08-16 00:25:57 -0700,2025-10-12 16:46:44 -0700
+click,click_W07,8.3.0,8.3.1,kevin@deldycke.com,Kevin Deldycke,False,3,196,15,211,0,2,2025-09-24 08:59:19 +0200,2025-11-12 10:07:50 +0400
+click,click_W07,8.3.0,8.3.1,sirosen@globus.org,Stephen Rosen,False,4,150,19,169,0,2,2025-09-24 09:17:13 -0500,2025-09-25 13:14:00 -0500
+click,click_W07,8.3.0,8.3.1,edward.g2013@gmail.com,Edward G,False,6,77,14,91,0,5,2025-09-23 19:44:49 -0700,2025-11-15 12:41:36 -0800
+click,click_W07,8.3.0,8.3.1,gene_wood@cementhorizon.com,Gene Wood,False,4,50,16,66,0,2,2025-07-28 16:56:51 -0700,2025-09-25 11:11:19 -0700
+click,click_W07,8.3.0,8.3.1,safe.pen2857@rhizoome.ch,Jean-Louis Fuchs,False,1,9,4,13,0,1,2025-09-30 18:28:57 +0200,2025-09-30 18:28:57 +0200
+click,click_W07,8.3.0,8.3.1,marcel@telka.sk,Marcel Telka,False,1,9,2,11,0,1,2025-10-30 00:08:38 +0100,2025-10-30 00:08:38 +0100
+click,click_W07,8.3.0,8.3.1,adamdangoor@gmail.com,Adam Dangoor,False,3,4,3,7,0,1,2025-09-19 16:05:03 +0100,2025-09-19 17:02:43 +0100
+click,click_W07,8.3.0,8.3.1,matthias@urlichs.de,Matthias Urlichs,False,1,3,1,4,0,1,2025-10-02 19:54:21 +0200,2025-10-02 19:54:21 +0200
+click,click_W07,8.3.0,8.3.1,jonsson.peter.a@gmail.com,Peter A. Jonsson,False,1,0,3,3,0,1,2025-11-13 14:50:42 +0100,2025-11-13 14:50:42 +0100
+click,click_W07,8.3.0,8.3.1,walker@pobox.com,Roland Walker,False,1,2,1,3,0,1,2025-09-13 09:27:46 -0400,2025-09-13 09:27:46 -0400
+click,click_W07,8.3.0,8.3.1,117423508+pre-commit-ci-lite[bot]@users.noreply.github.com,pre-commit-ci-lite[bot],True,1,1,1,2,0,1,2025-08-16 08:30:01 +0000,2025-08-16 08:30:01 +0000
+click,click_W07,8.3.0,8.3.1,jaron.rosenau@gmail.com,Jaron Rosenau,False,1,1,1,2,0,1,2025-09-16 14:04:44 -0700,2025-09-16 14:04:44 -0700
+click,click_W07,8.3.0,8.3.1,sigurd.spieckermann@gmail.com,Sigurd Spieckermann,False,1,1,1,2,0,1,2025-09-19 16:05:14 +0200,2025-09-19 16:05:14 +0200
+click,click_W07,8.3.0,8.3.1,webknjaz@redhat.com,🇺🇦 Sviatoslav Sydorenko (Святослав Сидоренко),False,1,1,1,2,0,1,2025-09-22 15:20:29 +0200,2025-09-22 15:20:29 +0200
+click,click_W07,8.3.0,8.3.1,moul@moul.re,Moul,False,1,0,1,1,0,1,2025-09-20 22:27:27 +0200,2025-09-20 22:27:27 +0200
+flask,flask_W01,3.0.0,3.0.1,davidism@gmail.com,David Lord,False,15,745,577,1322,0,5,2023-11-15 12:14:37 -0800,2024-01-18 11:57:33 -0800
+flask,flask_W01,3.0.0,3.0.1,philip.graham.jones@googlemail.com,pgjones,False,2,7,6,13,0,1,2023-09-30 15:37:24 +0100,2023-09-30 15:37:24 +0100
+flask,flask_W01,3.0.0,3.0.1,lizardwine@hotmail.com,lizard,False,1,4,1,5,0,1,2023-12-13 15:05:03 -0800,2023-12-13 15:05:03 -0800
+flask,flask_W01,3.0.0,3.0.1,ben@hubtech.tv,Ben Huebscher,False,1,2,2,4,0,1,2023-12-13 15:10:47 -0800,2023-12-13 15:10:47 -0800
+flask,flask_W01,3.0.0,3.0.1,danielbcbs2@gmail.com,Daniel Isaac,False,1,3,1,4,0,1,2023-11-15 12:53:22 -0800,2023-11-15 12:53:22 -0800
+flask,flask_W02,3.0.1,3.0.2,davidism@gmail.com,David Lord,False,2,9,3,12,0,1,2024-02-03 09:41:38 -0800,2024-02-03 12:54:41 -0800
+flask,flask_W02,3.0.1,3.0.2,r04922101@ntu.edu.tw,Tony Huang,False,1,10,1,11,0,1,2024-02-03 12:36:06 -0800,2024-02-03 12:36:06 -0800
+flask,flask_W02,3.0.1,3.0.2,cody.j.b.scott@gmail.com,Cody Scott,False,1,4,1,5,0,1,2024-02-03 12:14:38 -0800,2024-02-03 12:14:38 -0800
+flask,flask_W03,3.0.2,3.0.3,davidism@gmail.com,David Lord,False,5,399,321,720,0,1,2024-04-07 10:24:40 -0700,2024-04-07 12:17:41 -0700
+flask,flask_W03,3.0.2,3.0.3,philip.graham.jones@googlemail.com,pgjones,False,1,54,12,66,0,1,2024-04-07 12:13:02 -0700,2024-04-07 12:13:02 -0700
+flask,flask_W04,3.0.3,3.1.0,davidism@gmail.com,David Lord,False,53,1447,950,2397,0,17,2023-11-09 08:39:48 -0800,2024-11-13 10:20:07 -0800
+flask,flask_W04,3.0.3,3.1.0,49699333+dependabot[bot]@users.noreply.github.com,dependabot[bot],True,16,104,104,208,0,11,2023-11-09 17:01:38 +0000,2024-08-01 15:48:34 +0000
+flask,flask_W04,3.0.3,3.1.0,425026+bre-17387639@users.noreply.github.com,bre-17387639,False,1,22,19,41,0,1,2024-10-24 14:46:34 -0700,2024-10-24 14:46:34 -0700
+flask,flask_W04,3.0.3,3.1.0,66853113+pre-commit-ci[bot]@users.noreply.github.com,pre-commit-ci[bot],True,8,8,8,16,0,7,2023-12-04 20:29:39 +0000,2024-08-05 23:09:19 +0000
+flask,flask_W04,3.0.3,3.1.0,philip.graham.jones@googlemail.com,pgjones,False,1,14,2,16,0,1,2024-06-07 19:04:18 +0000,2024-06-07 19:04:18 +0000
+flask,flask_W04,3.0.3,3.1.0,65047028+jaketanis@users.noreply.github.com,Jake Tanis,False,1,4,4,8,0,1,2024-05-25 11:25:24 -0700,2024-05-25 11:25:24 -0700
+flask,flask_W04,3.0.3,3.1.0,webknjaz@redhat.com,Sviatoslav Sydorenko (Святослав Сидоренко),False,1,5,3,8,0,1,2024-02-27 01:24:27 +0100,2024-02-27 01:24:27 +0100
+flask,flask_W04,3.0.3,3.1.0,akinolaemmanuel49@gmail.com,Akinola Abiodun Emmanuel,False,1,5,1,6,0,1,2023-10-06 16:37:42 -0700,2023-10-06 16:37:42 -0700
+flask,flask_W04,3.0.3,3.1.0,eloi@yaal.coop,Éloi Rivard,False,1,6,0,6,0,1,2024-05-25 10:23:44 -0700,2024-05-25 10:23:44 -0700
+flask,flask_W04,3.0.3,3.1.0,39418842+cheesecake87@users.noreply.github.com,David,False,1,2,1,3,0,1,2024-11-06 09:47:57 -0800,2024-11-06 09:47:57 -0800
+flask,flask_W04,3.0.3,3.1.0,105151517+jamesmramm@users.noreply.github.com,JamesMRamm,False,1,1,1,2,0,1,2024-05-02 17:57:34 +1000,2024-05-02 17:57:34 +1000
+flask,flask_W04,3.0.3,3.1.0,45117218+amrear@users.noreply.github.com,Amirreza A,False,1,1,1,2,0,1,2024-07-10 18:06:15 -0700,2024-07-10 18:06:15 -0700
+flask,flask_W04,3.0.3,3.1.0,57943791+resistor-git@users.noreply.github.com,Resistor-git,False,2,1,1,2,0,1,2023-10-28 07:38:33 +0000,2023-10-28 08:04:03 +0000
+flask,flask_W04,3.0.3,3.1.0,alimirmohammad.1386@gmail.com,Heisenberg,False,1,1,1,2,0,1,2024-05-25 11:28:19 -0700,2024-05-25 11:28:19 -0700
+flask,flask_W04,3.0.3,3.1.0,arnout@bzzt.net,Arnout Engelen,False,1,1,1,2,0,1,2023-10-20 17:17:24 +0200,2023-10-20 17:17:24 +0200
+flask,flask_W04,3.0.3,3.1.0,arthur.bressan@adroll.com,Catarina Bressan,False,1,1,1,2,0,1,2024-10-22 17:32:02 -0300,2024-10-22 17:32:02 -0300
+flask,flask_W04,3.0.3,3.1.0,iztok@iztok-jr-fister.eu,Iztok Fister Jr,False,1,1,1,2,0,1,2023-10-06 17:36:39 -0700,2023-10-06 17:36:39 -0700
+flask,flask_W04,3.0.3,3.1.0,withlihui@gmail.com,Grey Li,False,1,1,1,2,0,1,2024-09-24 08:54:01 +0800,2024-09-24 08:54:01 +0800
+flask,flask_W05,3.1.0,3.1.1,davidism@gmail.com,David Lord,False,14,2008,974,2982,0,7,2024-11-20 19:37:06 -0800,2025-05-13 07:51:12 -0700
+flask,flask_W05,3.1.0,3.1.1,james@reciperadar.com,James Addison,False,1,15,5,20,0,1,2025-05-12 18:30:27 -0700,2025-05-12 18:30:27 -0700
+flask,flask_W05,3.1.0,3.1.1,code@ares-macrotechnology.com,black,False,1,0,13,13,0,1,2025-03-29 15:16:24 -0700,2025-03-29 15:16:24 -0700
+flask,flask_W05,3.1.0,3.1.1,52022020+coolcat467@users.noreply.github.com,CoolCat467,False,1,6,0,6,0,1,2025-03-30 13:14:25 -0700,2025-03-30 13:14:25 -0700
+flask,flask_W05,3.1.0,3.1.1,gwatersdev@gmail.com,George Waters,False,1,5,1,6,0,1,2025-03-29 15:13:23 -0700,2025-03-29 15:13:23 -0700
+flask,flask_W05,3.1.0,3.1.1,3nc0m0s12@gmail.com,kurtatter,False,1,4,1,5,0,1,2024-11-23 17:50:40 -0800,2024-11-23 17:50:40 -0800
+flask,flask_W05,3.1.0,3.1.1,kot-b-kbahte@yandex.ru,kotvkvante,False,1,2,2,4,0,1,2025-03-29 15:09:26 -0700,2025-03-29 15:09:26 -0700
+flask,flask_W05,3.1.0,3.1.1,zhuangzhuang1988@gmail.com,zhuangzhuang,False,1,1,1,2,0,1,2025-03-29 14:47:41 -0700,2025-03-29 14:47:41 -0700
+flask,flask_W06,3.1.1,3.1.2,davidism@gmail.com,David Lord,False,15,952,811,1763,3,7,2025-05-13 08:09:39 -0700,2025-08-19 13:57:47 -0700
+flask,flask_W06,3.1.1,3.1.2,grant.birkinbine@gmail.com,Grant Birkinbine,False,1,16,3,19,0,1,2025-08-19 13:50:03 -0700,2025-08-19 13:50:03 -0700
+flask,flask_W06,3.1.1,3.1.2,rao@grandperspective.de,Badhreesh,False,1,6,8,14,0,1,2025-08-18 10:19:18 -0700,2025-08-18 10:19:18 -0700
+flask,flask_W06,3.1.1,3.1.2,tero.vuotila@falcony.io,Tero Vuotila,False,1,2,1,3,0,1,2025-08-18 10:22:59 -0700,2025-08-18 10:22:59 -0700
+flask,flask_W06,3.1.1,3.1.2,84430900+abhiramk6@users.noreply.github.com,abhiram kamini,False,1,1,1,2,0,1,2025-06-04 17:24:45 -0700,2025-06-04 17:24:45 -0700
+flask,flask_W06,3.1.1,3.1.2,alex@strugee.net,AJ Jordan,False,1,1,1,2,0,1,2025-05-20 12:26:17 -0400,2025-05-20 12:26:17 -0400
+flask,flask_W07,3.1.2,3.1.3,davidism@gmail.com,David Lord,False,11,2082,1318,3400,0,6,2025-11-17 09:43:40 -0800,2026-02-18 19:41:55 -0800
+flask,flask_W07,3.1.2,3.1.3,m.heidelberg@cab.de,Markus Heidelberg,False,2,3,9,12,0,2,2026-01-24 19:02:37 -0800,2026-01-27 09:18:37 +0100
+flask,flask_W07,3.1.2,3.1.3,cclauss@me.com,Christian Clauss,False,1,9,0,9,0,1,2026-01-24 18:53:30 -0800,2026-01-24 18:53:30 -0800
+flask,flask_W07,3.1.2,3.1.3,134919531+adityasah104@users.noreply.github.com,ADITYA SAH,False,1,5,3,8,0,1,2026-01-24 18:46:56 -0800,2026-01-24 18:46:56 -0800
+flask,flask_W07,3.1.2,3.1.3,subhajitsaha.formal@gmail.com,subhajitsaha01,False,1,1,1,2,0,1,2025-09-06 22:01:22 +0530,2025-09-06 22:01:22 +0530
+requests,requests_W01,v2.30.0,v2.31.0,nate.prewitt@gmail.com,Nate Prewitt,False,2,52,3,55,0,1,2023-05-22 09:08:57 -0600,2023-05-22 09:10:32 -0600
+requests,requests_W01,v2.30.0,v2.31.0,tagrain@gmail.com,Thomas Grainger,False,2,6,7,13,0,2,2023-05-13 08:10:56 -0600,2023-05-15 09:04:21 -0600
+requests,requests_W01,v2.30.0,v2.31.0,39564496+syed-saif@users.noreply.github.com,Syed Saifullah,False,1,1,1,2,0,1,2023-05-09 10:55:33 -0600,2023-05-09 10:55:33 -0600
+requests,requests_W02,v2.31.0,v2.32.0,graffatcolmingov@gmail.com,Ian Stapleton Cordasco,False,9,848,20,868,0,7,2023-09-13 09:33:58 -0500,2024-03-14 06:06:22 -0500
+requests,requests_W02,v2.31.0,v2.32.0,nate.prewitt@gmail.com,Nate Prewitt,False,16,213,152,365,0,8,2023-05-22 09:36:22 -0600,2024-05-20 08:46:49 -0700
+requests,requests_W02,v2.31.0,v2.32.0,49699333+dependabot[bot]@users.noreply.github.com,dependabot[bot],True,15,36,36,72,0,12,2023-08-12 19:03:17 +0000,2024-04-15 16:40:35 +0000
+requests,requests_W02,v2.31.0,v2.32.0,miketheman@gmail.com,Mike Fiedler,False,5,30,24,54,0,1,2023-12-23 16:16:50 +0000,2023-12-23 18:15:33 +0000
+requests,requests_W02,v2.31.0,v2.32.0,agubelu@users.noreply.github.com,agubelu,False,1,28,18,46,0,1,2024-05-15 14:07:26 -0600,2024-05-15 14:07:26 -0600
+requests,requests_W02,v2.31.0,v2.32.0,birdsee@qq.com,flysee,False,2,35,1,36,0,1,2024-03-18 15:36:36 +0800,2024-03-18 22:33:17 +0800
+requests,requests_W02,v2.31.0,v2.32.0,nicola.soranzo@earlham.ac.uk,Nicola Soranzo,False,1,28,0,28,0,1,2023-12-15 20:59:56 +0000,2023-12-15 20:59:56 +0000
+requests,requests_W02,v2.31.0,v2.32.0,jkshpai@gmail.com,Jaikish Pai,False,1,11,11,22,0,1,2023-12-17 22:34:30 +0100,2023-12-17 22:34:30 +0100
+requests,requests_W02,v2.31.0,v2.32.0,marmand68@gmail.com,Matthew Armand,False,1,22,0,22,0,1,2023-07-03 13:38:22 -0700,2023-07-03 13:38:22 -0700
+requests,requests_W02,v2.31.0,v2.32.0,bruce.adams@acm.org,Bruce Adams,False,2,20,0,20,0,2,2023-11-27 17:27:43 -0500,2023-11-29 15:42:57 -0500
+requests,requests_W02,v2.31.0,v2.32.0,thomas.dehghani@gmail.com,Thomas Dehghani,False,1,20,0,20,0,1,2024-01-31 17:13:53 +0100,2024-01-31 17:13:53 +0100
+requests,requests_W02,v2.31.0,v2.32.0,atatuzuner61@gmail.com,Ata Tuzuner,False,3,16,1,17,0,2,2023-11-28 18:12:22 -0500,2023-11-29 12:27:18 -0500
+requests,requests_W02,v2.31.0,v2.32.0,alexandre@ittner.com.br,Alexandre Erwin Ittner,False,1,8,8,16,0,1,2023-07-29 18:50:43 -0700,2023-07-29 18:50:43 -0700
+requests,requests_W02,v2.31.0,v2.32.0,elliot.ford@astrazeneca.com,Elliot Ford,False,7,6,9,15,0,2,2023-11-22 11:34:04 +0000,2024-02-23 10:26:21 +0000
+requests,requests_W02,v2.31.0,v2.32.0,amkarn258@gmail.com,mayank,False,3,5,4,9,0,2,2023-10-31 00:50:10 +0530,2023-11-04 23:20:21 +0530
+requests,requests_W02,v2.31.0,v2.32.0,github@rodrigosilva.com,Rodrigo Silva,False,1,8,0,8,0,1,2023-12-13 10:05:12 -0300,2023-12-13 10:05:12 -0300
+requests,requests_W02,v2.31.0,v2.32.0,mb@x14.nl,Michiel W. Beijen,False,1,4,4,8,0,1,2024-04-08 21:48:24 +0200,2024-04-08 21:48:24 +0200
+requests,requests_W02,v2.31.0,v2.32.0,55189266+amkarn258@users.noreply.github.com,amkarn258,False,1,4,3,7,0,1,2023-10-31 22:36:39 +0530,2023-10-31 22:36:39 +0530
+requests,requests_W02,v2.31.0,v2.32.0,kevin.kirsche@one.verizon.com,Kevin Kirsche,False,1,1,5,6,0,1,2023-07-29 18:55:18 -0700,2023-07-29 18:55:18 -0700
+requests,requests_W02,v2.31.0,v2.32.0,calle.svensson@zeta-two.com,Calle Svensson,False,1,4,0,4,0,1,2023-07-29 21:05:44 -0700,2023-07-29 21:05:44 -0700
+requests,requests_W02,v2.31.0,v2.32.0,lbalhar@redhat.com,Lumir Balhar,False,1,2,2,4,0,1,2024-04-11 21:10:36 +0200,2024-04-11 21:10:36 +0200
+requests,requests_W02,v2.31.0,v2.32.0,13steinj@users.noreply.github.com,13steinj,False,1,1,1,2,0,1,2023-08-18 11:01:26 -0600,2023-08-18 11:01:26 -0600
+requests,requests_W02,v2.31.0,v2.32.0,boris.verk@gmail.com,Boris Verkhovskiy,False,1,1,1,2,0,1,2023-06-26 11:09:23 -0600,2023-06-26 11:09:23 -0600
+requests,requests_W02,v2.31.0,v2.32.0,carruthm@gmail.com,Matthew Carruth,False,1,1,1,2,0,1,2023-11-15 17:00:28 -0800,2023-11-15 17:00:28 -0800
+requests,requests_W02,v2.31.0,v2.32.0,chenpan9012@gmail.com,cpzt,False,1,2,0,2,0,1,2023-07-29 18:01:42 -0700,2023-07-29 18:01:42 -0700
+requests,requests_W02,v2.31.0,v2.32.0,framagie@gmail.com,franekmagiera,False,1,1,1,2,0,1,2024-05-12 22:08:24 +0200,2024-05-12 22:08:24 +0200
+requests,requests_W02,v2.31.0,v2.32.0,jnhyperion@gmail.com,Johnny.H,False,1,1,1,2,0,1,2023-08-29 13:41:49 +0800,2023-08-29 13:41:49 +0800
+requests,requests_W02,v2.31.0,v2.32.0,jonas@livekit.io,Jonas Schell,False,1,1,1,2,0,1,2023-08-16 08:16:53 -0700,2023-08-16 08:16:53 -0700
+requests,requests_W02,v2.31.0,v2.32.0,jorenvrancken@gmail.com,Joren Vrancken,False,1,1,1,2,0,1,2023-08-12 10:53:36 -0700,2023-08-12 10:53:36 -0700
+requests,requests_W02,v2.31.0,v2.32.0,sumedhrao7@gmail.com,sumedhrao7,False,1,1,1,2,0,1,2023-10-18 07:40:50 +0530,2023-10-18 07:40:50 +0530
+requests,requests_W02,v2.31.0,v2.32.0,volker.schaus@esa.int,Volker Schaus,False,1,1,1,2,0,1,2022-10-23 18:35:43 +0000,2022-10-23 18:35:43 +0000
+requests,requests_W03,v2.32.0,v2.32.1,nate.prewitt@gmail.com,Nate Prewitt,False,1,10,2,12,0,1,2024-05-20 15:02:29 -0700,2024-05-20 15:02:29 -0700
+requests,requests_W04,v2.32.1,v2.32.2,nate.prewitt@gmail.com,Nate Prewitt,False,3,47,8,55,0,1,2024-05-21 05:42:49 -0700,2024-05-21 11:49:22 -0700
+requests,requests_W05,v2.32.2,v2.32.3,graffatcolmingov@gmail.com,Ian Stapleton Cordasco,False,1,76,9,85,0,1,2024-05-22 06:53:24 -0500,2024-05-22 06:53:24 -0500
+requests,requests_W05,v2.32.2,v2.32.3,nate.prewitt@gmail.com,Nate Prewitt,False,4,33,13,46,0,2,2024-05-24 11:38:06 -0700,2024-05-29 08:36:10 -0700
+requests,requests_W06,v2.32.3,v2.32.4,cjwatson@debian.org,Colin Watson,False,2,283,272,555,0,1,2025-02-17 00:39:07 +0000,2025-02-17 00:41:30 +0000
+requests,requests_W06,v2.32.3,v2.32.4,nate.prewitt@gmail.com,Nate Prewitt,False,8,85,163,248,0,8,2024-05-23 11:51:07 -0700,2025-06-04 10:39:25 -0500
+requests,requests_W06,v2.32.3,v2.32.4,49699333+dependabot[bot]@users.noreply.github.com,dependabot[bot],True,9,34,34,68,0,8,2024-08-12 16:23:16 +0000,2025-04-28 17:28:05 +0000
+requests,requests_W06,v2.32.3,v2.32.4,daniel.garcia@suse.com,danigm,False,1,31,0,31,0,1,2025-06-05 06:21:46 -0500,2025-06-05 06:21:46 -0500
+requests,requests_W06,v2.32.3,v2.32.4,swast@google.com,Tim Sweña,False,1,12,17,29,0,1,2025-06-01 09:03:51 -0500,2025-06-01 09:03:51 -0500
+requests,requests_W06,v2.32.3,v2.32.4,167366979+allrob23@users.noreply.github.com,Robin,False,2,27,1,28,0,2,2025-04-23 07:44:05 -0500,2025-05-03 11:39:14 -0500
+requests,requests_W06,v2.32.3,v2.32.4,arthur.woimbee@gmail.com,Arthur Woimbée,False,1,20,8,28,0,1,2025-06-05 09:55:33 -0500,2025-06-05 09:55:33 -0500
+requests,requests_W06,v2.32.3,v2.32.4,graffatcolmingov@gmail.com,Ian Stapleton Cordasco,False,3,21,7,28,0,2,2025-05-31 11:59:51 -0500,2025-06-09 11:39:48 -0500
+requests,requests_W06,v2.32.3,v2.32.4,branchevincent@gmail.com,Branch Vincent,False,1,0,26,26,0,1,2024-07-29 08:49:17 -0500,2024-07-29 08:49:17 -0500
+requests,requests_W06,v2.32.3,v2.32.4,richard@vdberg.org,Richard van den Berg,False,1,11,10,21,0,1,2025-03-29 14:53:45 +0100,2025-03-29 14:53:45 +0100
+requests,requests_W06,v2.32.3,v2.32.4,tagrain@gmail.com,Thomas Grainger,False,5,8,6,14,0,1,2024-09-18 15:04:08 +0100,2024-09-18 19:40:02 +0100
+requests,requests_W06,v2.32.3,v2.32.4,11884243+pszlazak@users.noreply.github.com,Piotr Szlazak,False,1,11,0,11,0,1,2025-06-08 12:47:55 -0500,2025-06-08 12:47:55 -0500
+requests,requests_W06,v2.32.3,v2.32.4,118899211+anupam-arista@users.noreply.github.com,anupam-arista,False,4,6,4,10,0,3,2023-09-14 14:29:37 +0530,2025-02-12 17:58:07 +0530
+requests,requests_W06,v2.32.3,v2.32.4,tswast@gmail.com,Tim Sweña (Swast),False,1,3,3,6,0,1,2025-05-21 11:08:05 -0500,2025-05-21 11:08:05 -0500
+requests,requests_W06,v2.32.3,v2.32.4,65448395+duzhuoshanwai@users.noreply.github.com,duzhuoshanwai,False,1,1,1,2,0,1,2025-02-19 10:05:28 +0800,2025-02-19 10:05:28 +0800
+requests,requests_W06,v2.32.3,v2.32.4,me@jakobheine.de,jakobheine,False,1,0,1,1,0,1,2025-02-01 19:42:06 +0000,2025-02-01 19:42:06 +0000
+requests,requests_W07,v2.32.4,v2.32.5,nate.prewitt@gmail.com,Nate Prewitt,False,3,47,55,102,0,3,2025-06-13 10:42:08 -0600,2025-08-18 13:23:20 -0700
+requests,requests_W07,v2.32.4,v2.32.5,graffatcolmingov@gmail.com,Ian Stapleton Cordasco,False,1,90,1,91,0,1,2025-06-09 21:32:45 -0500,2025-06-09 21:32:45 -0500
+requests,requests_W07,v2.32.4,v2.32.5,49699333+dependabot[bot]@users.noreply.github.com,dependabot[bot],True,3,11,11,22,0,3,2025-06-16 14:10:36 -0500,2025-08-11 22:15:22 +0000
+requests,requests_W07,v2.32.4,v2.32.5,grant.birkinbine@gmail.com,Grant Birkinbine,False,1,6,2,8,0,1,2025-08-06 07:36:19 -0500,2025-08-06 07:36:19 -0500
+requests,requests_W07,v2.32.4,v2.32.5,abhi_jha1995@rediffmail.com,Abhishek Jha,False,1,2,5,7,0,1,2025-07-18 10:24:31 -0600,2025-07-18 10:24:31 -0600
+requests,requests_W07,v2.32.4,v2.32.5,31830590+killerdevildog@users.noreply.github.com,Quaylyn Rimer,False,1,1,1,2,0,1,2025-07-18 02:09:19 +0000,2025-07-18 02:09:19 +0000
+requests,requests_W07,v2.32.4,v2.32.5,40581230+anodo123@users.noreply.github.com,AHMAD FAIZ,False,1,1,1,2,0,1,2025-06-10 07:40:33 -0500,2025-06-10 07:40:33 -0500
+requests,requests_W07,v2.32.4,v2.32.5,jonas.fonseca@gmail.com,Jonas Fonseca,False,1,1,1,2,0,1,2025-06-09 21:54:25 -0500,2025-06-09 21:54:25 -0500
+urllib3,urllib3_W01,2.2.3,2.3.0,joe.marshall@nottingham.ac.uk,Joe Marshall,False,1,946,255,1201,0,1,2024-11-05 22:49:31 +0200,2024-11-05 22:49:31 +0200
+urllib3,urllib3_W01,2.2.3,2.3.0,illia.volochii@gmail.com,Illia Volochii,False,8,204,253,457,0,4,2024-10-27 17:47:03 +0200,2024-12-21 18:08:29 +0200
+urllib3,urllib3_W01,2.2.3,2.3.0,quentin.pradet@gmail.com,Quentin Pradet,False,9,287,61,348,0,6,2024-10-24 08:16:22 -0500,2024-12-22 11:34:22 +0400
+urllib3,urllib3_W01,2.2.3,2.3.0,49699333+dependabot[bot]@users.noreply.github.com,dependabot[bot],True,5,15,15,30,0,4,2024-10-27 18:21:54 +0200,2024-11-11 15:04:05 -0600
+urllib3,urllib3_W01,2.2.3,2.3.0,4160557+chrisoro@users.noreply.github.com,chrisoro,False,1,13,0,13,0,1,2024-09-28 21:20:00 +0300,2024-09-28 21:20:00 +0300
+urllib3,urllib3_W01,2.2.3,2.3.0,hasan.r67@gmail.com,Hasan Ramezani,False,1,7,6,13,0,1,2024-11-12 14:08:54 -0600,2024-11-12 14:08:54 -0600
+urllib3,urllib3_W01,2.2.3,2.3.0,itskanishkp.py@gmail.com,Kanishk Pachauri,False,1,10,2,12,0,1,2024-10-02 23:35:18 +0300,2024-10-02 23:35:18 +0300
+urllib3,urllib3_W01,2.2.3,2.3.0,827324+naglis@users.noreply.github.com,naglis,False,1,4,2,6,0,1,2024-09-28 18:29:12 +0300,2024-09-28 18:29:12 +0300
+urllib3,urllib3_W01,2.2.3,2.3.0,1324225+hugovk@users.noreply.github.com,Hugo van Kemenade,False,1,2,2,4,0,1,2024-09-28 17:58:19 +0300,2024-09-28 17:58:19 +0300
+urllib3,urllib3_W01,2.2.3,2.3.0,gliptak@gmail.com,Gábor Lipták,False,1,1,1,2,0,1,2024-10-05 18:13:59 -0500,2024-10-05 18:13:59 -0500
+urllib3,urllib3_W01,2.2.3,2.3.0,tagrain@gmail.com,Thomas Grainger,False,1,1,1,2,0,1,2024-12-04 20:48:39 +0200,2024-12-04 20:48:39 +0200
+urllib3,urllib3_W02,2.3.0,2.4.0,illia.volochii@gmail.com,Illia Volochii,False,12,2380,287,2667,0,9,2024-12-28 16:43:41 -0600,2025-04-10 17:55:56 +0300
+urllib3,urllib3_W02,2.3.0,2.4.0,github@vdberg.org,Richie B2B,False,1,137,10,147,0,1,2025-04-09 18:50:20 +0300,2025-04-09 18:50:20 +0300
+urllib3,urllib3_W02,2.3.0,2.4.0,tagrain@gmail.com,Thomas Grainger,False,1,23,47,70,0,1,2025-01-13 13:34:59 +0400,2025-01-13 13:34:59 +0400
+urllib3,urllib3_W02,2.3.0,2.4.0,joe.marshall@nottingham.ac.uk,Joe Marshall,False,1,47,16,63,0,1,2025-02-25 22:17:39 +0200,2025-02-25 22:17:39 +0200
+urllib3,urllib3_W02,2.3.0,2.4.0,49699333+dependabot[bot]@users.noreply.github.com,dependabot[bot],True,5,23,23,46,0,4,2024-12-24 09:37:32 +0400,2025-04-08 21:12:02 +0300
+urllib3,urllib3_W02,2.3.0,2.4.0,csm10495@gmail.com,Charles Machalow,False,1,31,4,35,0,1,2025-03-07 00:25:27 +0200,2025-03-07 00:25:27 +0200
+urllib3,urllib3_W02,2.3.0,2.4.0,quentin.pradet@gmail.com,Quentin Pradet,False,2,23,11,34,0,2,2024-12-23 18:27:05 +0400,2024-12-24 06:45:08 +0000
+urllib3,urllib3_W02,2.3.0,2.4.0,carl.smedstad@protonmail.com,Carl Smedstad,False,1,6,2,8,0,1,2024-12-30 14:52:46 -0600,2024-12-30 14:52:46 -0600
+urllib3,urllib3_W02,2.3.0,2.4.0,hasan.r67@gmail.com,Hasan Ramezani,False,1,2,2,4,0,1,2024-12-24 10:30:59 +0400,2024-12-24 10:30:59 +0400
+urllib3,urllib3_W02,2.3.0,2.4.0,steven@wedontsleep.org,Steve Kowalik,False,1,3,1,4,0,1,2025-01-10 14:32:20 +0400,2025-01-10 14:32:20 +0400
+urllib3,urllib3_W02,2.3.0,2.4.0,cjwatson@debian.org,Colin Watson,False,1,1,1,2,0,1,2025-02-03 00:36:37 +0200,2025-02-03 00:36:37 +0200
+urllib3,urllib3_W03,2.4.0,2.5.0,illia.volochii@gmail.com,Illia Volochii,False,6,245,80,325,0,4,2025-04-21 00:23:37 +0300,2025-06-18 16:55:24 +0300
+urllib3,urllib3_W03,2.4.0,2.5.0,quentin.pradet@gmail.com,Quentin Pradet,False,1,137,174,311,0,1,2025-06-16 21:40:46 +0400,2025-06-16 21:40:46 +0400
+urllib3,urllib3_W03,2.4.0,2.5.0,xninjakittyx@users.noreply.github.com,Daniel A,False,1,157,39,196,0,1,2025-06-18 16:22:30 +0300,2025-06-18 16:22:30 +0300
+urllib3,urllib3_W03,2.4.0,2.5.0,sethmichaellarson@gmail.com,Seth Michael Larson,False,1,99,53,152,0,1,2025-05-30 11:05:31 +0400,2025-05-30 11:05:31 +0400
+urllib3,urllib3_W03,2.4.0,2.5.0,joe.marshall@nottingham.ac.uk,Joe Marshall,False,1,40,4,44,0,1,2025-06-05 17:02:10 +0400,2025-06-05 17:02:10 +0400
+urllib3,urllib3_W03,2.4.0,2.5.0,49699333+dependabot[bot]@users.noreply.github.com,dependabot[bot],True,2,9,9,18,0,2,2025-04-29 14:11:51 +0300,2025-06-17 02:55:52 +0300
+urllib3,urllib3_W03,2.4.0,2.5.0,alexpbara@gmail.com,Alex Prabhat Bara,False,1,17,0,17,0,1,2025-06-15 10:45:25 +0400,2025-06-15 10:45:25 +0400
+urllib3,urllib3_W03,2.4.0,2.5.0,1324225+hugovk@users.noreply.github.com,Hugo van Kemenade,False,1,5,3,8,0,1,2025-04-11 23:14:50 +0300,2025-04-11 23:14:50 +0300
+urllib3,urllib3_W03,2.4.0,2.5.0,code@musicinmybrain.net,Ben Beasley,False,1,2,1,3,0,1,2025-05-30 10:25:37 +0400,2025-05-30 10:25:37 +0400
+urllib3,urllib3_W03,2.4.0,2.5.0,slev@altlinux.org,Stanislav Levin,False,1,1,1,2,0,1,2025-06-05 16:49:21 +0400,2025-06-05 16:49:21 +0400
+urllib3,urllib3_W04,2.5.0,2.6.0,illia.volochii@gmail.com,Illia Volochii,False,17,1424,725,2149,0,13,2025-07-28 22:11:28 +0400,2025-12-05 17:01:00 +0200
+urllib3,urllib3_W04,2.5.0,2.6.0,hasan.r67@gmail.com,Hasan Ramezani,False,1,833,823,1656,0,1,2025-06-19 07:38:59 +0000,2025-06-19 07:38:59 +0000
+urllib3,urllib3_W04,2.5.0,2.6.0,quentin.pradet@gmail.com,Quentin Pradet,False,4,961,571,1532,0,4,2025-08-06 11:13:38 +0300,2025-10-23 06:50:47 +0400
+urllib3,urllib3_W04,2.5.0,2.6.0,3994389+rogdham@users.noreply.github.com,Rogdham,False,1,149,191,340,0,1,2025-10-28 10:11:15 +0000,2025-10-28 10:11:15 +0000
+urllib3,urllib3_W04,2.5.0,2.6.0,49699333+dependabot[bot]@users.noreply.github.com,dependabot[bot],True,21,88,80,168,0,11,2025-06-19 00:06:19 +0300,2025-12-03 11:45:45 +0200
+urllib3,urllib3_W04,2.5.0,2.6.0,roberthoodchatham@gmail.com,Hood Chatham,False,2,32,9,41,0,1,2025-08-28 13:51:55 +0300,2025-08-28 23:55:23 +0300
+urllib3,urllib3_W04,2.5.0,2.6.0,49227365+phenylshima@users.noreply.github.com,phenylshima,False,1,31,3,34,0,1,2025-12-01 09:07:45 +0200,2025-12-01 09:07:45 +0200
+urllib3,urllib3_W04,2.5.0,2.6.0,akshat.gupta24@gmail.com,Akshat Gupta,False,1,27,0,27,0,1,2025-08-20 17:42:54 +0300,2025-08-20 17:42:54 +0300
+urllib3,urllib3_W04,2.5.0,2.6.0,61347081+typenoob@users.noreply.github.com,typenoob,False,1,19,3,22,0,1,2025-11-20 13:28:27 +0200,2025-11-20 13:28:27 +0200
+urllib3,urllib3_W04,2.5.0,2.6.0,grant.birkinbine@gmail.com,Grant Birkinbine,False,3,11,9,20,0,2,2025-08-05 16:55:11 +0000,2025-08-06 08:28:52 +0400
+urllib3,urllib3_W04,2.5.0,2.6.0,xonqnoppp@gmail.com,XonqNopp,False,1,7,0,7,0,1,2025-09-15 20:16:37 +0000,2025-09-15 20:16:37 +0000
+urllib3,urllib3_W04,2.5.0,2.6.0,subhajitsaha.formal@gmail.com,Subhajit Saha,False,1,2,2,4,0,1,2025-09-16 23:24:23 +0300,2025-09-16 23:24:23 +0300
+urllib3,urllib3_W04,2.5.0,2.6.0,tgamblin@ecocode.ca,Trevor Gamblin,False,1,2,1,3,0,1,2025-09-22 22:50:21 +0300,2025-09-22 22:50:21 +0300
+urllib3,urllib3_W04,2.5.0,2.6.0,webmaster@michivi.com,Le Tuan,False,1,2,1,3,0,1,2025-07-08 16:14:03 +0300,2025-07-08 16:14:03 +0300
+urllib3,urllib3_W04,2.5.0,2.6.0,edgarrm358@gmail.com,Edgar Ramírez Mondragón,False,1,1,1,2,0,1,2025-11-21 12:01:03 +0200,2025-11-21 12:01:03 +0200
+urllib3,urllib3_W04,2.5.0,2.6.0,hongyevgeny@gmail.com,yevgeny hong,False,1,1,1,2,0,1,2025-10-13 22:33:17 +0300,2025-10-13 22:33:17 +0300
+urllib3,urllib3_W04,2.5.0,2.6.0,sethmichaellarson@gmail.com,Seth Michael Larson,False,1,1,1,2,0,1,2025-06-23 11:57:07 -0500,2025-06-23 11:57:07 -0500
+urllib3,urllib3_W05,2.6.0,2.6.1,illia.volochii@gmail.com,Illia Volochii,False,2,24,6,30,0,1,2025-12-08 16:30:52 +0200,2025-12-08 17:05:11 +0200
+urllib3,urllib3_W06,2.6.1,2.6.2,illia.volochii@gmail.com,Illia Volochii,False,2,59,6,65,0,1,2025-12-11 16:14:30 +0200,2025-12-11 17:43:56 +0200
+urllib3,urllib3_W07,2.6.2,2.6.3,illia.volochii@gmail.com,Illia Volochii,False,5,157,76,233,0,3,2025-12-20 19:07:00 +0200,2026-01-07 18:18:09 +0200
+urllib3,urllib3_W07,2.6.2,2.6.3,shazow@gmail.com,Andrey Petrov,False,1,22,14,36,0,1,2025-12-19 11:30:53 +0400,2025-12-19 11:30:53 +0400
+urllib3,urllib3_W07,2.6.2,2.6.3,meeb@meeb.org,meeb,False,1,29,0,29,0,1,2025-12-29 19:41:41 +0200,2025-12-29 19:41:41 +0200
+urllib3,urllib3_W07,2.6.2,2.6.3,50025784+juntyr@users.noreply.github.com,Juniper Tyree,False,1,16,5,21,0,1,2025-12-30 00:15:01 +0200,2025-12-30 00:15:01 +0200
+urllib3,urllib3_W07,2.6.2,2.6.3,49699333+dependabot[bot]@users.noreply.github.com,dependabot[bot],True,4,8,8,16,0,2,2025-12-18 22:18:50 +0200,2025-12-24 09:32:25 +0400

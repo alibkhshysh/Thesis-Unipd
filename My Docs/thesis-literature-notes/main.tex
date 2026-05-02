@@ -1,0 +1,1394 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{hyperref}
+\usepackage{enumitem}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  urlcolor=blue,
+  citecolor=blue
+}
+
+\title{Literature Notes: Software Quality Metrics for Evidence-Based Developer Reputation}
+\author{Ali Bakhshayesh}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section*{How to use this file}
+These notes will grow paper by paper.
+Each paper will follow the same simple structure:
+\begin{itemize}[leftmargin=*]
+  \item why the paper matters for the thesis,
+  \item what the paper says,
+  \item how I will reuse it in thesis chapters.
+\end{itemize}
+
+\tableofcontents
+\newpage
+
+\section{Paper 1: \textit{Software Metrics: A Survey} (Timoteo et al.)}
+
+\subsection{Why this paper matters}
+This is a core reference for the thesis. It reviews software source-code metrics and explains why many proposed metrics do not survive in real use. The reasons are practical: weak validation, unclear goals, and poor tool support. Since my thesis compares metrics for developer reputation, this source helps justify focusing on metrics that are easy to interpret, stable, and difficult to misuse.
+
+I will cite it mainly in:
+\begin{itemize}[leftmargin=*]
+  \item background (what software metrics are and how they evolved),
+  \item methodology (why I select validated and interpretable metrics),
+  \item discussion (how to explain weak or unstable metric behavior).
+\end{itemize}
+
+\subsection{What the paper says}
+The core message is that software metrics are useful only when their meaning is clear and they are tested in realistic contexts. The paper defines metrics as quantitative indicators of software properties, but also warns that software quality is not one-dimensional and cannot be reduced to one number.
+
+It organizes the field into two periods. The first period (before 1991) focuses mostly on complexity metrics. The second period (after 1992) shifts to object-oriented metrics, with more attention to design-level concepts such as coupling, cohesion, inheritance, and encapsulation.
+
+For the first period, the paper discusses:
+\begin{itemize}[leftmargin=*]
+  \item \textbf{LOC} as a basic size indicator that is useful but highly context-dependent,
+  \item \textbf{Cyclomatic complexity} as one of the most useful and validated metrics for control-flow complexity and testing effort,
+  \item \textbf{Halstead metrics} as less reliable in practice because of language dependence and weaker empirical support.
+\end{itemize}
+
+For object-oriented metrics, the paper highlights the \textbf{CK suite} as the most established family due to strong validation and tool support, while also noting that no metric family is perfect. Other sets (such as Lorenz \& Kidd and MOOD) are discussed as complementary but with mixed validation quality.
+
+Another important point is automation: tools can calculate values quickly, but a number alone is not enough. Teams still need interpretation rules to connect a metric value to quality decisions.
+
+The paper ends with a pragmatic shortlist of widely used metrics: LOC, cyclomatic complexity, CK metrics, and Lorenz \& Kidd metrics.
+
+A practical limitation is scope: this survey is centered on source-code metrics and mostly technical attributes. It does not try to model broader socio-technical drivers directly, so its metric set is better treated as a solid baseline than a complete evaluation space.
+
+\subsection{How I will reuse it in the thesis}
+For this thesis, it leads to four concrete choices:
+\begin{enumerate}[leftmargin=*]
+  \item I should compare validated metrics instead of proposing new ones.
+  \item Interpretability is essential: if a metric is hard to explain, it is weak for reputation.
+  \item Context matters: a metric can look good in one setting and fail in another.
+  \item Tool support helps adoption, but I still need clear rules for reading metric values.
+\end{enumerate}
+
+For my comparison criteria, this paper is especially useful for:
+\begin{itemize}[leftmargin=*]
+  \item \textbf{stability} across versions and projects,
+  \item \textbf{interpretability} for non-expert readers,
+  \item \textbf{resistance to gaming} (easy-to-manipulate metrics are poor reputation signals),
+  \item \textbf{implementation feasibility} for a small proof-of-concept smart contract.
+\end{itemize}
+
+\subsection{Quick notes to remember}
+\begin{itemize}[leftmargin=*]
+  \item Many metrics fail because goals are vague, context is ignored, or validation is weak.
+  \item The field moved from complexity metrics to object-oriented metrics.
+  \item The most practical survivors are LOC, cyclomatic complexity, CK, and Lorenz \& Kidd.
+  \item Automatic computation is useful, but interpretation is the real value.
+\end{itemize}
+
+\subsection{Citation note}
+\noindent\textbf{Timoteo et al.} ``Software Metrics: A Survey.'' \textit{(venue and year to confirm from the paper PDF).}
+
+\newpage
+\section{Paper 2: \textit{Measuring Software Maintainability: An Analysis of Evolving Metrics across Development Paradigms}}
+
+\subsection{Why this paper matters}
+This is a key reference for my maintainability section. It focuses on maintainability metrics and shows how their behavior changes across development paradigms. It compares traditional, object-oriented, Agile, and DevOps contexts, and explains that metric validity is tied to context. This directly supports my evaluation goals: stability, interpretability, long-term usefulness, and resistance to misuse.
+Its role is mainly conceptual and discussion support, not direct definition of the experimental protocol.
+
+I will use this paper mainly in:
+\begin{itemize}[leftmargin=*]
+  \item background (maintainability metrics and paradigm shifts),
+  \item methodology (why comparison must be context-aware),
+  \item discussion (limits of classical metrics in modern pipelines).
+\end{itemize}
+
+\subsection{What the paper says}
+The paper starts from a practical problem: many maintainability metrics were designed for older development models and may not reflect fast iterative workflows. It asks four main questions about established metrics, continuous maintenance metrics, strengths and weaknesses, and future trends.
+
+It frames maintainability using ISO/IEC 25010: maintainability is the degree to which software can be modified effectively and efficiently. The important point is that maintainability is multi-dimensional, so metrics are only partial proxies.
+
+The authors run a structured literature review using major digital libraries and include mostly peer-reviewed empirical studies. They then compare findings across paradigms.
+
+A useful contribution is the metric taxonomy:
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Code-based metrics:} examples include cyclomatic complexity, LOC, and code churn.
+  \item \textbf{Structure-based metrics:} examples include dependency and information-flow metrics (fan-in/fan-out style reasoning).
+  \item \textbf{Hybrid metrics:} examples include the Maintainability Index and CK metrics.
+\end{itemize}
+The paper notes a tradeoff in hybrid metrics: they are convenient for summary, but harder to interpret when you need a clear cause behind a score.
+
+The paper also discusses continuous practices in Agile and DevOps, where maintenance is not a separate late phase but part of daily development. In this context, teams often track operational metrics like MTTF, MTTR, deployment frequency, and change failure rate.
+
+The key caution is that process and operational metrics do not directly measure code maintainability. They are useful, but they should be interpreted together with code and structure metrics. They can also be strongly affected by tooling choices and team process, so they are easier to optimize without necessarily improving code quality.
+
+The final message is that no single metric is enough for all contexts. Metric choice should be tied to paradigm, system type, development goals, and newer settings such as microservices.
+
+One limitation to keep in mind is evidence heterogeneity: the paper aggregates results from different study designs and contexts, but there is no single unified benchmark across all paradigms. So cross-paradigm conclusions are strong conceptually, but still need local empirical validation.
+
+\subsection{How I will reuse it in the thesis}
+From this paper, I derive four practical decisions:
+\begin{enumerate}[leftmargin=*]
+  \item I should test metric behavior across contexts, not assume one-size-fits-all validity.
+  \item I should favor metrics with clear meaning over opaque composite indices, and avoid blind use of fixed thresholds.
+  \item I should treat process metrics as complementary signals, not direct code-quality proxies or primary experiment metrics.
+  \item I should discuss gaming risk for metrics connected to team incentives (for example, deployment frequency alone).
+\end{enumerate}
+
+For my comparison framework, this paper is especially useful for:
+\begin{itemize}[leftmargin=*]
+  \item \textbf{stability} across versions and paradigms,
+  \item \textbf{interpretability} of single metrics versus aggregated indices,
+  \item \textbf{long-term suitability} under evolving development practices,
+  \item \textbf{resistance to gaming} when metrics become performance targets.
+\end{itemize}
+
+\subsection{Quick notes to remember}
+\begin{itemize}[leftmargin=*]
+  \item Maintainability cannot be captured by one metric.
+  \item Maintainability metrics are paradigm-dependent.
+  \item Code, structure, and hybrid metrics each capture different dimensions.
+  \item Fixed thresholds can be misleading in fast-changing systems.
+  \item DevOps metrics mainly reflect delivery and operations, not code quality alone.
+  \item Context-aware metric selection is essential.
+\end{itemize}
+
+\subsection{Citation note}
+\noindent\textbf{Syed-Mohamad et al.} ``Measuring Software Maintainability: An Analysis of Evolving Metrics across Development Paradigms.'' \textit{Journal of Advanced Research in Applied Sciences and Engineering Technology}, 2026.
+
+\newpage
+\section{Paper 3: \textit{A Survey of Key Factors Affecting Software Maintainability}}
+
+\subsection{Why this paper matters}
+I use this paper mainly for conceptual grounding. It does not compare metrics experimentally, but it gives a strong foundation for definitions and terminology. It helps separate maintainability factors from maintainability metrics, and it anchors the discussion in widely used standards.
+
+I will use this paper mainly in:
+\begin{itemize}[leftmargin=*]
+  \item background (definition of maintainability and maintenance),
+  \item methodology (mapping metrics to factors),
+  \item discussion (limits of metric-only interpretations).
+\end{itemize}
+
+\subsection{What the paper says}
+The paper starts from a practical motivation: maintenance can consume around 65\% to 75\% of total lifecycle effort, so maintainability has a major cost impact.
+
+It clearly distinguishes two terms:
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Maintainability:} a property of the software system.
+  \item \textbf{Maintenance:} the activity of modifying software after delivery.
+\end{itemize}
+This distinction matters because maintenance effort alone is not a direct measure of maintainability.
+
+The paper reviews the four classic maintenance types: corrective, adaptive, perfective, and preventive. It also uses quality-model references (especially ISO/IEC 9126) to show that maintainability is a high-level attribute with sub-characteristics such as analysability, modifiability, stability, and testability.
+
+Another key point is that many models exist (including ISO-based, Boehm/McCall style, and fuzzy-logic approaches), but no single model fully captures maintainability in all contexts.
+
+The core contribution is a list of factors that affect maintainability:
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Code factors:} size, complexity, coupling, cohesion, inheritance.
+  \item \textbf{Design factors:} modularity, architecture quality, component structure.
+  \item \textbf{Readability/documentation factors:} comments, naming, clarity.
+  \item \textbf{Testing factors:} testability and test coverage maturity.
+  \item \textbf{Human and organizational factors:} developer skills, tool support, turnover.
+\end{itemize}
+
+The paper emphasizes that metrics are indicators of these factors, not direct measurements of maintainability itself.
+
+The evidence style is mostly conceptual synthesis: this work consolidates standards and prior models, but it is not an empirical benchmark paper comparing large datasets across tools or ecosystems.
+
+\subsection{How I will reuse it in the thesis}
+For my thesis design, this paper leads to four decisions:
+\begin{enumerate}[leftmargin=*]
+  \item I should treat maintainability as a latent, multi-factor property.
+  \item I should explicitly map each selected metric to a factor, instead of claiming it measures maintainability directly.
+  \item I should use standards-based vocabulary to keep definitions defensible.
+  \item I should acknowledge human and organizational effects when interpreting metric results.
+\end{enumerate}
+
+For my comparison framework, this paper especially supports:
+\begin{itemize}[leftmargin=*]
+  \item \textbf{interpretability} through clear factor-to-metric mapping,
+  \item \textbf{stability} as a formal maintainability sub-characteristic,
+  \item \textbf{long-term suitability} through design and documentation factors,
+  \item \textbf{resistance to gaming} by warning that a metric can improve while real maintainability does not.
+\end{itemize}
+
+\subsection{Quick notes to remember}
+\begin{itemize}[leftmargin=*]
+  \item Maintainability is a software property; maintenance is an activity.
+  \item Maintainability cannot be measured by one metric.
+  \item Metrics approximate contributing factors, not the full attribute.
+  \item ISO/IEC 9126 gives a solid structure for maintainability reasoning.
+  \item Human and organizational factors matter, even when not directly measured.
+\end{itemize}
+
+\subsection{Citation note}
+\noindent\textbf{Balraj Kumar} ``A Survey of Key Factors Affecting Software Maintainability.'' \textit{IEEE International Conference on Computing Sciences (ICCS)}, 2012.
+
+\newpage
+\section{Paper 4: \textit{An Empirical Analysis of the Maintainability Evolution of Open Source Systems}}
+
+\subsection{Why this paper matters}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Verdict:} Core paper (empirical and methodological backbone).
+  \item \textbf{Role in the thesis:} This paper provides direct empirical evidence on how maintainability metrics behave across versions of real open-source systems and serves as a methodological reference for studying metric stability over time.
+  \item \textbf{Primary contribution to the thesis:} It demonstrates that maintainability metrics evolve non-linearly, that correlations between metrics are project-dependent, and that independent empirical validation is necessary.
+\end{itemize}
+
+\subsection{What the paper says}
+\paragraph{Motivation and problem statement}
+The paper starts from a critical observation: although many software maintainability models and metrics have been proposed in the literature, they are rarely evaluated independently or reused across different studies. Most models are validated only by their proposers, often on a limited number of projects, making it difficult to assess their general applicability. The authors propose a different approach, focusing on the independent application of existing maintainability metrics to popular open-source systems in order to analyze their evolution over time.
+
+\paragraph{Maintainability as an evolving property}
+Maintainability is treated as a dynamic quality attribute that changes as software evolves. As systems grow, refactor, and adapt to new requirements, their size, complexity, and structure change, which in turn affects maintainability. This motivates the need to analyze maintainability across multiple versions rather than at a single snapshot in time.
+
+\paragraph{Selected metrics}
+The study focuses on three widely used metrics:
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Cyclomatic Complexity (CC):} CC measures the number of independent execution paths through the source code. Higher values indicate greater structural complexity and are generally associated with increased maintenance effort.
+  \item \textbf{Lines of Code (LOC):} LOC is used as a simple measure of software size. While easy to compute and interpret, its relationship with maintainability is context-dependent.
+  \item \textbf{Maintainability Index (MI):} MI is a composite metric combining Halstead Volume, cyclomatic complexity, and LOC. It provides a single numerical indicator intended to summarize maintainability, with commonly used threshold ranges (for example difficult, maintainable, and good).
+\end{itemize}
+
+\paragraph{Case study design}
+The authors analyze multiple open-source Java projects, starting with a detailed case study of the jEdit project. Twelve major versions of jEdit are examined, covering a long period of its evolution. Metrics are extracted using the JHawk static analysis tool. Both variants of the MI metric (with and without comments) are discussed, and the authors justify their choice of including comments despite the lack of standardization.
+
+\paragraph{Empirical results}
+The analysis reveals that MI does not evolve monotonically. In jEdit, MI remains stable across several versions, drops sharply after major changes, and later recovers. Cyclomatic complexity tends to be higher in versions with lower MI, while LOC shows an inconsistent relationship with MI. Similar analyses on four additional projects (SoundHelix, jWebUnit, jXLS, jTDS) show heterogeneous behaviors, with significant correlations appearing only in some projects.
+
+\paragraph{Statistical analysis}
+To assess relationships between metrics, the authors use Spearman rank correlation, chosen because it does not assume linear relationships or specific data distributions. Results indicate that correlations between LOC, CC, and MI vary across projects, and in some cases are weak or non-significant. This suggests that the behavior of composite metrics such as MI is highly project-specific.
+
+\paragraph{Limitations}
+The authors explicitly acknowledge several limitations, including the restricted number of analyzed projects, language dependence (Java), and reliance on a single static analysis tool. These limitations are presented transparently and motivate future research rather than undermining the study's conclusions.
+
+\subsection{How I will reuse it in the thesis}
+\paragraph{Key insights for the thesis}
+\begin{enumerate}[leftmargin=*]
+  \item \textbf{Metric stability must be measured empirically.} This paper shows that maintainability metrics can fluctuate significantly across versions, even within the same project.
+  \item \textbf{Composite metrics are risky.} MI aggregates multiple dimensions and may hide the underlying causes of maintainability changes, making it less suitable for transparent reputation assessment.
+  \item \textbf{Metric behavior is project-dependent.} There is no universal relationship between size, complexity, and maintainability across all systems.
+  \item \textbf{Independent validation is essential.} Applying existing metrics to new datasets provides more insight than proposing new metrics without validation.
+\end{enumerate}
+
+\paragraph{Support for thesis comparison criteria}
+For the thesis criteria, this paper gives strong support on the following dimensions:
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Stability:} Non-linear evolution and abrupt changes in MI highlight the need to quantify stability across versions.
+  \item \textbf{Interpretability:} Simple metrics such as CC are easier to reason about than composite indices.
+  \item \textbf{Long-term suitability:} Metrics that behave inconsistently across projects may be unsuitable as long-term reputation indicators.
+  \item \textbf{Resistance to gaming:} Composite metrics can potentially be manipulated by optimizing subcomponents without improving overall code quality.
+\end{itemize}
+
+\paragraph{Methodological reuse}
+The study provides a concrete methodological template that can be reused in this thesis, including:
+\begin{itemize}[leftmargin=*]
+  \item multi-version analysis of open-source projects,
+  \item use of widely available static analysis tools,
+  \item correlation-based investigation of metric relationships,
+  \item cautious interpretation of results.
+\end{itemize}
+
+\paragraph{Where this paper will be used}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Chapter 2:} Empirical background on maintainability evolution.
+  \item \textbf{Chapter 3:} Inspiration and justification for experimental design choices.
+  \item \textbf{Chapter 4:} Interpretation of metric stability, inconsistencies, and limitations.
+\end{itemize}
+
+\subsection{Quick notes to remember}
+\begin{itemize}[leftmargin=*]
+  \item Maintainability evolves non-linearly over time.
+  \item Metric correlations are not stable across projects.
+  \item Composite metrics may obscure causal relationships.
+  \item Empirical, independent evaluation is necessary.
+\end{itemize}
+
+\subsection{Citation note}
+\noindent\textbf{Kapllani, G., Khomyakov, I., Mirgalimova, R., Sillitti, A.} ``An Empirical Analysis of the Maintainability Evolution of Open Source Systems.'' \textit{IFIP AICT 582, OSS 2020.}
+
+\newpage
+\section{Paper 5: \textit{Exploring Factors and Metrics to Select Open Source Software Components for Integration: An Empirical Study}}
+
+\subsection{Why this paper matters}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Verdict:} Core support paper (feasibility, availability, and proxy-metric risks).
+  \item \textbf{Role in the thesis:} Although the paper targets OSS component selection (not developer reputation), it provides strong empirical evidence about (i) how practitioners operationalize quality factors via metrics, and (ii) which metrics are realistically extractable at scale from OSS portals/APIs. This directly supports the thesis requirement to include computability/feasibility (including smart-contract feasibility) as a metric selection criterion.
+  \item \textbf{Primary contribution to the thesis:} The paper demonstrates that many desirable quality signals are not consistently available as machine-readable metrics; proxy metrics are common but introduce interpretability and gaming risks.
+\end{itemize}
+
+\subsection{What the paper says}
+\paragraph{Motivation and scope}
+Open-source components are widely integrated into industrial software products, but selecting an OSS component is a multi-criteria decision with practical constraints. The paper investigates which factors practitioners consider when selecting OSS components for integration, which metrics they use to operationalize those factors, and to what extent these metrics can be automatically extracted from public OSS portals. The core perspective is practitioner-centered: selection criteria should reflect real-world decision-making and data availability.
+
+\paragraph{Research questions and study design}
+The study is organized around four main questions: (i) what factors and metrics practitioners use to evaluate OSS components, (ii) what information sources practitioners rely on, (iii) what factors/metrics can be assessed automatically from OSS portals, and (iv) what improvements would increase the usefulness of OSS portals for selection decisions. The authors employ a two-phase approach:
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Qualitative elicitation:} semi-structured interviews with 23 experienced practitioners to identify factors and metrics used in OSS selection.
+  \item \textbf{Large-scale validation:} an API-based analysis of the most starred 100{,}000 GitHub repositories to determine which metrics are actually available and consistently populated at scale.
+\end{itemize}
+
+\paragraph{Factors versus metrics (conceptual separation)}
+A key conceptual distinction is made between:
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Factors:} high-level qualities decision makers care about (e.g., community support, maturity, quality, risk, trustworthiness).
+  \item \textbf{Metrics:} operational measurements used to approximate factors (e.g., number of contributors, release frequency, issue resolution time).
+\end{itemize}
+The paper emphasizes that many factors do not have direct metrics and are often approximated by one or more proxy metrics. This creates an interpretation gap between the numeric signal and the underlying concept.
+
+\paragraph{Identified factors and metric inventory}
+From practitioner input, the authors identify eight high-level factors (each decomposed into multiple sub-factors). They consolidate and extend the metric inventory using prior literature, resulting in a large set of metrics associated with OSS selection. A central observation is that selection decisions commonly combine multiple dimensions (technical quality, community activity, adoption, legal constraints), rather than relying on a single measure.
+
+\paragraph{Automatability and data availability at scale}
+The most thesis-relevant contribution is the systematic assessment of metric availability via portal APIs. Despite the large metric inventory (reported as 170 metrics overall), the paper finds that only a minority are realistically automatable:
+\begin{itemize}[leftmargin=*]
+  \item Only \textbf{40} metrics are potentially available through APIs.
+  \item Only \textbf{22} metrics return information consistently across the full dataset of 100{,}000 repositories.
+\end{itemize}
+This implies that many theoretically relevant criteria cannot be operationalized as automated evidence in a robust, cross-project manner. The paper therefore recommends improving OSS portals by providing more standardized metadata and richer machine-readable indicators.
+
+\paragraph{Interpretation risks and limitations}
+The paper highlights that practitioners frequently use proxy metrics (e.g., stars, commits, issue activity) because they are available. However, these metrics are context-dependent and may capture popularity or activity rather than intrinsic code quality. The authors discuss that selection must therefore balance automatable evidence with contextual interpretation and sometimes manual inspection.
+
+\subsection{How I will reuse it in the thesis}
+\paragraph{Why this paper is strategically important for the thesis}
+\begin{enumerate}[leftmargin=*]
+  \item \textbf{Feasibility is a first-class selection criterion.} The study provides empirical justification for including availability/computability as a core criterion in metric selection for evidence-based reputation systems.
+  \item \textbf{Factors $\neq$ metrics.} The factor/metric separation is directly reusable to argue that reputation cannot be reduced to a single raw metric, and that metrics are proxies for underlying quality dimensions.
+  \item \textbf{Proxy metrics are unavoidable but risky.} Many desirable qualities (e.g., trustworthiness) lack direct measures; available proxies can be ambiguous, confounded, or manipulable.
+\end{enumerate}
+
+\paragraph{Support for thesis comparison criteria}
+For my comparison framework, this paper adds strong support on these dimensions:
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Stability:} Portal-based activity metrics can fluctuate due to attention, trends, or external events; this supports the need to test stability empirically rather than assume it.
+  \item \textbf{Interpretability:} Many available metrics (stars, forks, commits) are easy to understand but ambiguous in meaning; this supports evaluating interpretability as human explainability rather than mere simplicity.
+  \item \textbf{Resistance to gaming:} Counts and activity-based measures are susceptible to manipulation (e.g., artificial stars, superficial commits); this supports treating gaming resistance as a key selection criterion.
+  \item \textbf{Long-term suitability:} Metrics tied to platform popularity may not reflect long-term developer quality; metrics with stable semantic meaning across time are preferable.
+  \item \textbf{Smart-contract feasibility:} Metrics that are not consistently obtainable or reproducible are poor candidates for on-chain proof-of-concept implementation; this paper provides evidence for that constraint.
+\end{itemize}
+
+\paragraph{How to reuse this paper in thesis writing (concrete guidance)}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Chapter 3 (Methodology / criteria):} cite this paper to justify adding availability and computability as a metric selection criterion alongside conceptual criteria (stability, interpretability, gaming resistance).
+  \item \textbf{Chapter 4 (Discussion):} use it to explain why certain intuitive indicators are excluded or down-weighted (data missingness, confounding).
+  \item \textbf{Threats to validity / limitations:} use the large-scale API findings to argue that metric-based systems may be biased toward projects that expose rich metadata and may under-represent high-quality but low-visibility projects.
+\end{itemize}
+
+\subsection{Quick notes to remember}
+\begin{itemize}[leftmargin=*]
+  \item Practitioners evaluate OSS with multiple factors; metrics are proxies.
+  \item Many metrics are not available or not consistently populated across projects.
+  \item Only a minority of metrics are automatable at scale (40 available; 22 consistently available across 100k repos).
+  \item Proxy metrics introduce interpretability and gaming risks.
+\end{itemize}
+
+\subsection{Citation note}
+\noindent\textbf{Li, Moreschini, Zhang, Taibi.} ``Exploring Factors and Metrics to Select Open Source Software Components for Integration: An Empirical Study.'' \textit{(venue/journal and year to confirm from the paper PDF).}
+
+\newpage
+\section{Paper 6: \textit{Towards Evidence-Based Software Quality Practices for Reproducibility: Practices and Aligned Software Qualities}}
+
+\subsection{Why this paper matters}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Verdict:} Strong support paper (evidence-based framing and ISO/IEC 25010 alignment).
+  \item \textbf{Role in the thesis:} This paper strengthens the philosophical and methodological framing of the thesis: it provides empirical evidence about which software engineering practices support reproducibility and which ISO/IEC 25010 product quality characteristics are perceived to align with reproducibility. Although the paper is situated in computational science and engineering (CSE), its findings are useful to motivate maintainability and other quality attributes as defensible, evidence-based targets for metric-driven assessment.
+  \item \textbf{Primary contribution to the thesis:} It empirically links reproducibility to maintainability (and reliability/usability) and highlights auditable practices (testing, documentation, version control) as central for evidence-based quality.
+\end{itemize}
+
+\subsection{What the paper says}
+\paragraph{Motivation and scope}
+The paper argues that reproducibility is a foundational requirement in computational science and engineering (CSE), but that teams face practical constraints and must prioritize among competing software qualities. Despite the importance of reproducibility, there is limited empirical evidence about (i) what development practices facilitate reproducibility, and (ii) which product quality characteristics are most aligned with reproducibility. The authors therefore adopt an evidence-based approach to identify practices and quality attributes that are perceived as relevant for reproducible software.
+
+\paragraph{Definitions and standards framing}
+Reproducibility is defined according to NASEM (2019) as obtaining consistent results using the same input data, computational steps, methods, code, and analysis conditions. The paper uses ISO/IEC 25010 as the product quality framework and explicitly notes that reproducibility is not itself a standard product quality characteristic, motivating the need to study how it relates to existing quality characteristics.
+
+\paragraph{Research questions}
+The study is driven by three questions:
+\begin{itemize}[leftmargin=*]
+  \item \textbf{RQ1:} What development practices facilitate reproducible software?
+  \item \textbf{RQ2:} What do developers believe about the relationship between software quality and reproducibility, and are they willing/able to improve software quality for reproducibility?
+  \item \textbf{RQ3:} Which ISO/IEC 25010 product quality characteristics are perceived to contribute to reproducibility, and how do projects prioritize them?
+\end{itemize}
+
+\paragraph{Methodology}
+The authors use a mixed-method design:
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Case studies:} They conduct case studies of nine CSE software teams at Sandia National Laboratories. Interviews are analyzed using qualitative coding and thematic grouping (inspired by Grounded Theory) to identify categories of practices used to support reproducibility.
+  \item \textbf{Survey:} They conduct an online survey with 219 CSE software developers and users (both Sandia and non-Sandia). The survey includes Likert items about reproducibility beliefs and willingness, ranking of ISO/IEC 25010 characteristics, and a MaxDiff (best-worst) exercise to estimate which qualities contribute most/least to reproducibility. Rankings are analyzed using Borda counts; MaxDiff choices are analyzed via multinomial logit modeling with regularization. They also apply corrections for multiple comparisons where appropriate.
+\end{itemize}
+
+\paragraph{Findings for RQ1: practices supporting reproducibility}
+From the case studies, seven categories of practices are identified:
+\begin{itemize}[leftmargin=*]
+  \item automated testing,
+  \item code reviews,
+  \item development pipeline,
+  \item documentation,
+  \item public processes,
+  \item team communication,
+  \item version control.
+\end{itemize}
+Three practices were universally highlighted across all nine teams: automated testing, documentation, and version control. The paper argues these practices produce artifacts that directly support reproducibility by making expected behavior explicit (tests), clarifying intended use and constraints (documentation), and enabling traceability and rollback (version control).
+
+\paragraph{Findings for RQ2: beliefs and willingness}
+Survey respondents overwhelmingly view reproducibility as essential and believe that higher-quality software is more likely to be reproducible. Many respondents express willingness to invest additional effort to improve software quality for reproducibility. However, a substantial fraction report limited ability to identify and address reproducibility issues quickly and request more training and support. Respondents also indicate varying time horizons for reproducibility (for example months versus years/decades), illustrating realistic constraints and differing expectations in practice.
+
+\paragraph{Findings for RQ3: aligned product qualities}
+Using the MaxDiff analysis, respondents perceive reproducibility as most aligned with maintainability, reliability, and usability (followed by functional suitability). In contrast, security and performance efficiency are perceived as least aligned (and sometimes negatively aligned) with reproducibility in the studied context. The authors further explore how project priorities influence perceived utility and identify respondent clusters based on quality prioritization, emphasizing that teams may adopt different quality profiles.
+
+\paragraph{Discussion themes and limitations}
+The paper discusses several cross-cutting themes: communicating intended use, learning from others, involving software engineering expertise, and right-sizing solutions to project context. Reported barriers include lack of training, limited institutional support, and diverse definitions of reproducibility across communities. Threats to validity include contextual bias toward national lab environments and the possibility that unreported practices still exist in teams.
+
+\subsection{How I will reuse it in the thesis}
+\paragraph{Strategic value for this thesis}
+I use this paper mainly as an evidence-based framing reference, not as a direct metric-comparison study:
+\begin{enumerate}[leftmargin=*]
+  \item \textbf{Evidence-based quality mindset:} The paper provides a strong external anchor for arguing that quality practices and quality targets should be justified with empirical evidence rather than convention.
+  \item \textbf{Maintainability as a defensible target:} The strong perceived alignment between reproducibility and maintainability supports treating maintainability as a central long-term quality dimension, which strengthens the rationale for maintainability-related metrics as reputation-relevant signals.
+  \item \textbf{Auditable practice artifacts:} Testing, documentation, and version control are highlighted as universally important practices, and they produce artifacts that can be audited and measured, supporting the evidence perspective of reputation systems.
+\end{enumerate}
+
+\paragraph{Mapping to thesis comparison criteria}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Stability:} The emphasis on version control and testing supports the importance of tracking changes across versions and motivates stability analysis as a meaningful property.
+  \item \textbf{Interpretability:} Maintainability, reliability, and usability are understood and prioritized by practitioners, supporting interpretability as a key criterion for reputation metrics.
+  \item \textbf{Resistance to gaming:} Practice-based evidence can be gamed superficially (e.g., minimal documentation), motivating explicit discussion of gaming resistance for any evidence-based metric system.
+  \item \textbf{Long-term suitability:} The paper's discussion on time horizons (months/years/decades) provides language for why long-term indicators matter and why objectives differ by context.
+  \item \textbf{Feasibility:} While not focused on smart contracts, the paper reinforces that measurable, auditable evidence often comes from artifacts (VCS history, tests, docs), which tends to be more feasible for automation than subjective qualities.
+\end{itemize}
+
+\paragraph{How to reuse this paper in writing}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Chapter 2 (Background):} Use it to motivate evidence-based quality practices and to connect reproducibility to ISO/IEC 25010 qualities.
+  \item \textbf{Chapter 3 (Criteria definition):} Cite it when motivating maintainability as a central, defensible target quality and when explaining why interpretability matters to stakeholders.
+  \item \textbf{Threats to validity / limitations:} Use its limitation structure as a template for discussing context specificity and sampling bias.
+\end{itemize}
+
+\subsection{Quick notes to remember}
+\begin{itemize}[leftmargin=*]
+  \item Universally emphasized practices for reproducibility: automated testing, documentation, version control.
+  \item Reproducibility perceived to align most with maintainability (then reliability/usability).
+  \item Evidence-based quality requires context-aware prioritization and trade-off awareness.
+\end{itemize}
+
+\subsection{Citation note}
+\noindent\textbf{Gonzales et al.} ``Towards Evidence-Based Software Quality Practices for Reproducibility: Practices and Aligned Software Qualities.'' \textit{ACM REP '24, 2024.}
+
+\newpage
+\section{Paper 7: \textit{Reputation Systems Evaluation: A Survey}}
+
+\subsection{Why this paper matters}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Verdict:} Highly aligned (core support paper for the reputation-systems side).
+  \item \textbf{Role in the thesis:} This survey provides the missing other half of the thesis framing: while several papers in this review focus on software quality metrics, this paper focuses on how reputation systems themselves are evaluated. It supports defining a defensible, explicit evaluation protocol for metric-driven reputation signals (stability, interpretability, resistance to gaming, long-term suitability) and motivates threats/attack scenarios as standard evaluation dimensions.
+  \item \textbf{Primary contribution to the thesis:} It provides a taxonomy of evaluation approaches (custom experiments, restricted common experiments, common evaluation frameworks) and a consolidated view of evaluation metrics, threat models, and desiderata for reproducible benchmarking.
+\end{itemize}
+
+\subsection{What the paper says}
+\paragraph{Motivation}
+Reputation systems are used to estimate the trustworthiness of entities and support decision making in distributed environments. Because different reputation systems make different architectural and modeling assumptions, and because experimental setups are often custom-made, it is difficult to compare systems objectively across the literature. The paper therefore surveys how reputation systems are evaluated and argues that the field lacks standardized evaluation methodologies.
+
+\paragraph{Taxonomy of evaluation approaches}
+The authors propose a taxonomy of reputation system evaluation approaches:
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Custom-made experiments:} Most research evaluates a new reputation system using bespoke simulations and metrics. This creates comparability problems because definitions of evaluation metrics and threat scenarios vary widely.
+  \item \textbf{Common experiments under restricted scenarios:} Some studies reuse shared scenarios (e.g., e-market benchmarks, Prisoner's Dilemma/utility games), but these are limited in scope and are not generic.
+  \item \textbf{Common evaluation frameworks (CEFs):} Frameworks that aim to standardize evaluation and enable reproducible comparison across systems.
+\end{itemize}
+CEFs are further divided into theoretic and simulation-based frameworks, reflecting whether evaluation is based on criteria/threat analysis or on shared simulation/testbed tooling.
+
+\paragraph{Evaluation metrics and what is measured}
+The paper identifies two major families of evaluation metrics:
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Correctness / prediction quality:} metrics that measure how accurately a system identifies trustworthy vs untrustworthy entities or predicts future behavior (e.g., success rates, detection rates, false positives/negatives, RMSE-like measures depending on the model).
+  \item \textbf{Performance / overhead:} metrics that measure computational and communication costs (e.g., convergence time, message overhead, storage/runtime cost).
+\end{itemize}
+A recurring message is that even when the same term is used (for example convergence), different works operationalize it differently, which undermines cross-paper comparison.
+
+\paragraph{Threat models and attack scenarios}
+The survey reviews commonly simulated attacks used to evaluate robustness of reputation systems, including:
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Badmouthing} (unfairly negative recommendations),
+  \item \textbf{Collusion} (groups boosting each other or defaming others),
+  \item \textbf{Oscillating behavior} (alternating honest and dishonest behavior),
+  \item \textbf{Traitor attacks} (behave well until high reputation, then exploit it).
+\end{itemize}
+The paper stresses that attack modeling differs widely across studies and that evaluation outcomes depend strongly on assumptions about dynamic behavior (nodes joining/leaving, mobility, topology changes) and social relationships.
+
+\paragraph{Common evaluation frameworks and their limitations}
+The survey synthesizes why CEFs have not achieved broad adoption:
+\begin{itemize}[leftmargin=*]
+  \item frameworks often target a specific architecture (centralized vs decentralized) or a specific environment (e-commerce, P2P, WSN),
+  \item limited coverage of threat models and interaction patterns,
+  \item inconsistent definition and reporting of evaluation metrics,
+  \item limited extensibility and scarce availability of reusable implementations.
+\end{itemize}
+A comparative view of CEF proposals is provided along dimensions such as standardization, independence from system characteristics, flexibility, ease of implementation, and availability of implementations.
+
+\paragraph{Desiderata for a widely useful evaluation framework}
+The paper proposes key requirements for a widely accepted CEF:
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Standardization} (common abstractions and shared evaluation metrics),
+  \item \textbf{Independence from system characteristics} (supporting diverse reputation mechanisms),
+  \item \textbf{Flexibility} (configurable environments, threats, social relationships, dynamic behaviors),
+  \item \textbf{Ease of adding new systems/tests},
+  \item \textbf{Availability of implementations} (to enable reproducibility).
+\end{itemize}
+The authors also discuss practical factors that enable these requirements, such as abstract system interfaces, standardized time/interaction models, configurable attacker profiles, and balancing flexibility with comparability.
+
+\subsection{How I will reuse it in the thesis}
+\paragraph{Why this paper is foundational for the reputation half of the thesis}
+In my thesis, I link software quality metrics to developer reputation. This paper provides the vocabulary and justification for treating evaluation methodology and robustness to attacks/gaming as essential, not optional. It helps justify explicit comparison criteria and keeps gaming resistance as a legitimate evaluation axis.
+
+\paragraph{Reusable arguments for thesis writing}
+\paragraph{Argument A: explicit evaluation criteria are required}
+Because reputation evaluations are often non-standardized and not comparable, the thesis must define a clear evaluation protocol for metric selection and validation (cross-version, cross-project, and feasibility checks). This motivates presenting criteria (stability, interpretability, resistance to gaming, long-term suitability) as a structured evaluation design rather than subjective preferences.
+
+\paragraph{Argument B: threat modeling is part of reputation evaluation}
+The survey shows that robustness against attacks (badmouthing, collusion, oscillation, traitor) is standard in reputation system evaluation. Metric gaming analysis can be framed as an analog of these attacks in a developer-quality context (e.g., collusion-like mutual boosting, oscillation-like bursty good activity, traitor-like long honest history followed by harmful changes).
+
+\paragraph{Argument C: a lightweight CEF-inspired evaluation is acceptable for minimum thesis scope}
+The thesis is not building a universal CEF, but it can design a small, defensible evaluation protocol inspired by CEF desiderata:
+\begin{itemize}[leftmargin=*]
+  \item standardized data pipeline and metric computation,
+  \item explicit scenarios: cross-project and cross-version evaluation,
+  \item stability measures defined operationally,
+  \item basic robustness/sensitivity checks (lightweight gaming tests),
+  \item reproducible reporting of metrics and results.
+\end{itemize}
+
+\paragraph{How this paper supports comparison criteria}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Stability:} parallels the idea of convergence and dynamic behavior; stability must be operationally defined to be comparable.
+  \item \textbf{Interpretability:} standardization and consistent definitions are required to make results meaningful.
+  \item \textbf{Resistance to gaming:} aligns with attack scenarios as a primary evaluation dimension.
+  \item \textbf{Long-term suitability:} relates to time modeling, recency, and dynamic participants.
+  \item \textbf{Feasibility / smart-contract computability:} reproducible evaluation and standardized data availability motivate selecting deterministic, auditable metrics for on-chain proof-of-concept.
+\end{itemize}
+
+\paragraph{Where to use it in the thesis}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Chapter 2:} reputation systems background plus evaluation challenges and taxonomy.
+  \item \textbf{Chapter 3:} justification for the evaluation protocol and for including gaming resistance and reproducibility as dimensions.
+  \item \textbf{Threats to validity / limitations:} use the survey's comparability critique and threat-model variability as a template for limitation discussion.
+\end{itemize}
+
+\subsection{Quick notes to remember}
+\begin{itemize}[leftmargin=*]
+  \item Reputation system evaluation lacks standardization; custom experiments dominate.
+  \item Common evaluation frameworks aim to standardize but are limited; reproducibility and availability of implementations matter.
+  \item Correctness vs overhead are the main families of evaluation metrics.
+  \item Robustness to attack scenarios (badmouthing, collusion, oscillation, traitor) is a standard evaluation axis.
+\end{itemize}
+
+\subsection{Citation note}
+\noindent\textbf{Hassan, A., et al.} ``Reputation Systems Evaluation: A Survey.'' \textit{ACM Computing Surveys (CSUR), 2015/2016 (confirm exact year/volume from the paper PDF).}
+
+\newpage
+\section{Paper 8: \textit{Comparing and Evaluating Metrics for Reputation Systems by Simulation}}
+
+\subsection{Why this paper matters}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Verdict:} Core paper (evaluation framework and robustness for reputation metrics).
+  \item \textbf{Role in the thesis:} This paper provides a concrete foundation for evaluating reputation system metrics by simulation. It strengthens the methodology of this thesis by illustrating how different reputation metrics perform in adversarial settings, making it highly relevant for gaming resistance and the evaluation framework.
+  \item \textbf{Primary contribution to the thesis:} It demonstrates how to simulate and evaluate reputation metrics under common attacks and adversarial behavior, offering both a formal model and empirical findings regarding metric robustness.
+\end{itemize}
+
+\subsection{What the paper says}
+\paragraph{Motivation and problem framing}
+Reputation systems, used to assess the trustworthiness of agents in distributed systems, require effective evaluation metrics to function in hostile or unreliable environments. The paper aims to address the lack of comparability between reputation systems by using a formal model for reputation metrics and evaluating them through simulation experiments under various adversarial conditions.
+
+The authors provide a structured simulation framework and apply it to evaluate several widely known reputation metrics, including EigenTrust, OnlyLast, Accumulative, and Blurred systems, comparing them under different attack models, such as malicious raters, collusion, and traitor attacks.
+
+\paragraph{Formal model for reputation systems}
+The authors define a formal model for reputation metrics, structuring reputation as a combination of a rating function and a reputation computation function. Agents rate each other after transactions, and reputation is calculated as a function of past ratings (potentially weighted by time, transaction value, and history). The paper formalizes this setup using an agent-based simulation framework (RePast) where different reputation metrics can be evaluated consistently.
+
+This formal model is particularly useful for this thesis because it offers a clear, reusable framework for structuring and evaluating reputation systems, which can be adapted to evaluate software quality metrics as part of developer reputation systems.
+
+\paragraph{Simulated reputation metrics}
+The paper evaluates multiple reputation metrics, including:
+
+\paragraph{Accumulative reputation systems}
+These sum all ratings without time decay. This is the most straightforward approach, but it is vulnerable to manipulation by high-frequency raters or attacks like badmouthing.
+
+\paragraph{Average-based metrics}
+These calculate the average rating. They offer more robustness than simple accumulative methods but still suffer from collusion and badmouthing.
+
+\paragraph{Time-decayed metrics (Blurred)}
+The Blurred metric decays older ratings over time. This approach is more resistant to manipulative actions over long periods and captures recent activity as more significant than old ratings.
+
+\paragraph{OnlyLast metric}
+Only the last rating counts. While simple and highly resistant to some forms of manipulation, this metric fails to handle oscillating behaviors or periodic malicious activities effectively.
+
+\paragraph{EigenTrust}
+This is a more sophisticated approach using iterative updates to compute a global trust value. EigenTrust is effective against collusion, but it can fail in systems where agents are not sufficiently connected, or when ratings are sparse.
+
+\paragraph{BlurredSquared (proposed metric)}
+The authors propose BlurredSquared, a modification of Blurred that gives quadratic weight to recent ratings, improving robustness against oscillating behaviors and collusion. This new metric shows promise for robustness against common adversarial strategies.
+
+\paragraph{Adversarial behavior and attack scenarios}
+The simulation includes multiple attack scenarios to assess the robustness of each metric:
+
+\paragraph{Badmouthing}
+Malicious agents provide negative ratings to damage other agents' reputations, even when they do not engage in fraudulent behavior themselves.
+
+\paragraph{Collusion}
+Agents group together and coordinate positive or negative ratings to boost or degrade each other's reputation unfairly.
+
+\paragraph{Traitors (oscillating behavior)}
+Agents initially behave honestly to build reputation but later exploit the trust they have gained to behave maliciously.
+
+\paragraph{Key results}
+\begin{itemize}[leftmargin=*]
+  \item OnlyLast is surprisingly effective against traitor behavior but weak against badmouthing and collusion.
+  \item EigenTrust is robust to collusion but vulnerable where some agents are free riders or provide too little feedback.
+  \item Blurred and BlurredSquared are robust across several attack models, but BlurredSquared shows superior resistance against oscillating agents. However, all models show limitations under certain attack scenarios.
+  \item Accumulative and Average models struggle significantly under malicious raters and badmouthing.
+  \item The authors argue that a single metric may not be universally effective and advocate multi-metric evaluation.
+\end{itemize}
+
+\paragraph{Limitations}
+The authors explicitly acknowledge limitations:
+\begin{itemize}[leftmargin=*]
+  \item Their simulation environment was not always reflective of real-world complexities (for example the number of agents and types of interactions).
+  \item They did not account for every possible form of attack, and results are specific to the modeled agent and attack patterns.
+  \item There is an implied trade-off between metric complexity and robustness: simpler metrics like OnlyLast are more transparent but less resistant to sophisticated attacks.
+\end{itemize}
+
+\subsection{How I will reuse it in the thesis}
+\paragraph{Key insights for the thesis}
+\begin{enumerate}[leftmargin=*]
+  \item \textbf{Gaming resistance is critical.} The paper demonstrates that different reputation metrics are vulnerable to different attack types, supporting gaming resistance as a critical comparison dimension.
+  \item \textbf{Metric robustness varies under adversarial conditions.} No single metric works under all attacks. This justifies a multi-metric approach and the need to test stability under different scenarios.
+  \item \textbf{Time-decayed metrics show improved robustness.} The focus on time-decayed ratings (BlurredSquared) and the benefits of quadratic weighting aligns with the thesis emphasis on long-term stability and the importance of recent developer behavior.
+\end{enumerate}
+
+\paragraph{Support for thesis comparison criteria}
+For this thesis, the paper reinforces several evaluation criteria:
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Stability:} Time-decayed metrics and multi-version reasoning reinforce the need for stability testing.
+  \item \textbf{Interpretability:} The paper supports using simpler metrics like OnlyLast when possible, as they are easier to explain to stakeholders.
+  \item \textbf{Resistance to gaming:} This paper is directly aligned with gaming resistance and the need to evaluate against common attacks (badmouthing, collusion, traitors).
+  \item \textbf{Long-term suitability:} The proposed BlurredSquared metric emphasizes recent behavior but remains resilient over time, highlighting the importance of time-based metrics.
+  \item \textbf{Feasibility:} The simulation-based approach reinforces the argument for feasible, auditable metrics that can be implemented on-chain in a minimal proof-of-concept.
+\end{itemize}
+
+\paragraph{How to reuse this paper in writing}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Chapter 3:} Use the formal model and simulation approach as a methodological guide for evaluating metrics under attack scenarios.
+  \item \textbf{Chapter 4:} Cite the attack scenarios and comparative findings (for example EigenTrust's weakness against selfish agents) to discuss limitations and trade-offs of chosen metrics.
+  \item \textbf{Discussion and Conclusion:} Use BlurredSquared as an example of improving robustness by adjusting weighting over time.
+\end{itemize}
+
+\subsection{Quick notes to remember}
+\begin{itemize}[leftmargin=*]
+  \item Different reputation metrics resist different attacks; there is no universal best metric.
+  \item Time decay is a useful mechanism to improve robustness.
+  \item BlurredSquared is a strong candidate for long-term and attack-robust reputation metrics.
+  \item The simulation framework demonstrates how to model reputation systems for testing.
+\end{itemize}
+
+\subsection{Citation note}
+\noindent\textbf{Schlosser, Voss, Br\"uckner.} ``Comparing and Evaluating Metrics for Reputation Systems by Simulation.'' \textit{2004 (confirm exact venue/year from the paper PDF).}
+
+\newpage
+\section{Paper 9: \textit{A Survey of Blockchain: Techniques, Applications, and Challenges} (Gao et al., 2018)}
+
+\subsection{Why this paper matters}
+\paragraph{What this paper is}
+A broad, system-level survey that explains blockchain via a layered framework (data layer, network layer, application layer), then reviews major application domains, and finally summarizes core limitations and challenges (security and performance).
+
+\paragraph{Why it is aligned with this thesis (evidence-based developer reputation and smart-contract computability)}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Smart-contract feasibility criterion:} The paper explicitly positions smart contracts and automation as a major application direction and flags a key integration difficulty: connecting on-chain contract logic with off-chain and external services and real-world exchange of goods (an oracle and external-dependency style challenge). This directly supports this thesis requirement to judge which metrics are implementable on-chain without unsafe or fragile external assumptions.
+  \item \textbf{Threat model grounding (gaming and manipulation):} The security section outlines attack classes rooted in consensus incentives (majority attack, selfish mining) and privacy leakage. While not about gaming metrics directly, it is very relevant for this thesis because it reminds us that any reputation or metric system placed on-chain inherits incentive attacks and must be designed under adversarial behavior assumptions.
+  \item \textbf{Performance constraints:} The paper frames consensus as resource-wasteful and emphasizes scalability, availability, and throughput limits, including that blockchains often cannot compete with traditional databases under high workload. This supports this thesis stance: metric selection must respect on-chain cost constraints and throughput realities.
+\end{itemize}
+
+\paragraph{How this paper will be used in the thesis}
+\begin{itemize}[leftmargin=*]
+  \item As a \textbf{foundational reference} to justify the smart-contract computability selection criterion.
+  \item As a \textbf{design-constraints reference} to motivate computability rubric dimensions (computation cost, storage growth, need for external data, determinism, auditability).
+  \item As a \textbf{threat-context reference} for the hard-to-game criterion (linking incentives and attack surfaces to metric-based reputation).
+\end{itemize}
+
+\subsection{Short summary}
+This survey explains blockchain as a decentralized, immutable ledger where distributed nodes collectively affirm transaction provenance using cryptographic primitives and a consensus mechanism. It motivates blockchain as a response to weaknesses of centralized architectures (single point of failure, trust asymmetry between users and providers), especially under the growth of IoT, cloud and edge computing, and big data.
+
+The authors propose a high-level blockchain framework with three layers:
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Data layer:} blocks, transactions, hashes, Merkle trees, and digital signatures that provide integrity and traceability.
+  \item \textbf{Network layer:} peer-to-peer participation, distribution of the ledger, and consensus protocols that decide which blocks are valid.
+  \item \textbf{Application layer:} integration into domains such as IoT, big data, cloud and edge, identity management, cryptocurrency and markets, business solutions, smart contracts and automation, supply-chain traceability, medical informatics, and networking.
+\end{itemize}
+
+Technically, the paper covers transactions as payload; cryptographic hash pointers linking blocks; digital signatures for provenance; Merkle trees for compact integrity of many transactions; and block headers and bodies including previous-block hash, timestamp, Merkle root, and a consensus-related nonce. On the network side, it surveys consensus families such as Proof-of-Work, Proof-of-Stake, PBFT, and trusted-hardware approaches (for example PoET), describing their trade-offs and limitations.
+
+Finally, the paper highlights two barriers to broad adoption: \textbf{security issues} and \textbf{performance issues}. Security issues include majority attacks, selfish mining (even with less than 50\% power), anonymity and privacy risks due to public transactions and side channels (for example IP linkage and compromised third-party services), and abuse scenarios (including illicit activity and persistence of arbitrary content stored on-chain). Performance issues include scalability (ledger growth, distribution overhead, throughput limits due to block size and time restrictions) and availability and latency, noting benchmarking work that shows common platforms can lag far behind conventional databases under heavy workload. The conclusion positions blockchain as maturing but constrained: useful where auditability and decentralized trust matter, yet challenged by incentive attacks and system performance.
+
+\subsection{Detailed summary}
+\paragraph{1) Motivation and scope}
+\begin{itemize}[leftmargin=*]
+  \item The survey frames blockchain as a response to trust and security pressures in distributed environments: more connected devices, larger data flows, and repeated breaches in centralized providers.
+  \item It aims to: (i) introduce blockchain fundamentals and a structured framework; (ii) review application areas; (iii) discuss challenges (security and performance).
+\end{itemize}
+
+\paragraph{2) Layered framework: data, network, application}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Data layer:} structures and cryptographic components that make records tamper-resistant and traceable.
+  \item \textbf{Network layer:} P2P membership, ledger distribution, and consensus protocols that decide the valid chain state.
+  \item \textbf{Application layer:} domain-specific systems that leverage the above (ledger, consensus, cryptographic validation, smart contracts).
+\end{itemize}
+
+\paragraph{3) Data layer (what is inside a blockchain and why it matters)}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Transactions (data records):} basic payload, representing interactions (payments, data writes, and so on) at a particular time.
+  \item \textbf{Hash and hash pointers:} cryptographic hashes provide integrity checks; hash pointers connect data blocks so modification breaks the chain.
+  \item \textbf{Public-key cryptography and digital signatures:} provenance and authenticity, where issuers sign transaction material and receivers are identified via public keys.
+  \item \textbf{Merkle tree:} transactions are hashed and aggregated; any change propagates upward, making the Merkle root a compact integrity commitment for the whole set.
+  \item \textbf{Block structure:} block header typically includes version, previous-block hash, Merkle root, timestamp, difficulty target (nBits), nonce; block body includes transaction count and the transactions themselves.
+  \item \textbf{Nonce and puzzle friendliness:} the nonce enables consensus puzzles (notably PoW) where solutions are hard to find but easy to verify.
+\end{itemize}
+
+\paragraph{4) Network layer (who participates, how agreement happens)}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{P2P network roles:} nodes can be full nodes (hold complete ledger copy) or miners and validators; ledger persistence emerges because many copies exist.
+  \item \textbf{Consensus need:} without a trusted central party, nodes must agree on valid blocks and transactions; consensus determines which history is authoritative.
+\end{itemize}
+
+\paragraph{5) Consensus mechanisms summarized (and why this matters to on-chain feasibility)}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{PoW:} miners solve computational puzzles (nonce search); resilient but expensive; subject to forks and incentive-based attacks; difficulty cannot be too low (or excessive forks and double-spending risk).
+  \item \textbf{PoS:} stake influences ability and difficulty; tries to reduce wasted work; still has incentive and pathology issues (for example nothing-at-stake), mitigated by deposits and penalties.
+  \item \textbf{PBFT:} deterministic finality via multi-phase voting (pre-prepare, prepare, commit); communication cost is high, and naive implementations scale poorly.
+  \item \textbf{Trusted hardware / PoET:} reduces energy costs by relying on trusted execution environments and attestation; shifts trust to hardware and trusted code base.
+  \item \textbf{Other:} PoA (authorized validators with time windows) and PoB (destroy value to gain proposing rights).
+\end{itemize}
+
+\paragraph{6) Emergent applications (taxonomy-level value for this thesis)}
+The survey groups blockchain use into several application domains. For this thesis, the main utility is:
+\begin{itemize}[leftmargin=*]
+  \item identifying \textbf{where} blockchain adds value (auditability, traceability, decentralized agreement),
+  \item and where it struggles (resource constraints, high-throughput needs, privacy leakage, external dependencies).
+\end{itemize}
+
+Key domains:
+\begin{itemize}[leftmargin=*]
+  \item \textbf{IoT:} blockchain as trust layer; computational limits motivate offloading or private and permissioned designs.
+  \item \textbf{Big data:} blockchain for trading, sharing, and traceability; often stores hashes and metadata on-chain and keeps bulk data off-chain.
+  \item \textbf{Cloud and edge:} blockchain for contract management and removing reliance on trusted third parties; some designs use private chains plus cryptographic proofs.
+  \item \textbf{Identity management:} blockchain-backed identity logs, access control, self-sovereign data control; often with off-chain storage plus on-chain commitments.
+  \item \textbf{Cryptocurrency and markets:} variations in consensus and incentives illustrate that parameters and incentives shape security.
+  \item \textbf{Smart contracts and automation:} appealing due to auditable transaction history plus programmable execution, but difficult to connect reliably to external services, external data, and real-world delivery.
+  \item \textbf{Supply-chain traceability:} typically stores proofs and hashes on-chain; raw certificates and files may remain in conventional databases (hybrid architecture).
+  \item \textbf{Medical informatics:} emphasizes privacy and access control; latency and availability constraints can become safety-critical.
+  \item \textbf{Networking:} gateways and edge nodes as resource-rich anchors; policies and identities can be encoded via contracts.
+\end{itemize}
+
+\paragraph{7) Security concerns (directly relevant to hard-to-game criterion)}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Majority attack:} controlling more than 50\% of mining or validation can hijack history and introduce erroneous blocks.
+  \item \textbf{Selfish mining:} attackers with less than 50\% can still profit by withholding blocks and strategically releasing longer private chains, shifting incentives and potentially centralizing power.
+  \item \textbf{Privacy leakage:} anonymous transactions can still leak identity via linkage attacks (for example IP association) or compromised third parties (exchanges, key managers).
+  \item \textbf{Abuse and illicit use:} secure ledgers can also serve malicious actors; illicit activity measurement and arbitrary content insertion raise practical and legal risks.
+\end{itemize}
+
+\paragraph{8) Performance concerns (directly relevant to smart-contract computability)}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Scalability:} chain size grows continually; distribution slows; public chains restrict block size and interval, lowering throughput.
+  \item \textbf{Availability and latency:} confirmation time and commit reliability can be problematic; empirical benchmarking shows typical platforms can be far behind traditional databases at high load.
+  \item \textbf{Implication for this thesis:} any metric implemented as a smart contract should avoid heavy on-chain computation, frequent writes, and large state growth.
+\end{itemize}
+
+\paragraph{9) Closing perspective}
+The paper concludes that blockchain is maturing and useful for decentralized trust and auditability, but adoption is constrained by incentive attacks and performance limits; designers must select techniques appropriate to target business logic and workload.
+
+\subsection{How I will reuse it in the thesis}
+\paragraph{D1. What this paper gives that can be reused directly}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Justification for smart-contract computability criterion:} The survey emphasizes that consensus is costly and that scalability and availability remain limiting. This supports a thesis argument that a metric is only a good candidate for an on-chain reputation proof-of-concept if it can be computed and updated under tight cost and throughput constraints.
+  \item \textbf{A clean conceptual framework (layers) to structure PoC discussion:} The PoC can be described with the same layered thinking:
+  \begin{enumerate}[leftmargin=*]
+    \item \emph{Data layer:} what is stored (metric values, commits, developer identifiers, project identifiers, hashes).
+    \item \emph{Network layer:} assumptions about consensus and permissioning (public vs consortium vs private).
+    \item \emph{Application layer:} how reputation queries and updates happen, and what incentives exist.
+  \end{enumerate}
+  \item \textbf{Explicit acknowledgement of smart-contract integration difficulty:} The survey flags the challenge of tying smart contracts to external services and real-world events. For this project, this means: if a metric needs off-chain facts (for example who authored which commits, issue-tracker activity, review quality), the PoC should either:
+  \begin{enumerate}[leftmargin=*]
+    \item avoid those dependencies by selecting an on-chain-native metric, or
+    \item represent them as signed attestations posted on-chain (with explicit trust and oracle assumptions).
+  \end{enumerate}
+\end{itemize}
+
+\paragraph{D2. Implications for metric-selection criteria}
+Supervisors require stability, interpretability, gaming resistance, long-term indicator quality, and smart-contract feasibility. This paper strengthens the last criterion and gives supporting logic for the others:
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Gaming resistance:} In blockchains, adversaries exploit incentives (selfish mining) and majority power. By analogy, a metric-based reputation system will also be attacked through incentives: developers may optimize for the metric rather than quality, and actors may try to manipulate inputs. So gaming-resistance criterion should explicitly define:
+  \begin{enumerate}[leftmargin=*]
+    \item attack surface (what inputs can be faked or cheaply manipulated),
+    \item cost to manipulate (how expensive it is to generate fake events),
+    \item detectability and auditability (whether manipulation leaves on-chain traces).
+  \end{enumerate}
+  \item \textbf{Interpretability:} The survey's explanation of how data integrity is derived (hash pointers, Merkle roots, signatures) supports a narrative that on-chain metrics can be auditable. Interpretability becomes: can a stakeholder understand what a metric means, and can they verify provenance of input data?
+  \item \textbf{Stability across versions and projects:} While not its central focus, the paper's emphasis on immutable histories suggests a benefit for longitudinal tracking. If metric snapshots can be defined per release and commit, temporal stability can be studied, but feasibility still depends on storage and update-frequency constraints.
+\end{itemize}
+
+\paragraph{D3. Concrete smart-contract feasibility constraints to operationalize}
+The survey repeatedly highlights cost and performance limitations plus the smart-contract external-data challenge. Translating that into a feasibility checklist:
+\begin{enumerate}[leftmargin=*]
+  \item \textbf{On-chain compute cost:} Can the metric be computed with a small number of operations per update?
+  \item \textbf{On-chain storage growth:} Does the metric require storing large histories, or can only aggregates be stored (for example counts, sums, rolling windows)?
+  \item \textbf{Update frequency:} Does the metric need an update per commit, PR, or issue event, or can it be computed per release or per time window?
+  \item \textbf{Deterministic inputs:} Are inputs purely on-chain facts (transactions and events), or is off-chain data required (introducing oracles and trust assumptions)?
+  \item \textbf{Auditability:} Can any third party recompute and verify the metric from stored commitments, hashes, and public events?
+  \item \textbf{Adversarial robustness:} If the metric is public, how easy is it to produce cheap fake events to inflate it?
+\end{enumerate}
+
+\paragraph{D4. How this paper narrows PoC design space}
+\begin{itemize}[leftmargin=*]
+  \item Prefer metrics that are \textbf{aggregate-based} and \textbf{incrementally updatable} (counts, sums, bounded statistics) rather than metrics requiring heavy static analysis on-chain.
+  \item If code metrics are still used (complexity, churn), then computation will likely happen off-chain and the chain stores \textbf{attested results plus hashes} of analyzed artifacts, with a clearly stated trust model (who attests and how disputes are handled).
+  \item The application survey suggests many real systems are \textbf{hybrid}: store hashes and metadata on-chain, store heavy data off-chain. This is a defensible architecture for this metric proof-of-concept if justified explicitly.
+\end{itemize}
+
+\paragraph{D5. Ready-to-use writing points}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Motivating computability:} Blockchain offers auditability and decentralized agreement but faces security and performance limitations. So not every metric is suitable for smart-contract implementation. Metrics requiring high computation, high-frequency updates, or large state growth are weak proof-of-concept candidates; metrics with incremental updates and small state are stronger candidates.
+  \item \textbf{Motivating oracle caution:} While smart contracts allow automated execution, tying on-chain logic to external services and real-world events is difficult and introduces added trust assumptions. Therefore, feasibility criterion should explicitly penalize metrics that require unverifiable external inputs.
+\end{itemize}
+
+\subsection{Quick notes to remember}
+\begin{itemize}[leftmargin=*]
+  \item This paper gives a strong foundation for the smart-contract computability criterion.
+  \item Security and incentive attacks in blockchain map naturally to metric-gaming risks in reputation systems.
+  \item Performance constraints imply preference for simple, incremental, low-state on-chain metrics.
+  \item Hybrid architecture (off-chain heavy data, on-chain proofs and hashes) is often the practical design choice.
+\end{itemize}
+
+\subsection{Citation note}
+\noindent\textbf{Gao, Hatcher, Yu.} ``A Survey of Blockchain: Techniques, Applications, and Challenges.'' \textit{IEEE, 2018.}
+
+\newpage
+\section{Paper 10: \textit{Assessing Vulnerability in Smart Contracts: The Role of Code Complexity Metrics in Security Analysis} (Tehrani, 2026)}
+
+\subsection{Why this paper matters}
+\subsubsection*{A) Alignment \& Fit to Thesis}
+\paragraph{Thesis fit (why this paper is in the core set)}
+This paper is \textbf{highly aligned} with this thesis because it connects three elements:
+\begin{enumerate}[leftmargin=*]
+  \item \textbf{Smart contracts are high-stakes and hard to patch} (immutability plus money at risk), which motivates strong pre-deployment assessment.
+  \item \textbf{Metrics as evidence-based signals:} it evaluates whether software metrics (here, complexity metrics) can function as diagnostic signals for security risk.
+  \item \textbf{Multi-metric reality:} it empirically supports the point that single metrics are weak alone but become useful collectively. This maps directly to the thesis agreement: compare multiple metrics; implement one metric as proof-of-concept.
+\end{enumerate}
+
+\paragraph{Direct contributions to thesis research questions}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Stability and robustness argument:} Individual metric-vulnerability associations are weak, and redundancy exists among metrics. This strengthens the plan to evaluate stability and avoid over-claiming from one metric.
+  \item \textbf{Interpretability:} The metrics are mostly classical (LOC-like size metrics, cyclomatic-complexity style metrics, coupling and inheritance analogs). These are explainable to non-experts, which is good for reputation interpretability.
+  \item \textbf{Gaming and manipulation:} Findings imply some metrics can be superficially altered (for example comment lines) without improving real quality. This supports gaming resistance as a formal comparison dimension.
+  \item \textbf{Smart-contract feasibility:} Complexity metrics are easy to compute with static-analysis tools off-chain, but expensive to compute on-chain. This justifies a hybrid proof-of-concept design (on-chain storage and verification, off-chain computation).
+\end{itemize}
+
+\paragraph{Where this fits in the final thesis structure}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Background:} why smart-contract quality and security are unique (immutability, high-value targets).
+  \item \textbf{Related work:} metrics and vulnerability prediction (traditional languages vs Solidity).
+  \item \textbf{Methodology inspiration:} statistical testing choices (Spearman, Mann-Whitney, effect size).
+  \item \textbf{Core narrative evidence:} single metric weak; multiple metrics better; redundancy matters; complexity indicates risk but is not a cause.
+\end{itemize}
+
+\subsection{Short summary}
+\subsubsection*{B) Short Summary}
+This paper studies whether \textbf{code complexity metrics} can help identify \textbf{vulnerable Solidity smart contracts}. The motivation is that smart contracts are immutable after deployment, execute autonomously, and often manage funds, so vulnerabilities can cause catastrophic losses. The author treats complexity as a quantifiable, objective signal that has historically correlated with defects and vulnerabilities in traditional software, and asks whether a similar relationship holds in Solidity.
+
+The study extracts \textbf{21 complexity metrics} from Solidity source code using \textbf{Solmet}, a static-analysis tool for smart-contract metrics. The metrics cover size (SLOC, LLOC), documentation (CLOC), functional structure (number of functions), control-flow complexity (McCabe-style complexity, nesting), coupling and invocations (fan-out / number of outgoing invocations), and OO-style inheritance and coupling proxies (DIT, ancestors and descendants, coupling between objects). The dataset comes from prior work that crawled verified contracts (Etherscan), removed duplicates, deployed them locally, and labeled them for \textbf{eight vulnerability types} (for example reentrancy, integer overflow and underflow, timestamp and block dependency, dangerous delegatecall, unchecked external call).
+
+The analysis answers four research questions: (1) whether metrics are redundant (correlated with each other), (2) whether each metric correlates with vulnerability presence, (3) whether metric distributions differ between vulnerable and neutral code, and (4) how strong the higher-complexity to more-vulnerability pattern is.
+
+Results show that \textbf{many metrics are highly correlated} (redundant feature sets), and that \textbf{each individual metric correlates only weakly} with vulnerabilities. However, most metrics \textbf{strongly discriminate} vulnerable versus neutral contracts when comparing distributions (with statistically significant differences and often large effect sizes). In general, vulnerable contracts show higher mean complexity, but there are notable exceptions: \textbf{comment lines}, \textbf{descendants}, and \textbf{average parameters} tend to be lower in vulnerable code. The conclusion is that complexity is an \textbf{indicator, not a direct cause} of vulnerability; still, complexity metrics are valuable as \textbf{complementary signals}, especially when used together, and can support automated risk scoring and audit prioritization.
+
+\subsection{Detailed summary}
+\subsubsection*{C) Detailed Summary}
+\paragraph{C1. Motivation: why smart-contract security makes metrics more critical}
+The paper frames smart contracts as a special software-engineering case where:
+\begin{itemize}[leftmargin=*]
+  \item Code is \textbf{immutable} after deployment (upgrades are difficult or indirect), so post-release patching is constrained.
+  \item Contracts can \textbf{hold funds} and execute automatically, raising attacker incentives.
+  \item High-profile incidents show real financial damage and motivate systematic pre-deployment assessment.
+\end{itemize}
+From this, the paper motivates complexity metrics as a scalable way to provide objective risk signals that can be computed automatically.
+
+\paragraph{C2. Research questions (what exactly is tested)}
+The work is structured around four RQs:
+\begin{enumerate}[leftmargin=*]
+  \item RQ1 (redundancy): Are complexity metrics correlated with each other?
+  \item RQ2 (individual association): Does each metric correlate with vulnerability presence?
+  \item RQ3 (discriminative ability): Do vulnerable and neutral code differ in metric distributions?
+  \item RQ4 (direction and magnitude): Are metrics systematically higher (or lower) in vulnerable code?
+\end{enumerate}
+This is important for this thesis because it separates association (RQ2) from practical discriminability (RQ3 and RQ4), which prevents over-interpretation.
+
+\paragraph{C3. Why complexity is investigated}
+The argument is that complexity increases cognitive load and maintenance difficulty, creating more opportunities for errors; security experts have long warned that complexity indirectly increases attack surface. The paper also emphasizes that complexity should be treated as an \textbf{indicator} rather than a causal mechanism.
+
+\paragraph{C4. Solidity is not traditional software: implications for metric behavior}
+The paper highlights Solidity and EVM properties that may change metric behavior:
+\begin{itemize}[leftmargin=*]
+  \item Solidity's smaller ecosystem (types and libraries) and deterministic constraints.
+  \item Domain-specific vulnerability classes (reentrancy, transaction ordering, and others).
+  \item Gas costs: developers may limit control structures to reduce gas, affecting classic complexity measures.
+  \item Persistent state and modifiers, payable functions, and language-specific data types.
+\end{itemize}
+This supports a key thesis theme: metric results cannot be transferred from traditional languages to smart contracts without validation.
+
+\paragraph{C5. Metric set (21 metrics) and what they represent}
+Metrics are extracted per contract with Solmet and cluster into families:
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Size:} SLOC (all lines), LLOC (logical/executable lines), and related size effects.
+  \item \textbf{Documentation:} CLOC (comment lines), enabling comment-ratio reasoning when combined with LLOC.
+  \item \textbf{Functional structure:} NF (number of functions), NUMPAR (parameters), NOS (statements).
+  \item \textbf{Control-flow complexity:} WMC and Avg.McCC (McCabe-like complexity), NL/NLE and their averages (nesting depth).
+  \item \textbf{Coupling and invocations:} NOI and Avg.NOI (fan-out / outgoing invocations).
+  \item \textbf{Inheritance and coupling proxies:} DIT (depth of inheritance), NOA/NOD (ancestors/descendants), CBO (coupling between objects).
+  \item \textbf{Contract attribute vocabulary:} NA (number of attributes, modifiers, and keywords used).
+\end{itemize}
+For this thesis, this taxonomy is reusable for interpretability and for explaining what each metric actually measures.
+
+\paragraph{C6. Dataset and labeling (ground truth)}
+The dataset is sourced from prior work (IR-Fuzz) that collected verified contracts and labeled them for eight vulnerability types (overflow/underflow, strict equality hazards, reentrancy, timestamp dependency, block-number dependency, delegatecall hazards, ether frozen, unchecked external call). Labeling uses a two-stage process: pattern-based initial identification and manual verification to reduce labeling cost.
+
+An important nuance is heavy class imbalance (few vulnerable contracts versus many neutral). This affects interpretation: statistical significance may not imply strong practical prediction power, and weak correlation is not surprising.
+
+\paragraph{C7. Statistical methods (why these tests, and what they answer)}
+The paper uses a coherent chain:
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Spearman correlation} for monotonic relationships:
+  \begin{enumerate}[leftmargin=*]
+    \item metric-metric correlations (RQ1) to detect redundancy;
+    \item metric-label correlations (RQ2) to test individual association with vulnerability presence.
+  \end{enumerate}
+  \item \textbf{Mann-Whitney U test} (non-parametric) to compare vulnerable versus neutral metric distributions (RQ3).
+  \item \textbf{Cliff's Delta} as an effect size to quantify how often vulnerable values exceed neutral values (practical magnitude).
+  \item \textbf{Confidence intervals} to visualize group differences (RQ4), emphasizing direction and exceptions.
+\end{itemize}
+This is a strong methodological reference for defining stability and difference across versions or projects.
+
+\paragraph{C8. Results - RQ1 (redundancy among metrics)}
+The paper reports multiple strong metric-metric correlations, implying redundancy:
+\begin{itemize}[leftmargin=*]
+  \item SLOC strongly relates to NOI, NOS, WMC, NF, and LLOC.
+  \item NF and WMC, although conceptually different, correlate strongly (plausibly due to gas-conscious coding reducing variation in control structures).
+  \item Nesting metrics (NL, NLE, Avg.NL, Avg.NLE) can become effectively interchangeable in Solidity due to limited use of deep if and loop structures.
+  \item Inheritance-related metrics (NOA and DIT) show similarity.
+  \item NOI and Avg.NOI can be equal or near-equal when invocation patterns are limited.
+\end{itemize}
+Thesis relevance: in a multi-metric reputation model, redundancy must be controlled to avoid double-counting size or structure.
+
+\paragraph{C9. Results - RQ2 (each metric vs vulnerability label)}
+All metrics show statistically significant correlations with vulnerability presence, but \textbf{the magnitude is weak for every metric}. This is crucial:
+\begin{itemize}[leftmargin=*]
+  \item It rejects a one-metric-to-rule-them-all approach.
+  \item It implies single-metric reputation systems are likely fragile and misleading.
+  \item It supports the thesis stance: compare multiple metrics, then implement only one for proof-of-concept due to feasibility constraints.
+\end{itemize}
+The paper explicitly contrasts this with traditional-language studies where stronger correlations were observed.
+
+\paragraph{C10. Results - RQ3/RQ4 (discriminative power and direction)}
+Despite weak individual correlation, distributional tests show:
+\begin{itemize}[leftmargin=*]
+  \item All metrics show statistically significant differences between vulnerable and neutral groups (Mann-Whitney U).
+  \item Many metrics have \textbf{large effect sizes} (Cliff's Delta), meaning vulnerable contracts tend to score higher.
+  \item Exceptions exist: \textbf{CLOC}, \textbf{NOD}, and \textbf{Avg.NUMPAR} trend lower in vulnerable code (negative Cliff's Delta with small magnitude).
+\end{itemize}
+This gives a nuanced picture: complexity is generally higher in vulnerable code overall, but specific signals (documentation volume, extensibility proxies, parameter averages) can behave differently in Solidity.
+
+\paragraph{C11. Discussion: practical integration and best practices}
+The paper proposes concrete uses:
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Feature optimization:} drop redundant metrics to reduce overhead and increase interpretability.
+  \item \textbf{Risk assessment:} treat metrics as complementary features in a risk score (some metrics like coupling/invocations may be weighted higher).
+  \item \textbf{Audit prioritization:} flag high-complexity contracts or regions for deeper review.
+  \item \textbf{Developer guidance:} keep contracts simple, reduce deep nesting, avoid overly complex inheritance, and note that documentation may be protective (CLOC higher in neutral contracts).
+\end{itemize}
+
+\paragraph{C12. Threats to validity (why interpretation must stay cautious)}
+The paper is explicit about limitations:
+\begin{itemize}[leftmargin=*]
+  \item Dataset and labeling choices can shift results; different datasets may produce different outcomes.
+  \item Solidity version distribution may matter; older syntax differs.
+  \item Tool validity: Solmet was introduced earlier; dataset includes newer contracts, but the paper argues metrics are traditional enough to remain meaningful.
+  \item Domain confounding: higher complexity may reflect inherent problem complexity (for example DeFi vs simple tokens), not bad style, motivating stratification by contract type.
+\end{itemize}
+This directly informs thesis design: stratify or control for project and contract domain when possible.
+
+\paragraph{C13. Main conclusion (message to reuse)}
+The paper concludes:
+\begin{enumerate}[leftmargin=*]
+  \item Some metrics are redundant and strongly correlated.
+  \item Individual metrics alone are weak predictors (low correlation).
+  \item Collectively, metrics can discriminate vulnerable versus neutral code strongly.
+  \item Most metrics are higher in vulnerable code, with a few meaningful exceptions.
+\end{enumerate}
+It also stresses that complexity is associated with vulnerability but is not necessarily causal.
+
+\subsection{How I will reuse it in the thesis}
+\subsubsection*{D) Thesis-Oriented Notes}
+\paragraph{D1. Evidence for metric-selection philosophy}
+This paper is very useful for two thesis claims:
+\begin{enumerate}[leftmargin=*]
+  \item \textbf{Single-metric caution:} one metric is usually insufficient to explain or predict vulnerability risk; correlation magnitudes are weak.
+  \item \textbf{Multi-metric advantage:} even with weak individual correlations, metrics can still show strong discriminative power collectively and support prioritization decisions.
+\end{enumerate}
+This aligns with supervisory feedback that multiple metrics are usually needed.
+
+\paragraph{D2. How it changes definition of a good reputation metric}
+For an evidence-based developer reputation system, do not confuse:
+\begin{itemize}[leftmargin=*]
+  \item \textbf{association} (weak correlation with a label), and
+  \item \textbf{utility} (ability to discriminate groups, rank risk, and support decisions).
+\end{itemize}
+A metric can still be operationally useful with low correlation if combined and interpreted correctly. So comparison should separate:
+\begin{enumerate}[leftmargin=*]
+  \item standalone predictive signal;
+  \item complementary signal in a metric bundle.
+\end{enumerate}
+
+\paragraph{D3. Redundancy as a first-class selection criterion}
+This paper strongly supports adding redundancy/collinearity as a criterion:
+\begin{itemize}[leftmargin=*]
+  \item If SLOC correlates strongly with multiple metrics, a formula that sums all of them unintentionally overweights size.
+  \item The comparison should explicitly record whether a metric adds unique information or mostly repackages size.
+\end{itemize}
+This is a defensible reason to prefer compact metric sets and justify final metric selection.
+
+\paragraph{D4. Smart-contract computability implications}
+Key translation into the smart-contract feasibility rubric:
+\begin{itemize}[leftmargin=*]
+  \item Metrics are \textbf{easy to extract via static analysis off-chain}, but full static analysis \textbf{on-chain} is unrealistic because of gas and determinism constraints.
+  \item A realistic proof-of-concept pattern is:
+  \begin{enumerate}[leftmargin=*]
+    \item compute metric off-chain from a verified source artifact (for example commit hash / release tarball hash),
+    \item post \textbf{attested metric value plus artifact hash} on-chain,
+    \item optionally allow disputes / re-verification mechanisms (depending on project scope).
+  \end{enumerate}
+  \item For a minimal proof-of-concept, choose a metric that can be incrementally updated from events (for example counts, simple aggregates) or posted as periodic snapshots.
+\end{itemize}
+
+\paragraph{D5. Candidate metrics suggested for implementation shortlist}
+If one metric must be implemented as proof-of-concept, this paper suggests two directions.
+
+\textbf{(1) Simple, explainable, low-cost metrics (good for feasibility):}
+\begin{itemize}[leftmargin=*]
+  \item SLOC/LLOC family (size): explainable, but gameable through verbosity and not strongly causal.
+  \item NF / NOS: structural counts, feasible to store and update, but can still correlate with size.
+\end{itemize}
+
+\textbf{(2) Slightly richer metrics (still explainable) that may capture more risk than pure size:}
+\begin{itemize}[leftmargin=*]
+  \item Control-flow complexity (Avg.McCC, nesting): linked to reasoning difficulty, but computing from source needs parsing.
+  \item Coupling/invocation metrics (NOI/CBO): may represent dependency surface; more meaningful but still off-chain computed.
+\end{itemize}
+
+The thesis should not present a best metric, but a feasible metric with defensible meaning.
+
+\paragraph{D6. Gaming-resistance insights}
+Exception metrics matter for gaming analysis:
+\begin{itemize}[leftmargin=*]
+  \item \textbf{CLOC higher in neutral code} suggests documentation may correlate with safety; but as a reputation metric, comment count is highly gameable.
+  \item If comment-related metrics are included, protections should be justified (for example normalize, cap contributions, or treat as secondary support signal).
+  \item \textbf{Size metrics} can be manipulated by refactoring style (splitting/merging functions, formatting changes). So size metrics should score low on hard-to-game.
+\end{itemize}
+
+\paragraph{D7. Method reuse for Step 3 evaluation}
+This structure can be reused for evaluating chosen metrics on OSS projects:
+\begin{enumerate}[leftmargin=*]
+  \item Compute metric values across versions/releases.
+  \item Use non-parametric tests for distribution shifts (metrics are rarely normal).
+  \item Report both significance and effect sizes (avoid p-value-only reporting).
+  \item Explicitly test redundancy if multiple metrics are included.
+\end{enumerate}
+
+\paragraph{D8. What not to over-claim}
+This paper is careful: complexity correlates with vulnerability but is not causal. The same discipline should be preserved:
+\begin{itemize}[leftmargin=*]
+  \item Do not claim metric causes quality/vulnerability.
+  \item Claim metric is an indicator/proxy with observed association and practical discriminative utility under conditions.
+  \item Acknowledge confounders: domain complexity, contract type, and dataset bias.
+\end{itemize}
+
+\subsection{Quick notes to remember}
+\begin{itemize}[leftmargin=*]
+  \item Individual complexity metrics show weak correlation with vulnerability labels.
+  \item Multi-metric views can still discriminate vulnerable vs neutral code effectively.
+  \item Redundancy among metrics is substantial and must be controlled.
+  \item Complexity is a useful risk indicator, but not a causal proof.
+  \item Off-chain computation plus on-chain attestation is the realistic smart-contract metric pattern.
+\end{itemize}
+
+\subsection{Citation note}
+\noindent\textbf{Masoud Jamshidiyan Tehrani.} ``Assessing Vulnerability in Smart Contracts: The Role of Code Complexity Metrics in Security Analysis.'' \textit{arXiv v4, January 2026.}
+
+\newpage
+\section{Paper 11: \textit{Smart contracts software metrics: A first study} (Tonelli et al., 2023)}
+
+\subsection{Why this paper matters}
+\subsubsection*{A) Alignment \& Fit to thesis}
+\paragraph{What this paper is (in one sentence)}
+A large-scale empirical and statistical study on about 85K Solidity smart contracts that computes internal smart-contract metrics and external/interface metrics (ABI and bytecode), then compares their distributions to those known in traditional software.
+
+\paragraph{Why it is core to this thesis (mapped to agreed criteria)}
+This paper directly supports the smart-contract feasibility criterion and strengthens the comparison framework:
+\begin{enumerate}[leftmargin=*]
+  \item \textbf{Smart-contract feasibility (computability plus constraints):}
+  The paper is built around blockchain constraints: limited size, per-operation execution cost (gas), immutability after deployment, no floating point, and no true randomness. These are exactly the constraints needed in the feasibility rubric and proof-of-concept design.
+  \item \textbf{Interpretability:}
+  Most metrics are plain and explainable counts (LOC, number of functions, events, mappings, modifiers, payable functions, cyclomatic complexity, and others). This is useful for evidence-based reputation because stakeholders can understand these signals.
+  \item \textbf{Stability (what stability should mean in this domain):}
+  The study shows smart-contract metric ranges are more restricted than traditional software, and distributions often have upper cut-offs driven by deployment constraints. This shapes stability definition: metrics may be naturally bounded and less volatile, but may also saturate and lose discriminative power.
+  \item \textbf{Gaming and manipulation:}
+  The paper does not directly measure gaming, but it gives empirical grounding: when metrics are bounded and developers face gas and size constraints, developers may optimize for deployment feasibility in ways that reshape metric values (for example fewer loops/branches). That creates an incentive channel and a gaming surface for reputation metrics.
+  \item \textbf{Long-term indicator suitability:}
+  The paper reports changes across pragma/compiler versions, including shifts in LOC distributions and a trend reversal after Solidity 0.8. This is directly relevant to long-term indicator suitability: metrics used for reputation should account for language/toolchain evolution and ecosystem shifts.
+\end{enumerate}
+
+\paragraph{How this paper will be used in the thesis}
+\begin{itemize}[leftmargin=*]
+  \item As \textbf{primary evidence} that smart-contract metrics behave differently (restricted ranges, cut-offs, different statement-usage densities), supporting a dedicated feasibility rubric and careful metric choice.
+  \item As a \textbf{source of candidate metrics} that are realistic to compute off-chain and realistic to store/verify on-chain in a proof-of-concept, especially simple counts and ABI/interface exposure proxies.
+  \item As \textbf{methodological inspiration} for distributional analysis (CCDF, power-law vs log-normal fitting, bootstrap confidence intervals), reusable for stability analysis across versions/projects.
+\end{itemize}
+
+\subsection{Short summary}
+\subsubsection*{B) Short Summary}
+This paper argues that smart contracts are software artifacts developed under constraints that differ sharply from traditional systems. Because smart contracts are deployed as bytecode on-chain, they should remain lightweight in code size, and execution has a per-operation gas cost. Once deployed, contracts are effectively immutable (hard to update). Further, contracts must execute deterministically across many nodes, which excludes typical constructs such as floating point arithmetic and true randomness. The authors hypothesize that these constraints should be visible in statistical properties of smart-contract metrics, and may motivate smart-contract-specific metrics.
+
+To test this, the authors analyze a large dataset of about 85K Solidity contracts collected from Etherscan and Smart Corpus. They extract source code, ABI, and bytecode for each contract, parse the source into an AST (using PASO), and compute metrics including: total lines, blank lines, comment lines, LOC, number of contracts per address, functions, payable functions, events, mappings to addresses, modifiers, interfaces/libraries, cyclomatic complexity, and ABI/bytecode sizes. They compute descriptive statistics and then analyze full distributions instead of relying only on histograms.
+
+A central result is that smart-contract metrics tend to have \textbf{restricted ranges} compared with traditional software. Many metrics exhibit \textbf{upper cut-offs} consistent with on-chain size/cost constraints. As a consequence, classic fat-tail/power-law patterns often seen in traditional software appear only partially or only in limited regions. LOC is a notable exception: it behaves more like traditional software, is well described by a log-normal distribution, and shows an approximate truncated power-law tail. ABI and bytecode metrics display bell-shaped behavior around central values, suggesting many contracts have a typical level of external interface exposure.
+
+The paper also studies statement usage and finds that iteration and conditional statements per LOC are far lower than in languages such as Java/C/Python, consistent with developers avoiding expensive branching/loops and trying to keep contracts cheap and understandable. Finally, it reports evolution over compiler/pragma versions: distributions shift toward larger LOC ranges up to Solidity 0.7, with trend reversal after Solidity 0.8, plausibly linked to compiler-level safety changes and reduced need for external libraries.
+
+\subsection{Detailed summary}
+\subsubsection*{C) Detailed Summary}
+\paragraph{C1. Domain constraints (paper axioms)}
+The paper lists constraints that are structural properties of the platform:
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Lightweight code:} size limited by blockchain constraints and deployment/mining cost.
+  \item \textbf{Costed execution:} each operation burns gas; expensive code is economically discouraged.
+  \item \textbf{Immutability:} bytecode is inserted into append-only ledger; updates are difficult.
+  \item \textbf{Determinism constraints:} floating point and true randomness are disallowed/unsafe because all nodes must reach identical state.
+\end{itemize}
+This is central for deriving feasibility dimensions (cost, determinism, update constraints).
+
+\paragraph{C2. Operational Ethereum model (why ABI/bytecode matter)}
+The authors model contracts as accounts with code and state, executed deterministically. Invocation includes payment and input data; deployment stores bytecode on-chain and initializes state with constructor logic. The gas mechanism is explicit: users set gasLimit and gasPrice; if execution exceeds gasLimit, state rolls back but gas is still paid. This discourages resource-heavy execution.
+
+Thesis implication: compute-on-chain is expensive, so store-minimal-and-verify designs are attractive for proof-of-concept metrics.
+
+\paragraph{C3. Metric design rationale}
+The paper notes that many OO-style metrics adapt easily (LOC, comments, number of functions, cyclomatic complexity), but contract-to-contract communication differs due to transaction/message semantics. So the study includes both:
+\begin{itemize}[leftmargin=*]
+  \item classic source metrics (size/structure/complexity),
+  \item smart-contract-specific indicators (payable functions, mapping-to-address usage, events, modifiers, ABI size as interface/exposure).
+\end{itemize}
+
+\paragraph{C4. Dataset and extraction pipeline}
+\begin{itemize}[leftmargin=*]
+  \item Sources: Etherscan (source, ABI, bytecode) and Smart Corpus.
+  \item Stored data: address, source, ABI, bytecode; then parse and compute metrics.
+  \item Replication patterns exist (same/near-same code at different addresses), but authors argue bias is limited because replicated-code cases are relatively few.
+\end{itemize}
+
+\paragraph{C5. Internal vs external metrics (important split)}
+Key conceptual distinction:
+\begin{itemize}[leftmargin=*]
+  \item \textbf{SCIM (internal metrics):} derived from Solidity source (LOC, functions, cyclomatic, etc.).
+  \item \textbf{SCEM / interface side:} ABI and bytecode metrics, reflecting exposure and deployed-artifact constraints.
+\end{itemize}
+The paper also notes that many address-related measures are time-varying (popularity, call counts, ether balance), so they require caution if correlated with code metrics.
+
+\paragraph{C6. Descriptive statistics (what a typical contract looks like)}
+Reported centrality/dispersion patterns are right-skewed: mean is greater than median for most metrics, and maxima can be one to two orders of magnitude above central values, but not the extreme multi-order ranges typical of unbounded traditional software metrics.
+
+Selected anchor values:
+\begin{itemize}[leftmargin=*]
+  \item \texttt{LOC}: mean 306.63, median 167, max 14,151; 90th percentile 663.
+  \item \texttt{functions}: mean 44.96, median 28, max 1,256; 90th percentile 95.
+  \item \texttt{cyclomatic}: mean 66.50, median 36, max 2,318; 90th percentile 146.
+  \item \texttt{bytecode}: mean 12,483, median 9,606, max 49,152 bytes.
+  \item \texttt{abiStringLength}: mean 4,644, median 3,886, max 48,274.
+\end{itemize}
+Interpretation: many metrics show meaningful variation but still appear bounded enough to avoid extreme tails.
+
+\paragraph{C7. Statement-level statistics (style shaped by cost constraints)}
+The paper reports much lower loops/branches per LOC compared with common general-purpose languages:
+\begin{itemize}[leftmargin=*]
+  \item Typical contract has about 10 \texttt{if} statements, about 5 \texttt{emit} statements, and around 1.5 iteration statements (for/while combined).
+  \item Iteration statements per LOC (0.005) and conditional statements per LOC (0.033) are far lower than Java/C/Python references.
+  \item \texttt{emit} is highlighted as a smart-contract-specific statement relevant for dApp event emission.
+\end{itemize}
+Thesis relevance: developer behavior is constrained by execution cost and readability expectations, which changes meaning, stability, and gameability of complexity metrics.
+
+\paragraph{C8. Distribution-analysis strategy}
+The authors treat histograms as fragile due to binning/tail noise and move to:
+\begin{itemize}[leftmargin=*]
+  \item empirical CCDF (log-log) for tail visualization,
+  \item fitting of power-law tails (with $x_{\min}$) and log-normal distributions,
+  \item goodness measures (KS values) and bootstrap confidence intervals.
+\end{itemize}
+
+\paragraph{C9. Key distribution findings}
+Headline result: \textbf{smart-contract metric distributions are generally more restricted} than traditional software distributions.
+\begin{itemize}[leftmargin=*]
+  \item Many metrics do not sustain a clear power-law tail; even when a power-law-like segment appears, it is often narrow.
+  \item Some metrics show bell-shaped behavior (especially ABI and bytecode), implying a typical interface/exposure scale and strong impact of size constraints.
+\end{itemize}
+
+\paragraph{C10. LOC behaves differently from most metrics}
+LOC is closest to traditional software behavior:
+\begin{itemize}[leftmargin=*]
+  \item LOC is well described by log-normal across bulk and tail, and shows an approximate power-law regime in the upper tail.
+\end{itemize}
+Thesis relevance: LOC remains broadly comparable across paradigms, though still truncated by on-chain constraints.
+
+\paragraph{C11. Evolution by pragma/compiler version}
+The study groups by pragma version (excluding cases with missing pragma) and reports:
+\begin{itemize}[leftmargin=*]
+  \item rightward shifts in peak distributions for functions/LOC/ABI from 0.4.* to 0.5.*,
+  \item broadening followed by reversal after Solidity 0.8,
+  \item growth in LOC/bytecode averages up to v0.7 then reduction at v0.8.
+\end{itemize}
+The proposed explanation is language/compiler evolution and safety features (notably 0.8 overflow checks) reducing dependence on external libraries.
+
+\paragraph{C12. Code-size limit and diamond pattern}
+The paper references the 24,576-byte contract code-size limit (introduced to reduce DoS risks), and discusses architecture patterns splitting logic across addresses (for example diamond/facets) to bypass single-contract limits.
+
+Thesis implication: per-contract metrics can be misleading when logic is intentionally distributed across contracts. Reputation metrics should either:
+\begin{enumerate}[leftmargin=*]
+  \item evaluate a system as a set of contracts, or
+  \item detect modularization patterns and adjust interpretation.
+\end{enumerate}
+
+\paragraph{C13. Final paper conclusions}
+The paper concludes:
+\begin{itemize}[leftmargin=*]
+  \item ABI exposure is relatively similar across contracts (few extreme outliers; bell-shaped behavior),
+  \item many metrics are limited by resource constraints and therefore do not show ubiquitous fat tails,
+  \item LOC is closest to traditional software distribution behavior (log-normal plus truncated tail).
+\end{itemize}
+
+\subsection{How I will reuse it in the thesis}
+\subsubsection*{D) Thesis-oriented notes}
+\paragraph{D1. Empirical backbone of smart-contract feasibility criterion}
+This paper provides the strongest empirical chain for feasibility:
+\begin{enumerate}[leftmargin=*]
+  \item On-chain resources are limited (size cap, gas cost).
+  \item Developers respond by changing style (fewer loops/branches, smaller/simpler logic).
+  \item Therefore metric values/distributions are structurally shaped by platform constraints.
+\end{enumerate}
+This justifies a dedicated feasibility rubric instead of blindly importing classic software-metric assumptions.
+
+\paragraph{D2. Restricted ranges change metric usefulness}
+If a metric is narrow and upper-bounded:
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Pros:} potentially more stable, less sensitive to small refactorings.
+  \item \textbf{Cons:} possible saturation (many contracts near typical value), reducing discrimination among developers/projects.
+\end{itemize}
+So stability should be paired with discriminative power/resolution in the comparison framework.
+
+\paragraph{D3. ABI and bytecode as reputation-relevant signals}
+Bell-shaped ABI/bytecode distributions suggest a typical interface exposure scale:
+\begin{itemize}[leftmargin=*]
+  \item ABI length / ABI string length can proxy public attack surface/interface complexity.
+  \item Bytecode size is directly tied to deployment feasibility/cost.
+\end{itemize}
+For reputation, these can be treated as quality-risk indicators, but interpreted carefully because design patterns (for example facet modularization) can distort per-contract readings.
+
+\paragraph{D4. Critical validity warning: diamond pattern and unit of analysis}
+Facet-based decomposition can reduce per-contract LOC/complexity while shifting complexity to system level. This informs thesis design: smart-contract computable metrics should still map to a meaningful unit (single contract vs system of contracts).
+
+\paragraph{D5. Methodology reuse for stability across versions}
+Reusable choices from this paper:
+\begin{itemize}[leftmargin=*]
+  \item CCDF and model fitting instead of histogram-only analysis.
+  \item Bootstrap confidence intervals for parameter estimates.
+  \item Distribution comparison across compiler/pragma eras to detect ecosystem drift.
+\end{itemize}
+For stability definition, this supports:
+\begin{enumerate}[leftmargin=*]
+  \item within-project version-to-version variation,
+  \item distribution-shift checks across releases,
+  \item sensitivity to small diffs.
+\end{enumerate}
+
+\paragraph{D6. PoC metric shortlist suggested by this paper}
+Feasibility-compatible candidates for minimal on-chain proof-of-concept (store/verify, not heavy compute):
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Simple counts:} LOC, number of functions, number of events, number of mappings-to-address, number of payable functions, number of modifiers.
+  \item \textbf{Interface exposure:} ABI length / ABI string length as attack-surface proxy.
+\end{itemize}
+
+Why strong for PoC:
+\begin{itemize}[leftmargin=*]
+  \item easy to explain,
+  \item likely stable under small changes if normalized,
+  \item computation off-chain, on-chain storage as values plus hash commitments.
+\end{itemize}
+
+Why risky:
+\begin{itemize}[leftmargin=*]
+  \item LOC/count metrics are gameable (verbosity/refactoring),
+  \item ABI metrics can be shifted by modularization patterns.
+\end{itemize}
+So these are practical PoC metrics, but should score lower on hard-to-game.
+
+\paragraph{D7. Two thesis-ready argument blocks enabled by this paper}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Why feasibility must be first-class:}
+  Smart contracts run under strict size and execution-cost constraints; evidence across about 85K contracts shows many metric distributions are truncated and limited. So not every software metric remains meaningful/implementable on-chain; feasibility and interpretability should be first-class selection criteria.
+  \item \textbf{Why ecosystem drift matters:}
+  Metric distributions shift across compiler/pragma versions, with growth in size/structure metrics up to Solidity 0.7 and reversal near 0.8. Long-term reputation indicators should account for toolchain evolution to avoid unfair cross-era comparisons.
+\end{itemize}
+
+\paragraph{D8. Final caution for thesis claims}
+This paper reinforces disciplined interpretation:
+\begin{itemize}[leftmargin=*]
+  \item use metrics as indicators/proxies, not causal proof,
+  \item control for platform constraints and architectural patterns,
+  \item separate stability from discriminative power.
+\end{itemize}
+
+\subsection{Quick notes to remember}
+\begin{itemize}[leftmargin=*]
+  \item Smart-contract metric ranges are often restricted and truncated by platform constraints.
+  \item LOC is the closest metric to traditional software distribution behavior.
+  \item ABI and bytecode provide practical interface/exposure signals.
+  \item Compiler/version drift changes metric distributions and should be modeled.
+  \item For PoC, simple counts and ABI-size proxies are feasible but partly gameable.
+\end{itemize}
+
+\subsection{Citation note}
+\noindent\textbf{Tonelli, Pierro, Ortu, Destefanis.} ``Smart contracts software metrics: A first study.'' \textit{PLOS ONE, 2023.}
+
+\newpage
+\section{Final Synthesis and Closing Notes}
+This literature review now includes 11 papers and provides a complete evidence base for the thesis methodology. The main conclusion across papers is consistent: no single metric is enough for robust quality or reputation assessment, especially in smart-contract ecosystems with hard platform constraints and evolving toolchains.
+
+The final metric-comparison framework for the thesis should keep five core dimensions:
+\begin{itemize}[leftmargin=*]
+  \item stability across versions/projects,
+  \item interpretability for stakeholders,
+  \item resistance to gaming/manipulation,
+  \item long-term suitability under ecosystem drift,
+  \item smart-contract feasibility (cost, storage, determinism, auditability, oracle dependence).
+\end{itemize}
+
+For implementation scope, the most defensible proof-of-concept pattern is hybrid: compute metrics off-chain from verified artifacts, then store attested metric outputs and artifact hashes on-chain for auditability and reproducibility.
+
+\end{document}

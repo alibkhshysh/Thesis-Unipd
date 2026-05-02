@@ -1,0 +1,197 @@
+\contentsline {section}{\numberline {1}Paper 1: \textit {Software Metrics: A Survey} (Timoteo et al.)}{4}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Why this paper matters}{4}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}What the paper says}{4}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}How I will reuse it in the thesis}{4}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Quick notes to remember}{5}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Citation note}{5}{subsection.1.5}%
+\contentsline {section}{\numberline {2}Paper 2: \textit {Measuring Software Maintainability: An Analysis of Evolving Metrics across Development Paradigms}}{6}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Why this paper matters}{6}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}What the paper says}{6}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}How I will reuse it in the thesis}{7}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Quick notes to remember}{7}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Citation note}{7}{subsection.2.5}%
+\contentsline {section}{\numberline {3}Paper 3: \textit {A Survey of Key Factors Affecting Software Maintainability}}{8}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Why this paper matters}{8}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}What the paper says}{8}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}How I will reuse it in the thesis}{9}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Quick notes to remember}{9}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Citation note}{9}{subsection.3.5}%
+\contentsline {section}{\numberline {4}Paper 4: \textit {An Empirical Analysis of the Maintainability Evolution of Open Source Systems}}{10}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Why this paper matters}{10}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}What the paper says}{10}{subsection.4.2}%
+\contentsline {paragraph}{Motivation and problem statement}{10}{section*.3}%
+\contentsline {paragraph}{Maintainability as an evolving property}{10}{section*.4}%
+\contentsline {paragraph}{Selected metrics}{10}{section*.5}%
+\contentsline {paragraph}{Case study design}{10}{section*.6}%
+\contentsline {paragraph}{Empirical results}{11}{section*.7}%
+\contentsline {paragraph}{Statistical analysis}{11}{section*.8}%
+\contentsline {paragraph}{Limitations}{11}{section*.9}%
+\contentsline {subsection}{\numberline {4.3}How I will reuse it in the thesis}{11}{subsection.4.3}%
+\contentsline {paragraph}{Key insights for the thesis}{11}{section*.10}%
+\contentsline {paragraph}{Support for thesis comparison criteria}{11}{section*.11}%
+\contentsline {paragraph}{Methodological reuse}{12}{section*.12}%
+\contentsline {paragraph}{Where this paper will be used}{12}{section*.13}%
+\contentsline {subsection}{\numberline {4.4}Quick notes to remember}{12}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Citation note}{12}{subsection.4.5}%
+\contentsline {section}{\numberline {5}Paper 5: \textit {Exploring Factors and Metrics to Select Open Source Software Components for Integration: An Empirical Study}}{13}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Why this paper matters}{13}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}What the paper says}{13}{subsection.5.2}%
+\contentsline {paragraph}{Motivation and scope}{13}{section*.14}%
+\contentsline {paragraph}{Research questions and study design}{13}{section*.15}%
+\contentsline {paragraph}{Factors versus metrics (conceptual separation)}{13}{section*.16}%
+\contentsline {paragraph}{Identified factors and metric inventory}{14}{section*.17}%
+\contentsline {paragraph}{Automatability and data availability at scale}{14}{section*.18}%
+\contentsline {paragraph}{Interpretation risks and limitations}{14}{section*.19}%
+\contentsline {subsection}{\numberline {5.3}How I will reuse it in the thesis}{14}{subsection.5.3}%
+\contentsline {paragraph}{Why this paper is strategically important for the thesis}{14}{section*.20}%
+\contentsline {paragraph}{Support for thesis comparison criteria}{14}{section*.21}%
+\contentsline {paragraph}{How to reuse this paper in thesis writing (concrete guidance)}{15}{section*.22}%
+\contentsline {subsection}{\numberline {5.4}Quick notes to remember}{15}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Citation note}{15}{subsection.5.5}%
+\contentsline {section}{\numberline {6}Paper 6: \textit {Towards Evidence-Based Software Quality Practices for Reproducibility: Practices and Aligned Software Qualities}}{16}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Why this paper matters}{16}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}What the paper says}{16}{subsection.6.2}%
+\contentsline {paragraph}{Motivation and scope}{16}{section*.23}%
+\contentsline {paragraph}{Definitions and standards framing}{16}{section*.24}%
+\contentsline {paragraph}{Research questions}{16}{section*.25}%
+\contentsline {paragraph}{Methodology}{16}{section*.26}%
+\contentsline {paragraph}{Findings for RQ1: practices supporting reproducibility}{17}{section*.27}%
+\contentsline {paragraph}{Findings for RQ2: beliefs and willingness}{17}{section*.28}%
+\contentsline {paragraph}{Findings for RQ3: aligned product qualities}{17}{section*.29}%
+\contentsline {paragraph}{Discussion themes and limitations}{17}{section*.30}%
+\contentsline {subsection}{\numberline {6.3}How I will reuse it in the thesis}{17}{subsection.6.3}%
+\contentsline {paragraph}{Strategic value for this thesis}{17}{section*.31}%
+\contentsline {paragraph}{Mapping to thesis comparison criteria}{18}{section*.32}%
+\contentsline {paragraph}{How to reuse this paper in writing}{18}{section*.33}%
+\contentsline {subsection}{\numberline {6.4}Quick notes to remember}{18}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.5}Citation note}{18}{subsection.6.5}%
+\contentsline {section}{\numberline {7}Paper 7: \textit {Reputation Systems Evaluation: A Survey}}{19}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Why this paper matters}{19}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}What the paper says}{19}{subsection.7.2}%
+\contentsline {paragraph}{Motivation}{19}{section*.34}%
+\contentsline {paragraph}{Taxonomy of evaluation approaches}{19}{section*.35}%
+\contentsline {paragraph}{Evaluation metrics and what is measured}{19}{section*.36}%
+\contentsline {paragraph}{Threat models and attack scenarios}{20}{section*.37}%
+\contentsline {paragraph}{Common evaluation frameworks and their limitations}{20}{section*.38}%
+\contentsline {paragraph}{Desiderata for a widely useful evaluation framework}{20}{section*.39}%
+\contentsline {subsection}{\numberline {7.3}How I will reuse it in the thesis}{20}{subsection.7.3}%
+\contentsline {paragraph}{Why this paper is foundational for the reputation half of the thesis}{20}{section*.40}%
+\contentsline {paragraph}{Reusable arguments for thesis writing}{20}{section*.41}%
+\contentsline {paragraph}{Argument A: explicit evaluation criteria are required}{21}{section*.42}%
+\contentsline {paragraph}{Argument B: threat modeling is part of reputation evaluation}{21}{section*.43}%
+\contentsline {paragraph}{Argument C: a lightweight CEF-inspired evaluation is acceptable for minimum thesis scope}{21}{section*.44}%
+\contentsline {paragraph}{How this paper supports comparison criteria}{21}{section*.45}%
+\contentsline {paragraph}{Where to use it in the thesis}{21}{section*.46}%
+\contentsline {subsection}{\numberline {7.4}Quick notes to remember}{22}{subsection.7.4}%
+\contentsline {subsection}{\numberline {7.5}Citation note}{22}{subsection.7.5}%
+\contentsline {section}{\numberline {8}Paper 8: \textit {Comparing and Evaluating Metrics for Reputation Systems by Simulation}}{23}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Why this paper matters}{23}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}What the paper says}{23}{subsection.8.2}%
+\contentsline {paragraph}{Motivation and problem framing}{23}{section*.47}%
+\contentsline {paragraph}{Formal model for reputation systems}{23}{section*.48}%
+\contentsline {paragraph}{Simulated reputation metrics}{23}{section*.49}%
+\contentsline {paragraph}{Accumulative reputation systems}{23}{section*.50}%
+\contentsline {paragraph}{Average-based metrics}{23}{section*.51}%
+\contentsline {paragraph}{Time-decayed metrics (Blurred)}{23}{section*.52}%
+\contentsline {paragraph}{OnlyLast metric}{24}{section*.53}%
+\contentsline {paragraph}{EigenTrust}{24}{section*.54}%
+\contentsline {paragraph}{BlurredSquared (proposed metric)}{24}{section*.55}%
+\contentsline {paragraph}{Adversarial behavior and attack scenarios}{24}{section*.56}%
+\contentsline {paragraph}{Badmouthing}{24}{section*.57}%
+\contentsline {paragraph}{Collusion}{24}{section*.58}%
+\contentsline {paragraph}{Traitors (oscillating behavior)}{24}{section*.59}%
+\contentsline {paragraph}{Key results}{24}{section*.60}%
+\contentsline {paragraph}{Limitations}{24}{section*.61}%
+\contentsline {subsection}{\numberline {8.3}How I will reuse it in the thesis}{25}{subsection.8.3}%
+\contentsline {paragraph}{Key insights for the thesis}{25}{section*.62}%
+\contentsline {paragraph}{Support for thesis comparison criteria}{25}{section*.63}%
+\contentsline {paragraph}{How to reuse this paper in writing}{25}{section*.64}%
+\contentsline {subsection}{\numberline {8.4}Quick notes to remember}{25}{subsection.8.4}%
+\contentsline {subsection}{\numberline {8.5}Citation note}{25}{subsection.8.5}%
+\contentsline {section}{\numberline {9}Paper 9: \textit {A Survey of Blockchain: Techniques, Applications, and Challenges} (Gao et al., 2018)}{26}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Why this paper matters}{26}{subsection.9.1}%
+\contentsline {paragraph}{What this paper is}{26}{section*.65}%
+\contentsline {paragraph}{Why it is aligned with this thesis (evidence-based developer reputation and smart-contract computability)}{26}{section*.66}%
+\contentsline {paragraph}{How this paper will be used in the thesis}{26}{section*.67}%
+\contentsline {subsection}{\numberline {9.2}Short summary}{26}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}Detailed summary}{27}{subsection.9.3}%
+\contentsline {paragraph}{1) Motivation and scope}{27}{section*.68}%
+\contentsline {paragraph}{2) Layered framework: data, network, application}{27}{section*.69}%
+\contentsline {paragraph}{3) Data layer (what is inside a blockchain and why it matters)}{27}{section*.70}%
+\contentsline {paragraph}{4) Network layer (who participates, how agreement happens)}{28}{section*.71}%
+\contentsline {paragraph}{5) Consensus mechanisms summarized (and why this matters to on-chain feasibility)}{28}{section*.72}%
+\contentsline {paragraph}{6) Emergent applications (taxonomy-level value for this thesis)}{28}{section*.73}%
+\contentsline {paragraph}{7) Security concerns (directly relevant to hard-to-game criterion)}{29}{section*.74}%
+\contentsline {paragraph}{8) Performance concerns (directly relevant to smart-contract computability)}{29}{section*.75}%
+\contentsline {paragraph}{9) Closing perspective}{29}{section*.76}%
+\contentsline {subsection}{\numberline {9.4}How I will reuse it in the thesis}{29}{subsection.9.4}%
+\contentsline {paragraph}{D1. What this paper gives that can be reused directly}{29}{section*.77}%
+\contentsline {paragraph}{D2. Implications for metric-selection criteria}{30}{section*.78}%
+\contentsline {paragraph}{D3. Concrete smart-contract feasibility constraints to operationalize}{30}{section*.79}%
+\contentsline {paragraph}{D4. How this paper narrows PoC design space}{31}{section*.80}%
+\contentsline {paragraph}{D5. Ready-to-use writing points}{31}{section*.81}%
+\contentsline {subsection}{\numberline {9.5}Quick notes to remember}{31}{subsection.9.5}%
+\contentsline {subsection}{\numberline {9.6}Citation note}{31}{subsection.9.6}%
+\contentsline {section}{\numberline {10}Paper 10: \textit {Assessing Vulnerability in Smart Contracts: The Role of Code Complexity Metrics in Security Analysis} (Tehrani, 2026)}{32}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Why this paper matters}{32}{subsection.10.1}%
+\contentsline {paragraph}{Thesis fit (why this paper is in the core set)}{32}{section*.83}%
+\contentsline {paragraph}{Direct contributions to thesis research questions}{32}{section*.84}%
+\contentsline {paragraph}{Where this fits in the final thesis structure}{32}{section*.85}%
+\contentsline {subsection}{\numberline {10.2}Short summary}{33}{subsection.10.2}%
+\contentsline {subsection}{\numberline {10.3}Detailed summary}{33}{subsection.10.3}%
+\contentsline {paragraph}{C1. Motivation: why smart-contract security makes metrics more critical}{33}{section*.88}%
+\contentsline {paragraph}{C2. Research questions (what exactly is tested)}{33}{section*.89}%
+\contentsline {paragraph}{C3. Why complexity is investigated}{34}{section*.90}%
+\contentsline {paragraph}{C4. Solidity is not traditional software: implications for metric behavior}{34}{section*.91}%
+\contentsline {paragraph}{C5. Metric set (21 metrics) and what they represent}{34}{section*.92}%
+\contentsline {paragraph}{C6. Dataset and labeling (ground truth)}{35}{section*.93}%
+\contentsline {paragraph}{C7. Statistical methods (why these tests, and what they answer)}{35}{section*.94}%
+\contentsline {paragraph}{C8. Results - RQ1 (redundancy among metrics)}{35}{section*.95}%
+\contentsline {paragraph}{C9. Results - RQ2 (each metric vs vulnerability label)}{35}{section*.96}%
+\contentsline {paragraph}{C10. Results - RQ3/RQ4 (discriminative power and direction)}{36}{section*.97}%
+\contentsline {paragraph}{C11. Discussion: practical integration and best practices}{36}{section*.98}%
+\contentsline {paragraph}{C12. Threats to validity (why interpretation must stay cautious)}{36}{section*.99}%
+\contentsline {paragraph}{C13. Main conclusion (message to reuse)}{36}{section*.100}%
+\contentsline {subsection}{\numberline {10.4}How I will reuse it in the thesis}{37}{subsection.10.4}%
+\contentsline {paragraph}{D1. Evidence for metric-selection philosophy}{37}{section*.102}%
+\contentsline {paragraph}{D2. How it changes definition of a good reputation metric}{37}{section*.103}%
+\contentsline {paragraph}{D3. Redundancy as a first-class selection criterion}{37}{section*.104}%
+\contentsline {paragraph}{D4. Smart-contract computability implications}{37}{section*.105}%
+\contentsline {paragraph}{D5. Candidate metrics suggested for implementation shortlist}{38}{section*.106}%
+\contentsline {paragraph}{D6. Gaming-resistance insights}{38}{section*.107}%
+\contentsline {paragraph}{D7. Method reuse for Step 3 evaluation}{38}{section*.108}%
+\contentsline {paragraph}{D8. What not to over-claim}{38}{section*.109}%
+\contentsline {subsection}{\numberline {10.5}Quick notes to remember}{39}{subsection.10.5}%
+\contentsline {subsection}{\numberline {10.6}Citation note}{39}{subsection.10.6}%
+\contentsline {section}{\numberline {11}Paper 11: \textit {Smart contracts software metrics: A first study} (Tonelli et al., 2023)}{40}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Why this paper matters}{40}{subsection.11.1}%
+\contentsline {paragraph}{What this paper is (in one sentence)}{40}{section*.111}%
+\contentsline {paragraph}{Why it is core to this thesis (mapped to agreed criteria)}{40}{section*.112}%
+\contentsline {paragraph}{How this paper will be used in the thesis}{40}{section*.113}%
+\contentsline {subsection}{\numberline {11.2}Short summary}{41}{subsection.11.2}%
+\contentsline {subsection}{\numberline {11.3}Detailed summary}{41}{subsection.11.3}%
+\contentsline {paragraph}{C1. Domain constraints (paper axioms)}{41}{section*.116}%
+\contentsline {paragraph}{C2. Operational Ethereum model (why ABI/bytecode matter)}{41}{section*.117}%
+\contentsline {paragraph}{C3. Metric design rationale}{42}{section*.118}%
+\contentsline {paragraph}{C4. Dataset and extraction pipeline}{42}{section*.119}%
+\contentsline {paragraph}{C5. Internal vs external metrics (important split)}{42}{section*.120}%
+\contentsline {paragraph}{C6. Descriptive statistics (what a typical contract looks like)}{42}{section*.121}%
+\contentsline {paragraph}{C7. Statement-level statistics (style shaped by cost constraints)}{43}{section*.122}%
+\contentsline {paragraph}{C8. Distribution-analysis strategy}{43}{section*.123}%
+\contentsline {paragraph}{C9. Key distribution findings}{43}{section*.124}%
+\contentsline {paragraph}{C10. LOC behaves differently from most metrics}{43}{section*.125}%
+\contentsline {paragraph}{C11. Evolution by pragma/compiler version}{43}{section*.126}%
+\contentsline {paragraph}{C12. Code-size limit and diamond pattern}{44}{section*.127}%
+\contentsline {paragraph}{C13. Final paper conclusions}{44}{section*.128}%
+\contentsline {subsection}{\numberline {11.4}How I will reuse it in the thesis}{44}{subsection.11.4}%
+\contentsline {paragraph}{D1. Empirical backbone of smart-contract feasibility criterion}{44}{section*.130}%
+\contentsline {paragraph}{D2. Restricted ranges change metric usefulness}{44}{section*.131}%
+\contentsline {paragraph}{D3. ABI and bytecode as reputation-relevant signals}{44}{section*.132}%
+\contentsline {paragraph}{D4. Critical validity warning: diamond pattern and unit of analysis}{44}{section*.133}%
+\contentsline {paragraph}{D5. Methodology reuse for stability across versions}{45}{section*.134}%
+\contentsline {paragraph}{D6. PoC metric shortlist suggested by this paper}{45}{section*.135}%
+\contentsline {paragraph}{D7. Two thesis-ready argument blocks enabled by this paper}{45}{section*.136}%
+\contentsline {paragraph}{D8. Final caution for thesis claims}{45}{section*.137}%
+\contentsline {subsection}{\numberline {11.5}Quick notes to remember}{46}{subsection.11.5}%
+\contentsline {subsection}{\numberline {11.6}Citation note}{46}{subsection.11.6}%
+\contentsline {section}{\numberline {12}Final Synthesis and Closing Notes}{47}{section.12}%

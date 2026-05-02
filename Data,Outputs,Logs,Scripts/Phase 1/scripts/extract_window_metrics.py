@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import csv
 import datetime as dt
+import re
 import subprocess
 from pathlib import Path
 
@@ -28,6 +29,7 @@ DEV_FIELDS = [
     "to_tag",
     "author_email",
     "author_name",
+    "is_bot",
     "commits",
     "added",
     "deleted",
@@ -49,6 +51,23 @@ TOTAL_FIELDS = [
     "total_churn",
     "unique_authors",
 ]
+
+UNKNOWN_NAME_VALUES = {
+    "",
+    "unknown",
+    "unknown author",
+    "n/a",
+    "na",
+    "none",
+    "null",
+    "(no author)",
+    "no author",
+}
+
+BOT_PATTERN = re.compile(
+    r"(\[bot\]|dependabot|github-actions|pre-commit-ci|renovate|codecov|snyk|readthedocs)",
+    re.IGNORECASE,
+)
 
 
 def parse_args() -> argparse.Namespace:
@@ -86,8 +105,7 @@ def run_git_log(repo_dir: Path, from_hash: str, to_hash: str) -> subprocess.Comp
         "log",
         "--no-merges",
         "--numstat",
-        "--pretty=format:COMMIT|%H|%ae|%an|%ad",
-        "--date=iso",
+        "--pretty=format:COMMIT|%H|%ae|%an|%cI",
         f"{from_hash}..{to_hash}",
     ]
     return subprocess.run(
@@ -102,10 +120,39 @@ def run_git_log(repo_dir: Path, from_hash: str, to_hash: str) -> subprocess.Comp
 
 def parse_git_date(value: str) -> dt.datetime | None:
     value = value.strip()
-    try:
-        return dt.datetime.strptime(value, "%Y-%m-%d %H:%M:%S %z")
-    except ValueError:
+    if not value:
         return None
+
+    try:
+        return dt.datetime.fromisoformat(value.replace("Z", "+00:00"))
+    except ValueError:
+        try:
+            return dt.datetime.strptime(value, "%Y-%m-%d %H:%M:%S %z")
+        except ValueError:
+            return None
+
+
+def is_unknown_name(name: str) -> bool:
+    return name.strip().lower() in UNKNOWN_NAME_VALUES
+
+
+def pick_author_name(name_counts: dict[str, int], author_email: str) -> str:
+    if not name_counts:
+        return "unknown"
+
+    non_unknown = {k: v for k, v in name_counts.items() if not is_unknown_name(k)}
+    pool = non_unknown if non_unknown else name_counts
+    ordered = sorted(pool.items(), key=lambda x: (-x[1], x[0].lower(), x[0]))
+    chosen = ordered[0][0].strip()
+    if chosen:
+        return chosen
+
+    local_part = author_email.split("@", 1)[0].strip()
+    return local_part if local_part else "unknown"
+
+
+def is_bot_identity(author_email: str, author_name: str) -> bool:
+    return bool(BOT_PATTERN.search(author_email) or BOT_PATTERN.search(author_name))
 
 
 def parse_git_log_output(text: str) -> list[dict]:
@@ -168,20 +215,19 @@ def parse_git_log_output(text: str) -> list[dict]:
 def aggregate_by_developer(
     window: dict, commits: list[dict]
 ) -> tuple[list[dict], dict]:
-    dev_map: dict[tuple[str, str], dict] = {}
+    dev_map: dict[str, dict] = {}
     total_added = 0
     total_deleted = 0
 
     for commit in commits:
-        key = (commit["email"], commit["name"])
-        if key not in dev_map:
-            dev_map[key] = {
+        email = commit["email"]
+        if email not in dev_map:
+            dev_map[email] = {
                 "project_id": window["project_id"],
                 "window_id": window["window_id"],
                 "from_tag": window["from_tag"],
                 "to_tag": window["to_tag"],
-                "author_email": commit["email"],
-                "author_name": commit["name"],
+                "author_email": email,
                 "commits": 0,
                 "added": 0,
                 "deleted": 0,
@@ -189,14 +235,17 @@ def aggregate_by_developer(
                 "active_days_set": set(),
                 "first_commit_dt": None,
                 "last_commit_dt": None,
+                "name_counts": {},
             }
 
-        rec = dev_map[key]
+        rec = dev_map[email]
         rec["commits"] += 1
         rec["added"] += commit["added"]
         rec["deleted"] += commit["deleted"]
         rec["binary_file_count"] += commit["binary_file_count"]
         rec["active_days_set"].add(commit["date"].date().isoformat())
+        name = commit["name"].strip()
+        rec["name_counts"][name] = rec["name_counts"].get(name, 0) + 1
 
         first_dt = rec["first_commit_dt"]
         last_dt = rec["last_commit_dt"]
@@ -212,13 +261,15 @@ def aggregate_by_developer(
     for rec in dev_map.values():
         first_dt = rec["first_commit_dt"]
         last_dt = rec["last_commit_dt"]
+        author_name = pick_author_name(rec["name_counts"], rec["author_email"])
         rec_out = {
             "project_id": rec["project_id"],
             "window_id": rec["window_id"],
             "from_tag": rec["from_tag"],
             "to_tag": rec["to_tag"],
             "author_email": rec["author_email"],
-            "author_name": rec["author_name"],
+            "author_name": author_name,
+            "is_bot": is_bot_identity(rec["author_email"], author_name),
             "commits": rec["commits"],
             "added": rec["added"],
             "deleted": rec["deleted"],
@@ -245,7 +296,7 @@ def aggregate_by_developer(
         "total_added": total_added,
         "total_deleted": total_deleted,
         "total_churn": total_added + total_deleted,
-        "unique_authors": len(dev_rows),
+        "unique_authors": len({row["author_email"] for row in dev_rows}),
     }
 
     return dev_rows, totals

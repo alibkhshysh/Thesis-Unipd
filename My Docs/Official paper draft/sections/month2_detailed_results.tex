@@ -1,0 +1,192 @@
+\section{Detailed Descriptive Results for M1--M4 (Initial Cohort)}
+\label{sec:phase1_detailed_results}
+
+This section reports detailed descriptive outputs already computed from the clean Phase I Initial Cohort datasets.
+These are not comparative rankings and do not select a PoC metric; they document empirical behavior that will be
+used in Phase II.
+
+\subsection{M1 Snapshot size evolution (LOC/SLOC)}
+\label{sec:results_m1}
+
+\begin{table}[H]
+\centering
+\footnotesize
+\renewcommand{\arraystretch}{1.12}
+\begin{tabular}{lrrr|rrr}
+\toprule
+\textbf{Project} & \textbf{First code} & \textbf{Last code} & \textbf{Delta (\%)} & \textbf{Min} & \textbf{Max} & \textbf{Mean} \\
+\midrule
+click    & 13454 & 16504 & +3050 (22.67\%) & 13454 & 16504 & 14691.38 \\
+flask    & 12586 & 12977 & +391 (3.11\%)   & 12586 & 12977 & 12815.75 \\
+requests & 7964  & 8412  & +448 (5.63\%)   & 7964  & 8425  & 8256.75  \\
+urllib3  & 23694 & 25260 & +1566 (6.61\%)  & 23694 & 25260 & 24747.62 \\
+\bottomrule
+\end{tabular}
+\caption{M1 evolution across frozen tags (values from \texttt{out/loc\_per\_tag.csv}; first/last are chronological tag endpoints).}
+\label{tab:m1_detailed}
+\end{table}
+
+M1 indicates moderate-to-strong size growth in all projects during the frozen interval, with click showing the largest relative increase.
+
+\subsection{M2 Churn and M3 cadence intensity by project}
+\label{sec:results_m2_m3}
+
+\begin{table}[H]
+\centering
+\scriptsize
+\renewcommand{\arraystretch}{1.12}
+\begin{tabular}{lrrrrrrr}
+\toprule
+\textbf{Project} & \textbf{Commits} & \textbf{Churn} & \textbf{Churn/commit} & \textbf{Window days} & \textbf{Commits/day} & \textbf{Churn/day} & \textbf{Mean authors/window} \\
+\midrule
+click    & 367 & 28901 & 78.75  & 851.03 & 0.431 & 33.96 & 14.29 \\
+flask    & 156 & 12935 & 82.92  & 872.60 & 0.179 & 14.82 & 6.43  \\
+requests & 125 & 3115  & 24.92  & 838.20 & 0.149 & 3.72  & 8.43  \\
+urllib3  & 111 & 12408 & 111.78 & 482.24 & 0.230 & 25.73 & 7.29  \\
+\bottomrule
+\end{tabular}
+\caption[M2/M3 human-only project-level intensity.]{M2/M3 human-only project-level intensity derived from \texttt{out/metrics\_window\_totals\_human.csv} and \texttt{data/windows.csv}.}
+\label{tab:m2_m3_intensity}
+\end{table}
+
+These values show that Initial Cohort projects differ substantially in both human change magnitude (M2) and human activity pace (M3).
+All-account totals remain useful as descriptive repository-activity evidence, but M3 developer-behavior analysis uses the human-only population.
+Duration-normalized outputs are therefore generated as explicit Phase I artifacts rather than deferred to later analysis.
+
+\subsection{Bot-sensitivity outputs}
+\label{sec:bot_sensitivity_outputs}
+
+\begin{table}[H]
+\centering
+\scriptsize
+\renewcommand{\arraystretch}{1.12}
+\begin{tabular}{lrrrrr}
+\toprule
+\textbf{Project} & \textbf{Bot rows} & \textbf{Bot commit \%} & \textbf{Bot churn \%} & \textbf{Windows with bots} & \textbf{Bot top-commit windows} \\
+\midrule
+click    & 8 & 13.03 & 0.94 & 6 & 1 \\
+flask    & 2 & 13.33 & 1.70 & 1 & 0 \\
+requests & 3 & 17.76 & 4.94 & 3 & 2 \\
+urllib3  & 5 & 25.00 & 2.19 & 5 & 1 \\
+\bottomrule
+\end{tabular}
+\caption{Bot impact summary from \texttt{out/bot\_summary\_by\_project.csv}. Percentages are relative to all-account project totals.}
+\label{tab:bot_impact_summary}
+\end{table}
+
+Across the Initial Cohort, bot rows contribute 143 of 902 commits (15.85\%) but only 939 of 58{,}298 churn lines (1.61\%).
+This means bot handling matters most for commit-frequency and ownership/cadence interpretations, not for aggregate churn magnitude.
+The primary M3 and M4 evidence therefore uses human-only outputs, while all-account outputs remain available for audit and sensitivity checks.
+
+\subsection{Duration-normalized analysis outputs}
+\label{sec:duration_normalized_outputs}
+
+\begin{table}[H]
+\centering
+\scriptsize
+\renewcommand{\arraystretch}{1.12}
+\begin{tabularx}{\textwidth}{p{2.7cm}p{1.8cm}X}
+\toprule
+\textbf{Sensitivity threshold} & \textbf{Window count} & \textbf{Affected windows} \\
+\midrule
+$<$1 day  & 2 & \path{requests_W03}; \path{requests_W04} \\
+$<$7 days & 4 & \path{requests_W03}; \path{requests_W04}; \path{urllib3_W05}; \path{urllib3_W06} \\
+$<$14 days & 6 & \path{click_W04}; \path{requests_W03}; \path{requests_W04}; \path{requests_W05}; \path{urllib3_W05}; \path{urllib3_W06} \\
+\bottomrule
+\end{tabularx}
+\caption{Short-window sensitivity flags. Windows below seven days are retained but marked as \texttt{sensitivity\_only}.}
+\label{tab:short_window_sensitivity}
+\end{table}
+
+\begin{table}[H]
+\centering
+\scriptsize
+\renewcommand{\arraystretch}{1.12}
+\begin{tabular}{lrrrr}
+\toprule
+\textbf{Window} & \textbf{Duration days} & \textbf{Commits/day} & \textbf{Churn/day} & \textbf{Analysis set} \\
+\midrule
+click\_W04    & 10.04 & 1.793 & 290.15 & primary \\
+click\_W06    & 45.05 & 1.709 & 104.22 & primary \\
+click\_W03    & 142.22 & 1.069 & 84.46 & primary \\
+requests\_W04 & 0.86  & 3.481 & 63.83 & sensitivity\_only \\
+click\_W07    & 63.62 & 0.864 & 49.18 & primary \\
+requests\_W03 & 0.26  & 3.784 & 45.41 & sensitivity\_only \\
+\bottomrule
+\end{tabular}
+\caption{Highest churn/day windows from \texttt{out/metrics\_window\_totals\_normalized.csv}. Very short windows can inflate rates and are explicitly flagged for sensitivity analysis.}
+\label{tab:duration_normalized_extremes}
+\end{table}
+
+The generated normalized tables provide aggregate per-day commit and churn rates, including a per-KLOC-day churn rate,
+and parallel per-day fields for developer-window analysis.
+Raw totals remain useful as descriptive evidence, while duration-sensitive comparisons use the normalized artifacts.
+
+\subsection{M3 Developer activity-day profile}
+\label{sec:results_m3_activity}
+
+\begin{table}[H]
+\centering
+\footnotesize
+\renewcommand{\arraystretch}{1.12}
+\begin{tabular}{lrrrrr}
+\toprule
+\textbf{Project} & \textbf{Mean active\_days/dev-window} & \textbf{Min} & \textbf{Max} & \textbf{Min window days} & \textbf{Max window days} \\
+\midrule
+click    & 2.10 & 1 & 19 & 10.04 & 489.99 \\
+flask    & 1.84 & 1 & 17 & 16.05 & 219.96 \\
+requests & 1.54 & 1 & 8  & 0.26  & 376.04 \\
+urllib3  & 1.75 & 1 & 13 & 3.00  & 170.05 \\
+\bottomrule
+\end{tabular}
+\caption[M3 human-only activity profile.]{M3 human-only cadence-related activity profile from \texttt{out/metrics\_window\_dev\_human.csv} and \texttt{data/windows.csv}.}
+\label{tab:m3_activity_profile}
+\end{table}
+
+The strong window-duration heterogeneity reinforces that cadence comparisons should use the generated per-day fields and timestamp-boundary sensitivity checks.
+
+\subsection{M4 Ownership and concentration profile}
+\label{sec:results_m4}
+
+\begin{table}[H]
+\centering
+\footnotesize
+\renewcommand{\arraystretch}{1.12}
+\begin{tabular}{lrrrr}
+\toprule
+\textbf{Project} & \textbf{Mean top1 commits} & \textbf{Mean top3 commits} & \textbf{Mean top1 churn} & \textbf{Mean top3 churn} \\
+\midrule
+click    & 0.363 & 0.689 & 0.502 & 0.862 \\
+flask    & 0.708 & 0.885 & 0.891 & 0.994 \\
+requests & 0.573 & 0.791 & 0.713 & 0.936 \\
+urllib3  & 0.629 & 0.783 & 0.695 & 0.937 \\
+\bottomrule
+\end{tabular}
+\caption{M4 human-only share concentration means from \texttt{out/ownership\_summary\_human.csv}.}
+\label{tab:m4_share_profile}
+\end{table}
+
+\begin{table}[H]
+\centering
+\footnotesize
+\renewcommand{\arraystretch}{1.12}
+\begin{tabular}{lrrr}
+\toprule
+\textbf{Project} & \textbf{Mean Gini commits} & \textbf{Mean Gini churn} & \textbf{Max top1 churn} \\
+\midrule
+click    & 0.506 & 0.716 & 0.702 \\
+flask    & 0.493 & 0.680 & 0.991 \\
+requests & 0.217 & 0.408 & 1.000 \\
+urllib3  & 0.310 & 0.496 & 1.000 \\
+\bottomrule
+\end{tabular}
+\caption{M4 human-only inequality indicators from \texttt{out/ownership\_summary\_human.csv}.}
+\label{tab:m4_inequality_profile}
+\end{table}
+
+M4 highlights non-trivial human concentration across windows, with some windows reaching full single-developer top-1 churn share in requests and urllib3.
+
+
+
+
+

@@ -1,0 +1,82 @@
+\section{Phase I: Dataset Freeze and Version-Window Definition}
+\label{sec:phase1_dataset_curation}
+
+This section documents the completed Phase I freeze workflow for the Initial Cohort: repository freeze, stable-tag freeze, and consecutive-window construction.
+
+\subsection{Repository Freeze}
+\label{sec:phase1_frozen_repos}
+
+The Initial Cohort includes four mature Python repositories hosted on GitHub. Storage persistence is recorded as \texttt{High (GitHub)}
+for all projects. Software-type tags are minimal and manually assigned.
+
+\begin{table}[H]
+\centering
+\footnotesize
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\textwidth}{p{1.05cm}p{1.5cm}X p{2.2cm}p{2.7cm}X}
+\toprule
+\textbf{Cohort} & \textbf{Project ID} & \textbf{Repository URL} & \textbf{Storage persistence} & \textbf{Software-type tags} & \textbf{Notes} \\
+\midrule
+Initial & flask    & \url{https://github.com/pallets/flask}   & High (GitHub) & web-framework, library & Stable release history with dense tags. \\
+Initial & requests & \url{https://github.com/psf/requests}    & High (GitHub) & http-client, library & Repository-specific clone behavior documented in extraction notes. \\
+Initial & urllib3  & \url{https://github.com/urllib3/urllib3} & High (GitHub) & http-client, library & Strong release cadence, mature maintainer base. \\
+Initial & click    & \url{https://github.com/pallets/click}   & High (GitHub) & cli-toolkit, library & Highest churn within the Initial Cohort. \\
+\bottomrule
+\end{tabularx}
+\caption{Frozen Initial Cohort dataset (\texttt{dataset\_freeze\_round1.csv}).}
+\label{tab:round1_freeze}
+\end{table}
+
+\subsection{Tag Freeze and Consecutive Windows}
+\label{sec:phase1_frozen_windows}
+
+For each project, we freeze eight stable release tags. Let $\{T_1,\dots,T_8\}$ be tags sorted chronologically
+(oldest to newest). We define seven windows $W_k=(T_k \rightarrow T_{k+1})$ for $k\in\{1,\dots,7\}$.
+Each tag is bound to an immutable commit hash. The repository freeze is captured in \texttt{dataset\_freeze\_round1.csv},
+and the tag/window freeze is captured in \texttt{versions.csv} and \texttt{windows.csv}, ensuring exact reproducibility.
+
+Initial Cohort totals are:
+\begin{itemize}[leftmargin=*]
+  \item 32 frozen tags (4 projects $\times$ 8 tags);
+  \item 28 consecutive windows (4 projects $\times$ 7 windows);
+  \item tag-date coverage from 2023-05-03 to 2026-02-19.
+\end{itemize}
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{lrrl}
+\toprule
+\textbf{Project} & \textbf{Frozen tags} & \textbf{Windows} & \textbf{Tag-date coverage} \\
+\midrule
+click    & 8 & 7 & 2023-07-18 to 2025-11-15 \\
+flask    & 8 & 7 & 2023-09-30 to 2026-02-19 \\
+requests & 8 & 7 & 2023-05-03 to 2025-08-18 \\
+urllib3  & 8 & 7 & 2024-09-12 to 2026-01-07 \\
+\bottomrule
+\end{tabular}
+\caption{Initial Cohort version coverage extracted from \texttt{versions.csv} and \texttt{windows.csv}.}
+\label{tab:round1_version_coverage}
+\end{table}
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{lrrr}
+\toprule
+\textbf{Project} & \textbf{Min window days} & \textbf{Max window days} & \textbf{Mean window days} \\
+\midrule
+click    & 10.04 & 489.99 & 121.58 \\
+flask    & 16.05 & 219.96 & 124.66 \\
+requests & 0.26  & 376.04 & 119.74 \\
+urllib3  & 3.00  & 170.05 & 68.89 \\
+\bottomrule
+\end{tabular}
+\caption[Window-duration statistics.]{Window-duration statistics from \texttt{windows.csv}. The high spread motivates the generated rate-normalized analysis outputs.}
+\label{tab:round1_window_durations}
+\end{table}
+
+
+
+
+

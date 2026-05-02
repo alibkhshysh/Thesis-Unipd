@@ -1,0 +1,26 @@
+\contentsline {table}{\numberline {1}{\ignorespaces Abbreviations and working notation used throughout the report.}}{6}{table.6}%
+\contentsline {table}{\numberline {2}{\ignorespaces Candidate shortlist. All metrics are computed and compared before selecting a single PoC metric.}}{7}{table.13}%
+\contentsline {table}{\numberline {3}{\ignorespaces Operational mapping from methodology criteria to evidence sources.}}{9}{table.22}%
+\contentsline {table}{\numberline {4}{\ignorespaces Alignment between DESTINO evidence requirements and current Phase I artifacts.}}{10}{table.31}%
+\contentsline {table}{\numberline {5}{\ignorespaces Feasibility dimensions with detailed scoring rules (D1--D5).}}{12}{table.44}%
+\contentsline {table}{\numberline {6}{\ignorespaces Feasibility dimensions with detailed scoring rules (D6--D10).}}{12}{table.46}%
+\contentsline {table}{\numberline {7}{\ignorespaces Feasibility rubric status table. All scores are deferred to Phase II comparative evaluation.}}{13}{table.52}%
+\contentsline {table}{\numberline {8}{\ignorespaces Metric-agnostic record shape for the future DESTINO PoC.}}{14}{table.57}%
+\contentsline {table}{\numberline {9}{\ignorespaces Frozen Initial Cohort dataset (\texttt {dataset\_freeze\_round1.csv}).}}{15}{table.69}%
+\contentsline {table}{\numberline {10}{\ignorespaces Initial Cohort version coverage extracted from \texttt {versions.csv} and \texttt {windows.csv}.}}{16}{table.72}%
+\contentsline {table}{\numberline {11}{\ignorespaces Window-duration statistics.}}{16}{table.74}%
+\contentsline {table}{\numberline {12}{\ignorespaces Executable mapping from pipeline scripts to canonical Initial Cohort outputs.}}{17}{table.79}%
+\contentsline {table}{\numberline {13}{\ignorespaces Initial Cohort issue ledger and implemented cleaning/validation actions.}}{19}{table.95}%
+\contentsline {table}{\numberline {14}{\ignorespaces Initial Cohort summary from cleaned datasets (commits/churn totals per project; bot rows flagged separately).}}{19}{table.98}%
+\contentsline {table}{\numberline {15}{\ignorespaces Initial Cohort global extraction totals from all-account and human-only clean outputs.}}{19}{table.100}%
+\contentsline {table}{\numberline {16}{\ignorespaces Snapshot size statistics (code lines) across the 8 frozen tags per project (M1).}}{20}{table.102}%
+\contentsline {table}{\numberline {17}{\ignorespaces M1 evolution across frozen tags (values from \texttt {out/loc\_per\_tag.csv}; first/last are chronological tag endpoints).}}{20}{table.106}%
+\contentsline {table}{\numberline {18}{\ignorespaces M2/M3 human-only project-level intensity.}}{20}{table.109}%
+\contentsline {table}{\numberline {19}{\ignorespaces Bot impact summary from \texttt {out/bot\_summary\_by\_project.csv}. Percentages are relative to all-account project totals.}}{21}{table.112}%
+\contentsline {table}{\numberline {20}{\ignorespaces Short-window sensitivity flags. Windows below seven days are retained but marked as \texttt {sensitivity\_only}.}}{21}{table.115}%
+\contentsline {table}{\numberline {21}{\ignorespaces Highest churn/day windows from \texttt {out/metrics\_window\_totals\_normalized.csv}. Very short windows can inflate rates and are explicitly flagged for sensitivity analysis.}}{21}{table.117}%
+\contentsline {table}{\numberline {22}{\ignorespaces M3 human-only activity profile.}}{21}{table.120}%
+\contentsline {table}{\numberline {23}{\ignorespaces M4 human-only share concentration means from \texttt {out/ownership\_summary\_human.csv}.}}{22}{table.123}%
+\contentsline {table}{\numberline {24}{\ignorespaces M4 human-only inequality indicators from \texttt {out/ownership\_summary\_human.csv}.}}{22}{table.125}%
+\contentsline {table}{\numberline {25}{\ignorespaces Detailed execution ledger for Phase I Initial Cohort pipeline operations.}}{23}{table.128}%
+\contentsline {table}{\numberline {26}{\ignorespaces Initial Cohort data lineage checkpoints used for reproducibility and auditing.}}{24}{table.141}%

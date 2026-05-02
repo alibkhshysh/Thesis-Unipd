@@ -1,0 +1,77 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{newtxtext,newtxmath}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage[hypertexnames=false]{hyperref}
+\usepackage{xurl}
+\usepackage{float}
+\usepackage{longtable}
+\usepackage{amsmath}
+
+\setcounter{tocdepth}{2}
+\setcounter{secnumdepth}{3}
+\hypersetup{
+  hidelinks,
+  pdftitle={Master Thesis Technical Report - Phase I: Dataset Curation and Pipeline Validation},
+  pdfauthor={Ali Bakhshayesh}
+}
+
+\title{Master Thesis Technical Report: Phase I --- Dataset Curation and Pipeline Validation}
+\author{Ali Bakhshayesh}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This report consolidates thesis work completed in Phase I (Initial Cohort), focused on
+building and validating the extraction pipeline for developer-reputation candidate metrics
+under defined evidence and reproducibility constraints. The document reports repository and version-window curation,
+pipeline outputs, and post-extraction data cleaning outcomes. The comparative evaluation
+phase (Phase II) is intentionally deferred, and no proof-of-concept (PoC) metric is selected
+at this stage. PoC metric selection is explicitly performed after Phase II comparative
+evaluation using the feasibility rubric.
+\end{abstract}
+
+\newpage
+\tableofcontents
+\newpage
+\listoftables
+\newpage
+\listoffigures
+\newpage
+
+\input{sections/abbreviations}
+\input{sections/intro_scope}
+\input{sections/candidate_metrics}
+\input{sections/methodology_criteria}
+\input{sections/destino_context}
+\input{sections/feasibility_rubric_full}
+\input{sections/detailed_design_blueprint}
+\input{sections/month2_round1_dataset}
+\input{sections/month2_pipeline}
+\input{sections/month2_cleaning}
+\input{sections/month2_round1_summary_tables}
+\input{sections/month2_detailed_results}
+\input{sections/month2_execution_ledger}
+\input{sections/reproducibility_protocol}
+\input{sections/threats_to_validity}
+\input{sections/month2_conclusion}
+\input{sections/next_steps_month3_plan}
+
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}
+
+
+
+
+

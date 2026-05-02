@@ -1,0 +1,40 @@
+\section{Candidate Metrics (Shortlist)}
+\label{sec:candidate_metrics}
+
+We compare a minimal set of candidate indicator families that are (i) computable from versioned artifacts and Git history,
+(ii) interpretable and comparable across heterogeneous projects, and (iii) compatible with hash-anchored evidence and compact
+on-chain storage. The shortlist is also informed by existing smart-contract metric and complexity literature
+\cite{smartmetrics2023,scvulncomplexity}. The comparative study evaluates all candidates; the PoC metric is selected only after evaluation.
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.18}
+\begin{tabularx}{\textwidth}{p{3.3cm}X X}
+\toprule
+\textbf{Candidate} & \textbf{Usage in this thesis} & \textbf{Why chosen (one sentence)} \\
+\midrule
+M1 Snapshot size (LOC/SLOC) &
+Per-tag size baseline for normalization and context. &
+Simple, interpretable baseline; efficient to compute, store, and audit. \\
+M2 Patch complexity proxy (churn) &
+Added/deleted lines per release window and developer. &
+Minimal proxy for change magnitude; aggregation-friendly and auditable. \\
+M3 Activity cadence &
+Commits/activity-days per window; inactivity gaps. &
+Captures continuity over time without requiring platform-specific PR data. \\
+M4 Ownership / concentration &
+Developer shares of churn/commits; top-1/top-3 and Gini concentration. &
+Separates core maintainers from occasional contributors; supports stability analysis. \\
+M5 Maintenance responsiveness (design extension) &
+Documented schema/logic; not implemented in baseline PoC. &
+Included for completeness, but deferred to keep baseline PoC scope controlled. \\
+\bottomrule
+\end{tabularx}
+\caption{Candidate shortlist. All metrics are computed and compared before selecting a single PoC metric.}
+\label{tab:metric_shortlist}
+\end{table}
+
+
+
+
+

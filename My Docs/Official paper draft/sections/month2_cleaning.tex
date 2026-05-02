@@ -1,0 +1,68 @@
+\section{Phase I: Data Integrity Verification and Cleaning}
+\label{sec:phase1_cleaning}
+
+\subsection{Sanity checks}
+\label{sec:phase1_sanity}
+
+We verify:
+\begin{itemize}[leftmargin=*]
+  \item Window integrity: each project has seven consecutive windows from eight frozen tags.
+  \item Arithmetic: for every row, \texttt{churn} $=$ \texttt{added} $+$ \texttt{deleted}.
+  \item Totals: window totals equal sums of developer rows.
+\end{itemize}
+
+All 28 windows pass integrity checks, and no window has zero commits or zero churn in the cleaned totals.
+
+\subsection{Canonical identity}
+\label{sec:phase1_dedup}
+
+The regenerated extraction pipeline canonicalizes developer identity during extraction. The canonical aggregation key is:
+\[
+(\texttt{project\_id}, \texttt{window\_id}, \texttt{author\_email})
+\]
+The extractor aggregates commits by email and selects a canonical \texttt{author\_name} using the most frequent non-\texttt{unknown} value.
+This produces \texttt{metrics\_window\_dev.csv} with 273 developer-window rows. The cleaning pass keeps the same
+273 canonical rows and records 0 duplicate key groups merged.
+
+\subsection{Bot labeling}
+\label{sec:phase1_bots}
+
+We retain an \texttt{is\_bot} flag to allow reporting with and without automated accounts. In the Initial Cohort, 18 developer-window rows
+are flagged as bots in the cleaned dataset. The pipeline now exports both all-account and human-only analysis populations:
+all-account outputs remain the audit trail for total repository activity, while human-only outputs are the primary source for
+M3 cadence and M4 ownership/concentration. This prevents automated dependency-update or formatting accounts from being interpreted
+as human maintainers.
+
+\subsection{Known limitation: commit-date/tag-date drift}
+\label{sec:phase1_author_date_lim}
+
+Some commits included between tags carry committer timestamps that precede the tag-date window boundaries.
+This can happen when commits were authored or committed on side branches before they became reachable in the tagged history.
+This affects optional cadence features based on timestamps (first/last commit), but does not affect churn or commit counts
+computed from the Git revision range. Phase II therefore treats human-only commit counts and duration-normalized rates as primary cadence evidence,
+and uses timestamp-derived active-day features only with sensitivity checks.
+
+\subsection{Issue-resolution ledger}
+\label{sec:phase1_issue_ledger}
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\textwidth}{p{4.2cm}p{2.2cm}X}
+\toprule
+\textbf{Issue} & \textbf{Observed count} & \textbf{Initial Cohort resolution} \\
+\midrule
+Display-name variation for the same email/window & 0 groups after regeneration & Canonical aggregation by email key is performed during extraction. \\
+Incorrect unique-author counting in raw totals & 0 windows after regeneration & Raw and clean totals compute unique authors by \texttt{author\_email}. \\
+Bot contamination in ownership shares & 18 rows & Preserved \texttt{is\_bot}, exported human-only M3/M4 outputs, and generated bot-summary CSVs for sensitivity analysis. \\
+Commit timestamp outside tag-date boundaries & 45 rows & Documented limitation; Phase II sensitivity checks avoid over-reliance on timestamp-derived cadence fields. \\
+\bottomrule
+\end{tabularx}
+\caption{Initial Cohort issue ledger and implemented cleaning/validation actions.}
+\label{tab:round1_issue_ledger}
+\end{table}
+
+
+
+
+

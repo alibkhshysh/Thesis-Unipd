@@ -1,0 +1,95 @@
+\section{Methodology: Comparison Criteria}
+\label{sec:methodology_criteria}
+
+We compare candidates using four criteria: stability, interpretability, resistance to gaming, and long-term suitability.
+The comparative phase (Phase II) applies these criteria uniformly to M1--M5 before any PoC metric decision.
+
+\subsection{Evaluation unit and normalization policy}
+\label{sec:evaluation_unit}
+
+The primary analysis unit is \texttt{(project\_id, window\_id, developer)} for developer-level metrics and
+\texttt{(project\_id, window\_id)} for aggregate metrics. Because window durations and project sizes vary, the pipeline now
+produces both raw and normalized values:
+\begin{itemize}[leftmargin=*]
+  \item per-day normalization for cadence-sensitive measures;
+  \item per-KLOC normalization where size effects can dominate;
+  \item within-project shares (ownership) to control for absolute scale.
+\end{itemize}
+Windows shorter than seven days are retained for auditability but flagged as \texttt{sensitivity\_only}; Phase II reports
+both full-dataset results and robust results excluding those very short windows when duration-sensitive metrics are evaluated.
+
+Automation is handled as an explicit population rule. Rows flagged with \texttt{is\_bot} remain in the clean all-account
+tables for auditability and project-activity totals. However, developer-behavior metrics use human-only outputs as the
+primary population: M3 cadence and M4 ownership/concentration are evaluated from \path{out/metrics_window_dev_human.csv}
+and \path{out/ownership_summary_human.csv}. Bot summaries are reported as sensitivity evidence rather than silently mixed
+into maintainer-behavior claims.
+
+\subsection{C1 Stability}
+\label{sec:criterion_stability}
+Stability is evaluated across consecutive version windows. We measure volatility (e.g., dispersion across windows) and
+rank stability (e.g., correlation of developer rankings between adjacent windows). Cross-project comparison is performed
+after simple normalizations (e.g., per day or per KLOC) to reduce artifacts from project size and release cadence.
+Planned outputs include dispersion statistics, adjacent-window rank correlations, and sensitivity checks on timestamp semantics.
+
+\subsection{C2 Interpretability}
+\label{sec:criterion_interpretability}
+Interpretability is assessed via semantic clarity (plain meaning), unit clarity (counts/shares/time), and normalization clarity.
+Metrics that require complex tooling or ambiguous definitions receive lower interpretability.
+
+\subsection{C3 Resistance to gaming}
+\label{sec:criterion_gaming}
+We analyze attack surfaces and manipulation cost per metric. Since single metrics can be misleading, we avoid strong causal claims
+and interpret gaming risks comparatively (e.g., commit-splitting inflates frequency but becomes detectable when churn remains low).
+The threat model follows common public-ledger constraints and manipulation tradeoffs discussed in blockchain and smart-contract studies
+\cite{blockchainsurvey,smartmetrics2023,scvulncomplexity}.
+
+\subsection{C4 Long-term suitability}
+\label{sec:criterion_longterm}
+We assess whether each metric remains informative over long histories, across lifecycle phases, and whether it supports
+incremental updates without full recomputation.
+
+\subsection{Criterion-to-output mapping}
+\label{sec:criterion_mapping}
+
+\begin{table}[H]
+\centering
+\footnotesize
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{1.8cm}>{\raggedright\arraybackslash}p{5.6cm}>{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Criterion} & \textbf{Planned Phase II evidence} & \textbf{Primary data source(s)} \\
+\midrule
+C1 Stability &
+Window-level volatility, adjacent-window rank correlation, robustness to normalization choices. &
+\path{out/metrics_window_dev_normalized.csv}, \path{out/metrics_window_totals_human_normalized.csv}, \path{out/window_duration_flags.csv} \\
+C2 Interpretability &
+Structured rubric (semantic clarity, unit clarity, normalization clarity, tooling transparency). &
+Metric definitions plus extracted fields in \path{out/} artifacts \\
+C3 Gaming resistance &
+Attack-surface matrix and manipulation detectability checks under multi-metric reading. &
+\path{out/metrics_window_dev_human.csv}, \path{out/ownership_dev_shares_human.csv}, \path{out/bot_summary_by_project.csv} \\
+C4 Long-term suitability &
+Informativeness over time, lifecycle robustness, and incremental update feasibility. &
+\path{out/loc_per_tag.csv}, \path{data/windows.csv}, feasibility rubric dimensions \\
+\bottomrule
+\end{tabularx}
+\caption{Operational mapping from methodology criteria to evidence sources.}
+\label{tab:criterion_mapping}
+\end{table}
+
+\subsection{Decision protocol (predefined, not executed in Phase I)}
+\label{sec:decision_protocol}
+
+The decision protocol is fixed before Phase II analysis:
+\begin{enumerate}[leftmargin=*]
+  \item compute comparative evidence for all candidates under C1--C4;
+  \item score smart-contract feasibility using the rubric in Section~\ref{sec:feasibility_rubric_full};
+  \item eliminate any candidate that violates feasibility exclusion criteria;
+  \item select one PoC metric with the best overall tradeoff between empirical behavior and feasibility.
+\end{enumerate}
+No step of this decision protocol is executed in Phase I.
+
+
+
+
+

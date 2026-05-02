@@ -1,0 +1,65 @@
+\begin{thebibliography}{10}
+
+\bibitem{blockchainsurvey}
+Weichao Gao, William~G. Hatcher, and Wei Yu.
+\newblock A survey of blockchain: Techniques, applications, and challenges.
+\newblock In {\em Proceedings of the 27th International Conference on Computer
+  Communication and Networks (ICCCN)}, 2018.
+
+\bibitem{kapllani2020maintainability}
+Gerta Kapllani, Ilya Khomyakov, Ruzilya Mirgalimova, and Alberto Sillitti.
+\newblock An empirical analysis of the maintainability evolution of open source
+  systems.
+\newblock In {\em Open Source Systems}. Springer, 2020.
+
+\bibitem{koutrouli2015reputation}
+Eleni Koutrouli and Aphrodite Tsalgatidou.
+\newblock Reputation systems evaluation survey.
+\newblock {\em ACM Computing Surveys}, 48(3):35:1--35:28, 2015.
+
+\bibitem{kumar2012maintainability}
+Balraj Kumar.
+\newblock A survey of key factors affecting software maintainability.
+\newblock In {\em 2012 International Conference on Computing Sciences}, 2012.
+
+\bibitem{li2022ossselection}
+Xiaozhou Li, Sergio Moreschini, Zheying Zhang, and Davide Taibi.
+\newblock Exploring factors and metrics to select open source software
+  components for integration: An empirical study.
+\newblock {\em Journal of Systems and Software}, 188:111255, 2022.
+
+\bibitem{schlosser2004reputation}
+Andreas Schlosser, Marco Voss, and Lars Brueckner.
+\newblock Comparing and evaluating metrics for reputation systems by
+  simulation.
+\newblock Conference manuscript, 2004.
+\newblock Local PDF copy in the ``Papers to read'' collection.
+
+\bibitem{syedmohamad2026maintainability}
+Sharifah~Mashita Syed-Mohamad, Amir Ngah, Al-Fahim~Mubarak Ali, and Pantea
+  Keikhosrokiani.
+\newblock Measuring software maintainability: An analysis of evolving metrics
+  across development paradigms.
+\newblock {\em Journal of Advanced Research in Applied Sciences and Engineering
+  Technology}, 63(2):181--195, 2026.
+
+\bibitem{scvulncomplexity}
+Masoud~Jamshidiyan Tehrani.
+\newblock Assessing vulnerability in smart contracts: The role of code
+  complexity metrics in security analysis.
+\newblock arXiv preprint, 2026.
+\newblock arXiv:2411.17343v4.
+
+\bibitem{timoteo_software_metrics_survey}
+Aline~Lopes Tim{\'o}teo, Alexandre {\'A}lvaro, Eduardo Santana~de Almeida, and
+  Silvio Romero de~Lemos Meira.
+\newblock Software metrics: A survey.
+\newblock Survey manuscript.
+\newblock Local PDF copy in the ``Papers to read'' collection.
+
+\bibitem{smartmetrics2023}
+Roberto Tonelli, Giuseppe~Antonio Pierro, Marco Ortu, and Giuseppe Destefanis.
+\newblock Smart contracts software metrics: A first study.
+\newblock {\em PLOS ONE}, 18(2):e0281043, 2023.
+
+\end{thebibliography}

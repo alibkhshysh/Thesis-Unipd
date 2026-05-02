@@ -1,0 +1,39 @@
+\section{Threats to Validity}
+\label{sec:threats_validity}
+
+\subsection{Construct validity}
+\label{sec:construct_validity}
+
+M2 uses churn as a proxy for change magnitude, which does not directly encode semantic complexity or defect risk.
+M3 cadence features are sensitive to timestamp semantics; commit-date/tag-date drift is documented and treated as a robustness concern.
+Automated accounts can also inflate commit-frequency and ownership/cadence interpretations, so M3 and M4 use human-only
+outputs as the primary population and keep all-account outputs for sensitivity checks.
+To reduce construct ambiguity, the study keeps raw fields (added, deleted, commits, activity days) alongside derived indicators.
+
+\subsection{Internal validity}
+\label{sec:internal_validity}
+
+Potential extraction errors were mitigated by deterministic windows, explicit cleaning rules, and arithmetic checks
+(\texttt{churn} $=$ \texttt{added} $+$ \texttt{deleted}). Developer identity is canonicalized by email during extraction,
+window totals are recomputed and validated from clean developer rows, and bot-sensitivity outputs validate that all-account
+totals remain consistent before deriving human-only tables.
+
+\subsection{External validity}
+\label{sec:external_validity}
+
+The Initial Cohort includes four mature Python projects only, so generalization to other ecosystems is limited.
+This is intentional: Phase I focuses on pipeline correctness; the Extended Cohort adds six more repositories to test transferability
+across a larger and more heterogeneous sample.
+
+\subsection{Conclusion validity}
+\label{sec:conclusion_validity}
+
+No inferential claims are made in Phase I. Comparative conclusions are deferred to Phase II and will be supported by
+explicit stability/ranking analyses and the predefined feasibility rubric. This sequencing reduces risk of premature
+metric selection bias.
+
+
+
+
+
+

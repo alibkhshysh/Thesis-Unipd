@@ -1,0 +1,35 @@
+\section{Introduction, Scope, and Research Roadmap}
+\label{sec:intro_scope}
+
+This thesis studies software-quality indicators as evidence for developer reputation systems.
+The objective of the current phase is methodological: construct a reproducible multi-project dataset,
+extract candidate metrics with transparent rules, and produce analysis-ready outputs for comparative evaluation.
+No proof-of-concept (PoC) metric is selected in this phase; metric selection is deferred to Phase II.
+
+\subsection*{Research Questions}
+
+\begin{itemize}[leftmargin=*]
+  \item \textbf{RQ1 (Stability):} Which candidate indicators are stable across versions and comparable across projects?
+  \item \textbf{RQ2 (Interpretability and gaming):} Which indicators are understandable and robust against manipulation?
+  \item \textbf{RQ3 (Smart-contract feasibility):} Which indicator is the strongest PoC candidate under implementation constraints?
+\end{itemize}
+
+\subsection*{Document Structure}
+
+The report is organized as follows:
+\begin{itemize}[leftmargin=*]
+  \item Sections~\ref{sec:candidate_metrics}--\ref{sec:detailed_design_blueprint} define candidate metrics, comparison criteria, DESTINO alignment, feasibility scoring, and the future PoC integration boundary.
+  \item Sections~\ref{sec:phase1_dataset_curation}--\ref{sec:round1_summary} document dataset curation, extraction, cleaning, and descriptive outputs for the Initial Cohort.
+  \item Sections~\ref{sec:reproducibility}--\ref{sec:phase1_conclusion} provide reproducibility and validity considerations.
+  \item Section~\ref{sec:phase2_plan} defines the comparative evaluation plan and decision gate for PoC metric selection.
+\end{itemize}
+
+\subsection*{Contributions}
+
+\begin{itemize}[leftmargin=*]
+  \item A shortlist of candidate metrics and operational comparison criteria.
+  \item A fully reproducible Initial-Cohort dataset (frozen repositories, tags, and consecutive windows) and extraction pipeline.
+  \item Cleaned, validated metric datasets (developer-window and window totals) and ownership/concentration statistics.
+  \item A detailed smart-contract feasibility rubric to support later PoC metric selection.
+  \item A DESTINO-aligned evidence model showing how Phase I outputs map to a future metric-agnostic PoC.
+\end{itemize}

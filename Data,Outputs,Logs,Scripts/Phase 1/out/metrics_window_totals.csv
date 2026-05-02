@@ -1,10 +1,10 @@
 project_id,window_id,from_tag,to_tag,total_commits,total_added,total_deleted,total_churn,unique_authors
 click,click_W01,8.1.6,8.1.7,8,41,28,69,5
-click,click_W02,8.1.7,8.1.8,62,1782,1445,3227,21
-click,click_W03,8.1.8,8.2.0,152,6626,5385,12011,28
-click,click_W04,8.2.0,8.2.1,18,2027,885,2912,9
+click,click_W02,8.1.7,8.1.8,62,1782,1445,3227,20
+click,click_W03,8.1.8,8.2.0,152,6626,5385,12011,27
+click,click_W04,8.2.0,8.2.1,18,2027,885,2912,8
 click,click_W05,8.2.1,8.2.2,50,1809,1324,3133,16
-click,click_W06,8.2.2,8.3.0,77,3137,1558,4695,15
+click,click_W06,8.2.2,8.3.0,77,3137,1558,4695,14
 click,click_W07,8.3.0,8.3.1,55,1972,1157,3129,18
 flask,flask_W01,3.0.0,3.0.1,20,761,587,1348,5
 flask,flask_W02,3.0.1,3.0.2,4,23,5,28,3

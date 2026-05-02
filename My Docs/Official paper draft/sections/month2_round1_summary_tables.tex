@@ -1,0 +1,60 @@
+\section{Initial Cohort Extraction Summary (Phase I Deliverables)}
+\label{sec:round1_summary}
+
+Initial Cohort extraction spans 28 windows and produces 273 clean developer-window rows after identity canonicalization.
+Aggregate all-account totals across all projects are 902 commits and 58{,}298 lines of churn.
+The primary human-only population for M3/M4 contains 255 developer-window rows, 759 commits, and 57{,}359 lines of churn.
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{lrrrrr}
+\toprule
+\textbf{Project} & \textbf{Windows} & \textbf{Total commits} & \textbf{Total churn} & \textbf{Mean authors/window} & \textbf{Bot rows} \\
+\midrule
+click    & 7 & 422 & 29{,}176 & 15.43 & 8 \\
+flask    & 7 & 180 & 13{,}159 & 6.71  & 2 \\
+requests & 7 & 152 & 3{,}277  & 8.86  & 3 \\
+urllib3  & 7 & 148 & 12{,}686 & 8.00  & 5 \\
+\bottomrule
+\end{tabular}
+\caption{Initial Cohort summary from cleaned datasets (commits/churn totals per project; bot rows flagged separately).}
+\label{tab:round1_commit_churn_summary}
+\end{table}
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{lrrrr}
+\toprule
+\textbf{Scope} & \textbf{Windows} & \textbf{Dev rows} & \textbf{Total commits} & \textbf{Total churn} \\
+\midrule
+All accounts & 28 & 273 & 902 & 58{,}298 \\
+Human-only M3/M4 population & 28 & 255 & 759 & 57{,}359 \\
+\bottomrule
+\end{tabular}
+\caption{Initial Cohort global extraction totals from all-account and human-only clean outputs.}
+\label{tab:round1_global_totals}
+\end{table}
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{lrrr}
+\toprule
+\textbf{Project} & \textbf{Min code lines} & \textbf{Max code lines} & \textbf{Mean code lines} \\
+\midrule
+click    & 13{,}454 & 16{,}504 & 14{,}691 \\
+flask    & 12{,}586 & 12{,}977 & 12{,}816 \\
+requests & 7{,}964  & 8{,}425  & 8{,}257  \\
+urllib3  & 23{,}694 & 25{,}260 & 24{,}748 \\
+\bottomrule
+\end{tabular}
+\caption{Snapshot size statistics (code lines) across the 8 frozen tags per project (M1).}
+\label{tab:round1_loc_stats}
+\end{table}
+
+
+
+
+

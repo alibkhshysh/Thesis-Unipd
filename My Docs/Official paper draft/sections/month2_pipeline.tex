@@ -1,0 +1,103 @@
+\section{Phase I: Metric Extraction Pipeline}
+\label{sec:phase1_pipeline}
+
+All candidate metrics M1--M4 are computed off-chain from Git history and tag windows.
+The extraction scripts are implemented as reproducible command-line programs that generate deterministic CSV outputs.
+The pipeline explicitly consumes the freeze artifacts \texttt{dataset\_freeze\_round1.csv}, \texttt{versions.csv}, and \texttt{windows.csv}.
+
+\subsection{Primary CSV outputs}
+\label{sec:phase1_outputs}
+
+\begin{itemize}[leftmargin=*]
+  \item \texttt{loc\_per\_tag.csv}: per (project, tag) snapshot size (total, blank, comment, code lines).
+  \item \texttt{metrics\_window\_dev.csv}: per (project, window, developer) commits, added/deleted, churn, activity days, first/last committer timestamps.
+  \item \texttt{metrics\_window\_totals.csv}: per (project, window) totals and unique authors.
+  \item \texttt{metrics\_window\_dev\_clean.csv} and \texttt{metrics\_window\_totals\_clean.csv}: cleaned canonical datasets used for analysis.
+  \item \texttt{ownership\_dev\_shares\_clean.csv} and \texttt{ownership\_summary\_clean.csv}: ownership and concentration computed from the clean dataset.
+  \item Normalized metric outputs: \path{metrics_window_dev_normalized.csv} and \path{metrics_window_totals_normalized.csv}, with per-day and per-KLOC-day derived fields.
+  \item Window-duration outputs: \path{window_duration_flags.csv} and \path{window_duration_sensitivity_summary.csv}, with short-window flags and sensitivity thresholds.
+  \item Human-only and bot-sensitivity outputs: \path{metrics_window_dev_human.csv}, \path{metrics_window_totals_human.csv}, \path{ownership_summary_human.csv}, and \path{bot_summary_by_project.csv}.
+\end{itemize}
+
+\subsection{Script-to-output mapping}
+\label{sec:phase1_script_mapping}
+
+\begin{table}[H]
+\centering
+\footnotesize
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\textwidth}{p{5.5cm}X}
+\toprule
+\textbf{Script} & \textbf{Primary output(s)} \\
+\midrule
+\path{scripts/extract_window_metrics.py} &
+\path{metrics_window_dev.csv}, \path{metrics_window_totals.csv} \\
+\path{scripts/compute_loc_per_tag.py} &
+\path{loc_per_tag.csv} \\
+\path{scripts/clean_round1_metrics.py} &
+\path{metrics_window_dev_clean.csv}, \path{metrics_window_totals_clean.csv} \\
+\path{scripts/recompute_ownership_from_clean.py} &
+\path{ownership_dev_shares_clean.csv}, \path{ownership_summary_clean.csv} \\
+\path{scripts/compute_duration_normalized_metrics.py} &
+\path{metrics_window_dev_normalized.csv}, \path{metrics_window_totals_normalized.csv}, \path{window_duration_flags.csv} \\
+\path{scripts/compute_bot_sensitivity_outputs.py} &
+\path{metrics_window_totals_human.csv}, \path{ownership_summary_human.csv}, \path{bot_summary_by_project.csv} \\
+\bottomrule
+\end{tabularx}
+\caption{Executable mapping from pipeline scripts to canonical Initial Cohort outputs.}
+\label{tab:script_mapping}
+\end{table}
+
+\subsection{Metric definitions (implementation-level)}
+\label{sec:phase1_metric_impl}
+
+\paragraph{M1 (LOC/SLOC).}
+For each frozen tag commit, we count Python \texttt{*.py} lines and classify lines into blank, comment, and code.
+Common non-source directories are excluded to preserve comparability.
+
+\paragraph{M2 (Churn).}
+For each window $(from\_tag\rightarrow to\_tag)$, we use Git numstat to sum lines added and deleted per developer,
+and define \texttt{churn} $=$ \texttt{added} $+$ \texttt{deleted}. Binary file changes are tracked via \texttt{binary\_file\_count}.
+
+\paragraph{M3 (Cadence).}
+Cadence is represented by commit counts per developer-window and activity-days per developer-window.
+We store first/last committer timestamps for optional temporal analyses. Human-only cadence outputs are the primary
+developer-behavior population; all-account cadence outputs are retained for audit and sensitivity analysis.
+
+\paragraph{M4 (Ownership and concentration).}
+We compute developer shares within each project-window:
+\[
+share^{(churn)}_{d,w}=\frac{churn_{d,w}}{\sum_{d'}churn_{d',w}}, \quad
+share^{(commits)}_{d,w}=\frac{commits_{d,w}}{\sum_{d'}commits_{d',w}}.
+\]
+We derive top-1/top-3 shares and Gini concentration to characterize maintainership concentration.
+Because M4 represents human maintainership concentration, the primary M4 tables exclude rows flagged as automated accounts.
+All-account ownership outputs remain available to quantify the effect of this exclusion.
+
+\paragraph{Duration-normalized derived metrics.}
+Because release windows have uneven durations, the pipeline derives \texttt{commits\_per\_day},
+\texttt{churn\_per\_day}, and \texttt{churn\_per\_kloc\_day}. The normalization script also marks windows shorter
+than 1, 7, and 14 days. Windows shorter than 7 days are retained in the dataset but marked as
+\texttt{sensitivity\_only} for comparative analyses that are sensitive to release cadence.
+
+\paragraph{Bot-sensitivity derived metrics.}
+The bot-sensitivity script preserves the all-account clean tables and exports a parallel human-only population.
+This resolves the analysis population explicitly: M3 and M4 use human-only outputs as the primary evidence,
+while all-account outputs and bot summaries document automation effects.
+
+\subsection{Error handling and traceability}
+\label{sec:phase1_error_trace}
+
+The extraction pipeline is fault-tolerant at repository-window granularity:
+\begin{itemize}[leftmargin=*]
+  \item Git command failures are appended to \texttt{logs/errors.log} and processing continues;
+  \item cleaning, ownership, duration-normalization, and bot-sensitivity scripts write structured run logs with row counts and validation status;
+  \item all derived tables are built from declared input files only (no manual edits).
+\end{itemize}
+
+This logging policy provides an audit trail suitable for re-execution and for thesis appendix verification.
+
+
+
+
+

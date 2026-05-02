@@ -1,0 +1,274 @@
+project_id,window_id,from_tag,to_tag,author_email,author_name,is_bot,commits,churn,share_commits,share_churn
+click,click_W01,8.1.6,8.1.7,peter.dragun@espressif.com,Peter Dragun,False,2,31,0.250000,0.449275
+click,click_W01,8.1.6,8.1.7,51250849+superatomic@users.noreply.github.com,Olivia Kinnear,False,1,14,0.125000,0.202899
+click,click_W01,8.1.6,8.1.7,davidism@gmail.com,David Lord,False,3,14,0.375000,0.202899
+click,click_W01,8.1.6,8.1.7,66853113+pre-commit-ci[bot]@users.noreply.github.com,pre-commit-ci[bot],True,1,6,0.125000,0.086957
+click,click_W01,8.1.6,8.1.7,12621235+hauntsaninja@users.noreply.github.com,Shantanu,False,1,4,0.125000,0.057971
+click,click_W02,8.1.7,8.1.8,davidism@gmail.com,David Lord,False,16,1450,0.258065,0.449334
+click,click_W02,8.1.7,8.1.8,edward.g2013@gmail.com,Edward G,False,20,1128,0.322581,0.349551
+click,click_W02,8.1.7,8.1.8,kdeldycke@users.noreply.github.com,Kevin Deldycke,False,2,240,0.032258,0.074372
+click,click_W02,8.1.7,8.1.8,jwodder@users.noreply.github.com,John T. Wodder II,False,1,112,0.016129,0.034707
+click,click_W02,8.1.7,8.1.8,j7an@users.noreply.github.com,J Tan,False,1,43,0.016129,0.013325
+click,click_W02,8.1.7,8.1.8,kevin@deldycke.com,Kevin Deldycke,False,1,37,0.016129,0.011466
+click,click_W02,8.1.7,8.1.8,tpayne.dev@gmail.com,Taylor Payne,False,6,37,0.096774,0.011466
+click,click_W02,8.1.7,8.1.8,9089037+dzcode@users.noreply.github.com,Dan Ziring,False,1,31,0.016129,0.009606
+click,click_W02,8.1.7,8.1.8,66853113+pre-commit-ci[bot]@users.noreply.github.com,pre-commit-ci[bot],True,2,30,0.032258,0.009297
+click,click_W02,8.1.7,8.1.8,cpappala@gmail.com,Chris Pappalardo,False,1,29,0.016129,0.008987
+click,click_W02,8.1.7,8.1.8,33157532+krisztianloki@users.noreply.github.com,Krisztián Löki,False,1,22,0.016129,0.006817
+click,click_W02,8.1.7,8.1.8,nils.hjelte@gmail.com,Nils Hjelte,False,1,18,0.016129,0.005578
+click,click_W02,8.1.7,8.1.8,24376333+stefmolin@users.noreply.github.com,Stefanie Molin,False,1,12,0.016129,0.003719
+click,click_W02,8.1.7,8.1.8,kiwi.seed.allergy@gmail.com,danwusbu,False,1,11,0.016129,0.003409
+click,click_W02,8.1.7,8.1.8,trl75@pitt.edu,trl75,False,2,10,0.032258,0.003099
+click,click_W02,8.1.7,8.1.8,136313+jaseg@users.noreply.github.com,jaseg,False,1,6,0.016129,0.001859
+click,click_W02,8.1.7,8.1.8,andreas@backx.org,Andreas Backx,False,1,4,0.016129,0.001240
+click,click_W02,8.1.7,8.1.8,chestnutprog@outlook.com,Chestnut,False,1,4,0.016129,0.001240
+click,click_W02,8.1.7,8.1.8,827324+naglis@users.noreply.github.com,naglis,False,1,2,0.016129,0.000620
+click,click_W02,8.1.7,8.1.8,5091033+pbhuss@users.noreply.github.com,Peter Huss,False,1,1,0.016129,0.000310
+click,click_W03,8.1.8,8.2.0,davidism@gmail.com,David Lord,False,40,5920,0.263158,0.492882
+click,click_W03,8.1.8,8.2.0,edward.g2013@gmail.com,Edward G,False,23,2126,0.151316,0.177004
+click,click_W03,8.1.8,8.2.0,67291205+rowlando13@users.noreply.github.com,Rowlando13,False,4,842,0.026316,0.070102
+click,click_W03,8.1.8,8.2.0,kevin@deldycke.com,Kevin Deldycke,False,10,576,0.065789,0.047956
+click,click_W03,8.1.8,8.2.0,andreasbackx@users.noreply.github.com,Andreas Backx,False,4,520,0.026316,0.043294
+click,click_W03,8.1.8,8.2.0,kdeldycke@users.noreply.github.com,Kevin Deldycke,False,3,472,0.019737,0.039297
+click,click_W03,8.1.8,8.2.0,grohe43@gmail.com,Brian Grohe,False,1,316,0.006579,0.026309
+click,click_W03,8.1.8,8.2.0,stefreak@gmail.com,Steffen Neubauer,False,1,231,0.006579,0.019232
+click,click_W03,8.1.8,8.2.0,49699333+dependabot[bot]@users.noreply.github.com,dependabot[bot],True,43,222,0.282895,0.018483
+click,click_W03,8.1.8,8.2.0,me@p3ac0ck.net,Peacock,False,1,212,0.006579,0.017650
+click,click_W03,8.1.8,8.2.0,edrogers@users.noreply.github.com,Ed Rogers,False,1,77,0.006579,0.006411
+click,click_W03,8.1.8,8.2.0,57002207+yashrathi-git@users.noreply.github.com,Yash Rathi,False,1,68,0.006579,0.005661
+click,click_W03,8.1.8,8.2.0,asottile@umich.edu,Anthony Sottile,False,1,67,0.006579,0.005578
+click,click_W03,8.1.8,8.2.0,40209416+bhuffman-usgs@users.noreply.github.com,bhuffman-usgs,False,1,48,0.006579,0.003996
+click,click_W03,8.1.8,8.2.0,matt@mups.tech,mrmups,False,1,47,0.006579,0.003913
+click,click_W03,8.1.8,8.2.0,eloi.rivard@nubla.fr,Éloi Rivard,False,1,40,0.006579,0.003330
+click,click_W03,8.1.8,8.2.0,miketheman@gmail.com,Mike Fiedler,False,1,37,0.006579,0.003081
+click,click_W03,8.1.8,8.2.0,fdavis@users.noreply.github.com,fdavis,False,1,33,0.006579,0.002747
+click,click_W03,8.1.8,8.2.0,jules@apeworx.io,antazoey,False,1,32,0.006579,0.002664
+click,click_W03,8.1.8,8.2.0,65446343+kotlinisland@users.noreply.github.com,KotlinIsland,False,1,28,0.006579,0.002331
+click,click_W03,8.1.8,8.2.0,77174327+chips-wq@users.noreply.github.com,chips-wq,False,1,28,0.006579,0.002331
+click,click_W03,8.1.8,8.2.0,andreas@backx.org,Andreas Backx,False,4,28,0.026316,0.002331
+click,click_W03,8.1.8,8.2.0,403100+pfhayes@users.noreply.github.com,Patrick Hayes,False,1,21,0.006579,0.001748
+click,click_W03,8.1.8,8.2.0,leo.p.singer@nasa.gov,Leo Singer,False,1,10,0.006579,0.000833
+click,click_W03,8.1.8,8.2.0,66853113+pre-commit-ci[bot]@users.noreply.github.com,pre-commit-ci[bot],True,3,6,0.019737,0.000500
+click,click_W03,8.1.8,8.2.0,117423508+pre-commit-ci-lite[bot]@users.noreply.github.com,pre-commit-ci-lite[bot],True,1,2,0.006579,0.000167
+click,click_W03,8.1.8,8.2.0,andybozhko@gmail.com,Andrey Bozhko,False,1,2,0.006579,0.000167
+click,click_W04,8.2.0,8.2.1,davidism@gmail.com,David Lord,False,3,1903,0.166667,0.653503
+click,click_W04,8.2.0,8.2.1,edward.g2013@gmail.com,Edward G,False,7,858,0.388889,0.294643
+click,click_W04,8.2.0,8.2.1,kieranyangyu@gmail.com,kyu243,False,3,88,0.166667,0.030220
+click,click_W04,8.2.0,8.2.1,simon.gerber@vshn.ch,Simon Gerber,False,1,29,0.055556,0.009959
+click,click_W04,8.2.0,8.2.1,sirosen@globus.org,Stephen Rosen,False,1,23,0.055556,0.007898
+click,click_W04,8.2.0,8.2.1,adamdangoor@gmail.com,Adam Dangoor,False,1,5,0.055556,0.001717
+click,click_W04,8.2.0,8.2.1,meator.dev@gmail.com,meator,False,1,4,0.055556,0.001374
+click,click_W04,8.2.0,8.2.1,johnaziz269@gmail.com,John Aziz,False,1,2,0.055556,0.000687
+click,click_W05,8.2.1,8.2.2,jaron@rosenau.info,denuoweb,False,13,1148,0.260000,0.366422
+click,click_W05,8.2.1,8.2.2,kevin@deldycke.com,Kevin Deldycke,False,3,641,0.060000,0.204596
+click,click_W05,8.2.1,8.2.2,davidism@gmail.com,David Lord,False,7,628,0.140000,0.200447
+click,click_W05,8.2.1,8.2.2,funkyvish88@gmail.com,Veritia,False,4,255,0.080000,0.081392
+click,click_W05,8.2.1,8.2.2,edward.g2013@gmail.com,Edward G,False,9,225,0.180000,0.071816
+click,click_W05,8.2.1,8.2.2,the-13th-letter@users.noreply.github.com,Marco Ricci,False,1,99,0.020000,0.031599
+click,click_W05,8.2.1,8.2.2,sirosen@globus.org,Stephen Rosen,False,1,60,0.020000,0.019151
+click,click_W05,8.2.1,8.2.2,cr52@protonmail.com,Clément Robert,False,3,21,0.060000,0.006703
+click,click_W05,8.2.1,8.2.2,p.lannigan@gmail.com,Patrick Lannigan,False,1,16,0.020000,0.005107
+click,click_W05,8.2.1,8.2.2,jaron.rosenau@gmail.com,Jaron Rosenau,False,2,15,0.040000,0.004788
+click,click_W05,8.2.1,8.2.2,firelight.flagboy@gmail.com,Firelight Flagboy,False,1,9,0.020000,0.002873
+click,click_W05,8.2.1,8.2.2,safe.pen2857@rhizoome.ch,Jean-Louis Fuchs,False,1,7,0.020000,0.002234
+click,click_W05,8.2.1,8.2.2,1154903+bobkerns@users.noreply.github.com,Bob Kerns,False,1,4,0.020000,0.001277
+click,click_W05,8.2.1,8.2.2,forsuse@live.de,nudopnu,False,1,2,0.020000,0.000638
+click,click_W05,8.2.1,8.2.2,gabrian.nagy@gmail.com,Gabi Nagy,False,1,2,0.020000,0.000638
+click,click_W05,8.2.1,8.2.2,117423508+pre-commit-ci-lite[bot]@users.noreply.github.com,pre-commit-ci-lite[bot],True,1,1,0.020000,0.000319
+click,click_W06,8.2.2,8.3.0,kevin@deldycke.com,Kevin Deldycke,False,40,3293,0.519481,0.701384
+click,click_W06,8.2.2,8.3.0,jaron@rosenau.info,denuoweb,False,9,699,0.116883,0.148882
+click,click_W06,8.2.2,8.3.0,edward.g2013@gmail.com,Edward G,False,3,229,0.038961,0.048775
+click,click_W06,8.2.2,8.3.0,67291205+rowlando13@users.noreply.github.com,Rowlando13,False,1,218,0.012987,0.046432
+click,click_W06,8.2.2,8.3.0,jazzinghen@gmail.com,Michele Bianchi,False,4,154,0.051948,0.032801
+click,click_W06,8.2.2,8.3.0,2506664+msaipraneeth@users.noreply.github.com,Saipraneeth,False,7,31,0.090909,0.006603
+click,click_W06,8.2.2,8.3.0,anlambert@softwareheritage.org,Antoine Lambert,False,1,26,0.012987,0.005538
+click,click_W06,8.2.2,8.3.0,ofekmeister@gmail.com,Ofek Lev,False,4,26,0.051948,0.005538
+click,click_W06,8.2.2,8.3.0,117423508+pre-commit-ci-lite[bot]@users.noreply.github.com,pre-commit-ci-lite[bot],True,3,6,0.038961,0.001278
+click,click_W06,8.2.2,8.3.0,andreas@backx.org,Andreas Backx,False,1,4,0.012987,0.000852
+click,click_W06,8.2.2,8.3.0,hans.lehnert@gmail.com,Hans Lehnert,False,1,3,0.012987,0.000639
+click,click_W06,8.2.2,8.3.0,ben.blank@gmail.com,"Ben ""535"" Blank",False,1,2,0.012987,0.000426
+click,click_W06,8.2.2,8.3.0,jaron.rosenau@gmail.com,Jaron Rosenau,False,1,2,0.012987,0.000426
+click,click_W06,8.2.2,8.3.0,mark.jansen@reactos.org,Mark Jansen,False,1,2,0.012987,0.000426
+click,click_W07,8.3.0,8.3.1,egirling@wallstreet.io,Edward Girling,False,10,1064,0.181818,0.340045
+click,click_W07,8.3.0,8.3.1,funkyvish88@gmail.com,Veritia,False,4,1037,0.072727,0.331416
+click,click_W07,8.3.0,8.3.1,jaron@rosenau.info,denuoweb,False,11,441,0.200000,0.140940
+click,click_W07,8.3.0,8.3.1,kevin@deldycke.com,Kevin Deldycke,False,3,211,0.054545,0.067434
+click,click_W07,8.3.0,8.3.1,sirosen@globus.org,Stephen Rosen,False,4,169,0.072727,0.054011
+click,click_W07,8.3.0,8.3.1,edward.g2013@gmail.com,Edward G,False,6,91,0.109091,0.029083
+click,click_W07,8.3.0,8.3.1,gene_wood@cementhorizon.com,Gene Wood,False,4,66,0.072727,0.021093
+click,click_W07,8.3.0,8.3.1,safe.pen2857@rhizoome.ch,Jean-Louis Fuchs,False,1,13,0.018182,0.004155
+click,click_W07,8.3.0,8.3.1,marcel@telka.sk,Marcel Telka,False,1,11,0.018182,0.003516
+click,click_W07,8.3.0,8.3.1,adamdangoor@gmail.com,Adam Dangoor,False,3,7,0.054545,0.002237
+click,click_W07,8.3.0,8.3.1,matthias@urlichs.de,Matthias Urlichs,False,1,4,0.018182,0.001278
+click,click_W07,8.3.0,8.3.1,jonsson.peter.a@gmail.com,Peter A. Jonsson,False,1,3,0.018182,0.000959
+click,click_W07,8.3.0,8.3.1,walker@pobox.com,Roland Walker,False,1,3,0.018182,0.000959
+click,click_W07,8.3.0,8.3.1,117423508+pre-commit-ci-lite[bot]@users.noreply.github.com,pre-commit-ci-lite[bot],True,1,2,0.018182,0.000639
+click,click_W07,8.3.0,8.3.1,jaron.rosenau@gmail.com,Jaron Rosenau,False,1,2,0.018182,0.000639
+click,click_W07,8.3.0,8.3.1,sigurd.spieckermann@gmail.com,Sigurd Spieckermann,False,1,2,0.018182,0.000639
+click,click_W07,8.3.0,8.3.1,webknjaz@redhat.com,🇺🇦 Sviatoslav Sydorenko (Святослав Сидоренко),False,1,2,0.018182,0.000639
+click,click_W07,8.3.0,8.3.1,moul@moul.re,Moul,False,1,1,0.018182,0.000320
+flask,flask_W01,3.0.0,3.0.1,davidism@gmail.com,David Lord,False,15,1322,0.750000,0.980712
+flask,flask_W01,3.0.0,3.0.1,philip.graham.jones@googlemail.com,pgjones,False,2,13,0.100000,0.009644
+flask,flask_W01,3.0.0,3.0.1,lizardwine@hotmail.com,lizard,False,1,5,0.050000,0.003709
+flask,flask_W01,3.0.0,3.0.1,ben@hubtech.tv,Ben Huebscher,False,1,4,0.050000,0.002967
+flask,flask_W01,3.0.0,3.0.1,danielbcbs2@gmail.com,Daniel Isaac,False,1,4,0.050000,0.002967
+flask,flask_W02,3.0.1,3.0.2,davidism@gmail.com,David Lord,False,2,12,0.500000,0.428571
+flask,flask_W02,3.0.1,3.0.2,r04922101@ntu.edu.tw,Tony Huang,False,1,11,0.250000,0.392857
+flask,flask_W02,3.0.1,3.0.2,cody.j.b.scott@gmail.com,Cody Scott,False,1,5,0.250000,0.178571
+flask,flask_W03,3.0.2,3.0.3,davidism@gmail.com,David Lord,False,5,720,0.833333,0.916031
+flask,flask_W03,3.0.2,3.0.3,philip.graham.jones@googlemail.com,pgjones,False,1,66,0.166667,0.083969
+flask,flask_W04,3.0.3,3.1.0,davidism@gmail.com,David Lord,False,53,2397,0.569892,0.879633
+flask,flask_W04,3.0.3,3.1.0,49699333+dependabot[bot]@users.noreply.github.com,dependabot[bot],True,16,208,0.172043,0.076330
+flask,flask_W04,3.0.3,3.1.0,425026+bre-17387639@users.noreply.github.com,bre-17387639,False,1,41,0.010753,0.015046
+flask,flask_W04,3.0.3,3.1.0,66853113+pre-commit-ci[bot]@users.noreply.github.com,pre-commit-ci[bot],True,8,16,0.086022,0.005872
+flask,flask_W04,3.0.3,3.1.0,philip.graham.jones@googlemail.com,pgjones,False,1,16,0.010753,0.005872
+flask,flask_W04,3.0.3,3.1.0,65047028+jaketanis@users.noreply.github.com,Jake Tanis,False,1,8,0.010753,0.002936
+flask,flask_W04,3.0.3,3.1.0,webknjaz@redhat.com,Sviatoslav Sydorenko (Святослав Сидоренко),False,1,8,0.010753,0.002936
+flask,flask_W04,3.0.3,3.1.0,akinolaemmanuel49@gmail.com,Akinola Abiodun Emmanuel,False,1,6,0.010753,0.002202
+flask,flask_W04,3.0.3,3.1.0,eloi@yaal.coop,Éloi Rivard,False,1,6,0.010753,0.002202
+flask,flask_W04,3.0.3,3.1.0,39418842+cheesecake87@users.noreply.github.com,David,False,1,3,0.010753,0.001101
+flask,flask_W04,3.0.3,3.1.0,105151517+jamesmramm@users.noreply.github.com,JamesMRamm,False,1,2,0.010753,0.000734
+flask,flask_W04,3.0.3,3.1.0,45117218+amrear@users.noreply.github.com,Amirreza A,False,1,2,0.010753,0.000734
+flask,flask_W04,3.0.3,3.1.0,57943791+resistor-git@users.noreply.github.com,Resistor-git,False,2,2,0.021505,0.000734
+flask,flask_W04,3.0.3,3.1.0,alimirmohammad.1386@gmail.com,Heisenberg,False,1,2,0.010753,0.000734
+flask,flask_W04,3.0.3,3.1.0,arnout@bzzt.net,Arnout Engelen,False,1,2,0.010753,0.000734
+flask,flask_W04,3.0.3,3.1.0,arthur.bressan@adroll.com,Catarina Bressan,False,1,2,0.010753,0.000734
+flask,flask_W04,3.0.3,3.1.0,iztok@iztok-jr-fister.eu,Iztok Fister Jr,False,1,2,0.010753,0.000734
+flask,flask_W04,3.0.3,3.1.0,withlihui@gmail.com,Grey Li,False,1,2,0.010753,0.000734
+flask,flask_W05,3.1.0,3.1.1,davidism@gmail.com,David Lord,False,14,2982,0.666667,0.981567
+flask,flask_W05,3.1.0,3.1.1,james@reciperadar.com,James Addison,False,1,20,0.047619,0.006583
+flask,flask_W05,3.1.0,3.1.1,code@ares-macrotechnology.com,black,False,1,13,0.047619,0.004279
+flask,flask_W05,3.1.0,3.1.1,52022020+coolcat467@users.noreply.github.com,CoolCat467,False,1,6,0.047619,0.001975
+flask,flask_W05,3.1.0,3.1.1,gwatersdev@gmail.com,George Waters,False,1,6,0.047619,0.001975
+flask,flask_W05,3.1.0,3.1.1,3nc0m0s12@gmail.com,kurtatter,False,1,5,0.047619,0.001646
+flask,flask_W05,3.1.0,3.1.1,kot-b-kbahte@yandex.ru,kotvkvante,False,1,4,0.047619,0.001317
+flask,flask_W05,3.1.0,3.1.1,zhuangzhuang1988@gmail.com,zhuangzhuang,False,1,2,0.047619,0.000658
+flask,flask_W06,3.1.1,3.1.2,davidism@gmail.com,David Lord,False,15,1763,0.750000,0.977815
+flask,flask_W06,3.1.1,3.1.2,grant.birkinbine@gmail.com,Grant Birkinbine,False,1,19,0.050000,0.010538
+flask,flask_W06,3.1.1,3.1.2,rao@grandperspective.de,Badhreesh,False,1,14,0.050000,0.007765
+flask,flask_W06,3.1.1,3.1.2,tero.vuotila@falcony.io,Tero Vuotila,False,1,3,0.050000,0.001664
+flask,flask_W06,3.1.1,3.1.2,84430900+abhiramk6@users.noreply.github.com,abhiram kamini,False,1,2,0.050000,0.001109
+flask,flask_W06,3.1.1,3.1.2,alex@strugee.net,AJ Jordan,False,1,2,0.050000,0.001109
+flask,flask_W07,3.1.2,3.1.3,davidism@gmail.com,David Lord,False,11,3400,0.687500,0.990965
+flask,flask_W07,3.1.2,3.1.3,m.heidelberg@cab.de,Markus Heidelberg,False,2,12,0.125000,0.003498
+flask,flask_W07,3.1.2,3.1.3,cclauss@me.com,Christian Clauss,False,1,9,0.062500,0.002623
+flask,flask_W07,3.1.2,3.1.3,134919531+adityasah104@users.noreply.github.com,ADITYA SAH,False,1,8,0.062500,0.002332
+flask,flask_W07,3.1.2,3.1.3,subhajitsaha.formal@gmail.com,subhajitsaha01,False,1,2,0.062500,0.000583
+requests,requests_W01,v2.30.0,v2.31.0,nate.prewitt@gmail.com,Nate Prewitt,False,2,55,0.400000,0.785714
+requests,requests_W01,v2.30.0,v2.31.0,tagrain@gmail.com,Thomas Grainger,False,2,13,0.400000,0.185714
+requests,requests_W01,v2.30.0,v2.31.0,39564496+syed-saif@users.noreply.github.com,Syed Saifullah,False,1,2,0.200000,0.028571
+requests,requests_W02,v2.31.0,v2.32.0,graffatcolmingov@gmail.com,Ian Stapleton Cordasco,False,9,868,0.107143,0.520696
+requests,requests_W02,v2.31.0,v2.32.0,nate.prewitt@gmail.com,Nate Prewitt,False,16,365,0.190476,0.218956
+requests,requests_W02,v2.31.0,v2.32.0,49699333+dependabot[bot]@users.noreply.github.com,dependabot[bot],True,15,72,0.178571,0.043191
+requests,requests_W02,v2.31.0,v2.32.0,miketheman@gmail.com,Mike Fiedler,False,5,54,0.059524,0.032394
+requests,requests_W02,v2.31.0,v2.32.0,agubelu@users.noreply.github.com,agubelu,False,1,46,0.011905,0.027594
+requests,requests_W02,v2.31.0,v2.32.0,birdsee@qq.com,flysee,False,2,36,0.023810,0.021596
+requests,requests_W02,v2.31.0,v2.32.0,nicola.soranzo@earlham.ac.uk,Nicola Soranzo,False,1,28,0.011905,0.016797
+requests,requests_W02,v2.31.0,v2.32.0,jkshpai@gmail.com,Jaikish Pai,False,1,22,0.011905,0.013197
+requests,requests_W02,v2.31.0,v2.32.0,marmand68@gmail.com,Matthew Armand,False,1,22,0.011905,0.013197
+requests,requests_W02,v2.31.0,v2.32.0,bruce.adams@acm.org,Bruce Adams,False,2,20,0.023810,0.011998
+requests,requests_W02,v2.31.0,v2.32.0,thomas.dehghani@gmail.com,Thomas Dehghani,False,1,20,0.011905,0.011998
+requests,requests_W02,v2.31.0,v2.32.0,atatuzuner61@gmail.com,Ata Tuzuner,False,3,17,0.035714,0.010198
+requests,requests_W02,v2.31.0,v2.32.0,alexandre@ittner.com.br,Alexandre Erwin Ittner,False,1,16,0.011905,0.009598
+requests,requests_W02,v2.31.0,v2.32.0,elliot.ford@astrazeneca.com,Elliot Ford,False,7,15,0.083333,0.008998
+requests,requests_W02,v2.31.0,v2.32.0,amkarn258@gmail.com,mayank,False,3,9,0.035714,0.005399
+requests,requests_W02,v2.31.0,v2.32.0,github@rodrigosilva.com,Rodrigo Silva,False,1,8,0.011905,0.004799
+requests,requests_W02,v2.31.0,v2.32.0,mb@x14.nl,Michiel W. Beijen,False,1,8,0.011905,0.004799
+requests,requests_W02,v2.31.0,v2.32.0,55189266+amkarn258@users.noreply.github.com,amkarn258,False,1,7,0.011905,0.004199
+requests,requests_W02,v2.31.0,v2.32.0,kevin.kirsche@one.verizon.com,Kevin Kirsche,False,1,6,0.011905,0.003599
+requests,requests_W02,v2.31.0,v2.32.0,calle.svensson@zeta-two.com,Calle Svensson,False,1,4,0.011905,0.002400
+requests,requests_W02,v2.31.0,v2.32.0,lbalhar@redhat.com,Lumir Balhar,False,1,4,0.011905,0.002400
+requests,requests_W02,v2.31.0,v2.32.0,13steinj@users.noreply.github.com,13steinj,False,1,2,0.011905,0.001200
+requests,requests_W02,v2.31.0,v2.32.0,boris.verk@gmail.com,Boris Verkhovskiy,False,1,2,0.011905,0.001200
+requests,requests_W02,v2.31.0,v2.32.0,carruthm@gmail.com,Matthew Carruth,False,1,2,0.011905,0.001200
+requests,requests_W02,v2.31.0,v2.32.0,chenpan9012@gmail.com,cpzt,False,1,2,0.011905,0.001200
+requests,requests_W02,v2.31.0,v2.32.0,framagie@gmail.com,franekmagiera,False,1,2,0.011905,0.001200
+requests,requests_W02,v2.31.0,v2.32.0,jnhyperion@gmail.com,Johnny.H,False,1,2,0.011905,0.001200
+requests,requests_W02,v2.31.0,v2.32.0,jonas@livekit.io,Jonas Schell,False,1,2,0.011905,0.001200
+requests,requests_W02,v2.31.0,v2.32.0,jorenvrancken@gmail.com,Joren Vrancken,False,1,2,0.011905,0.001200
+requests,requests_W02,v2.31.0,v2.32.0,sumedhrao7@gmail.com,sumedhrao7,False,1,2,0.011905,0.001200
+requests,requests_W02,v2.31.0,v2.32.0,volker.schaus@esa.int,Volker Schaus,False,1,2,0.011905,0.001200
+requests,requests_W03,v2.32.0,v2.32.1,nate.prewitt@gmail.com,Nate Prewitt,False,1,12,1.000000,1.000000
+requests,requests_W04,v2.32.1,v2.32.2,nate.prewitt@gmail.com,Nate Prewitt,False,3,55,1.000000,1.000000
+requests,requests_W05,v2.32.2,v2.32.3,graffatcolmingov@gmail.com,Ian Stapleton Cordasco,False,1,85,0.200000,0.648855
+requests,requests_W05,v2.32.2,v2.32.3,nate.prewitt@gmail.com,Nate Prewitt,False,4,46,0.800000,0.351145
+requests,requests_W06,v2.32.3,v2.32.4,cjwatson@debian.org,Colin Watson,False,2,555,0.047619,0.501808
+requests,requests_W06,v2.32.3,v2.32.4,nate.prewitt@gmail.com,Nate Prewitt,False,8,248,0.190476,0.224231
+requests,requests_W06,v2.32.3,v2.32.4,49699333+dependabot[bot]@users.noreply.github.com,dependabot[bot],True,9,68,0.214286,0.061483
+requests,requests_W06,v2.32.3,v2.32.4,daniel.garcia@suse.com,danigm,False,1,31,0.023810,0.028029
+requests,requests_W06,v2.32.3,v2.32.4,swast@google.com,Tim Sweña,False,1,29,0.023810,0.026221
+requests,requests_W06,v2.32.3,v2.32.4,167366979+allrob23@users.noreply.github.com,Robin,False,2,28,0.047619,0.025316
+requests,requests_W06,v2.32.3,v2.32.4,arthur.woimbee@gmail.com,Arthur Woimbée,False,1,28,0.023810,0.025316
+requests,requests_W06,v2.32.3,v2.32.4,graffatcolmingov@gmail.com,Ian Stapleton Cordasco,False,3,28,0.071429,0.025316
+requests,requests_W06,v2.32.3,v2.32.4,branchevincent@gmail.com,Branch Vincent,False,1,26,0.023810,0.023508
+requests,requests_W06,v2.32.3,v2.32.4,richard@vdberg.org,Richard van den Berg,False,1,21,0.023810,0.018987
+requests,requests_W06,v2.32.3,v2.32.4,tagrain@gmail.com,Thomas Grainger,False,5,14,0.119048,0.012658
+requests,requests_W06,v2.32.3,v2.32.4,11884243+pszlazak@users.noreply.github.com,Piotr Szlazak,False,1,11,0.023810,0.009946
+requests,requests_W06,v2.32.3,v2.32.4,118899211+anupam-arista@users.noreply.github.com,anupam-arista,False,4,10,0.095238,0.009042
+requests,requests_W06,v2.32.3,v2.32.4,tswast@gmail.com,Tim Sweña (Swast),False,1,6,0.023810,0.005425
+requests,requests_W06,v2.32.3,v2.32.4,65448395+duzhuoshanwai@users.noreply.github.com,duzhuoshanwai,False,1,2,0.023810,0.001808
+requests,requests_W06,v2.32.3,v2.32.4,me@jakobheine.de,jakobheine,False,1,1,0.023810,0.000904
+requests,requests_W07,v2.32.4,v2.32.5,nate.prewitt@gmail.com,Nate Prewitt,False,3,102,0.250000,0.432203
+requests,requests_W07,v2.32.4,v2.32.5,graffatcolmingov@gmail.com,Ian Stapleton Cordasco,False,1,91,0.083333,0.385593
+requests,requests_W07,v2.32.4,v2.32.5,49699333+dependabot[bot]@users.noreply.github.com,dependabot[bot],True,3,22,0.250000,0.093220
+requests,requests_W07,v2.32.4,v2.32.5,grant.birkinbine@gmail.com,Grant Birkinbine,False,1,8,0.083333,0.033898
+requests,requests_W07,v2.32.4,v2.32.5,abhi_jha1995@rediffmail.com,Abhishek Jha,False,1,7,0.083333,0.029661
+requests,requests_W07,v2.32.4,v2.32.5,31830590+killerdevildog@users.noreply.github.com,Quaylyn Rimer,False,1,2,0.083333,0.008475
+requests,requests_W07,v2.32.4,v2.32.5,40581230+anodo123@users.noreply.github.com,AHMAD FAIZ,False,1,2,0.083333,0.008475
+requests,requests_W07,v2.32.4,v2.32.5,jonas.fonseca@gmail.com,Jonas Fonseca,False,1,2,0.083333,0.008475
+urllib3,urllib3_W01,2.2.3,2.3.0,joe.marshall@nottingham.ac.uk,Joe Marshall,False,1,1201,0.033333,0.575192
+urllib3,urllib3_W01,2.2.3,2.3.0,illia.volochii@gmail.com,Illia Volochii,False,8,457,0.266667,0.218870
+urllib3,urllib3_W01,2.2.3,2.3.0,quentin.pradet@gmail.com,Quentin Pradet,False,9,348,0.300000,0.166667
+urllib3,urllib3_W01,2.2.3,2.3.0,49699333+dependabot[bot]@users.noreply.github.com,dependabot[bot],True,5,30,0.166667,0.014368
+urllib3,urllib3_W01,2.2.3,2.3.0,4160557+chrisoro@users.noreply.github.com,chrisoro,False,1,13,0.033333,0.006226
+urllib3,urllib3_W01,2.2.3,2.3.0,hasan.r67@gmail.com,Hasan Ramezani,False,1,13,0.033333,0.006226
+urllib3,urllib3_W01,2.2.3,2.3.0,itskanishkp.py@gmail.com,Kanishk Pachauri,False,1,12,0.033333,0.005747
+urllib3,urllib3_W01,2.2.3,2.3.0,827324+naglis@users.noreply.github.com,naglis,False,1,6,0.033333,0.002874
+urllib3,urllib3_W01,2.2.3,2.3.0,1324225+hugovk@users.noreply.github.com,Hugo van Kemenade,False,1,4,0.033333,0.001916
+urllib3,urllib3_W01,2.2.3,2.3.0,gliptak@gmail.com,Gábor Lipták,False,1,2,0.033333,0.000958
+urllib3,urllib3_W01,2.2.3,2.3.0,tagrain@gmail.com,Thomas Grainger,False,1,2,0.033333,0.000958
+urllib3,urllib3_W02,2.3.0,2.4.0,illia.volochii@gmail.com,Illia Volochii,False,12,2667,0.444444,0.865909
+urllib3,urllib3_W02,2.3.0,2.4.0,github@vdberg.org,Richie B2B,False,1,147,0.037037,0.047727
+urllib3,urllib3_W02,2.3.0,2.4.0,tagrain@gmail.com,Thomas Grainger,False,1,70,0.037037,0.022727
+urllib3,urllib3_W02,2.3.0,2.4.0,joe.marshall@nottingham.ac.uk,Joe Marshall,False,1,63,0.037037,0.020455
+urllib3,urllib3_W02,2.3.0,2.4.0,49699333+dependabot[bot]@users.noreply.github.com,dependabot[bot],True,5,46,0.185185,0.014935
+urllib3,urllib3_W02,2.3.0,2.4.0,csm10495@gmail.com,Charles Machalow,False,1,35,0.037037,0.011364
+urllib3,urllib3_W02,2.3.0,2.4.0,quentin.pradet@gmail.com,Quentin Pradet,False,2,34,0.074074,0.011039
+urllib3,urllib3_W02,2.3.0,2.4.0,carl.smedstad@protonmail.com,Carl Smedstad,False,1,8,0.037037,0.002597
+urllib3,urllib3_W02,2.3.0,2.4.0,hasan.r67@gmail.com,Hasan Ramezani,False,1,4,0.037037,0.001299
+urllib3,urllib3_W02,2.3.0,2.4.0,steven@wedontsleep.org,Steve Kowalik,False,1,4,0.037037,0.001299
+urllib3,urllib3_W02,2.3.0,2.4.0,cjwatson@debian.org,Colin Watson,False,1,2,0.037037,0.000649
+urllib3,urllib3_W03,2.4.0,2.5.0,illia.volochii@gmail.com,Illia Volochii,False,6,325,0.375000,0.302045
+urllib3,urllib3_W03,2.4.0,2.5.0,quentin.pradet@gmail.com,Quentin Pradet,False,1,311,0.062500,0.289033
+urllib3,urllib3_W03,2.4.0,2.5.0,xninjakittyx@users.noreply.github.com,Daniel A,False,1,196,0.062500,0.182156
+urllib3,urllib3_W03,2.4.0,2.5.0,sethmichaellarson@gmail.com,Seth Michael Larson,False,1,152,0.062500,0.141264
+urllib3,urllib3_W03,2.4.0,2.5.0,joe.marshall@nottingham.ac.uk,Joe Marshall,False,1,44,0.062500,0.040892
+urllib3,urllib3_W03,2.4.0,2.5.0,49699333+dependabot[bot]@users.noreply.github.com,dependabot[bot],True,2,18,0.125000,0.016729
+urllib3,urllib3_W03,2.4.0,2.5.0,alexpbara@gmail.com,Alex Prabhat Bara,False,1,17,0.062500,0.015799
+urllib3,urllib3_W03,2.4.0,2.5.0,1324225+hugovk@users.noreply.github.com,Hugo van Kemenade,False,1,8,0.062500,0.007435
+urllib3,urllib3_W03,2.4.0,2.5.0,code@musicinmybrain.net,Ben Beasley,False,1,3,0.062500,0.002788
+urllib3,urllib3_W03,2.4.0,2.5.0,slev@altlinux.org,Stanislav Levin,False,1,2,0.062500,0.001859
+urllib3,urllib3_W04,2.5.0,2.6.0,illia.volochii@gmail.com,Illia Volochii,False,17,2149,0.288136,0.357452
+urllib3,urllib3_W04,2.5.0,2.6.0,hasan.r67@gmail.com,Hasan Ramezani,False,1,1656,0.016949,0.275449
+urllib3,urllib3_W04,2.5.0,2.6.0,quentin.pradet@gmail.com,Quentin Pradet,False,4,1532,0.067797,0.254824
+urllib3,urllib3_W04,2.5.0,2.6.0,3994389+rogdham@users.noreply.github.com,Rogdham,False,1,340,0.016949,0.056554
+urllib3,urllib3_W04,2.5.0,2.6.0,49699333+dependabot[bot]@users.noreply.github.com,dependabot[bot],True,21,168,0.355932,0.027944
+urllib3,urllib3_W04,2.5.0,2.6.0,roberthoodchatham@gmail.com,Hood Chatham,False,2,41,0.033898,0.006820
+urllib3,urllib3_W04,2.5.0,2.6.0,49227365+phenylshima@users.noreply.github.com,phenylshima,False,1,34,0.016949,0.005655
+urllib3,urllib3_W04,2.5.0,2.6.0,akshat.gupta24@gmail.com,Akshat Gupta,False,1,27,0.016949,0.004491
+urllib3,urllib3_W04,2.5.0,2.6.0,61347081+typenoob@users.noreply.github.com,typenoob,False,1,22,0.016949,0.003659
+urllib3,urllib3_W04,2.5.0,2.6.0,grant.birkinbine@gmail.com,Grant Birkinbine,False,3,20,0.050847,0.003327
+urllib3,urllib3_W04,2.5.0,2.6.0,xonqnoppp@gmail.com,XonqNopp,False,1,7,0.016949,0.001164
+urllib3,urllib3_W04,2.5.0,2.6.0,subhajitsaha.formal@gmail.com,Subhajit Saha,False,1,4,0.016949,0.000665
+urllib3,urllib3_W04,2.5.0,2.6.0,tgamblin@ecocode.ca,Trevor Gamblin,False,1,3,0.016949,0.000499
+urllib3,urllib3_W04,2.5.0,2.6.0,webmaster@michivi.com,Le Tuan,False,1,3,0.016949,0.000499
+urllib3,urllib3_W04,2.5.0,2.6.0,edgarrm358@gmail.com,Edgar Ramírez Mondragón,False,1,2,0.016949,0.000333
+urllib3,urllib3_W04,2.5.0,2.6.0,hongyevgeny@gmail.com,yevgeny hong,False,1,2,0.016949,0.000333
+urllib3,urllib3_W04,2.5.0,2.6.0,sethmichaellarson@gmail.com,Seth Michael Larson,False,1,2,0.016949,0.000333
+urllib3,urllib3_W05,2.6.0,2.6.1,illia.volochii@gmail.com,Illia Volochii,False,2,30,1.000000,1.000000
+urllib3,urllib3_W06,2.6.1,2.6.2,illia.volochii@gmail.com,Illia Volochii,False,2,65,1.000000,1.000000
+urllib3,urllib3_W07,2.6.2,2.6.3,illia.volochii@gmail.com,Illia Volochii,False,5,233,0.416667,0.695522
+urllib3,urllib3_W07,2.6.2,2.6.3,shazow@gmail.com,Andrey Petrov,False,1,36,0.083333,0.107463
+urllib3,urllib3_W07,2.6.2,2.6.3,meeb@meeb.org,meeb,False,1,29,0.083333,0.086567
+urllib3,urllib3_W07,2.6.2,2.6.3,50025784+juntyr@users.noreply.github.com,Juniper Tyree,False,1,21,0.083333,0.062687
+urllib3,urllib3_W07,2.6.2,2.6.3,49699333+dependabot[bot]@users.noreply.github.com,dependabot[bot],True,4,16,0.333333,0.047761

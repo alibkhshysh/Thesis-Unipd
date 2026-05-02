@@ -1,0 +1,52 @@
+\section{Phase I Execution Ledger (Detailed, Step-Mapped)}
+\label{sec:phase1_execution_ledger}
+
+This section documents the exact operational sequence executed in Phase I for the Initial Cohort, aligned with steps 2.1--2.5.
+It provides a direct bridge between roadmap instructions and reproducible artifacts.
+
+\begin{table}[H]
+\centering
+\scriptsize
+\renewcommand{\arraystretch}{1.12}
+\begin{tabularx}{\textwidth}{p{1.0cm}p{3.2cm}p{4.0cm}X}
+\toprule
+\textbf{Step} & \textbf{Action} & \textbf{Primary artifact(s)} & \textbf{Verification result} \\
+\midrule
+2.1 & Freeze repository dataset metadata & \path{data/dataset_freeze_round1.csv} & 4 projects frozen with software-type tags and storage-persistence metadata. \\
+2.2 & Freeze stable tags (8 per project) & \path{data/versions.csv} & 32 rows with tag name, commit hash, and tag date. \\
+2.3 & Build consecutive windows (7 per project) & \path{data/windows.csv} & 28 windows generated in chronological order from frozen tags. \\
+2.4.2 & Extract raw developer-window metrics (M2/M3 base) & \path{out/metrics_window_dev.csv}; \path{out/metrics_window_totals.csv} & 273 canonical developer rows; 28 window totals; \path{logs/errors.log} remained empty. \\
+2.4.3 & Compute LOC/SLOC snapshots (M1) & \path{out/loc_per_tag.csv} & 32 per-tag rows produced from frozen commits. \\
+2.4.4 & Compute ownership/concentration (M4) from clean base & \path{out/ownership_dev_shares_clean.csv}; \path{out/ownership_summary_clean.csv} & 273 developer-share rows and 28 summary rows with top shares and Gini. \\
+2.4.5 & Compute duration-normalized analysis fields & \path{out/metrics_window_totals_normalized.csv}; \path{out/metrics_window_dev_normalized.csv}; \path{out/window_duration_flags.csv} & 28 normalized window rows, 273 normalized developer rows, and short-window sensitivity flags generated. \\
+2.4.6 & Compute bot-sensitivity and human-only outputs & \path{out/metrics_window_dev_human.csv}; \path{out/ownership_summary_human.csv}; \path{out/bot_summary_by_project.csv} & 255 human developer rows, 28 human ownership summaries, and bot impact summaries generated. \\
+2.5 & Cleaning and sanity checks & \path{out/metrics_window_dev_clean.csv}; \path{out/metrics_window_totals_clean.csv}; \path{logs/*.log} & Duplicate identity groups merged=0 after extraction-time canonicalization; clean rows=273; all validation checks passed. \\
+\bottomrule
+\end{tabularx}
+\caption{Detailed execution ledger for Phase I Initial Cohort pipeline operations.}
+\label{tab:phase1_execution_ledger}
+\end{table}
+
+\subsection{Cleaning and validation outcomes}
+\label{sec:phase1_execution_validation}
+
+The cleaning and ownership recomputation logs provide concrete numerical guarantees:
+\begin{itemize}[leftmargin=*]
+  \item input developer-window rows: 273; cleaned rows: 273;
+  \item duplicate key groups merged during cleaning: 0 (email-based canonicalization is performed during extraction);
+  \item windows with zero churn: 0; windows with zero commits: 0;
+  \item bad windows for share-sum checks: 0;
+  \item bad windows for unique-author consistency: 0;
+  \item duration-normalized rows generated: 28 aggregate-window rows and 273 developer-window rows;
+  \item very short windows flagged for sensitivity analysis: 4 windows below seven days;
+  \item bot-flagged rows retained in clean data: 18 (click 8, flask 2, requests 3, urllib3 5);
+  \item human-only rows generated for primary M3/M4 analysis: 255;
+  \item bot contribution: 143 commits (15.85\%) and 939 churn lines (1.61\%).
+\end{itemize}
+
+These outcomes confirm that Phase I outputs are analysis-ready and suitable as auditable input for Phase II.
+
+
+
+
+

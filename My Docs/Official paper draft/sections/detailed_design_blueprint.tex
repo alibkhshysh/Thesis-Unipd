@@ -1,0 +1,84 @@
+\section{Future DESTINO PoC Integration Blueprint}
+\label{sec:detailed_design_blueprint}
+
+This section records the intended integration shape for the future proof-of-concept without choosing the PoC metric.
+Its purpose is to keep Phase I connected to the deployment target while preserving the decision rule: empirical comparison and
+feasibility scoring must happen before implementation.
+
+\subsection{Design Objective and Boundary}
+\label{sec:design_objective_boundary}
+
+The future PoC should support evidence-based developer reputation records that are traceable to hash-pinned software artifacts.
+The contract layer should not compute repository metrics directly. Repository traversal, Git history analysis, duration
+normalization, bot handling, and ownership calculations remain off-chain because they require file-system access, Git tooling,
+and potentially unbounded iteration. The contract stores the result and the commitments needed to audit it.
+
+The boundary is:
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Off-chain:} artifact retrieval, hash verification, metric extraction, cleaning, normalization, and report generation;
+  \item \textbf{On-chain:} submission registration, compact metric-record storage, evidence-hash storage, permission checks, and events;
+  \item \textbf{Not in Phase I:} final metric selection, contract implementation, and M5 maintenance-responsiveness implementation.
+\end{itemize}
+
+\subsection{Metric-Agnostic Record Shape}
+\label{sec:design_record_shape}
+
+The future contract interface can remain metric-agnostic until Phase II selects a metric. A minimal record shape is shown in
+Table~\ref{tab:destino_record_shape}; field names are implementation placeholders, not final Solidity declarations.
+
+\begin{table}[H]
+\centering
+\footnotesize
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\textwidth}{p{3.2cm}X X}
+\toprule
+\textbf{Record} & \textbf{Core fields} & \textbf{Role} \\
+\midrule
+\texttt{ProjectSubmission} &
+\texttt{projectId}, \texttt{developerId}, \texttt{versionId}, \texttt{archiveLink}, \texttt{archiveHash},
+\texttt{tags}, \texttt{storagePersistence}, \texttt{submittedAt} &
+Registers the artifact/provenance claim that later metric evidence depends on. \\
+\texttt{MetricRecord} &
+\texttt{projectId}, \texttt{versionId}, \texttt{metricName}, \texttt{metricValue}, \texttt{evidenceHash},
+\texttt{analysisPolicy}, \texttt{recordedAt} &
+Stores the compact selected metric result and binds it to an auditable off-chain report. \\
+\bottomrule
+\end{tabularx}
+\caption{Metric-agnostic record shape for the future DESTINO PoC.}
+\label{tab:destino_record_shape}
+\end{table}
+
+The \texttt{analysisPolicy} field is included because the current report now makes population and sensitivity rules explicit:
+human-only M3/M4 outputs, short-window flags, and bot-sensitivity summaries are not incidental cleaning details. They are part
+of the evidence interpretation that must accompany any future metric record.
+
+\subsection{Transaction and Replay Flow}
+\label{sec:design_tx_flow}
+
+The intended end-to-end flow is:
+\begin{enumerate}[leftmargin=*]
+  \item a developer registers signed project/archive metadata and an archive hash;
+  \item an off-chain verifier retrieves the artifact and checks hash equality;
+  \item the selected Phase II metric is computed using the pinned script version and declared analysis policy;
+  \item a compact metric value and evidence-report hash are recorded on-chain;
+  \item an event is emitted so an indexing/search component can expose the new datapoint;
+  \item auditors can replay the same computation from the artifact hash, script version, window definition, and evidence report.
+\end{enumerate}
+
+This design preserves the core DESTINO requirement: trust is not based on a private metric calculation alone, but on a replayable
+chain of artifact commitments, deterministic scripts, and compact public records.
+
+\subsection{How Phase I Outputs Support the Blueprint}
+\label{sec:design_to_phase1}
+
+The current Phase I outputs are already shaped for this future integration:
+\begin{itemize}[leftmargin=*]
+  \item frozen projects, versions, and windows provide stable input identifiers;
+  \item clean and human-only metric tables provide candidate values that can be reduced to compact records;
+  \item duration flags and bot summaries document analysis policies that affect interpretation;
+  \item logs and reproducibility checkpoints provide the replay trail for third-party verification;
+  \item the feasibility rubric defines the gate that prevents an empirically attractive but contract-hostile metric from becoming the PoC.
+\end{itemize}
+
+This means the current report completes the DESTINO alignment at the planning and evidence level. The implementation step remains
+properly deferred until Phase II identifies the metric with the best empirical and feasibility tradeoff.

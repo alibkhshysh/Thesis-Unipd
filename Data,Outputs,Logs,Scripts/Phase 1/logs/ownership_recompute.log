@@ -1,0 +1,48 @@
+[2026-05-02T16:15:18Z] input_file=E:\Thesis - Large Files\month2_round1\out\metrics_window_dev_clean.csv
+[2026-05-02T16:15:18Z] windows_file=E:\Thesis - Large Files\month2_round1\data\windows.csv
+[2026-05-02T16:15:18Z] input_row_count=273
+[2026-05-02T16:15:18Z] output_dev_row_count=273
+[2026-05-02T16:15:18Z] output_summary_row_count=28
+[2026-05-02T16:15:18Z] unique_windows=28
+[2026-05-02T16:15:18Z] windows_total_churn_zero=0
+[2026-05-02T16:15:18Z] windows_total_commits_zero=0
+[2026-05-02T16:15:18Z] validation_share_churn_bad_windows=0
+[2026-05-02T16:15:18Z] validation_share_commits_bad_windows=0
+[2026-05-02T16:15:18Z] validation_unique_authors_bad_windows=0
+[2026-05-02T16:15:18Z] validation_summary_rowcount_bad=0
+[2026-05-02T16:15:18Z] bot_counts_per_project_start
+[2026-05-02T16:15:18Z] bot_rows[click]=8
+[2026-05-02T16:15:18Z] bot_rows[flask]=2
+[2026-05-02T16:15:18Z] bot_rows[requests]=3
+[2026-05-02T16:15:18Z] bot_rows[urllib3]=5
+[2026-05-02T16:15:18Z] bot_counts_per_project_end
+[2026-05-02T16:15:18Z] no_bot_window_stats_start
+[2026-05-02T16:15:18Z] no_bots[click/click_W01] total_commits_no_bots=7 total_churn_no_bots=63 unique_authors_no_bots=4 top1_share_churn_no_bots=0.492063 top3_share_churn_no_bots=0.936508
+[2026-05-02T16:15:18Z] no_bots[click/click_W02] total_commits_no_bots=60 total_churn_no_bots=3197 unique_authors_no_bots=19 top1_share_churn_no_bots=0.453550 top3_share_churn_no_bots=0.881451
+[2026-05-02T16:15:18Z] no_bots[click/click_W03] total_commits_no_bots=105 total_churn_no_bots=11781 unique_authors_no_bots=24 top1_share_churn_no_bots=0.502504 top3_share_churn_no_bots=0.754435
+[2026-05-02T16:15:18Z] no_bots[click/click_W04] total_commits_no_bots=18 total_churn_no_bots=2912 unique_authors_no_bots=8 top1_share_churn_no_bots=0.653503 top3_share_churn_no_bots=0.978365
+[2026-05-02T16:15:18Z] no_bots[click/click_W05] total_commits_no_bots=49 total_churn_no_bots=3132 unique_authors_no_bots=15 top1_share_churn_no_bots=0.366539 top3_share_churn_no_bots=0.771711
+[2026-05-02T16:15:18Z] no_bots[click/click_W06] total_commits_no_bots=74 total_churn_no_bots=4689 unique_authors_no_bots=13 top1_share_churn_no_bots=0.702282 top3_share_churn_no_bots=0.900192
+[2026-05-02T16:15:18Z] no_bots[click/click_W07] total_commits_no_bots=54 total_churn_no_bots=3127 unique_authors_no_bots=17 top1_share_churn_no_bots=0.340262 top3_share_churn_no_bots=0.812920
+[2026-05-02T16:15:18Z] no_bots[flask/flask_W01] total_commits_no_bots=20 total_churn_no_bots=1348 unique_authors_no_bots=5 top1_share_churn_no_bots=0.980712 top3_share_churn_no_bots=0.994065
+[2026-05-02T16:15:18Z] no_bots[flask/flask_W02] total_commits_no_bots=4 total_churn_no_bots=28 unique_authors_no_bots=3 top1_share_churn_no_bots=0.428571 top3_share_churn_no_bots=1.000000
+[2026-05-02T16:15:18Z] no_bots[flask/flask_W03] total_commits_no_bots=6 total_churn_no_bots=786 unique_authors_no_bots=2 top1_share_churn_no_bots=0.916031 top3_share_churn_no_bots=1.000000
+[2026-05-02T16:15:18Z] no_bots[flask/flask_W04] total_commits_no_bots=69 total_churn_no_bots=2501 unique_authors_no_bots=16 top1_share_churn_no_bots=0.958417 top3_share_churn_no_bots=0.981208
+[2026-05-02T16:15:18Z] no_bots[flask/flask_W05] total_commits_no_bots=21 total_churn_no_bots=3038 unique_authors_no_bots=8 top1_share_churn_no_bots=0.981567 top3_share_churn_no_bots=0.992429
+[2026-05-02T16:15:18Z] no_bots[flask/flask_W06] total_commits_no_bots=20 total_churn_no_bots=1803 unique_authors_no_bots=6 top1_share_churn_no_bots=0.977815 top3_share_churn_no_bots=0.996118
+[2026-05-02T16:15:18Z] no_bots[flask/flask_W07] total_commits_no_bots=16 total_churn_no_bots=3431 unique_authors_no_bots=5 top1_share_churn_no_bots=0.990965 top3_share_churn_no_bots=0.997085
+[2026-05-02T16:15:18Z] no_bots[requests/requests_W01] total_commits_no_bots=5 total_churn_no_bots=70 unique_authors_no_bots=3 top1_share_churn_no_bots=0.785714 top3_share_churn_no_bots=1.000000
+[2026-05-02T16:15:18Z] no_bots[requests/requests_W02] total_commits_no_bots=69 total_churn_no_bots=1595 unique_authors_no_bots=30 top1_share_churn_no_bots=0.544201 top3_share_churn_no_bots=0.806897
+[2026-05-02T16:15:18Z] no_bots[requests/requests_W03] total_commits_no_bots=1 total_churn_no_bots=12 unique_authors_no_bots=1 top1_share_churn_no_bots=1.000000 top3_share_churn_no_bots=1.000000
+[2026-05-02T16:15:18Z] no_bots[requests/requests_W04] total_commits_no_bots=3 total_churn_no_bots=55 unique_authors_no_bots=1 top1_share_churn_no_bots=1.000000 top3_share_churn_no_bots=1.000000
+[2026-05-02T16:15:18Z] no_bots[requests/requests_W05] total_commits_no_bots=5 total_churn_no_bots=131 unique_authors_no_bots=2 top1_share_churn_no_bots=0.648855 top3_share_churn_no_bots=1.000000
+[2026-05-02T16:15:18Z] no_bots[requests/requests_W06] total_commits_no_bots=33 total_churn_no_bots=1038 unique_authors_no_bots=15 top1_share_churn_no_bots=0.534682 top3_share_churn_no_bots=0.803468
+[2026-05-02T16:15:18Z] no_bots[requests/requests_W07] total_commits_no_bots=9 total_churn_no_bots=214 unique_authors_no_bots=7 top1_share_churn_no_bots=0.476636 top3_share_churn_no_bots=0.939252
+[2026-05-02T16:15:18Z] no_bots[urllib3/urllib3_W01] total_commits_no_bots=25 total_churn_no_bots=2058 unique_authors_no_bots=10 top1_share_churn_no_bots=0.583576 top3_share_churn_no_bots=0.974733
+[2026-05-02T16:15:18Z] no_bots[urllib3/urllib3_W02] total_commits_no_bots=22 total_churn_no_bots=3034 unique_authors_no_bots=10 top1_share_churn_no_bots=0.879038 top3_share_churn_no_bots=0.950560
+[2026-05-02T16:15:18Z] no_bots[urllib3/urllib3_W03] total_commits_no_bots=14 total_churn_no_bots=1058 unique_authors_no_bots=9 top1_share_churn_no_bots=0.307183 top3_share_churn_no_bots=0.786389
+[2026-05-02T16:15:18Z] no_bots[urllib3/urllib3_W04] total_commits_no_bots=38 total_churn_no_bots=5844 unique_authors_no_bots=16 top1_share_churn_no_bots=0.367728 top3_share_churn_no_bots=0.913244
+[2026-05-02T16:15:18Z] no_bots[urllib3/urllib3_W05] total_commits_no_bots=2 total_churn_no_bots=30 unique_authors_no_bots=1 top1_share_churn_no_bots=1.000000 top3_share_churn_no_bots=1.000000
+[2026-05-02T16:15:18Z] no_bots[urllib3/urllib3_W06] total_commits_no_bots=2 total_churn_no_bots=65 unique_authors_no_bots=1 top1_share_churn_no_bots=1.000000 top3_share_churn_no_bots=1.000000
+[2026-05-02T16:15:18Z] no_bots[urllib3/urllib3_W07] total_commits_no_bots=8 total_churn_no_bots=319 unique_authors_no_bots=4 top1_share_churn_no_bots=0.730408 top3_share_churn_no_bots=0.934169
+[2026-05-02T16:15:18Z] no_bot_window_stats_end
