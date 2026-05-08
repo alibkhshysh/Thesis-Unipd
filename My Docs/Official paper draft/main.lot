@@ -28,3 +28,6 @@
 \contentsline {table}{\numberline {28}{\ignorespaces Phase II C1 stability artifacts. Paths are relative to the Phase II analysis directory.}}{29}{table.158}%
 \contentsline {table}{\numberline {29}{\ignorespaces C1 window-level volatility summary. CV is the coefficient of variation across project windows; ``primary'' excludes short windows marked \texttt {sensitivity\_only}.}}{30}{table.162}%
 \contentsline {table}{\numberline {30}{\ignorespaces C1 developer-rank stability summary across adjacent windows. Correlations use only developers appearing in both adjacent windows.}}{31}{table.169}%
+\contentsline {table}{\numberline {31}{\ignorespaces C2 interpretability rubric. Each dimension is scored from 0 to 2.}}{33}{table.176}%
+\contentsline {table}{\numberline {32}{\ignorespaces Phase II C2 interpretability artifacts. Paths are relative to the Phase II analysis directory.}}{33}{table.178}%
+\contentsline {table}{\numberline {33}{\ignorespaces C2 interpretability summary for the candidate metrics.}}{33}{table.181}%

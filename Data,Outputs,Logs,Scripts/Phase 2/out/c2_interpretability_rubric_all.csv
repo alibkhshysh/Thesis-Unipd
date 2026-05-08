@@ -1,0 +1,6 @@
+dimension_id,dimension,max_score,description
+C2_D1,Semantic clarity,2,Whether the metric has a plain and stable meaning.
+C2_D2,Unit clarity,2,Whether the unit can be explained without ambiguity.
+C2_D3,Normalization clarity,2,Whether normalization improves comparison without obscuring meaning.
+C2_D4,Tooling transparency,2,Whether extraction can be reproduced from explicit inputs.
+C2_D5,Reputation explanation fit,2,Whether the metric can support a developer-reputation explanation.

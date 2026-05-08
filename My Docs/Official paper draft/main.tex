@@ -19,11 +19,11 @@
 \setcounter{secnumdepth}{3}
 \hypersetup{
   hidelinks,
-  pdftitle={Master Thesis Technical Report - Phase I Dataset and Phase II C1 Stability Analysis},
+  pdftitle={Master Thesis Technical Report - Phase I Dataset and Phase II C1-C2 Analysis},
   pdfauthor={Ali Bakhshayesh}
 }
 
-\title{Master Thesis Technical Report: Phase I Dataset and Phase II C1 Stability Analysis}
+\title{Master Thesis Technical Report: Phase I Dataset and Phase II C1--C2 Analysis}
 \author{Ali Bakhshayesh}
 \date{\today}
 
@@ -36,9 +36,10 @@ The Phase I dataset contains ten open-source repositories, each frozen at eight 
 release tags and seven consecutive release windows. The report documents repository and
 version-window curation, metric extraction for M1--M4, cleaning and validation,
 bot-sensitivity handling, and duration-normalized outputs for uneven release windows.
-It then reports the first Month 3 analysis step: C1 stability across release windows and
-projects. No proof-of-concept (PoC) metric is selected here; that decision remains deferred
-until the remaining comparison criteria and feasibility scoring are complete.
+It then reports the first Month 3 analysis steps: C1 stability across release windows and
+projects, and C2 interpretability of the candidate metrics. No proof-of-concept (PoC)
+metric is selected here; that decision remains deferred until the remaining comparison
+criteria and feasibility scoring are complete.
 \end{abstract}
 
 \newpage
@@ -66,6 +67,7 @@ until the remaining comparison criteria and feasibility scoring are complete.
 \input{sections/threats_to_validity}
 \input{sections/month2_conclusion}
 \input{sections/month3_c1_stability}
+\input{sections/month3_c2_interpretability}
 \input{sections/next_steps_month3_plan}
 
 \nocite{*}

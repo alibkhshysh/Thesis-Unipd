@@ -74,6 +74,10 @@
 \contentsline {subsection}{\numberline {17.3}Window-level stability results}{30}{subsection.160}%
 \contentsline {subsection}{\numberline {17.4}Developer-rank stability results}{31}{subsection.167}%
 \contentsline {subsection}{\numberline {17.5}C1 interpretation for the decision process}{32}{subsection.172}%
-\contentsline {section}{\numberline {18}Planned Next Phase: Comparative Metric Evaluation}{32}{section.173}%
-\contentsline {subsection}{\numberline {18.1}Phase II execution plan}{32}{subsection.174}%
-\contentsline {subsection}{\numberline {18.2}Decision gate criteria}{33}{subsection.181}%
+\contentsline {section}{\numberline {18}Phase II Step 2: C2 Interpretability Analysis}{32}{section.173}%
+\contentsline {subsection}{\numberline {18.1}Scoring protocol and artifacts}{32}{subsection.174}%
+\contentsline {subsection}{\numberline {18.2}C2 results}{33}{subsection.179}%
+\contentsline {subsection}{\numberline {18.3}C2 interpretation for the decision process}{34}{subsection.184}%
+\contentsline {section}{\numberline {19}Planned Next Phase: Comparative Metric Evaluation}{35}{section.185}%
+\contentsline {subsection}{\numberline {19.1}Phase II execution plan}{35}{subsection.186}%
+\contentsline {subsection}{\numberline {19.2}Decision gate criteria}{35}{subsection.193}%

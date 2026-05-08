@@ -1,0 +1,26 @@
+metric_id,metric_name,implementation_status,dimension_id,dimension,score,max_score,score_label,rationale
+M1,Snapshot size (LOC/SLOC),implemented,C2_D1,Semantic clarity,2,2,clear,The concept is plain: the codebase size at a frozen release tag.
+M1,Snapshot size (LOC/SLOC),implemented,C2_D2,Unit clarity,2,2,clear,The unit is directly countable as lines or KLOC.
+M1,Snapshot size (LOC/SLOC),implemented,C2_D3,Normalization clarity,2,2,clear,"It is mostly used as context or a denominator, so the normalization role is simple."
+M1,Snapshot size (LOC/SLOC),implemented,C2_D4,Tooling transparency,2,2,clear,The value is reproducible from frozen tags and the explicit source-extension policy.
+M1,Snapshot size (LOC/SLOC),implemented,C2_D5,Reputation explanation fit,0,2,weak,"It describes project size, not an individual developer's reputation or contribution quality."
+M2,Patch complexity proxy (churn),implemented,C2_D1,Semantic clarity,2,2,clear,"Added, deleted, and changed lines have an intuitive interpretation as change magnitude."
+M2,Patch complexity proxy (churn),implemented,C2_D2,Unit clarity,2,2,clear,"The base unit is lines changed, which is easy to inspect and aggregate."
+M2,Patch complexity proxy (churn),implemented,C2_D3,Normalization clarity,1,2,partial,Per-day and per-KLOC-day forms help comparison but require careful explanation.
+M2,Patch complexity proxy (churn),implemented,C2_D4,Tooling transparency,2,2,clear,The value is reproducible from Git diff evidence over frozen windows.
+M2,Patch complexity proxy (churn),implemented,C2_D5,Reputation explanation fit,1,2,partial,"It is a useful effort signal, but high churn does not necessarily mean high-quality work."
+M3,Activity cadence,implemented,C2_D1,Semantic clarity,2,2,clear,Commit frequency and active days have a clear continuity meaning.
+M3,Activity cadence,implemented,C2_D2,Unit clarity,2,2,clear,"Commits, active days, and commits/day are familiar units."
+M3,Activity cadence,implemented,C2_D3,Normalization clarity,2,2,clear,Per-day normalization is direct and aligns with uneven release-window duration.
+M3,Activity cadence,implemented,C2_D4,Tooling transparency,2,2,clear,The fields are reproducible from commit timestamps and frozen release windows.
+M3,Activity cadence,implemented,C2_D5,Reputation explanation fit,1,2,partial,"It supports continuity claims, but activity alone does not prove maintainership quality."
+M4,Ownership / concentration,implemented,C2_D1,Semantic clarity,1,2,partial,"Ownership share is intuitive, but Gini and concentration need a short explanation."
+M4,Ownership / concentration,implemented,C2_D2,Unit clarity,1,2,partial,"Shares are clear, while Gini is less immediately readable to a non-specialist."
+M4,Ownership / concentration,implemented,C2_D3,Normalization clarity,2,2,clear,Within-window shares give a clear scale-free comparison across projects.
+M4,Ownership / concentration,implemented,C2_D4,Tooling transparency,1,2,partial,"The metric is reproducible, but it depends on identity canonicalization and aggregation choices."
+M4,Ownership / concentration,implemented,C2_D5,Reputation explanation fit,2,2,clear,It maps well to maintainer responsibility and sustained influence within a project.
+M5,Maintenance responsiveness,design_extension,C2_D1,Semantic clarity,2,2,clear,Responsiveness is conceptually clear as time to react to maintenance events.
+M5,Maintenance responsiveness,design_extension,C2_D2,Unit clarity,1,2,partial,"Time-to-response units are clear, but the event boundary must be defined."
+M5,Maintenance responsiveness,design_extension,C2_D3,Normalization clarity,1,2,partial,"Normalization would depend on issue volume, severity, and project workflow."
+M5,Maintenance responsiveness,design_extension,C2_D4,Tooling transparency,0,2,weak,The current Phase I evidence does not include issue or pull-request event data.
+M5,Maintenance responsiveness,design_extension,C2_D5,Reputation explanation fit,2,2,clear,"If collected, it would map strongly to maintenance reputation."

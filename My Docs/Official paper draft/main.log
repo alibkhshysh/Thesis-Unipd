@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.2.7)  8 MAY 2026 22:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.2.7)  8 MAY 2026 23:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -837,9 +837,9 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 {C:/Users/alibk/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/alib
 k/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 14.4pt on input line 45.
+(Font)              scaled to size 14.4pt on input line 46.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 14.4pt on input line 45.
+(Font)              scaled to size 14.4pt on input line 46.
 
 (main.toc
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
@@ -1075,14 +1075,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 29--29
 [24]) (sections/reproducibility_protocol.tex [25] [26])
 (sections/threats_to_validity.tex [27]) (sections/month2_conclusion.tex)
 (sections/month3_c1_stability.tex [28] [29]
-<figures/month3_c1/c1_volatility_by_metric.pdf, id=657, 853.22621pt x 343.40585
+<figures/month3_c1/c1_volatility_by_metric.pdf, id=686, 853.22621pt x 343.40585
 pt>
 File: figures/month3_c1/c1_volatility_by_metric.pdf Graphic file (type pdf)
 <use figures/month3_c1/c1_volatility_by_metric.pdf>
 Package pdftex.def Info: figures/month3_c1/c1_volatility_by_metric.pdf  used on
  input line 88.
 (pdftex.def)             Requested size: 452.9679pt x 182.30814pt.
-<figures/month3_c1/c1_indexed_metric_trends.pdf, id=658, 823.6164pt x 754.09734
+<figures/month3_c1/c1_indexed_metric_trends.pdf, id=687, 823.6164pt x 754.09734
 pt>
 File: figures/month3_c1/c1_indexed_metric_trends.pdf Graphic file (type pdf)
 <use figures/month3_c1/c1_indexed_metric_trends.pdf>
@@ -1090,7 +1090,7 @@ Package pdftex.def Info: figures/month3_c1/c1_indexed_metric_trends.pdf  used o
 n input line 95.
 (pdftex.def)             Requested size: 452.97784pt x 414.74332pt.
  [30 <./figures/month3_c1/c1_volatility_by_metric.pdf>]
-<figures/month3_c1/c1_rank_stability_by_metric.pdf, id=711, 606.78947pt x 338.3
+<figures/month3_c1/c1_rank_stability_by_metric.pdf, id=740, 606.78947pt x 338.3
 7973pt>
 File: figures/month3_c1/c1_rank_stability_by_metric.pdf Graphic file (type pdf)
 
@@ -1099,23 +1099,32 @@ Package pdftex.def Info: figures/month3_c1/c1_rank_stability_by_metric.pdf  use
 d on input line 128.
 (pdftex.def)             Requested size: 371.43698pt x 207.13417pt.
  [31 <./figures/month3_c1/c1_indexed_metric_trends.pdf>])
-(sections/next_steps_month3_plan.tex [32 <./figures/month3_c1/c1_rank_stability
-_by_metric.pdf>]) (main.bbl) [33] (main.aux)
+(sections/month3_c2_interpretability.tex [32 <./figures/month3_c1/c1_rank_stabi
+lity_by_metric.pdf>]
+<figures/month3_c2/c2_interpretability_scores.pdf, id=898, 643.28201pt x 337.89
+111pt>
+File: figures/month3_c2/c2_interpretability_scores.pdf Graphic file (type pdf)
+<use figures/month3_c2/c2_interpretability_scores.pdf>
+Package pdftex.def Info: figures/month3_c2/c2_interpretability_scores.pdf  used
+ on input line 77.
+(pdftex.def)             Requested size: 407.66833pt x 214.14084pt.
+ [33]) (sections/next_steps_month3_plan.tex [34 <./figures/month3_c2/c2_interpr
+etability_scores.pdf>]) (main.bbl [35]) [36] (main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 2689375B93A64F7ABAE488173FFD6876;13532.
+(rerunfilecheck)             Checksum: 75415EAAF61C553D7CC0CA100538D110;14438.
  ) 
 Here is how much of TeX's memory you used:
- 17740 strings out of 467871
- 278876 string characters out of 5418377
- 732160 words of memory out of 5000000
- 45820 multiletter control sequences out of 15000+600000
- 726442 words of font info for 273 fonts, out of 8000000 for 9000
+ 17790 strings out of 467871
+ 280227 string characters out of 5418377
+ 732786 words of memory out of 5000000
+ 45844 multiletter control sequences out of 15000+600000
+ 726804 words of font info for 277 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,12n,79p,1003b,657s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,12n,79p,1003b,643s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/alibk/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/NewTXM
 I.pfb><C:/Users/alibk/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/Ne
 wTXMI7.pfb><C:/Users/alibk/AppData/Local/Programs/MiKTeX/fonts/type1/public/tex
@@ -1127,9 +1136,9 @@ e1/public/newtx/txsys.pfb><C:/Users/alibk/AppData/Local/Programs/MiKTeX/fonts/t
 ype1/public/newtx/ztmb.pfb><C:/Users/alibk/AppData/Local/Programs/MiKTeX/fonts/
 type1/public/newtx/ztmr.pfb><C:/Users/alibk/AppData/Local/Programs/MiKTeX/fonts
 /type1/public/newtx/ztmri.pfb>
-Output written on main.pdf (33 pages, 424992 bytes).
+Output written on main.pdf (36 pages, 452816 bytes).
 PDF statistics:
- 989 PDF objects out of 1000 (max. 8388607)
- 226 named destinations out of 1000 (max. 500000)
- 39952 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 1087 PDF objects out of 1200 (max. 8388607)
+ 241 named destinations out of 1000 (max. 500000)
+ 39989 words of extra memory for PDF output out of 42996 (max. 10000000)
 

@@ -1,0 +1,7 @@
+[2026-05-08T21:10:08Z] c2_interpretability_scoring=completed
+[2026-05-08T21:10:08Z] rubric_dimensions=5
+[2026-05-08T21:10:08Z] score_rows=25
+[2026-05-08T21:10:08Z] summary_rows=5
+[2026-05-08T21:10:08Z] implemented_metrics=M1,M2,M3,M4
+[2026-05-08T21:10:08Z] design_extension_metrics=M5
+[2026-05-08T21:10:08Z] result=derived_c2_interpretability_tables_and_figure_written
