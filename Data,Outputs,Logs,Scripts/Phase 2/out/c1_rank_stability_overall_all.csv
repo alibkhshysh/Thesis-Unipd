@@ -1,0 +1,4 @@
+metric_signal_id,metric_family,metric_label,projects,median_project_spearman,median_project_primary_spearman,median_common_developer_share,total_adjacent_pairs,total_pairs_with_rank_correlation,total_primary_adjacent_pairs,total_primary_pairs_with_rank_correlation
+M2_developer_churn_per_day,M2,M2 developer churn/day,10,0.667857,0.607842,0.172185,60,36,31,20
+M3_developer_commits_per_day,M3,M3 developer commits/day,10,0.857617,0.835603,0.172185,60,33,31,19
+M4_developer_share_churn,M4,M4 developer churn share,10,0.667857,0.607842,0.172185,60,36,31,20

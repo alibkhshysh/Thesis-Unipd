@@ -68,6 +68,12 @@
 \contentsline {subsection}{\numberline {15.3}External validity}{28}{subsection.152}%
 \contentsline {subsection}{\numberline {15.4}Conclusion validity}{28}{subsection.153}%
 \contentsline {section}{\numberline {16}Phase I Conclusion}{28}{section.154}%
-\contentsline {section}{\numberline {17}Planned Next Phase: Comparative Metric Evaluation}{29}{section.155}%
-\contentsline {subsection}{\numberline {17.1}Phase II execution plan}{29}{subsection.156}%
-\contentsline {subsection}{\numberline {17.2}Decision gate criteria}{29}{subsection.163}%
+\contentsline {section}{\numberline {17}Phase II Step 1: C1 Stability Analysis}{29}{section.155}%
+\contentsline {subsection}{\numberline {17.1}Analysis inputs and generated artifacts}{29}{subsection.156}%
+\contentsline {subsection}{\numberline {17.2}Method}{29}{subsection.159}%
+\contentsline {subsection}{\numberline {17.3}Window-level stability results}{30}{subsection.160}%
+\contentsline {subsection}{\numberline {17.4}Developer-rank stability results}{31}{subsection.167}%
+\contentsline {subsection}{\numberline {17.5}C1 interpretation for the decision process}{32}{subsection.172}%
+\contentsline {section}{\numberline {18}Planned Next Phase: Comparative Metric Evaluation}{32}{section.173}%
+\contentsline {subsection}{\numberline {18.1}Phase II execution plan}{32}{subsection.174}%
+\contentsline {subsection}{\numberline {18.2}Decision gate criteria}{33}{subsection.181}%

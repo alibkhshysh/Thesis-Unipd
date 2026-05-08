@@ -25,3 +25,6 @@
 \contentsline {table}{\numberline {25}{\ignorespaces Mean human-only M4 concentration indicators.}}{24}{table.127}%
 \contentsline {table}{\numberline {26}{\ignorespaces Execution ledger for the centralized Phase I pipeline.}}{25}{table.130}%
 \contentsline {table}{\numberline {27}{\ignorespaces Centralized Phase I data lineage checkpoints used for reproducibility and auditing.}}{27}{table.147}%
+\contentsline {table}{\numberline {28}{\ignorespaces Phase II C1 stability artifacts. Paths are relative to the Phase II analysis directory.}}{29}{table.158}%
+\contentsline {table}{\numberline {29}{\ignorespaces C1 window-level volatility summary. CV is the coefficient of variation across project windows; ``primary'' excludes short windows marked \texttt {sensitivity\_only}.}}{30}{table.162}%
+\contentsline {table}{\numberline {30}{\ignorespaces C1 developer-rank stability summary across adjacent windows. Correlations use only developers appearing in both adjacent windows.}}{31}{table.169}%

@@ -1,0 +1,11 @@
+[2026-05-08T20:47:29Z] c1_stability_analysis=completed
+[2026-05-08T20:47:29Z] window_metric_rows=350
+[2026-05-08T20:47:29Z] project_stability_rows=50
+[2026-05-08T20:47:29Z] overall_stability_rows=5
+[2026-05-08T20:47:29Z] rank_pair_rows=180
+[2026-05-08T20:47:29Z] rank_project_summary_rows=30
+[2026-05-08T20:47:29Z] rank_overall_rows=3
+[2026-05-08T20:47:29Z] projects=brew,click,curl,flask,gin,junit5,prettier,requests,tokio,urllib3
+[2026-05-08T20:47:29Z] window_metric_signals=M1_endpoint_kloc,M2_churn_per_kloc_day,M3_commits_per_day,M4_gini_churn,M4_top1_share_churn
+[2026-05-08T20:47:29Z] rank_metric_signals=M2_developer_churn_per_day,M3_developer_commits_per_day,M4_developer_share_churn
+[2026-05-08T20:47:29Z] result=derived_c1_tables_and_figures_written

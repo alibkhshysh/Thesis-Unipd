@@ -13,16 +13,17 @@
 \usepackage{float}
 \usepackage{longtable}
 \usepackage{amsmath}
+\usepackage{graphicx}
 
 \setcounter{tocdepth}{2}
 \setcounter{secnumdepth}{3}
 \hypersetup{
   hidelinks,
-  pdftitle={Master Thesis Technical Report - Phase I: Centralized Dataset Curation and Pipeline Validation},
+  pdftitle={Master Thesis Technical Report - Phase I Dataset and Phase II C1 Stability Analysis},
   pdfauthor={Ali Bakhshayesh}
 }
 
-\title{Master Thesis Technical Report: Phase I --- Centralized Dataset Curation and Pipeline Validation}
+\title{Master Thesis Technical Report: Phase I Dataset and Phase II C1 Stability Analysis}
 \author{Ali Bakhshayesh}
 \date{\today}
 
@@ -30,15 +31,14 @@
 \maketitle
 
 \begin{abstract}
-This report consolidates Phase I of the thesis: the construction of a centralized,
-reproducible dataset and extraction pipeline for developer-reputation candidate metrics.
-The final Phase I dataset contains ten open-source repositories, each frozen at eight
-stable release tags and seven consecutive release windows. The report documents repository
-and version-window curation, metric extraction for M1--M4, cleaning and validation,
+This report consolidates Phase I of the thesis and begins Phase II comparative evaluation.
+The Phase I dataset contains ten open-source repositories, each frozen at eight stable
+release tags and seven consecutive release windows. The report documents repository and
+version-window curation, metric extraction for M1--M4, cleaning and validation,
 bot-sensitivity handling, and duration-normalized outputs for uneven release windows.
-The comparative evaluation phase (Phase II) is intentionally deferred. No proof-of-concept
-(PoC) metric is selected in this report; that decision is made only after comparative
-analysis and feasibility scoring.
+It then reports the first Month 3 analysis step: C1 stability across release windows and
+projects. No proof-of-concept (PoC) metric is selected here; that decision remains deferred
+until the remaining comparison criteria and feasibility scoring are complete.
 \end{abstract}
 
 \newpage
@@ -65,6 +65,7 @@ analysis and feasibility scoring.
 \input{sections/reproducibility_protocol}
 \input{sections/threats_to_validity}
 \input{sections/month2_conclusion}
+\input{sections/month3_c1_stability}
 \input{sections/next_steps_month3_plan}
 
 \nocite{*}

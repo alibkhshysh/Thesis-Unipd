@@ -1,0 +1,31 @@
+metric_signal_id,metric_family,metric_label,project_id,adjacent_pairs,pairs_with_rank_correlation,mean_spearman_rank_correlation,median_spearman_rank_correlation,mean_common_developer_share,primary_adjacent_pairs,primary_pairs_with_rank_correlation,primary_mean_spearman_rank_correlation,primary_median_spearman_rank_correlation
+M2_developer_churn_per_day,M2,M2 developer churn/day,brew,6,6,0.219048,0.657143,0.187897,0,0,,
+M2_developer_churn_per_day,M2,M2 developer churn/day,click,6,5,0.900000,0.900000,0.119035,6,5,0.900000,0.900000
+M2_developer_churn_per_day,M2,M2 developer churn/day,curl,6,6,0.691483,0.715683,0.156472,6,6,0.691483,0.715683
+M2_developer_churn_per_day,M2,M2 developer churn/day,flask,6,1,1.000000,1.000000,0.123043,6,1,1.000000,1.000000
+M2_developer_churn_per_day,M2,M2 developer churn/day,gin,6,3,0.300000,0.500000,0.059045,6,3,0.300000,0.500000
+M2_developer_churn_per_day,M2,M2 developer churn/day,junit5,6,6,0.946062,0.988613,0.481845,0,0,,
+M2_developer_churn_per_day,M2,M2 developer churn/day,prettier,6,1,-1.000000,-1.000000,0.388889,0,0,,
+M2_developer_churn_per_day,M2,M2 developer churn/day,requests,6,2,0.000000,0.000000,0.299653,3,2,0.000000,0.000000
+M2_developer_churn_per_day,M2,M2 developer churn/day,tokio,6,3,0.226190,0.678571,0.059373,1,0,,
+M2_developer_churn_per_day,M2,M2 developer churn/day,urllib3,6,3,0.566667,0.500000,0.328283,3,3,0.566667,0.500000
+M3_developer_commits_per_day,M3,M3 developer commits/day,brew,6,4,0.699342,0.818038,0.187897,0,0,,
+M3_developer_commits_per_day,M3,M3 developer commits/day,click,6,5,0.272858,0.400000,0.119035,6,5,0.272858,0.400000
+M3_developer_commits_per_day,M3,M3 developer commits/day,curl,6,6,0.807324,0.805180,0.156472,6,6,0.807324,0.805180
+M3_developer_commits_per_day,M3,M3 developer commits/day,flask,6,1,1.000000,1.000000,0.123043,6,1,1.000000,1.000000
+M3_developer_commits_per_day,M3,M3 developer commits/day,gin,6,2,0.162281,0.162281,0.059045,6,2,0.162281,0.162281
+M3_developer_commits_per_day,M3,M3 developer commits/day,junit5,6,6,0.930246,0.910642,0.481845,0,0,,
+M3_developer_commits_per_day,M3,M3 developer commits/day,prettier,6,1,1.000000,1.000000,0.388889,0,0,,
+M3_developer_commits_per_day,M3,M3 developer commits/day,requests,6,2,1.000000,1.000000,0.299653,3,2,1.000000,1.000000
+M3_developer_commits_per_day,M3,M3 developer commits/day,tokio,6,3,0.283069,0.849208,0.059373,1,0,,
+M3_developer_commits_per_day,M3,M3 developer commits/day,urllib3,6,3,0.869017,0.866025,0.328283,3,3,0.869017,0.866025
+M4_developer_share_churn,M4,M4 developer churn share,brew,6,6,0.219048,0.657143,0.187897,0,0,,
+M4_developer_share_churn,M4,M4 developer churn share,click,6,5,0.900000,0.900000,0.119035,6,5,0.900000,0.900000
+M4_developer_share_churn,M4,M4 developer churn share,curl,6,6,0.691483,0.715683,0.156472,6,6,0.691483,0.715683
+M4_developer_share_churn,M4,M4 developer churn share,flask,6,1,1.000000,1.000000,0.123043,6,1,1.000000,1.000000
+M4_developer_share_churn,M4,M4 developer churn share,gin,6,3,0.300000,0.500000,0.059045,6,3,0.300000,0.500000
+M4_developer_share_churn,M4,M4 developer churn share,junit5,6,6,0.946062,0.988613,0.481845,0,0,,
+M4_developer_share_churn,M4,M4 developer churn share,prettier,6,1,-1.000000,-1.000000,0.388889,0,0,,
+M4_developer_share_churn,M4,M4 developer churn share,requests,6,2,0.000000,0.000000,0.299653,3,2,0.000000,0.000000
+M4_developer_share_churn,M4,M4 developer churn share,tokio,6,3,0.226190,0.678571,0.059373,1,0,,
+M4_developer_share_churn,M4,M4 developer churn share,urllib3,6,3,0.566667,0.500000,0.328283,3,3,0.566667,0.500000

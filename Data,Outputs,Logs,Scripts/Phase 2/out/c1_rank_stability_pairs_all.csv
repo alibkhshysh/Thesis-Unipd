@@ -1,0 +1,181 @@
+metric_signal_id,metric_family,metric_label,project_id,from_window_id,to_window_id,from_window_index,to_window_index,from_analysis_set,to_analysis_set,both_primary,common_developers,union_developers,common_developer_share,spearman_rank_correlation
+M2_developer_churn_per_day,M2,M2 developer churn/day,brew,brew_W01,brew_W02,1,2,primary,sensitivity_only,False,2,16,0.125000,1.000000
+M2_developer_churn_per_day,M2,M2 developer churn/day,brew,brew_W02,brew_W03,2,3,sensitivity_only,sensitivity_only,False,2,15,0.133333,-1.000000
+M2_developer_churn_per_day,M2,M2 developer churn/day,brew,brew_W03,brew_W04,3,4,sensitivity_only,sensitivity_only,False,3,15,0.200000,1.000000
+M2_developer_churn_per_day,M2,M2 developer churn/day,brew,brew_W04,brew_W05,4,5,sensitivity_only,sensitivity_only,False,2,15,0.133333,-1.000000
+M2_developer_churn_per_day,M2,M2 developer churn/day,brew,brew_W05,brew_W06,5,6,sensitivity_only,sensitivity_only,False,6,21,0.285714,0.828571
+M2_developer_churn_per_day,M2,M2 developer churn/day,brew,brew_W06,brew_W07,6,7,sensitivity_only,primary,False,6,24,0.250000,0.485714
+M2_developer_churn_per_day,M2,M2 developer churn/day,click,click_W01,click_W02,1,2,primary,primary,True,1,22,0.045455,
+M2_developer_churn_per_day,M2,M2 developer churn/day,click,click_W02,click_W03,2,3,primary,primary,True,5,38,0.131579,0.900000
+M2_developer_churn_per_day,M2,M2 developer churn/day,click,click_W03,click_W04,3,4,primary,primary,True,2,30,0.066667,1.000000
+M2_developer_churn_per_day,M2,M2 developer churn/day,click,click_W04,click_W05,4,5,primary,primary,True,3,20,0.150000,1.000000
+M2_developer_churn_per_day,M2,M2 developer churn/day,click,click_W05,click_W06,5,6,primary,primary,True,4,24,0.166667,0.800000
+M2_developer_churn_per_day,M2,M2 developer churn/day,click,click_W06,click_W07,6,7,primary,primary,True,4,26,0.153846,0.800000
+M2_developer_churn_per_day,M2,M2 developer churn/day,curl,curl_W01,curl_W02,1,2,primary,primary,True,5,40,0.125000,0.400000
+M2_developer_churn_per_day,M2,M2 developer churn/day,curl,curl_W02,curl_W03,2,3,primary,primary,True,9,58,0.155172,0.669462
+M2_developer_churn_per_day,M2,M2 developer churn/day,curl,curl_W03,curl_W04,3,4,primary,primary,True,7,45,0.155556,0.964286
+M2_developer_churn_per_day,M2,M2 developer churn/day,curl,curl_W04,curl_W05,4,5,primary,primary,True,11,45,0.244444,0.781818
+M2_developer_churn_per_day,M2,M2 developer churn/day,curl,curl_W05,curl_W06,5,6,primary,primary,True,8,62,0.129032,0.761905
+M2_developer_churn_per_day,M2,M2 developer churn/day,curl,curl_W06,curl_W07,6,7,primary,primary,True,7,54,0.129630,0.571429
+M2_developer_churn_per_day,M2,M2 developer churn/day,flask,flask_W01,flask_W02,1,2,primary,primary,True,1,7,0.142857,
+M2_developer_churn_per_day,M2,M2 developer churn/day,flask,flask_W02,flask_W03,2,3,primary,primary,True,1,4,0.250000,
+M2_developer_churn_per_day,M2,M2 developer churn/day,flask,flask_W03,flask_W04,3,4,primary,primary,True,2,16,0.125000,1.000000
+M2_developer_churn_per_day,M2,M2 developer churn/day,flask,flask_W04,flask_W05,4,5,primary,primary,True,1,23,0.043478,
+M2_developer_churn_per_day,M2,M2 developer churn/day,flask,flask_W05,flask_W06,5,6,primary,primary,True,1,13,0.076923,
+M2_developer_churn_per_day,M2,M2 developer churn/day,flask,flask_W06,flask_W07,6,7,primary,primary,True,1,10,0.100000,
+M2_developer_churn_per_day,M2,M2 developer churn/day,gin,gin_W01,gin_W02,1,2,primary,primary,True,4,32,0.125000,-0.600000
+M2_developer_churn_per_day,M2,M2 developer churn/day,gin,gin_W02,gin_W03,2,3,primary,primary,True,4,38,0.105263,1.000000
+M2_developer_churn_per_day,M2,M2 developer churn/day,gin,gin_W03,gin_W04,3,4,primary,primary,True,1,43,0.023256,
+M2_developer_churn_per_day,M2,M2 developer churn/day,gin,gin_W04,gin_W05,4,5,primary,primary,True,1,34,0.029412,
+M2_developer_churn_per_day,M2,M2 developer churn/day,gin,gin_W05,gin_W06,5,6,primary,primary,True,1,61,0.016393,
+M2_developer_churn_per_day,M2,M2 developer churn/day,gin,gin_W06,gin_W07,6,7,primary,primary,True,5,91,0.054945,0.500000
+M2_developer_churn_per_day,M2,M2 developer churn/day,junit5,junit5_W01,junit5_W02,1,2,primary,sensitivity_only,False,10,20,0.500000,0.945140
+M2_developer_churn_per_day,M2,M2 developer churn/day,junit5,junit5_W02,junit5_W03,2,3,sensitivity_only,primary,False,10,22,0.454545,0.996965
+M2_developer_churn_per_day,M2,M2 developer churn/day,junit5,junit5_W03,junit5_W04,3,4,primary,sensitivity_only,False,11,22,0.500000,0.988613
+M2_developer_churn_per_day,M2,M2 developer churn/day,junit5,junit5_W04,junit5_W05,4,5,sensitivity_only,primary,False,11,23,0.478261,0.988613
+M2_developer_churn_per_day,M2,M2 developer churn/day,junit5,junit5_W05,junit5_W06,5,6,primary,sensitivity_only,False,11,23,0.478261,0.988613
+M2_developer_churn_per_day,M2,M2 developer churn/day,junit5,junit5_W06,junit5_W07,6,7,sensitivity_only,primary,False,12,25,0.480000,0.768426
+M2_developer_churn_per_day,M2,M2 developer churn/day,prettier,prettier_W01,prettier_W02,1,2,sensitivity_only,sensitivity_only,False,2,6,0.333333,-1.000000
+M2_developer_churn_per_day,M2,M2 developer churn/day,prettier,prettier_W02,prettier_W03,2,3,sensitivity_only,sensitivity_only,False,1,3,0.333333,
+M2_developer_churn_per_day,M2,M2 developer churn/day,prettier,prettier_W03,prettier_W04,3,4,sensitivity_only,primary,False,1,3,0.333333,
+M2_developer_churn_per_day,M2,M2 developer churn/day,prettier,prettier_W04,prettier_W05,4,5,primary,sensitivity_only,False,1,3,0.333333,
+M2_developer_churn_per_day,M2,M2 developer churn/day,prettier,prettier_W05,prettier_W06,5,6,sensitivity_only,primary,False,1,2,0.500000,
+M2_developer_churn_per_day,M2,M2 developer churn/day,prettier,prettier_W06,prettier_W07,6,7,primary,sensitivity_only,False,1,2,0.500000,
+M2_developer_churn_per_day,M2,M2 developer churn/day,requests,requests_W01,requests_W02,1,2,primary,primary,True,1,32,0.031250,
+M2_developer_churn_per_day,M2,M2 developer churn/day,requests,requests_W02,requests_W03,2,3,primary,sensitivity_only,False,1,30,0.033333,
+M2_developer_churn_per_day,M2,M2 developer churn/day,requests,requests_W03,requests_W04,3,4,sensitivity_only,sensitivity_only,False,1,1,1.000000,
+M2_developer_churn_per_day,M2,M2 developer churn/day,requests,requests_W04,requests_W05,4,5,sensitivity_only,primary,False,1,2,0.500000,
+M2_developer_churn_per_day,M2,M2 developer churn/day,requests,requests_W05,requests_W06,5,6,primary,primary,True,2,15,0.133333,-1.000000
+M2_developer_churn_per_day,M2,M2 developer churn/day,requests,requests_W06,requests_W07,6,7,primary,primary,True,2,20,0.100000,1.000000
+M2_developer_churn_per_day,M2,M2 developer churn/day,tokio,tokio_W01,tokio_W02,1,2,sensitivity_only,primary,False,7,95,0.073684,0.678571
+M2_developer_churn_per_day,M2,M2 developer churn/day,tokio,tokio_W02,tokio_W03,2,3,primary,primary,True,1,34,0.029412,
+M2_developer_churn_per_day,M2,M2 developer churn/day,tokio,tokio_W03,tokio_W04,3,4,primary,sensitivity_only,False,1,107,0.009346,
+M2_developer_churn_per_day,M2,M2 developer churn/day,tokio,tokio_W04,tokio_W05,4,5,sensitivity_only,sensitivity_only,False,2,108,0.018519,1.000000
+M2_developer_churn_per_day,M2,M2 developer churn/day,tokio,tokio_W05,tokio_W06,5,6,sensitivity_only,sensitivity_only,False,1,14,0.071429,
+M2_developer_churn_per_day,M2,M2 developer churn/day,tokio,tokio_W06,tokio_W07,6,7,sensitivity_only,sensitivity_only,False,2,13,0.153846,-1.000000
+M2_developer_churn_per_day,M2,M2 developer churn/day,urllib3,urllib3_W01,urllib3_W02,1,2,primary,primary,True,5,15,0.333333,0.200000
+M2_developer_churn_per_day,M2,M2 developer churn/day,urllib3,urllib3_W02,urllib3_W03,2,3,primary,primary,True,3,16,0.187500,0.500000
+M2_developer_churn_per_day,M2,M2 developer churn/day,urllib3,urllib3_W03,urllib3_W04,3,4,primary,primary,True,3,22,0.136364,1.000000
+M2_developer_churn_per_day,M2,M2 developer churn/day,urllib3,urllib3_W04,urllib3_W05,4,5,primary,sensitivity_only,False,1,16,0.062500,
+M2_developer_churn_per_day,M2,M2 developer churn/day,urllib3,urllib3_W05,urllib3_W06,5,6,sensitivity_only,sensitivity_only,False,1,1,1.000000,
+M2_developer_churn_per_day,M2,M2 developer churn/day,urllib3,urllib3_W06,urllib3_W07,6,7,sensitivity_only,primary,False,1,4,0.250000,
+M3_developer_commits_per_day,M3,M3 developer commits/day,brew,brew_W01,brew_W02,1,2,primary,sensitivity_only,False,2,16,0.125000,
+M3_developer_commits_per_day,M3,M3 developer commits/day,brew,brew_W02,brew_W03,2,3,sensitivity_only,sensitivity_only,False,2,15,0.133333,
+M3_developer_commits_per_day,M3,M3 developer commits/day,brew,brew_W03,brew_W04,3,4,sensitivity_only,sensitivity_only,False,3,15,0.200000,0.866025
+M3_developer_commits_per_day,M3,M3 developer commits/day,brew,brew_W04,brew_W05,4,5,sensitivity_only,sensitivity_only,False,2,15,0.133333,1.000000
+M3_developer_commits_per_day,M3,M3 developer commits/day,brew,brew_W05,brew_W06,5,6,sensitivity_only,sensitivity_only,False,6,21,0.285714,0.770051
+M3_developer_commits_per_day,M3,M3 developer commits/day,brew,brew_W06,brew_W07,6,7,sensitivity_only,primary,False,6,24,0.250000,0.161290
+M3_developer_commits_per_day,M3,M3 developer commits/day,click,click_W01,click_W02,1,2,primary,primary,True,1,22,0.045455,
+M3_developer_commits_per_day,M3,M3 developer commits/day,click,click_W02,click_W03,2,3,primary,primary,True,5,38,0.131579,0.564288
+M3_developer_commits_per_day,M3,M3 developer commits/day,click,click_W03,click_W04,3,4,primary,primary,True,2,30,0.066667,-1.000000
+M3_developer_commits_per_day,M3,M3 developer commits/day,click,click_W04,click_W05,4,5,primary,primary,True,3,20,0.150000,1.000000
+M3_developer_commits_per_day,M3,M3 developer commits/day,click,click_W05,click_W06,5,6,primary,primary,True,4,24,0.166667,0.400000
+M3_developer_commits_per_day,M3,M3 developer commits/day,click,click_W06,click_W07,6,7,primary,primary,True,4,26,0.153846,0.400000
+M3_developer_commits_per_day,M3,M3 developer commits/day,curl,curl_W01,curl_W02,1,2,primary,primary,True,5,40,0.125000,0.700000
+M3_developer_commits_per_day,M3,M3 developer commits/day,curl,curl_W02,curl_W03,2,3,primary,primary,True,9,58,0.155172,0.779036
+M3_developer_commits_per_day,M3,M3 developer commits/day,curl,curl_W03,curl_W04,3,4,primary,primary,True,7,45,0.155556,0.934947
+M3_developer_commits_per_day,M3,M3 developer commits/day,curl,curl_W04,curl_W05,4,5,primary,primary,True,11,45,0.244444,0.672072
+M3_developer_commits_per_day,M3,M3 developer commits/day,curl,curl_W05,curl_W06,5,6,primary,primary,True,8,62,0.129032,0.831325
+M3_developer_commits_per_day,M3,M3 developer commits/day,curl,curl_W06,curl_W07,6,7,primary,primary,True,7,54,0.129630,0.926562
+M3_developer_commits_per_day,M3,M3 developer commits/day,flask,flask_W01,flask_W02,1,2,primary,primary,True,1,7,0.142857,
+M3_developer_commits_per_day,M3,M3 developer commits/day,flask,flask_W02,flask_W03,2,3,primary,primary,True,1,4,0.250000,
+M3_developer_commits_per_day,M3,M3 developer commits/day,flask,flask_W03,flask_W04,3,4,primary,primary,True,2,16,0.125000,1.000000
+M3_developer_commits_per_day,M3,M3 developer commits/day,flask,flask_W04,flask_W05,4,5,primary,primary,True,1,23,0.043478,
+M3_developer_commits_per_day,M3,M3 developer commits/day,flask,flask_W05,flask_W06,5,6,primary,primary,True,1,13,0.076923,
+M3_developer_commits_per_day,M3,M3 developer commits/day,flask,flask_W06,flask_W07,6,7,primary,primary,True,1,10,0.100000,
+M3_developer_commits_per_day,M3,M3 developer commits/day,gin,gin_W01,gin_W02,1,2,primary,primary,True,4,32,0.125000,
+M3_developer_commits_per_day,M3,M3 developer commits/day,gin,gin_W02,gin_W03,2,3,primary,primary,True,4,38,0.105263,-0.333333
+M3_developer_commits_per_day,M3,M3 developer commits/day,gin,gin_W03,gin_W04,3,4,primary,primary,True,1,43,0.023256,
+M3_developer_commits_per_day,M3,M3 developer commits/day,gin,gin_W04,gin_W05,4,5,primary,primary,True,1,34,0.029412,
+M3_developer_commits_per_day,M3,M3 developer commits/day,gin,gin_W05,gin_W06,5,6,primary,primary,True,1,61,0.016393,
+M3_developer_commits_per_day,M3,M3 developer commits/day,gin,gin_W06,gin_W07,6,7,primary,primary,True,5,91,0.054945,0.657895
+M3_developer_commits_per_day,M3,M3 developer commits/day,junit5,junit5_W01,junit5_W02,1,2,primary,sensitivity_only,False,10,20,0.500000,1.000000
+M3_developer_commits_per_day,M3,M3 developer commits/day,junit5,junit5_W02,junit5_W03,2,3,sensitivity_only,primary,False,10,22,0.454545,1.000000
+M3_developer_commits_per_day,M3,M3 developer commits/day,junit5,junit5_W03,junit5_W04,3,4,primary,sensitivity_only,False,11,22,0.500000,0.910642
+M3_developer_commits_per_day,M3,M3 developer commits/day,junit5,junit5_W04,junit5_W05,4,5,sensitivity_only,primary,False,11,23,0.478261,0.910642
+M3_developer_commits_per_day,M3,M3 developer commits/day,junit5,junit5_W05,junit5_W06,5,6,primary,sensitivity_only,False,11,23,0.478261,0.910642
+M3_developer_commits_per_day,M3,M3 developer commits/day,junit5,junit5_W06,junit5_W07,6,7,sensitivity_only,primary,False,12,25,0.480000,0.849552
+M3_developer_commits_per_day,M3,M3 developer commits/day,prettier,prettier_W01,prettier_W02,1,2,sensitivity_only,sensitivity_only,False,2,6,0.333333,1.000000
+M3_developer_commits_per_day,M3,M3 developer commits/day,prettier,prettier_W02,prettier_W03,2,3,sensitivity_only,sensitivity_only,False,1,3,0.333333,
+M3_developer_commits_per_day,M3,M3 developer commits/day,prettier,prettier_W03,prettier_W04,3,4,sensitivity_only,primary,False,1,3,0.333333,
+M3_developer_commits_per_day,M3,M3 developer commits/day,prettier,prettier_W04,prettier_W05,4,5,primary,sensitivity_only,False,1,3,0.333333,
+M3_developer_commits_per_day,M3,M3 developer commits/day,prettier,prettier_W05,prettier_W06,5,6,sensitivity_only,primary,False,1,2,0.500000,
+M3_developer_commits_per_day,M3,M3 developer commits/day,prettier,prettier_W06,prettier_W07,6,7,primary,sensitivity_only,False,1,2,0.500000,
+M3_developer_commits_per_day,M3,M3 developer commits/day,requests,requests_W01,requests_W02,1,2,primary,primary,True,1,32,0.031250,
+M3_developer_commits_per_day,M3,M3 developer commits/day,requests,requests_W02,requests_W03,2,3,primary,sensitivity_only,False,1,30,0.033333,
+M3_developer_commits_per_day,M3,M3 developer commits/day,requests,requests_W03,requests_W04,3,4,sensitivity_only,sensitivity_only,False,1,1,1.000000,
+M3_developer_commits_per_day,M3,M3 developer commits/day,requests,requests_W04,requests_W05,4,5,sensitivity_only,primary,False,1,2,0.500000,
+M3_developer_commits_per_day,M3,M3 developer commits/day,requests,requests_W05,requests_W06,5,6,primary,primary,True,2,15,0.133333,1.000000
+M3_developer_commits_per_day,M3,M3 developer commits/day,requests,requests_W06,requests_W07,6,7,primary,primary,True,2,20,0.100000,1.000000
+M3_developer_commits_per_day,M3,M3 developer commits/day,tokio,tokio_W01,tokio_W02,1,2,sensitivity_only,primary,False,7,95,0.073684,0.849208
+M3_developer_commits_per_day,M3,M3 developer commits/day,tokio,tokio_W02,tokio_W03,2,3,primary,primary,True,1,34,0.029412,
+M3_developer_commits_per_day,M3,M3 developer commits/day,tokio,tokio_W03,tokio_W04,3,4,primary,sensitivity_only,False,1,107,0.009346,
+M3_developer_commits_per_day,M3,M3 developer commits/day,tokio,tokio_W04,tokio_W05,4,5,sensitivity_only,sensitivity_only,False,2,108,0.018519,1.000000
+M3_developer_commits_per_day,M3,M3 developer commits/day,tokio,tokio_W05,tokio_W06,5,6,sensitivity_only,sensitivity_only,False,1,14,0.071429,
+M3_developer_commits_per_day,M3,M3 developer commits/day,tokio,tokio_W06,tokio_W07,6,7,sensitivity_only,sensitivity_only,False,2,13,0.153846,-1.000000
+M3_developer_commits_per_day,M3,M3 developer commits/day,urllib3,urllib3_W01,urllib3_W02,1,2,primary,primary,True,5,15,0.333333,0.875000
+M3_developer_commits_per_day,M3,M3 developer commits/day,urllib3,urllib3_W02,urllib3_W03,2,3,primary,primary,True,3,16,0.187500,0.866025
+M3_developer_commits_per_day,M3,M3 developer commits/day,urllib3,urllib3_W03,urllib3_W04,3,4,primary,primary,True,3,22,0.136364,0.866025
+M3_developer_commits_per_day,M3,M3 developer commits/day,urllib3,urllib3_W04,urllib3_W05,4,5,primary,sensitivity_only,False,1,16,0.062500,
+M3_developer_commits_per_day,M3,M3 developer commits/day,urllib3,urllib3_W05,urllib3_W06,5,6,sensitivity_only,sensitivity_only,False,1,1,1.000000,
+M3_developer_commits_per_day,M3,M3 developer commits/day,urllib3,urllib3_W06,urllib3_W07,6,7,sensitivity_only,primary,False,1,4,0.250000,
+M4_developer_share_churn,M4,M4 developer churn share,brew,brew_W01,brew_W02,1,2,primary,sensitivity_only,False,2,16,0.125000,1.000000
+M4_developer_share_churn,M4,M4 developer churn share,brew,brew_W02,brew_W03,2,3,sensitivity_only,sensitivity_only,False,2,15,0.133333,-1.000000
+M4_developer_share_churn,M4,M4 developer churn share,brew,brew_W03,brew_W04,3,4,sensitivity_only,sensitivity_only,False,3,15,0.200000,1.000000
+M4_developer_share_churn,M4,M4 developer churn share,brew,brew_W04,brew_W05,4,5,sensitivity_only,sensitivity_only,False,2,15,0.133333,-1.000000
+M4_developer_share_churn,M4,M4 developer churn share,brew,brew_W05,brew_W06,5,6,sensitivity_only,sensitivity_only,False,6,21,0.285714,0.828571
+M4_developer_share_churn,M4,M4 developer churn share,brew,brew_W06,brew_W07,6,7,sensitivity_only,primary,False,6,24,0.250000,0.485714
+M4_developer_share_churn,M4,M4 developer churn share,click,click_W01,click_W02,1,2,primary,primary,True,1,22,0.045455,
+M4_developer_share_churn,M4,M4 developer churn share,click,click_W02,click_W03,2,3,primary,primary,True,5,38,0.131579,0.900000
+M4_developer_share_churn,M4,M4 developer churn share,click,click_W03,click_W04,3,4,primary,primary,True,2,30,0.066667,1.000000
+M4_developer_share_churn,M4,M4 developer churn share,click,click_W04,click_W05,4,5,primary,primary,True,3,20,0.150000,1.000000
+M4_developer_share_churn,M4,M4 developer churn share,click,click_W05,click_W06,5,6,primary,primary,True,4,24,0.166667,0.800000
+M4_developer_share_churn,M4,M4 developer churn share,click,click_W06,click_W07,6,7,primary,primary,True,4,26,0.153846,0.800000
+M4_developer_share_churn,M4,M4 developer churn share,curl,curl_W01,curl_W02,1,2,primary,primary,True,5,40,0.125000,0.400000
+M4_developer_share_churn,M4,M4 developer churn share,curl,curl_W02,curl_W03,2,3,primary,primary,True,9,58,0.155172,0.669462
+M4_developer_share_churn,M4,M4 developer churn share,curl,curl_W03,curl_W04,3,4,primary,primary,True,7,45,0.155556,0.964286
+M4_developer_share_churn,M4,M4 developer churn share,curl,curl_W04,curl_W05,4,5,primary,primary,True,11,45,0.244444,0.781818
+M4_developer_share_churn,M4,M4 developer churn share,curl,curl_W05,curl_W06,5,6,primary,primary,True,8,62,0.129032,0.761905
+M4_developer_share_churn,M4,M4 developer churn share,curl,curl_W06,curl_W07,6,7,primary,primary,True,7,54,0.129630,0.571429
+M4_developer_share_churn,M4,M4 developer churn share,flask,flask_W01,flask_W02,1,2,primary,primary,True,1,7,0.142857,
+M4_developer_share_churn,M4,M4 developer churn share,flask,flask_W02,flask_W03,2,3,primary,primary,True,1,4,0.250000,
+M4_developer_share_churn,M4,M4 developer churn share,flask,flask_W03,flask_W04,3,4,primary,primary,True,2,16,0.125000,1.000000
+M4_developer_share_churn,M4,M4 developer churn share,flask,flask_W04,flask_W05,4,5,primary,primary,True,1,23,0.043478,
+M4_developer_share_churn,M4,M4 developer churn share,flask,flask_W05,flask_W06,5,6,primary,primary,True,1,13,0.076923,
+M4_developer_share_churn,M4,M4 developer churn share,flask,flask_W06,flask_W07,6,7,primary,primary,True,1,10,0.100000,
+M4_developer_share_churn,M4,M4 developer churn share,gin,gin_W01,gin_W02,1,2,primary,primary,True,4,32,0.125000,-0.600000
+M4_developer_share_churn,M4,M4 developer churn share,gin,gin_W02,gin_W03,2,3,primary,primary,True,4,38,0.105263,1.000000
+M4_developer_share_churn,M4,M4 developer churn share,gin,gin_W03,gin_W04,3,4,primary,primary,True,1,43,0.023256,
+M4_developer_share_churn,M4,M4 developer churn share,gin,gin_W04,gin_W05,4,5,primary,primary,True,1,34,0.029412,
+M4_developer_share_churn,M4,M4 developer churn share,gin,gin_W05,gin_W06,5,6,primary,primary,True,1,61,0.016393,
+M4_developer_share_churn,M4,M4 developer churn share,gin,gin_W06,gin_W07,6,7,primary,primary,True,5,91,0.054945,0.500000
+M4_developer_share_churn,M4,M4 developer churn share,junit5,junit5_W01,junit5_W02,1,2,primary,sensitivity_only,False,10,20,0.500000,0.945140
+M4_developer_share_churn,M4,M4 developer churn share,junit5,junit5_W02,junit5_W03,2,3,sensitivity_only,primary,False,10,22,0.454545,0.996965
+M4_developer_share_churn,M4,M4 developer churn share,junit5,junit5_W03,junit5_W04,3,4,primary,sensitivity_only,False,11,22,0.500000,0.988613
+M4_developer_share_churn,M4,M4 developer churn share,junit5,junit5_W04,junit5_W05,4,5,sensitivity_only,primary,False,11,23,0.478261,0.988613
+M4_developer_share_churn,M4,M4 developer churn share,junit5,junit5_W05,junit5_W06,5,6,primary,sensitivity_only,False,11,23,0.478261,0.988613
+M4_developer_share_churn,M4,M4 developer churn share,junit5,junit5_W06,junit5_W07,6,7,sensitivity_only,primary,False,12,25,0.480000,0.768426
+M4_developer_share_churn,M4,M4 developer churn share,prettier,prettier_W01,prettier_W02,1,2,sensitivity_only,sensitivity_only,False,2,6,0.333333,-1.000000
+M4_developer_share_churn,M4,M4 developer churn share,prettier,prettier_W02,prettier_W03,2,3,sensitivity_only,sensitivity_only,False,1,3,0.333333,
+M4_developer_share_churn,M4,M4 developer churn share,prettier,prettier_W03,prettier_W04,3,4,sensitivity_only,primary,False,1,3,0.333333,
+M4_developer_share_churn,M4,M4 developer churn share,prettier,prettier_W04,prettier_W05,4,5,primary,sensitivity_only,False,1,3,0.333333,
+M4_developer_share_churn,M4,M4 developer churn share,prettier,prettier_W05,prettier_W06,5,6,sensitivity_only,primary,False,1,2,0.500000,
+M4_developer_share_churn,M4,M4 developer churn share,prettier,prettier_W06,prettier_W07,6,7,primary,sensitivity_only,False,1,2,0.500000,
+M4_developer_share_churn,M4,M4 developer churn share,requests,requests_W01,requests_W02,1,2,primary,primary,True,1,32,0.031250,
+M4_developer_share_churn,M4,M4 developer churn share,requests,requests_W02,requests_W03,2,3,primary,sensitivity_only,False,1,30,0.033333,
+M4_developer_share_churn,M4,M4 developer churn share,requests,requests_W03,requests_W04,3,4,sensitivity_only,sensitivity_only,False,1,1,1.000000,
+M4_developer_share_churn,M4,M4 developer churn share,requests,requests_W04,requests_W05,4,5,sensitivity_only,primary,False,1,2,0.500000,
+M4_developer_share_churn,M4,M4 developer churn share,requests,requests_W05,requests_W06,5,6,primary,primary,True,2,15,0.133333,-1.000000
+M4_developer_share_churn,M4,M4 developer churn share,requests,requests_W06,requests_W07,6,7,primary,primary,True,2,20,0.100000,1.000000
+M4_developer_share_churn,M4,M4 developer churn share,tokio,tokio_W01,tokio_W02,1,2,sensitivity_only,primary,False,7,95,0.073684,0.678571
+M4_developer_share_churn,M4,M4 developer churn share,tokio,tokio_W02,tokio_W03,2,3,primary,primary,True,1,34,0.029412,
+M4_developer_share_churn,M4,M4 developer churn share,tokio,tokio_W03,tokio_W04,3,4,primary,sensitivity_only,False,1,107,0.009346,
+M4_developer_share_churn,M4,M4 developer churn share,tokio,tokio_W04,tokio_W05,4,5,sensitivity_only,sensitivity_only,False,2,108,0.018519,1.000000
+M4_developer_share_churn,M4,M4 developer churn share,tokio,tokio_W05,tokio_W06,5,6,sensitivity_only,sensitivity_only,False,1,14,0.071429,
+M4_developer_share_churn,M4,M4 developer churn share,tokio,tokio_W06,tokio_W07,6,7,sensitivity_only,sensitivity_only,False,2,13,0.153846,-1.000000
+M4_developer_share_churn,M4,M4 developer churn share,urllib3,urllib3_W01,urllib3_W02,1,2,primary,primary,True,5,15,0.333333,0.200000
+M4_developer_share_churn,M4,M4 developer churn share,urllib3,urllib3_W02,urllib3_W03,2,3,primary,primary,True,3,16,0.187500,0.500000
+M4_developer_share_churn,M4,M4 developer churn share,urllib3,urllib3_W03,urllib3_W04,3,4,primary,primary,True,3,22,0.136364,1.000000
+M4_developer_share_churn,M4,M4 developer churn share,urllib3,urllib3_W04,urllib3_W05,4,5,primary,sensitivity_only,False,1,16,0.062500,
+M4_developer_share_churn,M4,M4 developer churn share,urllib3,urllib3_W05,urllib3_W06,5,6,sensitivity_only,sensitivity_only,False,1,1,1.000000,
+M4_developer_share_churn,M4,M4 developer churn share,urllib3,urllib3_W06,urllib3_W07,6,7,sensitivity_only,primary,False,1,4,0.250000,

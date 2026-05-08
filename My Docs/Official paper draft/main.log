@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.2.7)  8 MAY 2026 22:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.2.7)  8 MAY 2026 22:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -581,64 +581,80 @@ Package: longtable 2025-10-13 v4.24 Multi-page Table package (DPC)
 \c@LT@chunks=\count333
 \LT@p@ftn=\toks38
 )
-LaTeX Font Info:    Trying to load font information for T1+ntxtlf on input line
- 29.
+(C:\Users\alibk\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
 
-(C:\Users\alibk\AppData\Local\Programs\MiKTeX\tex/latex/newtx\t1ntxtlf.fd
+(C:\Users\alibk\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\alibk\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+)
+(C:\Users\alibk\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.c
+fg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 106.
+)
+\Gin@req@height=\dimen263
+\Gin@req@width=\dimen264
+)
+LaTeX Font Info:    Trying to load font information for T1+ntxtlf on input line
+ 30.
+ (C:\Users\alibk\AppData\Local\Programs\MiKTeX\tex/latex/newtx\t1ntxtlf.fd
 File: t1ntxtlf.fd 2021/05/24 v1.1 font definition file for T1/ntx/tlf
 )
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.95pt on input line 29.
-
-(main.aux)
+(Font)              scaled to size 10.95pt on input line 30.
+ (main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 29.
+LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 30.
 LaTeX Font Info:    Trying to load font information for OML+ntxmi on input line
- 29.
+ 30.
 
 (C:\Users\alibk\AppData\Local\Programs\MiKTeX\tex/latex/newtx\omlntxmi.fd
 File: omlntxmi.fd 2015/08/25 Fontinst v1.933 font definitions for OML/ntxmi.
 )
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 30.
 LaTeX Font Info:    Trying to load font information for U+ntxexa on input line 
-29.
+30.
 
 (C:\Users\alibk\AppData\Local\Programs\MiKTeX\tex/latex/newtx\untxexa.fd
 File: untxexa.fd 2012/04/16 Fontinst v1.933 font definitions for U/ntxexa.
 )
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 30.
 LaTeX Font Info:    Trying to load font information for LMS+ntxsy on input line
- 29.
+ 30.
 
 (C:\Users\alibk\AppData\Local\Programs\MiKTeX\tex/latex/newtx\lmsntxsy.fd
 File: lmsntxsy.fd 2016/07/02 Fontinst v1.933 font definitions for LMS/ntxsy.
 )
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 30.
 LaTeX Font Info:    Trying to load font information for LMX+ntxexx on input lin
-e 29.
+e 30.
 
 (C:\Users\alibk\AppData\Local\Programs\MiKTeX\tex/latex/newtx\lmxntxexx.fd
 File: lmxntxexx.fd 2016/07/03 Fontinst v1.933 font definitions for LMX/ntxexx.
 )
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -679,28 +695,38 @@ LaTeX Font Info:    ... okay on input line 29.
 ii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count334
-\scratchdimen=\dimen263
+\scratchdimen=\dimen265
 \scratchbox=\box66
 \nofMPsegments=\count335
 \nofMParguments=\count336
 \everyMPshowfont=\toks39
 \MPscratchCnt=\count337
-\MPscratchDim=\dimen264
+\MPscratchDim=\dimen266
 \MPnumerator=\count338
 \makeMPintoPDFobject=\count339
 \everyMPtoPDFconversion=\toks40
 )
+(C:\Users\alibk\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
+ase.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(C:\Users\alibk\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.c
+fg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
 \c@mv@tabular=\count340
 \c@mv@boldtabular=\count341
-LaTeX Info: Command `\dddot' is already robust on input line 29.
-LaTeX Info: Command `\ddddot' is already robust on input line 29.
-LaTeX Info: Redefining \microtypecontext on input line 29.
-Package microtype Info: Applying patch `item' on input line 29.
-Package microtype Info: Applying patch `toc' on input line 29.
-Package microtype Info: Applying patch `eqnum' on input line 29.
-Package microtype Info: Applying patch `footnote' on input line 29.
-Package microtype Info: Applying patch `verbatim' on input line 29.
-LaTeX Info: Redefining \microtypesetup on input line 29.
+LaTeX Info: Command `\dddot' is already robust on input line 30.
+LaTeX Info: Command `\ddddot' is already robust on input line 30.
+LaTeX Info: Redefining \microtypecontext on input line 30.
+Package microtype Info: Applying patch `item' on input line 30.
+Package microtype Info: Applying patch `toc' on input line 30.
+Package microtype Info: Applying patch `eqnum' on input line 30.
+Package microtype Info: Applying patch `footnote' on input line 30.
+Package microtype Info: Applying patch `verbatim' on input line 30.
+LaTeX Info: Redefining \microtypesetup on input line 30.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -711,98 +737,100 @@ Package microtype Info: Patching command `\showhyphens'.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
- (C:\Users\alibk\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-ptm.cfg
+
+(C:\Users\alibk\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-ptm.cfg
 File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
 )
-Package hyperref Info: Link coloring OFF on input line 29.
+Package hyperref Info: Link coloring OFF on input line 30.
+
 (main.out) (main.out)
 \@outlinefile=\write3
 \openout3 = `main.out'.
 
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 17.28pt on input line 31.
+(Font)              scaled to size 17.28pt on input line 32.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 31.
+(Font)              scaled to size 12.0pt on input line 32.
 LaTeX Font Info:    Trying to load font information for OT1+minntx on input lin
-e 31.
+e 32.
 
 (C:\Users\alibk\AppData\Local\Programs\MiKTeX\tex/latex/newtx\ot1minntx.fd
 File: ot1minntx.fd 2023/09/09 v1.1 font definition file for OT1/minntx
 )
 LaTeX Font Info:    Font shape `OT1/minntx/m/n' will be
-(Font)              scaled to size 12.0pt on input line 31.
+(Font)              scaled to size 12.0pt on input line 32.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `minntx' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `OT1/minntx/m/n' will be
-(Font)              scaled to size 8.8pt on input line 31.
+(Font)              scaled to size 8.8pt on input line 32.
 LaTeX Font Info:    Font shape `OT1/minntx/m/n' will be
-(Font)              scaled to size 6.6pt on input line 31.
+(Font)              scaled to size 6.6pt on input line 32.
 LaTeX Font Info:    Font shape `OML/ntxmi/m/it' will be
-(Font)              scaled to size 12.0pt on input line 31.
+(Font)              scaled to size 12.0pt on input line 32.
 LaTeX Font Info:    Font shape `OML/ntxmi/m/it' will be
-(Font)              scaled to size 8.8pt on input line 31.
+(Font)              scaled to size 8.8pt on input line 32.
 LaTeX Font Info:    Font shape `OML/ntxmi/m/it' will be
-(Font)              scaled to size 6.6pt on input line 31.
+(Font)              scaled to size 6.6pt on input line 32.
 LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 12.0pt on input line 31.
+(Font)              scaled to size 12.0pt on input line 32.
 LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 8.8pt on input line 31.
+(Font)              scaled to size 8.8pt on input line 32.
 LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 6.6pt on input line 31.
+(Font)              scaled to size 6.6pt on input line 32.
 LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 12.0pt on input line 31.
+(Font)              scaled to size 12.0pt on input line 32.
 LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 8.8pt on input line 31.
+(Font)              scaled to size 8.8pt on input line 32.
 LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 6.6pt on input line 31.
+(Font)              scaled to size 6.6pt on input line 32.
 LaTeX Font Info:    Trying to load font information for U+ntxmia on input line 
-31.
+32.
 
 (C:\Users\alibk\AppData\Local\Programs\MiKTeX\tex/latex/newtx\untxmia.fd
 File: untxmia.fd 2024/04/09 Fontinst v1.933 font definitions for U/ntxmia.
 )
 LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 12.0pt on input line 31.
+(Font)              scaled to size 12.0pt on input line 32.
 LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 8.8pt on input line 31.
+(Font)              scaled to size 8.8pt on input line 32.
 LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 6.6pt on input line 31.
+(Font)              scaled to size 6.6pt on input line 32.
 LaTeX Font Info:    Trying to load font information for U+ntxsym on input line 
-31.
+32.
 
 (C:\Users\alibk\AppData\Local\Programs\MiKTeX\tex/latex/newtx\untxsym.fd
 File: untxsym.fd 2023/08/16 Fontinst v1.933 font definitions for U/ntxsym.
 )
 LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 12.0pt on input line 31.
+(Font)              scaled to size 12.0pt on input line 32.
 LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 8.8pt on input line 31.
+(Font)              scaled to size 8.8pt on input line 32.
 LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 6.6pt on input line 31.
+(Font)              scaled to size 6.6pt on input line 32.
 LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 
-31.
+32.
 
 (C:\Users\alibk\AppData\Local\Programs\MiKTeX\tex/latex/newtx\untxsyc.fd
 File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
 )
 LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 12.0pt on input line 31.
+(Font)              scaled to size 12.0pt on input line 32.
 LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 8.8pt on input line 31.
+(Font)              scaled to size 8.8pt on input line 32.
 LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 6.6pt on input line 31.
+(Font)              scaled to size 6.6pt on input line 32.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 12.0pt on input line 31.
+(Font)              scaled to size 12.0pt on input line 32.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 8.8pt on input line 31.
+(Font)              scaled to size 8.8pt on input line 32.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 6.6pt on input line 31.
+(Font)              scaled to size 6.6pt on input line 32.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.0pt on input line 32.
+(Font)              scaled to size 10.0pt on input line 33.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 10.0pt on input line 32.
+(Font)              scaled to size 10.0pt on input line 33.
 
 [1
 
@@ -1046,22 +1074,48 @@ Underfull \hbox (badness 10000) in paragraph at lines 29--29
 
 [24]) (sections/reproducibility_protocol.tex [25] [26])
 (sections/threats_to_validity.tex [27]) (sections/month2_conclusion.tex)
-(sections/next_steps_month3_plan.tex [28]) (main.bbl [29]) [30] (main.aux)
+(sections/month3_c1_stability.tex [28] [29]
+<figures/month3_c1/c1_volatility_by_metric.pdf, id=657, 853.22621pt x 343.40585
+pt>
+File: figures/month3_c1/c1_volatility_by_metric.pdf Graphic file (type pdf)
+<use figures/month3_c1/c1_volatility_by_metric.pdf>
+Package pdftex.def Info: figures/month3_c1/c1_volatility_by_metric.pdf  used on
+ input line 88.
+(pdftex.def)             Requested size: 452.9679pt x 182.30814pt.
+<figures/month3_c1/c1_indexed_metric_trends.pdf, id=658, 823.6164pt x 754.09734
+pt>
+File: figures/month3_c1/c1_indexed_metric_trends.pdf Graphic file (type pdf)
+<use figures/month3_c1/c1_indexed_metric_trends.pdf>
+Package pdftex.def Info: figures/month3_c1/c1_indexed_metric_trends.pdf  used o
+n input line 95.
+(pdftex.def)             Requested size: 452.97784pt x 414.74332pt.
+ [30 <./figures/month3_c1/c1_volatility_by_metric.pdf>]
+<figures/month3_c1/c1_rank_stability_by_metric.pdf, id=711, 606.78947pt x 338.3
+7973pt>
+File: figures/month3_c1/c1_rank_stability_by_metric.pdf Graphic file (type pdf)
+
+<use figures/month3_c1/c1_rank_stability_by_metric.pdf>
+Package pdftex.def Info: figures/month3_c1/c1_rank_stability_by_metric.pdf  use
+d on input line 128.
+(pdftex.def)             Requested size: 371.43698pt x 207.13417pt.
+ [31 <./figures/month3_c1/c1_indexed_metric_trends.pdf>])
+(sections/next_steps_month3_plan.tex [32 <./figures/month3_c1/c1_rank_stability
+_by_metric.pdf>]) (main.bbl) [33] (main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: A7902644C2EDAB0E6B99401A435A7A29;12194.
+(rerunfilecheck)             Checksum: 2689375B93A64F7ABAE488173FFD6876;13532.
  ) 
 Here is how much of TeX's memory you used:
- 17312 strings out of 467871
- 270510 string characters out of 5418377
- 725619 words of memory out of 5000000
- 45427 multiletter control sequences out of 15000+600000
- 726810 words of font info for 277 fonts, out of 8000000 for 9000
+ 17740 strings out of 467871
+ 278876 string characters out of 5418377
+ 732160 words of memory out of 5000000
+ 45820 multiletter control sequences out of 15000+600000
+ 726442 words of font info for 273 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,12n,79p,1003b,643s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,12n,79p,1003b,657s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/alibk/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/NewTXM
 I.pfb><C:/Users/alibk/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/Ne
 wTXMI7.pfb><C:/Users/alibk/AppData/Local/Programs/MiKTeX/fonts/type1/public/tex
@@ -1073,9 +1127,9 @@ e1/public/newtx/txsys.pfb><C:/Users/alibk/AppData/Local/Programs/MiKTeX/fonts/t
 ype1/public/newtx/ztmb.pfb><C:/Users/alibk/AppData/Local/Programs/MiKTeX/fonts/
 type1/public/newtx/ztmr.pfb><C:/Users/alibk/AppData/Local/Programs/MiKTeX/fonts
 /type1/public/newtx/ztmri.pfb>
-Output written on main.pdf (30 pages, 336351 bytes).
+Output written on main.pdf (33 pages, 424992 bytes).
 PDF statistics:
- 724 PDF objects out of 1000 (max. 8388607)
- 205 named destinations out of 1000 (max. 500000)
- 39889 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 989 PDF objects out of 1000 (max. 8388607)
+ 226 named destinations out of 1000 (max. 500000)
+ 39952 words of extra memory for PDF output out of 42996 (max. 10000000)
 
