@@ -4,22 +4,33 @@
 \subsection{Artifact layout}
 \label{sec:repro_layout}
 
-Initial Cohort artifacts are organized under a single workspace root (e.g., \texttt{phase1\_round1/}, equivalent to the \texttt{month2\_round1/} folder in execution notes) with fixed subdirectories:
-\texttt{data/}, \texttt{repos/}, \texttt{scripts/}, \texttt{out/}, and \texttt{logs/}. This layout is intentionally stable so that
-all extraction and cleaning steps can be rerun without changing paths or script arguments.
+Phase I artifacts are organized under a single workspace root, \texttt{Data,Outputs,Logs,Scripts/Phase 1/},
+with fixed subdirectories: \texttt{data/}, \texttt{repos/}, \texttt{scripts/}, \texttt{out/}, and
+\texttt{logs/}. The final evidence layer uses the \texttt{\_all} suffix. Pilot-only and extended-only
+CSVs have been consolidated into the centralized files and removed from the active evidence layer.
+The centralized \texttt{\_all} files are the inputs for the next phase.
+
+All ten Git working copies are now colocated under the canonical \texttt{repos/} directory. Each repository
+uses the official GitHub URL from \texttt{data/dataset\_freeze\_all.csv} as its \texttt{origin}. The layout
+has also been validated against \texttt{data/versions\_all.csv}: all 80 frozen tags resolve to the frozen
+commit hashes in the centralized repository folder. The validation record is stored in
+\texttt{logs/canonical\_repos\_validation.log}.
 
 \subsection{Execution protocol}
 \label{sec:repro_execution}
 
-The pipeline is deterministic given frozen \texttt{versions.csv} and \texttt{windows.csv}. The execution order is:
+The pipeline is deterministic given the frozen version and window files. A full rerun follows this order:
 \begin{enumerate}[leftmargin=*]
-  \item \texttt{python scripts/extract\_window\_metrics.py}
-  \item \texttt{python scripts/compute\_loc\_per\_tag.py}
-  \item \texttt{python scripts/clean\_round1\_metrics.py --windows data/windows.csv}
-  \item \texttt{python scripts/recompute\_ownership\_from\_clean.py}\\
-  \texttt{--in out/metrics\_window\_dev\_clean.csv --outdir out --windows data/windows.csv}
-  \item \texttt{python scripts/compute\_duration\_normalized\_metrics.py}
-  \item \texttt{python scripts/compute\_bot\_sensitivity\_outputs.py}
+  \item freeze repository metadata in \path{data/dataset_freeze_all.csv};
+  \item freeze stable tags and commit hashes in \path{data/versions_all.csv};
+  \item build consecutive tag-to-tag windows in \path{data/windows_all.csv};
+  \item run \texttt{scripts/extract\_window\_metrics.py} to generate developer-window and window-total rows;
+  \item run \texttt{scripts/clean\_round1\_metrics.py} to canonicalize developer rows and recompute clean totals;
+  \item run \texttt{scripts/compute\_loc\_per\_tag\_multilang.py} for M1 snapshot-size evidence;
+  \item run \texttt{scripts/recompute\_ownership\_from\_clean.py} for M4 concentration evidence;
+  \item run \texttt{scripts/compute\_bot\_sensitivity\_outputs.py} to export human-only and bot-sensitivity tables;
+  \item run \texttt{scripts/compute\_duration\_normalized\_metrics.py} for per-day, per-KLOC-day, and short-window flags;
+  \item verify row counts and validation logs before using the outputs in Phase II.
 \end{enumerate}
 
 \subsection{Lineage checkpoints}
@@ -27,30 +38,37 @@ The pipeline is deterministic given frozen \texttt{versions.csv} and \texttt{win
 
 \begin{table}[H]
 \centering
-\footnotesize
-\renewcommand{\arraystretch}{1.15}
-\begin{tabularx}{\textwidth}{Xrr}
+\scriptsize
+\renewcommand{\arraystretch}{1.06}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.47\textwidth}rX}
 \toprule
 \textbf{Artifact} & \textbf{Rows} & \textbf{Role} \\
 \midrule
-\path{data/versions.csv} & 32 & Frozen tags and commit hashes (4 projects $\times$ 8 tags). \\
-\path{data/windows.csv} & 28 & Consecutive windows (4 projects $\times$ 7 windows). \\
-\path{out/metrics_window_dev.csv} & 273 & Canonical developer-window extraction from Git history. \\
-\path{out/metrics_window_dev_clean.csv} & 273 & Validated developer-window dataset after cleaning checks. \\
-\path{out/metrics_window_totals_clean.csv} & 28 & Window totals from clean developer rows. \\
-\path{out/loc_per_tag.csv} & 32 & M1 snapshot-size values per frozen tag. \\
-\path{out/ownership_summary_clean.csv} & 28 & All-account concentration statistics (top shares and Gini) from clean data. \\
-\path{out/metrics_window_totals_normalized.csv} & 28 & Duration-normalized aggregate metrics and per-KLOC-day derived fields. \\
-\path{out/metrics_window_dev_normalized.csv} & 273 & Duration-normalized developer-window metrics. \\
-\path{out/window_duration_flags.csv} & 28 & Short-window flags and primary/sensitivity analysis labels. \\
-\path{out/metrics_window_dev_human.csv} & 255 & Human-only developer-window dataset for M3/M4 primary analysis. \\
-\path{out/metrics_window_totals_human.csv} & 28 & Human-only window totals derived from clean developer rows. \\
-\path{out/ownership_summary_human.csv} & 28 & Human-only ownership/concentration statistics for M4. \\
-\path{out/bot_summary_by_project.csv} & 4 & Project-level automation contribution and sensitivity summary. \\
-\path{out/bot_summary_by_window.csv} & 28 & Window-level automation contribution and top-contributor flags. \\
+\path{data/dataset_freeze_all.csv} & 10 & Repository metadata and cohort membership. \\
+\path{data/version_tag_rules_all.csv} & 10 & Stable-tag selection rules for all repositories. \\
+\path{data/loc_language_policy_all.csv} & 10 & Source-extension policy for M1 LOC/SLOC counting. \\
+\path{data/versions_all.csv} & 80 & Frozen tags and commit hashes (10 projects $\times$ 8 tags). \\
+\path{data/windows_all.csv} & 70 & Consecutive windows (10 projects $\times$ 7 windows). \\
+\path{out/metrics_window_dev_clean_all.csv} & 1118 & Validated all-account developer-window dataset. \\
+\path{out/metrics_window_totals_clean_all.csv} & 70 & All-account window totals from clean developer rows. \\
+\path{out/metrics_window_dev_human_all.csv} & 1063 & Human-only developer-window dataset for primary M3/M4 analysis. \\
+\path{out/metrics_window_totals_human_all.csv} & 70 & Human-only window totals. \\
+\path{out/loc_per_tag_all.csv} & 80 & M1 snapshot-size values per frozen tag. \\
+\path{out/ownership_dev_shares_human_all.csv} & 1063 & Human-only ownership shares. \\
+\path{out/ownership_summary_human_all.csv} & 70 & Human-only concentration statistics for M4. \\
+\path{out/metrics_window_totals_human_normalized_all.csv} & 70 & Human-only duration-normalized aggregate metrics. \\
+\path{out/metrics_window_dev_human_normalized_all.csv} & 1063 & Human-only duration-normalized developer metrics. \\
+\path{out/window_duration_flags_all.csv} & 70 & Short-window flags and primary/sensitivity labels. \\
+\path{out/bot_summary_by_project_all.csv} & 10 & Project-level automation contribution summary. \\
+\path{out/bot_summary_by_window_all.csv} & 70 & Window-level automation contribution and top-contributor flags. \\
+\path{out/bot_identity_summary_all.csv} & 6 & Automation identity summary. \\
+\path{logs/canonical_repos_validation.log} & 1 & Canonical repository-layout validation log. \\
+\path{logs/loc_full_recompute_20260508.log} & 1 & Full M1 LOC recomputation audit log; recomputed rows matched \path{out/loc_per_tag_all.csv} exactly. \\
+\path{logs/pilot_cleanup_20260505.log} & 1 & Cleanup record for pilot-only files removed after consolidation. \\
+\path{logs/centralized_cleanup_20260508.log} & 1 & Cleanup and verification record for extended-only and scoped duplicate files removed after consolidation. \\
 \bottomrule
 \end{tabularx}
-\caption{Initial Cohort data lineage checkpoints used for reproducibility and auditing.}
+\caption{Centralized Phase I data lineage checkpoints used for reproducibility and auditing.}
 \label{tab:lineage_checkpoints}
 \end{table}
 
@@ -62,16 +80,14 @@ Validation evidence is recorded in log files and confirms that:
   \item duplicate-key groups merged in cleaning: 0;
   \item windows with zero total churn: 0;
   \item windows with zero total commits: 0;
-  \item windows failing share-sum validations (churn or commits): 0;
+  \item windows failing share-sum validations: 0;
   \item windows failing unique-author consistency checks: 0;
-  \item windows shorter than seven days and flagged as \texttt{sensitivity\_only}: 4;
   \item all-account total mismatches found during bot-sensitivity validation: 0;
-  \item bot rows retained for audit: 18; human-only rows exported for primary M3/M4 analysis: 255.
+  \item windows shorter than seven days and flagged as \texttt{sensitivity\_only}: 22;
+  \item bot rows retained for audit: 55; human-only rows exported for primary M3/M4 analysis: 1063.
+  \item canonical repository-layout validation: 10 repositories checked, 80 frozen tag rows checked, 0 missing or mismatched commits, and 0 missing or mismatched tags.
+  \item pilot-only cleanup: 32 superseded pilot CSV/log files removed after their evidence was consolidated into the centralized \texttt{\_all} layer.
+  \item extended/scoped cleanup: 42 superseded extended CSV/log files and 8 duplicate scoped output folders removed after verification against the centralized \texttt{\_all} layer.
 \end{itemize}
 
-These checks establish that downstream Phase II comparative analysis will operate on a coherent and fully auditable dataset.
-
-
-
-
-
+These checks establish that downstream Phase II analysis will operate on a coherent and fully auditable dataset.

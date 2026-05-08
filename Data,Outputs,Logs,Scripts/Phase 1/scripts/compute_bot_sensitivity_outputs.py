@@ -151,18 +151,23 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
         "--dev-clean",
-        default="out/metrics_window_dev_clean.csv",
+        default="out/metrics_window_dev_clean_all.csv",
         type=Path,
     )
     parser.add_argument(
         "--totals-clean",
-        default="out/metrics_window_totals_clean.csv",
+        default="out/metrics_window_totals_clean_all.csv",
         type=Path,
     )
-    parser.add_argument("--windows", default="data/windows.csv", type=Path)
-    parser.add_argument("--loc", default="out/loc_per_tag.csv", type=Path)
+    parser.add_argument("--windows", default="data/windows_all.csv", type=Path)
+    parser.add_argument("--loc", default="out/loc_per_tag_all.csv", type=Path)
     parser.add_argument("--outdir", default="out", type=Path)
-    parser.add_argument("--log", default="logs/bot_sensitivity.log", type=Path)
+    parser.add_argument("--log", default="logs/bot_sensitivity_all.log", type=Path)
+    parser.add_argument(
+        "--output-suffix",
+        default="_all",
+        help="Suffix inserted before .csv for generated output files.",
+    )
     return parser.parse_args()
 
 
@@ -184,6 +189,10 @@ def write_csv(path: Path, fieldnames: list[str], rows: list[dict]) -> None:
         writer = csv.DictWriter(fh, fieldnames=fieldnames, extrasaction="ignore")
         writer.writeheader()
         writer.writerows(rows)
+
+
+def output_name(stem: str, suffix: str) -> str:
+    return f"{stem}{suffix}.csv"
 
 
 def to_int(value: str | int | None) -> int:
@@ -593,18 +602,27 @@ def main() -> int:
     bot_project_summary = build_project_summaries(bot_window_summary)
     bot_identity_summary = build_identity_summary(bot_rows)
 
-    write_csv(outdir / "metrics_window_dev_human.csv", DEV_HUMAN_FIELDS, human_dev_out)
-    write_csv(outdir / "metrics_window_totals_human.csv", TOTAL_HUMAN_FIELDS, human_totals)
+    dev_human_out = outdir / output_name("metrics_window_dev_human", args.output_suffix)
+    totals_human_out = outdir / output_name("metrics_window_totals_human", args.output_suffix)
+    normalized_human_out = outdir / output_name("metrics_window_totals_human_normalized", args.output_suffix)
+    ownership_dev_out = outdir / output_name("ownership_dev_shares_human", args.output_suffix)
+    ownership_summary_out = outdir / output_name("ownership_summary_human", args.output_suffix)
+    bot_project_out = outdir / output_name("bot_summary_by_project", args.output_suffix)
+    bot_window_out = outdir / output_name("bot_summary_by_window", args.output_suffix)
+    bot_identity_out = outdir / output_name("bot_identity_summary", args.output_suffix)
+
+    write_csv(dev_human_out, DEV_HUMAN_FIELDS, human_dev_out)
+    write_csv(totals_human_out, TOTAL_HUMAN_FIELDS, human_totals)
     write_csv(
-        outdir / "metrics_window_totals_human_normalized.csv",
+        normalized_human_out,
         NORMALIZED_HUMAN_FIELDS,
         human_normalized,
     )
-    write_csv(outdir / "ownership_dev_shares_human.csv", OWNERSHIP_DEV_FIELDS, ownership_dev)
-    write_csv(outdir / "ownership_summary_human.csv", OWNERSHIP_SUMMARY_FIELDS, ownership_summary)
-    write_csv(outdir / "bot_summary_by_project.csv", BOT_PROJECT_FIELDS, bot_project_summary)
-    write_csv(outdir / "bot_summary_by_window.csv", BOT_WINDOW_FIELDS, bot_window_summary)
-    write_csv(outdir / "bot_identity_summary.csv", BOT_IDENTITY_FIELDS, bot_identity_summary)
+    write_csv(ownership_dev_out, OWNERSHIP_DEV_FIELDS, ownership_dev)
+    write_csv(ownership_summary_out, OWNERSHIP_SUMMARY_FIELDS, ownership_summary)
+    write_csv(bot_project_out, BOT_PROJECT_FIELDS, bot_project_summary)
+    write_csv(bot_window_out, BOT_WINDOW_FIELDS, bot_window_summary)
+    write_csv(bot_identity_out, BOT_IDENTITY_FIELDS, bot_identity_summary)
 
     validation_mismatches = validate_totals(grouped, totals_clean)
     total_commits_all = sum(to_int(row.get("commits")) for row in dev_rows)
@@ -634,17 +652,17 @@ def main() -> int:
         fh.write(f"[{now}] primary_population_for_m3_m4=human_only\n")
         fh.write(f"[{now}] all_account_outputs_retained_for_audit_and_sensitivity=True\n")
 
-    print(f"Wrote {len(human_dev_out)} rows to {outdir / 'metrics_window_dev_human.csv'}")
-    print(f"Wrote {len(human_totals)} rows to {outdir / 'metrics_window_totals_human.csv'}")
+    print(f"Wrote {len(human_dev_out)} rows to {dev_human_out}")
+    print(f"Wrote {len(human_totals)} rows to {totals_human_out}")
     print(
         f"Wrote {len(human_normalized)} rows to "
-        f"{outdir / 'metrics_window_totals_human_normalized.csv'}"
+        f"{normalized_human_out}"
     )
-    print(f"Wrote {len(ownership_dev)} rows to {outdir / 'ownership_dev_shares_human.csv'}")
-    print(f"Wrote {len(ownership_summary)} rows to {outdir / 'ownership_summary_human.csv'}")
-    print(f"Wrote {len(bot_project_summary)} rows to {outdir / 'bot_summary_by_project.csv'}")
-    print(f"Wrote {len(bot_window_summary)} rows to {outdir / 'bot_summary_by_window.csv'}")
-    print(f"Wrote {len(bot_identity_summary)} rows to {outdir / 'bot_identity_summary.csv'}")
+    print(f"Wrote {len(ownership_dev)} rows to {ownership_dev_out}")
+    print(f"Wrote {len(ownership_summary)} rows to {ownership_summary_out}")
+    print(f"Wrote {len(bot_project_summary)} rows to {bot_project_out}")
+    print(f"Wrote {len(bot_window_summary)} rows to {bot_window_out}")
+    print(f"Wrote {len(bot_identity_summary)} rows to {bot_identity_out}")
     print(f"Log written to {log_path}")
     return 0
 

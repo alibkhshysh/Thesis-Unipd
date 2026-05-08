@@ -65,20 +65,20 @@ UNKNOWN_NAME_VALUES = {
 }
 
 BOT_PATTERN = re.compile(
-    r"(\[bot\]|dependabot|github-actions|pre-commit-ci|renovate|codecov|snyk|readthedocs)",
+    r"(\[bot\]|brewtestbot|dependabot|github-actions|pre-commit-ci|renovate|codecov|snyk|readthedocs)",
     re.IGNORECASE,
 )
 
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--windows", default="data/windows.csv", type=Path)
+    parser.add_argument("--windows", default="data/windows_all.csv", type=Path)
     parser.add_argument("--repos-dir", default="repos", type=Path)
-    parser.add_argument("--out-dev", default="out/metrics_window_dev.csv", type=Path)
+    parser.add_argument("--out-dev", default="out/metrics_window_dev_all.csv", type=Path)
     parser.add_argument(
-        "--out-totals", default="out/metrics_window_totals.csv", type=Path
+        "--out-totals", default="out/metrics_window_totals_all.csv", type=Path
     )
-    parser.add_argument("--error-log", default="logs/errors.log", type=Path)
+    parser.add_argument("--error-log", default="logs/errors_all_metrics.log", type=Path)
     return parser.parse_args()
 
 

@@ -1,19 +1,20 @@
 \section{Planned Next Phase: Comparative Metric Evaluation}
 \label{sec:phase2_plan}
 
-Phase II will perform comparative analysis across all candidate metrics using the criteria defined in
-Section~\ref{sec:methodology_criteria}, including stability and ranking consistency across consecutive windows.
-Only after this comparative evaluation will we apply the smart-contract feasibility rubric and select a single metric
-for the baseline PoC implementation.
+Phase II will compare the candidate metrics using the criteria defined in
+Section~\ref{sec:methodology_criteria}. The centralized Phase I artifacts are now the evidence base,
+so the next phase can focus on metric behavior rather than additional dataset construction.
+Only after this comparative evaluation will the smart-contract feasibility rubric be applied and one
+metric selected for the baseline proof-of-concept implementation.
 
 \subsection{Phase II execution plan}
 \label{sec:phase2_execution}
 
 \begin{enumerate}[leftmargin=*]
-  \item Compute criterion evidence (C1--C4) for all candidates using the clean, human-only, bot-sensitivity, and duration-normalized Initial Cohort outputs.
-  \item Report full-dataset and robust results using the generated short-window sensitivity flags where needed.
-  \item Add the Extended Cohort repositories and rerun the full extraction/cleaning pipeline for external-validity support.
-  \item Score feasibility dimensions for each candidate using the predefined rubric.
+  \item Compute criterion evidence (C1--C4) for all candidates using the clean, human-only, bot-sensitivity, and duration-normalized \texttt{\_all} outputs.
+  \item Report both full-dataset results and robust results that exclude windows marked \texttt{sensitivity\_only} where duration-sensitive metrics are evaluated.
+  \item Compare metric behavior across projects, ecosystems, and release-window lengths without selecting a PoC metric prematurely.
+  \item Score smart-contract feasibility dimensions for each candidate using the predefined rubric.
   \item Select exactly one PoC metric using the decision protocol in Section~\ref{sec:decision_protocol}.
   \item Instantiate the selected metric inside the DESTINO-aligned metric-record blueprint in Section~\ref{sec:detailed_design_blueprint}.
 \end{enumerate}
@@ -23,14 +24,11 @@ for the baseline PoC implementation.
 
 The PoC metric will be selected only if it simultaneously satisfies:
 \begin{itemize}[leftmargin=*]
-  \item no feasibility exclusion criterion triggered (Section~\ref{sec:feasibility_rubric_full});
+  \item no feasibility exclusion criterion triggered under Section~\ref{sec:feasibility_rubric_full};
   \item acceptable comparative behavior under C1--C4 relative to alternatives;
-  \item reproducible extraction with no unresolved data-integrity issues.
+  \item stable interpretation under bot-sensitivity and short-window robustness checks;
+  \item reproducible extraction with no unresolved data-integrity issue.
 \end{itemize}
 
-This gate prevents premature implementation based on a single attractive but methodologically weak indicator.
-
-
-
-
-
+This gate keeps implementation tied to the evidence, instead of choosing a metric because it is easy to compute
+or attractive in one project only.

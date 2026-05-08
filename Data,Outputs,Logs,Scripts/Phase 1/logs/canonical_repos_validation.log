@@ -1,0 +1,17 @@
+[2026-05-05T19:57:26Z] canonical_repo_root=Data,Outputs,Logs,Scripts\Phase 1\repos
+[2026-05-05T19:57:26Z] repo_ok project=brew origin=https://github.com/Homebrew/brew head=c4e48fdd080d9f892c614233c7d8166f5bb3a01e tag_count=501
+[2026-05-05T19:57:26Z] repo_ok project=click origin=https://github.com/pallets/click head=cdab890e57a30a9f437b88ce9652f7bfce980c1f tag_count=65
+[2026-05-05T19:57:26Z] repo_ok project=curl origin=https://github.com/curl/curl head=47755c4e69710552f5951190980114ccf3a42707 tag_count=231
+[2026-05-05T19:57:26Z] repo_ok project=flask origin=https://github.com/pallets/flask head=c34d6e81fd8e405e6d4178bf24b364918811ef17 tag_count=69
+[2026-05-05T19:57:26Z] repo_ok project=gin origin=https://github.com/gin-gonic/gin head=d3ffc9985281dcf4d3bef604cce4e662b1a327a6 tag_count=38
+[2026-05-05T19:57:26Z] repo_ok project=junit5 origin=https://github.com/junit-team/junit5 head=25030af410befc589382d5db792c74974af274b6 tag_count=112
+[2026-05-05T19:57:26Z] repo_ok project=prettier origin=https://github.com/prettier/prettier head=2c713de00fc2265aaf34047108326f42bbca1a94 tag_count=180
+[2026-05-05T19:57:26Z] repo_ok project=requests origin=https://github.com/psf/requests head=4bd79e397304d46dfccd76f36c07f66c0295ff82 tag_count=156
+[2026-05-05T19:57:26Z] repo_ok project=tokio origin=https://github.com/tokio-rs/tokio head=50c23d300aef05e55b07b069a0455d5cab489cdd tag_count=383
+[2026-05-05T19:57:26Z] repo_ok project=urllib3 origin=https://github.com/urllib3/urllib3 head=6568c5950208a5493a815e831edc5f675c0f1d21 tag_count=107
+[2026-05-05T19:57:26Z] projects_checked=10
+[2026-05-05T19:57:26Z] frozen_version_rows_checked=80
+[2026-05-05T19:57:26Z] repo_errors=0
+[2026-05-05T19:57:26Z] missing_or_mismatched_commits=0
+[2026-05-05T19:57:26Z] missing_or_mismatched_tags=0
+[2026-05-05T19:57:26Z] validation_passed=True

@@ -1,0 +1,7 @@
+author_email,author_name,developer_window_rows,project_count,window_count,total_commits,total_churn,projects,windows
+114827586+autofix-ci[bot]@users.noreply.github.com,autofix-ci[bot],1,1,1,1,2,prettier,prettier_W04
+117423508+pre-commit-ci-lite[bot]@users.noreply.github.com,pre-commit-ci-lite[bot],4,1,4,6,11,click,click_W03;click_W05;click_W06;click_W07
+1589480+brewtestbot@users.noreply.github.com,BrewTestBot,5,1,5,47,3357,brew,brew_W01;brew_W03;brew_W05;brew_W06;brew_W07
+29139614+renovate[bot]@users.noreply.github.com,renovate[bot],16,3,16,672,2862,curl;junit5;prettier,curl_W02;curl_W03;curl_W04;curl_W05;curl_W06;curl_W07;junit5_W01;junit5_W02;junit5_W03;junit5_W04;junit5_W05;junit5_W06;junit5_W07;prettier_W01;prettier_W03;prettier_W04
+49699333+dependabot[bot]@users.noreply.github.com,dependabot[bot],25,8,25,259,3004,brew;click;curl;flask;gin;requests;tokio;urllib3,brew_W01;brew_W03;brew_W05;brew_W06;brew_W07;click_W03;curl_W04;curl_W05;curl_W06;curl_W07;flask_W04;gin_W02;gin_W03;gin_W04;gin_W06;gin_W07;requests_W02;requests_W06;requests_W07;tokio_W07;urllib3_W01;urllib3_W02;urllib3_W03;urllib3_W04;urllib3_W07
+66853113+pre-commit-ci[bot]@users.noreply.github.com,pre-commit-ci[bot],4,2,4,14,58,click;flask,click_W01;click_W02;click_W03;flask_W04

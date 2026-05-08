@@ -1,0 +1,4 @@
+threshold,window_count,windows
+<1 day,9,requests_W03;requests_W04;brew_W02;junit5_W02;junit5_W04;junit5_W06;prettier_W02;tokio_W01;tokio_W04
+<7 days,22,requests_W03;requests_W04;urllib3_W05;urllib3_W06;brew_W02;brew_W03;brew_W04;brew_W05;brew_W06;junit5_W02;junit5_W04;junit5_W06;prettier_W01;prettier_W02;prettier_W03;prettier_W05;prettier_W07;tokio_W01;tokio_W04;tokio_W05;tokio_W06;tokio_W07
+<14 days,27,click_W04;requests_W03;requests_W04;requests_W05;urllib3_W05;urllib3_W06;brew_W01;brew_W02;brew_W03;brew_W04;brew_W05;brew_W06;brew_W07;curl_W01;junit5_W02;junit5_W04;junit5_W06;prettier_W01;prettier_W02;prettier_W03;prettier_W05;prettier_W07;tokio_W01;tokio_W04;tokio_W05;tokio_W06;tokio_W07

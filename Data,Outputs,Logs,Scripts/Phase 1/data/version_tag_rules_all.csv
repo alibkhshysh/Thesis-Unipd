@@ -1,0 +1,11 @@
+project_id,stable_tag_pattern,selection_rule,notes
+brew,^\d+\.\d+\.\d+$,latest 8 stable tags by Git tag creation date,Homebrew stable release tags use plain semantic versions
+click,^\d+\.\d+\.\d+$,latest 8 stable tags by Git tag creation date,Click stable release tags use plain semantic versions
+curl,^curl-\d+_\d+_\d+$,latest 8 stable tags by Git tag creation date,curl stable release tags use curl-prefixed underscore versions; rc and tiny-curl tags excluded
+flask,^\d+\.\d+\.\d+$,latest 8 stable tags by Git tag creation date,Flask stable release tags use plain semantic versions
+gin,^v\d+\.\d+\.\d+$,latest 8 stable tags by Git tag creation date,Gin stable release tags use v-prefixed semantic versions
+junit5,^r\d+\.\d+\.\d+$,latest 8 stable tags by Git tag creation date,JUnit stable release tags use r-prefixed semantic versions; milestone and release-candidate tags excluded
+prettier,^\d+\.\d+\.\d+$,latest 8 stable tags by Git tag creation date,Prettier stable release tags use plain semantic versions; alpha tags and non-version tags excluded
+requests,^v\d+\.\d+\.\d+$,latest 8 stable tags by Git tag creation date,Requests stable release tags use v-prefixed semantic versions
+tokio,^tokio-\d+\.\d+\.\d+$,latest 8 stable tags by Git tag creation date,Tokio repository has crate-specific tags; only main tokio runtime release tags included
+urllib3,^\d+\.\d+\.\d+$,latest 8 stable tags by Git tag creation date,urllib3 stable release tags use plain semantic versions

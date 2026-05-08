@@ -54,7 +54,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--in",
         dest="in_clean",
-        default="out/metrics_window_dev_clean.csv",
+        default="out/metrics_window_dev_clean_all.csv",
         type=Path,
         help="Path to cleaned developer-window metrics CSV.",
     )
@@ -66,15 +66,20 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--windows",
-        default="data/windows.csv",
+        default="data/windows_all.csv",
         type=Path,
         help="Optional windows CSV for from_tag/to_tag lookup when missing in input.",
     )
     parser.add_argument(
         "--log",
-        default="logs/ownership_recompute.log",
+        default="logs/ownership_recompute_all.log",
         type=Path,
         help="Path to recompute log file.",
+    )
+    parser.add_argument(
+        "--output-suffix",
+        default="_all",
+        help="Suffix inserted before .csv for generated output files.",
     )
     parser.add_argument(
         "--tol",
@@ -91,6 +96,10 @@ def normalize(path: Path, base: Path) -> Path:
 
 def ensure_parent(path: Path) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
+
+
+def output_name(stem: str, suffix: str) -> str:
+    return f"{stem}{suffix}.csv"
 
 
 def to_int(value: str | int | None) -> int:
@@ -207,8 +216,8 @@ def main() -> int:
 
     in_clean = resolve_clean_input(args.in_clean, base)
     outdir = normalize(args.outdir, base)
-    out_dev = outdir / "ownership_dev_shares_clean.csv"
-    out_summary = outdir / "ownership_summary_clean.csv"
+    out_dev = outdir / output_name("ownership_dev_shares_clean", args.output_suffix)
+    out_summary = outdir / output_name("ownership_summary_clean", args.output_suffix)
     log_path = normalize(args.log, base)
     windows_path = resolve_windows(args.windows, base)
 

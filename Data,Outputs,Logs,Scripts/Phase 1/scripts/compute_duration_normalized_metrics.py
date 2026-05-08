@@ -82,23 +82,34 @@ SUMMARY_OUT_FIELDS = [
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--windows", default="data/windows.csv", type=Path)
+    parser.add_argument("--windows", default="data/windows_all.csv", type=Path)
     parser.add_argument(
         "--totals-clean",
-        default="out/metrics_window_totals_clean.csv",
+        default="out/metrics_window_totals_clean_all.csv",
         type=Path,
     )
     parser.add_argument(
         "--dev-clean",
-        default="out/metrics_window_dev_clean.csv",
+        default="out/metrics_window_dev_clean_all.csv",
         type=Path,
     )
-    parser.add_argument("--loc", default="out/loc_per_tag.csv", type=Path)
+    parser.add_argument("--loc", default="out/loc_per_tag_all.csv", type=Path)
     parser.add_argument("--outdir", default="out", type=Path)
     parser.add_argument(
         "--log",
-        default="logs/duration_normalization.log",
+        default="logs/duration_normalization_all.log",
         type=Path,
+    )
+    parser.add_argument(
+        "--output-suffix",
+        default="_all",
+        help="Suffix inserted before .csv for generated output files.",
+    )
+    parser.add_argument(
+        "--analysis-scope",
+        choices=("all", "human"),
+        default="all",
+        help="Controls centralized output names for all-account or human-only normalized files.",
     )
     return parser.parse_args()
 
@@ -121,6 +132,19 @@ def write_csv(path: Path, fieldnames: list[str], rows: list[dict]) -> None:
         writer = csv.DictWriter(fh, fieldnames=fieldnames, extrasaction="ignore")
         writer.writeheader()
         writer.writerows(rows)
+
+
+def output_name(stem: str, suffix: str, analysis_scope: str) -> str:
+    if analysis_scope == "human":
+        if stem == "metrics_window_dev_normalized":
+            return f"metrics_window_dev_human_normalized{suffix}.csv"
+        if stem == "metrics_window_totals_normalized":
+            return f"metrics_window_totals_human_normalized{suffix}.csv"
+        if stem == "window_duration_flags":
+            return f"window_duration_flags_human{suffix}.csv"
+        if stem == "window_duration_sensitivity_summary":
+            return f"window_duration_sensitivity_summary_human{suffix}.csv"
+    return f"{stem}{suffix}.csv"
 
 
 def to_float(value: str | int | float | None) -> float:
@@ -292,19 +316,36 @@ def main() -> int:
     dev_normalized = normalize_dev_rows(read_csv(dev_path), windows_by_id)
     summary_rows = build_threshold_summary(window_rows)
 
-    write_csv(outdir / "window_duration_flags.csv", WINDOW_OUT_FIELDS, strip_internal(window_rows))
+    window_out = outdir / output_name("window_duration_flags", args.output_suffix, args.analysis_scope)
+    totals_out = outdir / output_name(
+        "metrics_window_totals_normalized",
+        args.output_suffix,
+        args.analysis_scope,
+    )
+    dev_out = outdir / output_name(
+        "metrics_window_dev_normalized",
+        args.output_suffix,
+        args.analysis_scope,
+    )
+    summary_out = outdir / output_name(
+        "window_duration_sensitivity_summary",
+        args.output_suffix,
+        args.analysis_scope,
+    )
+
+    write_csv(window_out, WINDOW_OUT_FIELDS, strip_internal(window_rows))
     write_csv(
-        outdir / "metrics_window_totals_normalized.csv",
+        totals_out,
         TOTAL_OUT_FIELDS,
         totals_normalized,
     )
     write_csv(
-        outdir / "metrics_window_dev_normalized.csv",
+        dev_out,
         DEV_OUT_FIELDS,
         dev_normalized,
     )
     write_csv(
-        outdir / "window_duration_sensitivity_summary.csv",
+        summary_out,
         SUMMARY_OUT_FIELDS,
         summary_rows,
     )
@@ -321,10 +362,10 @@ def main() -> int:
             )
         fh.write(f"[{now}] robust_primary_rule=exclude windows with duration_days < 7\n")
 
-    print(f"Wrote {len(window_rows)} rows to {outdir / 'window_duration_flags.csv'}")
-    print(f"Wrote {len(totals_normalized)} rows to {outdir / 'metrics_window_totals_normalized.csv'}")
-    print(f"Wrote {len(dev_normalized)} rows to {outdir / 'metrics_window_dev_normalized.csv'}")
-    print(f"Wrote {len(summary_rows)} rows to {outdir / 'window_duration_sensitivity_summary.csv'}")
+    print(f"Wrote {len(window_rows)} rows to {window_out}")
+    print(f"Wrote {len(totals_normalized)} rows to {totals_out}")
+    print(f"Wrote {len(dev_normalized)} rows to {dev_out}")
+    print(f"Wrote {len(summary_rows)} rows to {summary_out}")
     print(f"Log written to {log_path}")
     return 0
 

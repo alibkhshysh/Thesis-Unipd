@@ -18,11 +18,11 @@
 \setcounter{secnumdepth}{3}
 \hypersetup{
   hidelinks,
-  pdftitle={Master Thesis Technical Report - Phase I: Dataset Curation and Pipeline Validation},
+  pdftitle={Master Thesis Technical Report - Phase I: Centralized Dataset Curation and Pipeline Validation},
   pdfauthor={Ali Bakhshayesh}
 }
 
-\title{Master Thesis Technical Report: Phase I --- Dataset Curation and Pipeline Validation}
+\title{Master Thesis Technical Report: Phase I --- Centralized Dataset Curation and Pipeline Validation}
 \author{Ali Bakhshayesh}
 \date{\today}
 
@@ -30,13 +30,15 @@
 \maketitle
 
 \begin{abstract}
-This report consolidates thesis work completed in Phase I (Initial Cohort), focused on
-building and validating the extraction pipeline for developer-reputation candidate metrics
-under defined evidence and reproducibility constraints. The document reports repository and version-window curation,
-pipeline outputs, and post-extraction data cleaning outcomes. The comparative evaluation
-phase (Phase II) is intentionally deferred, and no proof-of-concept (PoC) metric is selected
-at this stage. PoC metric selection is explicitly performed after Phase II comparative
-evaluation using the feasibility rubric.
+This report consolidates Phase I of the thesis: the construction of a centralized,
+reproducible dataset and extraction pipeline for developer-reputation candidate metrics.
+The final Phase I dataset contains ten open-source repositories, each frozen at eight
+stable release tags and seven consecutive release windows. The report documents repository
+and version-window curation, metric extraction for M1--M4, cleaning and validation,
+bot-sensitivity handling, and duration-normalized outputs for uneven release windows.
+The comparative evaluation phase (Phase II) is intentionally deferred. No proof-of-concept
+(PoC) metric is selected in this report; that decision is made only after comparative
+analysis and feasibility scoring.
 \end{abstract}
 
 \newpage

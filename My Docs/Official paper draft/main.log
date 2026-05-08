@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.2.7)  3 MAY 2026 00:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.2.7)  8 MAY 2026 22:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -809,9 +809,9 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 {C:/Users/alibk/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/alib
 k/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 14.4pt on input line 43.
+(Font)              scaled to size 14.4pt on input line 45.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 14.4pt on input line 43.
+(Font)              scaled to size 14.4pt on input line 45.
 
 (main.toc
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
@@ -870,13 +870,13 @@ LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
 
  [3] (main.lot
 LaTeX Font Info:    Trying to load font information for T1+ntxtt on input line 
-9.
+14.
 
 (C:\Users\alibk\AppData\Local\Programs\MiKTeX\tex/latex/newtx\t1ntxtt.fd
 File: t1ntxtt.fd 2012/04/20 v3.1
 )
 LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
-(Font)              scaled to size 10.95pt on input line 9.
+(Font)              scaled to size 10.95pt on input line 14.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `ntxtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
@@ -890,7 +890,12 @@ Package microtype Info: Loading generic protrusion settings for font family
 \tf@lof=\write6
 \openout6 = `main.lof'.
 
- [5] (sections/abbreviations.tex) (sections/intro_scope.tex
+ [5] (sections/abbreviations.tex
+Underfull \hbox (badness 10000) in paragraph at lines 24--24
+[]|\T1/ntxtlf/m/n/10.95 (+20) Centralized
+ []
+
+) (sections/intro_scope.tex
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 (Font)              scaled to size 12.0pt on input line 9.
 LaTeX Font Info:    Trying to load font information for TS1+ntxtlf on input lin
@@ -953,103 +958,110 @@ h\T1/ntxtlf/m/n/9 (+20) ,
  []
 
 [14]) (sections/month2_round1_dataset.tex
-Underfull \hbox (badness 3568) in paragraph at lines 25--25
-[]|\T1/ntxtlf/b/n/9 (+20) Storage per-sis-
+Underfull \hbox (badness 2343) in paragraph at lines 37--37
+[]|\T1/ntxtlf/m/n/8 (+20) package-manager, cli-tool,
  []
 
 
-Underfull \hbox (badness 4229) in paragraph at lines 25--25
-[]|\T1/ntxtlf/m/n/9 (+20) web-framework, li-
+Underfull \hbox (badness 10000) in paragraph at lines 37--37
+[]|\T1/ntxtlf/m/n/8 (+20) network-transfer-tool, cli-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 25--25
-[]|\T1/ntxtlf/m/n/9 (+20) Repository-specific
+Underfull \hbox (badness 10000) in paragraph at lines 37--37
+[]|\T1/ntxtlf/m/n/8 (+20) web-framework, http-
  []
 
 
-Underfull \hbox (badness 1484) in paragraph at lines 25--25
-\T1/ntxtlf/m/n/9 (+20) clone be-hav-ior doc-u-
+Underfull \hbox (badness 10000) in paragraph at lines 37--37
+[]|\T1/ntxtlf/m/n/8 (+20) code-formatter, cli-tool,
+ []
+
+[15]
+
+LaTeX Warning: \verb may be unreliable inside tabularx on input line 106.
+
+
+Overfull \hbox (1.21529pt too wide) in paragraph at lines 106--106
+[]|[]\T1/ntxtt/m/n/8 ^tokio-\d +\.\d +\.\d +$| 
+ []
+
+) (sections/month2_pipeline.tex [16]
+Underfull \hbox (badness 10000) in paragraph at lines 52--52
+[]|\T1/ntxtlf/m/n/8 (+20) Canonicalizes developer-window rows by \T1/ntxtt/m/n/
+8 (project_id, window_id,
  []
 
 
-Underfull \hbox (badness 1796) in paragraph at lines 25--25
-\T1/ntxtlf/m/n/9 (+20) mented in ex-trac-tion
+Underfull \hbox (badness 1715) in paragraph at lines 52--52
+[]|\T1/ntxtlf/m/n/8 (+20) Computes per-day and per-KLOC-day fields and marks sh
+ort win-dows as
  []
 
-[15]) (sections/month2_pipeline.tex [16]
+[17]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 6.1pt on input line 59.
- [17]) (sections/month2_cleaning.tex
-Underfull \hbox (badness 10000) in paragraph at lines 60--60
-[]|\T1/ntxtlf/b/n/10.95 (+20) Observed
+(Font)              scaled to size 6.1pt on input line 67.
+ [18]) (sections/month2_cleaning.tex [19]
+Underfull \hbox (badness 3049) in paragraph at lines 96--96
+[]|\T1/ntxtlf/m/n/9 (+20) Window to-tals com-pute unique au-thors from canon-i-
+cal
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 60--60
-[]|\T1/ntxtlf/m/n/10.95 (+20) Incorrect unique-author
- []
-
-
-Underfull \hbox (badness 4872) in paragraph at lines 60--60
-\T1/ntxtlf/m/n/10.95 (+20) ter re-gen-er-a-
- []
-
-[18]) (sections/month2_round1_summary_tables.tex [19])
-(sections/month2_detailed_results.tex
-Underfull \hbox (badness 10000) in paragraph at lines 48--48
-[]\T1/ntxtlf/m/n/10.95 (+20) Table 18: []M2/M3 human-only project-level in-ten-
-sity de-rived from
- []
-
-[20] [21]) (sections/month2_execution_ledger.tex
-Underfull \hbox (badness 2521) in paragraph at lines 25--25
-[]|\T1/ntxtlf/m/n/8 (+20) Freeze repos-i-tory dataset
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 25--25
+) (sections/month2_round1_summary_tables.tex [20])
+(sections/month2_detailed_results.tex [21] [22] [23])
+(sections/month2_execution_ledger.tex
+Underfull \hbox (badness 10000) in paragraph at lines 29--29
 []|\T1/ntxtlf/m/n/8 (+20) Extract raw developer-
  []
 
 
-Underfull \hbox (badness 2600) in paragraph at lines 25--25
-\T1/ntxtlf/m/n/8 (+20) window met-rics (M2/M3
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 25--25
+Underfull \hbox (badness 10000) in paragraph at lines 29--29
 []|\T1/ntxtlf/m/n/8 (+20) Compute own-er-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 25--25
-\T1/ntxtlf/m/n/8 (+20) ship/concentration (M4)
+Underfull \hbox (badness 3471) in paragraph at lines 29--29
+[]|\T1/ntxtlf/m/n/8 (+20) Separate au-toma-tion and
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 25--25
-[]|\T1/ntxtlf/m/n/8 (+20) Compute duration-
+Underfull \hbox (badness 3815) in paragraph at lines 29--29
+[]|\T1/ntxtlf/m/n/8 (+20) Per-day and per-KLOC-day fields gen-er-ated;
  []
 
-[22]) (sections/reproducibility_protocol.tex [23] [24])
-(sections/threats_to_validity.tex) (sections/month2_conclusion.tex [25])
-(sections/next_steps_month3_plan.tex) (main.bbl [26]) [27] (main.aux)
+
+Underfull \hbox (badness 4217) in paragraph at lines 29--29
+\T1/ntxtlf/m/n/8 (+20) 22 win-dows be-low seven days marked as
+ []
+
+
+Underfull \hbox (badness 1565) in paragraph at lines 29--29
+[]|\T1/ntxtlf/m/n/8 (+20) Remove su-per-seded pilot-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 29--29
+[]|\T1/ntxtlf/m/n/8 (+20) Remove su-per-seded ex-
+ []
+
+[24]) (sections/reproducibility_protocol.tex [25] [26])
+(sections/threats_to_validity.tex [27]) (sections/month2_conclusion.tex)
+(sections/next_steps_month3_plan.tex [28]) (main.bbl [29]) [30] (main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 7BAC241EB4E5C6E23EED2DC77ED8E158;12600.
+(rerunfilecheck)             Checksum: A7902644C2EDAB0E6B99401A435A7A29;12194.
  ) 
 Here is how much of TeX's memory you used:
- 17288 strings out of 467871
- 270067 string characters out of 5418377
- 716794 words of memory out of 5000000
- 45426 multiletter control sequences out of 15000+600000
- 726660 words of font info for 271 fonts, out of 8000000 for 9000
+ 17312 strings out of 467871
+ 270510 string characters out of 5418377
+ 725619 words of memory out of 5000000
+ 45427 multiletter control sequences out of 15000+600000
+ 726810 words of font info for 277 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,12n,79p,1003b,642s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,12n,79p,1003b,643s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/alibk/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/NewTXM
 I.pfb><C:/Users/alibk/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/Ne
 wTXMI7.pfb><C:/Users/alibk/AppData/Local/Programs/MiKTeX/fonts/type1/public/tex
@@ -1061,9 +1073,9 @@ e1/public/newtx/txsys.pfb><C:/Users/alibk/AppData/Local/Programs/MiKTeX/fonts/t
 ype1/public/newtx/ztmb.pfb><C:/Users/alibk/AppData/Local/Programs/MiKTeX/fonts/
 type1/public/newtx/ztmr.pfb><C:/Users/alibk/AppData/Local/Programs/MiKTeX/fonts
 /type1/public/newtx/ztmri.pfb>
-Output written on main.pdf (27 pages, 322578 bytes).
+Output written on main.pdf (30 pages, 336351 bytes).
 PDF statistics:
- 691 PDF objects out of 1000 (max. 8388607)
- 196 named destinations out of 1000 (max. 500000)
+ 724 PDF objects out of 1000 (max. 8388607)
+ 205 named destinations out of 1000 (max. 500000)
  39889 words of extra memory for PDF output out of 42996 (max. 10000000)
 

@@ -1,57 +1,72 @@
-\section{Detailed Descriptive Results for M1--M4 (Initial Cohort)}
+\section{Detailed Descriptive Results for M1--M4}
 \label{sec:phase1_detailed_results}
 
-This section reports detailed descriptive outputs already computed from the clean Phase I Initial Cohort datasets.
-These are not comparative rankings and do not select a PoC metric; they document empirical behavior that will be
-used in Phase II.
+This section reports the descriptive outputs computed from the centralized Phase I dataset.
+The tables are not used to rank metrics or select a proof-of-concept metric. They document
+the empirical base that Phase II will compare under the predefined criteria.
 
-\subsection{M1 Snapshot size evolution (LOC/SLOC)}
+\subsection{M1 Snapshot size evolution}
 \label{sec:results_m1}
 
 \begin{table}[H]
 \centering
-\footnotesize
+\scriptsize
 \renewcommand{\arraystretch}{1.12}
-\begin{tabular}{lrrr|rrr}
+\begin{tabular}{lrrrrrr}
 \toprule
-\textbf{Project} & \textbf{First code} & \textbf{Last code} & \textbf{Delta (\%)} & \textbf{Min} & \textbf{Max} & \textbf{Mean} \\
+\textbf{Project} & \textbf{First code} & \textbf{Last code} & \textbf{Delta} & \textbf{Delta \%} & \textbf{Min} & \textbf{Max} \\
 \midrule
-click    & 13454 & 16504 & +3050 (22.67\%) & 13454 & 16504 & 14691.38 \\
-flask    & 12586 & 12977 & +391 (3.11\%)   & 12586 & 12977 & 12815.75 \\
-requests & 7964  & 8412  & +448 (5.63\%)   & 7964  & 8425  & 8256.75  \\
-urllib3  & 23694 & 25260 & +1566 (6.61\%)  & 23694 & 25260 & 24747.62 \\
+brew     & 213073 & 220989 & 7916  & 3.72  & 213073 & 220989 \\
+click    & 13454  & 16504  & 3050  & 22.67 & 13454  & 16504  \\
+curl     & 224573 & 225738 & 1165  & 0.52  & 219978 & 225738 \\
+flask    & 12586  & 12977  & 391   & 3.11  & 12586  & 12977  \\
+gin      & 13510  & 17974  & 4464  & 33.04 & 13510  & 17974  \\
+junit5   & 132705 & 132689 & -16   & -0.01 & 132615 & 133150 \\
+prettier & 112668 & 113217 & 549   & 0.49  & 112668 & 113217 \\
+requests & 7964   & 8412   & 448   & 5.63  & 7964   & 8425   \\
+tokio    & 86219  & 95257  & 9038  & 10.48 & 86219  & 95385  \\
+urllib3  & 23694  & 25260  & 1566  & 6.61  & 23694  & 25260  \\
 \bottomrule
 \end{tabular}
-\caption{M1 evolution across frozen tags (values from \texttt{out/loc\_per\_tag.csv}; first/last are chronological tag endpoints).}
+\caption{M1 code-line evolution across frozen tags. First and last values follow chronological tag order.}
 \label{tab:m1_detailed}
 \end{table}
 
-M1 indicates moderate-to-strong size growth in all projects during the frozen interval, with click showing the largest relative increase.
+M1 captures source-size change over the frozen release interval. The largest relative growth appears in
+\texttt{gin}, \texttt{click}, and \texttt{tokio}. \texttt{junit5} is effectively stable in total code-line
+size across its selected tags, even though its windows contain substantial churn.
 
-\subsection{M2 Churn and M3 cadence intensity by project}
+\subsection{M2 churn and M3 cadence intensity}
 \label{sec:results_m2_m3}
 
 \begin{table}[H]
 \centering
 \scriptsize
 \renewcommand{\arraystretch}{1.12}
-\begin{tabular}{lrrrrrrr}
+\begin{tabular}{lrrrrrr}
 \toprule
-\textbf{Project} & \textbf{Commits} & \textbf{Churn} & \textbf{Churn/commit} & \textbf{Window days} & \textbf{Commits/day} & \textbf{Churn/day} & \textbf{Mean authors/window} \\
+\textbf{Project} & \textbf{Human commits} & \textbf{Human churn} & \textbf{Churn/commit} & \textbf{Commits/day} & \textbf{Churn/day} & \textbf{Mean authors/window} \\
 \midrule
-click    & 367 & 28901 & 78.75  & 851.03 & 0.431 & 33.96 & 14.29 \\
-flask    & 156 & 12935 & 82.92  & 872.60 & 0.179 & 14.82 & 6.43  \\
-requests & 125 & 3115  & 24.92  & 838.20 & 0.149 & 3.72  & 8.43  \\
-urllib3  & 111 & 12408 & 111.78 & 482.24 & 0.230 & 25.73 & 7.29  \\
+brew     & 311  & 39565   & 127.22 & 8.904  & 1132.80 & 11.29 \\
+click    & 367  & 28901   & 78.75  & 0.431  & 33.96   & 14.29 \\
+curl     & 3229 & 420253  & 130.15 & 9.610  & 1250.74 & 27.57 \\
+flask    & 156  & 12935   & 82.92  & 0.179  & 14.82   & 6.43  \\
+gin      & 295  & 20943   & 70.99  & 0.216  & 15.37   & 25.29 \\
+junit5   & 3386 & 1455032 & 429.72 & 16.268 & 6990.58 & 16.14 \\
+prettier & 76   & 8117    & 106.80 & 0.549  & 58.58   & 2.43  \\
+requests & 125  & 3115    & 24.92  & 0.149  & 3.72    & 8.43  \\
+tokio    & 505  & 55496   & 109.89 & 4.853  & 533.33  & 32.71 \\
+urllib3  & 111  & 12408   & 111.78 & 0.230  & 25.73   & 7.29  \\
 \bottomrule
 \end{tabular}
-\caption[M2/M3 human-only project-level intensity.]{M2/M3 human-only project-level intensity derived from \texttt{out/metrics\_window\_totals\_human.csv} and \texttt{data/windows.csv}.}
+\caption[M2/M3 human-only intensity.]{M2/M3 human-only project-level intensity.}
 \label{tab:m2_m3_intensity}
 \end{table}
 
-These values show that Initial Cohort projects differ substantially in both human change magnitude (M2) and human activity pace (M3).
-All-account totals remain useful as descriptive repository-activity evidence, but M3 developer-behavior analysis uses the human-only population.
-Duration-normalized outputs are therefore generated as explicit Phase I artifacts rather than deferred to later analysis.
+The centralized dataset has a wider activity range than the pilot. \texttt{curl} and \texttt{junit5}
+carry high commit and churn volume, while \texttt{requests}, \texttt{flask}, and \texttt{urllib3}
+provide lower-volume contrast. These differences are useful for Phase II because a candidate metric
+should remain interpretable across both high- and low-activity projects.
 
 \subsection{Bot-sensitivity outputs}
 \label{sec:bot_sensitivity_outputs}
@@ -64,19 +79,26 @@ Duration-normalized outputs are therefore generated as explicit Phase I artifact
 \toprule
 \textbf{Project} & \textbf{Bot rows} & \textbf{Bot commit \%} & \textbf{Bot churn \%} & \textbf{Windows with bots} & \textbf{Bot top-commit windows} \\
 \midrule
-click    & 8 & 13.03 & 0.94 & 6 & 1 \\
-flask    & 2 & 13.33 & 1.70 & 1 & 0 \\
-requests & 3 & 17.76 & 4.94 & 3 & 2 \\
-urllib3  & 5 & 25.00 & 2.19 & 5 & 1 \\
+brew     & 10 & 17.72 & 9.10 & 5 & 0 \\
+click    & 8  & 13.03 & 0.94 & 6 & 1 \\
+curl     & 10 & 3.78  & 0.33 & 6 & 0 \\
+flask    & 2  & 13.33 & 1.70 & 1 & 0 \\
+gin      & 5  & 25.32 & 5.15 & 5 & 5 \\
+junit5   & 7  & 14.10 & 0.12 & 7 & 0 \\
+prettier & 4  & 6.17  & 0.94 & 3 & 0 \\
+requests & 3  & 17.76 & 4.94 & 3 & 2 \\
+tokio    & 1  & 0.20  & 0.00 & 1 & 0 \\
+urllib3  & 5  & 25.00 & 2.19 & 5 & 1 \\
 \bottomrule
 \end{tabular}
-\caption{Bot impact summary from \texttt{out/bot\_summary\_by\_project.csv}. Percentages are relative to all-account project totals.}
+\caption{Automation impact summary. Percentages are relative to all-account project totals.}
 \label{tab:bot_impact_summary}
 \end{table}
 
-Across the Initial Cohort, bot rows contribute 143 of 902 commits (15.85\%) but only 939 of 58{,}298 churn lines (1.61\%).
-This means bot handling matters most for commit-frequency and ownership/cadence interpretations, not for aggregate churn magnitude.
-The primary M3 and M4 evidence therefore uses human-only outputs, while all-account outputs remain available for audit and sensitivity checks.
+Across the centralized dataset, bot rows contribute 999 of 9560 commits (10.45\%) but only
+9294 of 2{,}066{,}059 churn lines (0.45\%). Automation therefore matters most for cadence
+and ownership interpretation, not for aggregate churn volume. The primary M3 and M4 evidence
+uses human-only outputs, while all-account outputs remain available for audit and sensitivity checks.
 
 \subsection{Duration-normalized analysis outputs}
 \label{sec:duration_normalized_outputs}
@@ -85,13 +107,13 @@ The primary M3 and M4 evidence therefore uses human-only outputs, while all-acco
 \centering
 \scriptsize
 \renewcommand{\arraystretch}{1.12}
-\begin{tabularx}{\textwidth}{p{2.7cm}p{1.8cm}X}
+\begin{tabularx}{\textwidth}{p{2.5cm}p{1.8cm}X}
 \toprule
 \textbf{Sensitivity threshold} & \textbf{Window count} & \textbf{Affected windows} \\
 \midrule
-$<$1 day  & 2 & \path{requests_W03}; \path{requests_W04} \\
-$<$7 days & 4 & \path{requests_W03}; \path{requests_W04}; \path{urllib3_W05}; \path{urllib3_W06} \\
-$<$14 days & 6 & \path{click_W04}; \path{requests_W03}; \path{requests_W04}; \path{requests_W05}; \path{urllib3_W05}; \path{urllib3_W06} \\
+$<$1 day  & 9  & \path{requests_W03}; \path{requests_W04}; \path{brew_W02}; \path{junit5_W02}; \path{junit5_W04}; \path{junit5_W06}; \path{prettier_W02}; \path{tokio_W01}; \path{tokio_W04} \\
+$<$7 days & 22 & \path{requests_W03}; \path{requests_W04}; \path{urllib3_W05}; \path{urllib3_W06}; \path{brew_W02}; \path{brew_W03}; \path{brew_W04}; \path{brew_W05}; \path{brew_W06}; \path{junit5_W02}; \path{junit5_W04}; \path{junit5_W06}; \path{prettier_W01}; \path{prettier_W02}; \path{prettier_W03}; \path{prettier_W05}; \path{prettier_W07}; \path{tokio_W01}; \path{tokio_W04}; \path{tokio_W05}; \path{tokio_W06}; \path{tokio_W07} \\
+$<$14 days & 27 & The previous windows plus \path{click_W04}, \path{requests_W05}, \path{brew_W01}, \path{brew_W07}, and \path{curl_W01}. \\
 \bottomrule
 \end{tabularx}
 \caption{Short-window sensitivity flags. Windows below seven days are retained but marked as \texttt{sensitivity\_only}.}
@@ -106,87 +128,79 @@ $<$14 days & 6 & \path{click_W04}; \path{requests_W03}; \path{requests_W04}; \pa
 \toprule
 \textbf{Window} & \textbf{Duration days} & \textbf{Commits/day} & \textbf{Churn/day} & \textbf{Analysis set} \\
 \midrule
-click\_W04    & 10.04 & 1.793 & 290.15 & primary \\
-click\_W06    & 45.05 & 1.709 & 104.22 & primary \\
-click\_W03    & 142.22 & 1.069 & 84.46 & primary \\
-requests\_W04 & 0.86  & 3.481 & 63.83 & sensitivity\_only \\
-click\_W07    & 63.62 & 0.864 & 49.18 & primary \\
-requests\_W03 & 0.26  & 3.784 & 45.41 & sensitivity\_only \\
+junit5\_W06 & 0.030 & 26909.313 & 10006801.83 & sensitivity\_only \\
+junit5\_W04 & 0.034 & 23433.962 & 8822406.47  & sensitivity\_only \\
+junit5\_W02 & 0.135 & 4976.771  & 375831.47   & sensitivity\_only \\
+tokio\_W01  & 0.577 & 277.240   & 37366.70    & sensitivity\_only \\
+tokio\_W04  & 0.854 & 291.516   & 31412.33    & sensitivity\_only \\
+junit5\_W05 & 39.870 & 7.399    & 6573.49     & primary \\
 \bottomrule
 \end{tabular}
-\caption{Highest churn/day windows from \texttt{out/metrics\_window\_totals\_normalized.csv}. Very short windows can inflate rates and are explicitly flagged for sensitivity analysis.}
+\caption{Highest human-only churn/day windows. Very short windows can dominate per-day rates, so they are not used as primary cadence evidence.}
 \label{tab:duration_normalized_extremes}
 \end{table}
 
-The generated normalized tables provide aggregate per-day commit and churn rates, including a per-KLOC-day churn rate,
-and parallel per-day fields for developer-window analysis.
-Raw totals remain useful as descriptive evidence, while duration-sensitive comparisons use the normalized artifacts.
+The normalized artifacts provide aggregate per-day commit and churn rates, per-KLOC-day churn rates,
+and parallel developer-window fields. Raw totals remain useful descriptive evidence, while duration-sensitive
+comparisons should use the normalized tables together with the \texttt{analysis\_set} flag.
 
-\subsection{M3 Developer activity-day profile}
+\subsection{M3 developer activity-day profile}
 \label{sec:results_m3_activity}
 
 \begin{table}[H]
 \centering
-\footnotesize
+\scriptsize
 \renewcommand{\arraystretch}{1.12}
 \begin{tabular}{lrrrrr}
 \toprule
-\textbf{Project} & \textbf{Mean active\_days/dev-window} & \textbf{Min} & \textbf{Max} & \textbf{Min window days} & \textbf{Max window days} \\
+\textbf{Project} & \textbf{Mean active days/dev-window} & \textbf{Min} & \textbf{Max} & \textbf{Min window days} & \textbf{Max window days} \\
 \midrule
+brew     & 1.90 & 1 & 7  & 0.83 & 8.96   \\
 click    & 2.10 & 1 & 19 & 10.04 & 489.99 \\
+curl     & 5.04 & 1 & 58 & 7.00 & 63.00  \\
 flask    & 1.84 & 1 & 17 & 16.05 & 219.96 \\
-requests & 1.54 & 1 & 8  & 0.26  & 376.04 \\
-urllib3  & 1.75 & 1 & 13 & 3.00  & 170.05 \\
+gin      & 1.50 & 1 & 12 & 60.82 & 378.26 \\
+junit5   & 6.74 & 1 & 95 & 0.03 & 69.91  \\
+prettier & 1.59 & 1 & 4  & 0.87 & 78.36  \\
+requests & 1.54 & 1 & 8  & 0.26 & 376.04 \\
+tokio    & 1.92 & 1 & 25 & 0.58 & 58.99  \\
+urllib3  & 1.75 & 1 & 13 & 3.00 & 170.05 \\
 \bottomrule
 \end{tabular}
-\caption[M3 human-only activity profile.]{M3 human-only cadence-related activity profile from \texttt{out/metrics\_window\_dev\_human.csv} and \texttt{data/windows.csv}.}
+\caption[M3 human-only activity profile.]{M3 human-only activity-day profile.}
 \label{tab:m3_activity_profile}
 \end{table}
 
-The strong window-duration heterogeneity reinforces that cadence comparisons should use the generated per-day fields and timestamp-boundary sensitivity checks.
+The activity-day profile confirms that cadence is sensitive to both project rhythm and release-window construction.
+This is why Phase II should compare cadence-related indicators with both full-data and robust, short-window-filtered views.
 
-\subsection{M4 Ownership and concentration profile}
+\subsection{M4 ownership and concentration profile}
 \label{sec:results_m4}
 
 \begin{table}[H]
 \centering
-\footnotesize
+\scriptsize
 \renewcommand{\arraystretch}{1.12}
-\begin{tabular}{lrrrr}
+\begin{tabular}{lrrrrrr}
 \toprule
-\textbf{Project} & \textbf{Mean top1 commits} & \textbf{Mean top3 commits} & \textbf{Mean top1 churn} & \textbf{Mean top3 churn} \\
+\textbf{Project} & \textbf{Top1 commits} & \textbf{Top3 commits} & \textbf{Top1 churn} & \textbf{Top3 churn} & \textbf{Gini commits} & \textbf{Gini churn} \\
 \midrule
-click    & 0.363 & 0.689 & 0.502 & 0.862 \\
-flask    & 0.708 & 0.885 & 0.891 & 0.994 \\
-requests & 0.573 & 0.791 & 0.713 & 0.936 \\
-urllib3  & 0.629 & 0.783 & 0.695 & 0.937 \\
+brew     & 0.35 & 0.68 & 0.64 & 0.86 & 0.40 & 0.71 \\
+click    & 0.36 & 0.69 & 0.50 & 0.86 & 0.51 & 0.72 \\
+curl     & 0.46 & 0.88 & 0.54 & 0.97 & 0.81 & 0.89 \\
+flask    & 0.71 & 0.89 & 0.89 & 0.99 & 0.49 & 0.68 \\
+gin      & 0.33 & 0.52 & 0.48 & 0.73 & 0.23 & 0.57 \\
+junit5   & 0.79 & 0.96 & 0.90 & 0.98 & 0.87 & 0.91 \\
+prettier & 0.87 & 0.96 & 0.83 & 0.99 & 0.35 & 0.32 \\
+requests & 0.57 & 0.79 & 0.71 & 0.94 & 0.22 & 0.41 \\
+tokio    & 0.30 & 0.61 & 0.42 & 0.71 & 0.31 & 0.56 \\
+urllib3  & 0.63 & 0.78 & 0.69 & 0.94 & 0.31 & 0.50 \\
 \bottomrule
 \end{tabular}
-\caption{M4 human-only share concentration means from \texttt{out/ownership\_summary\_human.csv}.}
-\label{tab:m4_share_profile}
+\caption{Mean human-only M4 concentration indicators.}
+\label{tab:m4_concentration_profile}
 \end{table}
 
-\begin{table}[H]
-\centering
-\footnotesize
-\renewcommand{\arraystretch}{1.12}
-\begin{tabular}{lrrr}
-\toprule
-\textbf{Project} & \textbf{Mean Gini commits} & \textbf{Mean Gini churn} & \textbf{Max top1 churn} \\
-\midrule
-click    & 0.506 & 0.716 & 0.702 \\
-flask    & 0.493 & 0.680 & 0.991 \\
-requests & 0.217 & 0.408 & 1.000 \\
-urllib3  & 0.310 & 0.496 & 1.000 \\
-\bottomrule
-\end{tabular}
-\caption{M4 human-only inequality indicators from \texttt{out/ownership\_summary\_human.csv}.}
-\label{tab:m4_inequality_profile}
-\end{table}
-
-M4 highlights non-trivial human concentration across windows, with some windows reaching full single-developer top-1 churn share in requests and urllib3.
-
-
-
-
-
+M4 shows substantial variation in human concentration. Some projects have broad participation by author count
+but still concentrate churn in a small set of contributors. This distinction is important for Phase II because
+ownership-style metrics may reward sustained maintainership differently from simple activity-volume metrics.

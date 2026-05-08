@@ -1,0 +1,11 @@
+project_id,developer_rows_all,developer_rows_human,developer_rows_bot,windows_with_bots,windows_where_bot_top_committer,total_commits_all,total_commits_human,total_commits_bot,bot_commit_share,total_churn_all,total_churn_human,total_churn_bot,bot_churn_share,bot_identities
+brew,89,79,10,5,0,378,311,67,0.177249,43524,39565,3959,0.090961,BrewTestBot;dependabot[bot]
+click,108,100,8,6,1,422,367,55,0.130332,29176,28901,275,0.009426,dependabot[bot];pre-commit-ci-lite[bot];pre-commit-ci[bot]
+curl,203,193,10,6,0,3356,3229,127,0.037843,421663,420253,1410,0.003344,dependabot[bot];renovate[bot]
+flask,47,45,2,1,0,180,156,24,0.133333,13159,12935,224,0.017023,dependabot[bot];pre-commit-ci[bot]
+gin,182,177,5,5,5,395,295,100,0.253165,22079,20943,1136,0.051452,dependabot[bot]
+junit5,120,113,7,7,0,3942,3386,556,0.141045,1456803,1455032,1771,0.001216,renovate[bot]
+prettier,21,17,4,3,0,81,76,5,0.061728,8194,8117,77,0.009397,autofix-ci[bot];renovate[bot]
+requests,62,59,3,3,2,152,125,27,0.177632,3277,3115,162,0.049435,dependabot[bot]
+tokio,230,229,1,1,0,506,505,1,0.001976,55498,55496,2,0.000036,dependabot[bot]
+urllib3,56,51,5,5,1,148,111,37,0.250000,12686,12408,278,0.021914,dependabot[bot]

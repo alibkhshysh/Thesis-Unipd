@@ -1,4 +1,0 @@
-threshold,window_count,windows
-<1 day,2,requests_W03;requests_W04
-<7 days,4,requests_W03;requests_W04;urllib3_W05;urllib3_W06
-<14 days,6,click_W04;requests_W03;requests_W04;requests_W05;urllib3_W05;urllib3_W06

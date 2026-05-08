@@ -72,15 +72,15 @@ UNKNOWN_NAMES = {
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--in-dev", default="out/metrics_window_dev.csv", type=Path)
-    parser.add_argument("--windows", default="out/windows.csv", type=Path)
+    parser.add_argument("--in-dev", default="out/metrics_window_dev_all.csv", type=Path)
+    parser.add_argument("--windows", default="data/windows_all.csv", type=Path)
     parser.add_argument(
-        "--out-dev-clean", default="out/metrics_window_dev_clean.csv", type=Path
+        "--out-dev-clean", default="out/metrics_window_dev_clean_all.csv", type=Path
     )
     parser.add_argument(
-        "--out-totals-clean", default="out/metrics_window_totals_clean.csv", type=Path
+        "--out-totals-clean", default="out/metrics_window_totals_clean_all.csv", type=Path
     )
-    parser.add_argument("--log", default="logs/clean_round1_metrics.log", type=Path)
+    parser.add_argument("--log", default="logs/clean_all_metrics.log", type=Path)
     return parser.parse_args()
 
 

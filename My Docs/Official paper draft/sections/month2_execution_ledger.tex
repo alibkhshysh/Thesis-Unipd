@@ -1,52 +1,52 @@
-\section{Phase I Execution Ledger (Detailed, Step-Mapped)}
+\section{Phase I Execution Ledger}
 \label{sec:phase1_execution_ledger}
 
-This section documents the exact operational sequence executed in Phase I for the Initial Cohort, aligned with steps 2.1--2.5.
-It provides a direct bridge between roadmap instructions and reproducible artifacts.
+This section records the operational sequence executed for the centralized Phase I dataset.
+The ledger links each step to its primary artifact and gives the validation result that makes
+the artifact usable in later analysis.
 
 \begin{table}[H]
 \centering
 \scriptsize
 \renewcommand{\arraystretch}{1.12}
-\begin{tabularx}{\textwidth}{p{1.0cm}p{3.2cm}p{4.0cm}X}
+\begin{tabularx}{\textwidth}{p{1.0cm}p{3.2cm}p{4.2cm}X}
 \toprule
 \textbf{Step} & \textbf{Action} & \textbf{Primary artifact(s)} & \textbf{Verification result} \\
 \midrule
-2.1 & Freeze repository dataset metadata & \path{data/dataset_freeze_round1.csv} & 4 projects frozen with software-type tags and storage-persistence metadata. \\
-2.2 & Freeze stable tags (8 per project) & \path{data/versions.csv} & 32 rows with tag name, commit hash, and tag date. \\
-2.3 & Build consecutive windows (7 per project) & \path{data/windows.csv} & 28 windows generated in chronological order from frozen tags. \\
-2.4.2 & Extract raw developer-window metrics (M2/M3 base) & \path{out/metrics_window_dev.csv}; \path{out/metrics_window_totals.csv} & 273 canonical developer rows; 28 window totals; \path{logs/errors.log} remained empty. \\
-2.4.3 & Compute LOC/SLOC snapshots (M1) & \path{out/loc_per_tag.csv} & 32 per-tag rows produced from frozen commits. \\
-2.4.4 & Compute ownership/concentration (M4) from clean base & \path{out/ownership_dev_shares_clean.csv}; \path{out/ownership_summary_clean.csv} & 273 developer-share rows and 28 summary rows with top shares and Gini. \\
-2.4.5 & Compute duration-normalized analysis fields & \path{out/metrics_window_totals_normalized.csv}; \path{out/metrics_window_dev_normalized.csv}; \path{out/window_duration_flags.csv} & 28 normalized window rows, 273 normalized developer rows, and short-window sensitivity flags generated. \\
-2.4.6 & Compute bot-sensitivity and human-only outputs & \path{out/metrics_window_dev_human.csv}; \path{out/ownership_summary_human.csv}; \path{out/bot_summary_by_project.csv} & 255 human developer rows, 28 human ownership summaries, and bot impact summaries generated. \\
-2.5 & Cleaning and sanity checks & \path{out/metrics_window_dev_clean.csv}; \path{out/metrics_window_totals_clean.csv}; \path{logs/*.log} & Duplicate identity groups merged=0 after extraction-time canonicalization; clean rows=273; all validation checks passed. \\
+2.1 & Freeze repository metadata & \path{data/dataset_freeze_all.csv} & 10 repositories frozen with cohort labels, repository URLs, persistence status, and software-type tags. \\
+2.2 & Freeze stable release tags & \path{data/versions_all.csv}; \path{data/version_tag_rules_all.csv} & 80 stable tags frozen, eight per repository, with each tag tied to an immutable commit hash. \\
+2.3 & Build consecutive windows & \path{data/windows_all.csv} & 70 tag-to-tag windows generated in chronological order with no chain or chronology errors. \\
+2.4.1 & Extract raw developer-window metrics & \path{out/metrics_window_dev_all.csv}; \path{out/metrics_window_totals_all.csv} & 1118 developer-window rows and 70 window-total rows produced; extraction error logs remained empty. \\
+2.4.2 & Clean and validate developer rows & \path{out/metrics_window_dev_clean_all.csv}; \path{out/metrics_window_totals_clean_all.csv}; \path{logs/clean_all_metrics.log} & Clean rows remained 1118; duplicate groups merged were 0; zero-commit and zero-churn windows were 0. \\
+2.4.3 & Compute LOC/SLOC snapshots (M1) & \path{out/loc_per_tag_all.csv}; \path{data/loc_language_policy_all.csv}; \path{logs/loc_full_recompute_20260508.log} & 80 per-tag rows produced using the centralized multi-language source policy; full recomputation produced 80 rows with 0 mismatches. \\
+2.4.4 & Compute ownership/concentration (M4) & \path{out/ownership_dev_shares_clean_all.csv}; \path{out/ownership_summary_clean_all.csv} & 1118 all-account developer-share rows and 70 summary rows generated from clean data. \\
+2.4.5 & Separate automation and human-only evidence & \path{out/metrics_window_dev_human_all.csv}; \path{out/ownership_summary_human_all.csv}; \path{out/bot_summary_by_project_all.csv} & 1063 human developer-window rows, 70 human ownership summaries, and automation summaries for 6 bot identities generated. \\
+2.4.6 & Normalize for uneven window duration & \path{out/metrics_window_totals_human_normalized_all.csv}; \path{out/metrics_window_dev_human_normalized_all.csv}; \path{out/window_duration_flags_all.csv} & Per-day and per-KLOC-day fields generated; 22 windows below seven days marked as \texttt{sensitivity\_only}. \\
+2.4.7 & Validate canonical repository layout & \path{logs/canonical_repos_validation.log} & 10 colocated repositories checked; 80 frozen tags resolved to their frozen commit hashes; 0 missing or mismatched tags/commits. \\
+2.4.8 & Remove superseded pilot-only files & \path{logs/pilot_cleanup_20260505.log} & 32 pilot-only CSV/log files removed after verification that the active evidence is centralized in the \texttt{\_all} artifacts. \\
+2.4.9 & Remove superseded extended/scoped files & \path{logs/centralized_cleanup_20260508.log} & 42 extended CSV/log files and 8 duplicate scoped output folders removed after subset and rerun verification against the centralized \texttt{\_all} artifacts. \\
 \bottomrule
 \end{tabularx}
-\caption{Detailed execution ledger for Phase I Initial Cohort pipeline operations.}
+\caption{Execution ledger for the centralized Phase I pipeline.}
 \label{tab:phase1_execution_ledger}
 \end{table}
 
 \subsection{Cleaning and validation outcomes}
 \label{sec:phase1_execution_validation}
 
-The cleaning and ownership recomputation logs provide concrete numerical guarantees:
+The cleaning and recomputation logs provide concrete numerical guarantees:
 \begin{itemize}[leftmargin=*]
-  \item input developer-window rows: 273; cleaned rows: 273;
-  \item duplicate key groups merged during cleaning: 0 (email-based canonicalization is performed during extraction);
+  \item input developer-window rows: 1118; cleaned rows: 1118;
+  \item duplicate key groups merged during cleaning: 0;
   \item windows with zero churn: 0; windows with zero commits: 0;
   \item bad windows for share-sum checks: 0;
   \item bad windows for unique-author consistency: 0;
-  \item duration-normalized rows generated: 28 aggregate-window rows and 273 developer-window rows;
-  \item very short windows flagged for sensitivity analysis: 4 windows below seven days;
-  \item bot-flagged rows retained in clean data: 18 (click 8, flask 2, requests 3, urllib3 5);
-  \item human-only rows generated for primary M3/M4 analysis: 255;
-  \item bot contribution: 143 commits (15.85\%) and 939 churn lines (1.61\%).
+  \item human-only rows generated for primary M3/M4 analysis: 1063;
+  \item bot-flagged rows retained for audit: 55;
+  \item bot contribution: 999 commits (10.45\%) and 9294 churn lines (0.45\%);
+  \item duration-normalized rows generated: 70 aggregate rows and 1118 developer rows for the all-account layer, plus 70 aggregate rows and 1063 developer rows for the human-only layer;
+  \item windows shorter than seven days and flagged as \texttt{sensitivity\_only}: 22.
 \end{itemize}
 
-These outcomes confirm that Phase I outputs are analysis-ready and suitable as auditable input for Phase II.
-
-
-
-
-
+These outcomes confirm that the centralized Phase I artifacts are internally consistent and ready
+to serve as auditable input for Phase II.

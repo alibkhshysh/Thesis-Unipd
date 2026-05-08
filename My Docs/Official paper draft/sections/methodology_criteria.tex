@@ -20,9 +20,9 @@ both full-dataset results and robust results excluding those very short windows 
 
 Automation is handled as an explicit population rule. Rows flagged with \texttt{is\_bot} remain in the clean all-account
 tables for auditability and project-activity totals. However, developer-behavior metrics use human-only outputs as the
-primary population: M3 cadence and M4 ownership/concentration are evaluated from \path{out/metrics_window_dev_human.csv}
-and \path{out/ownership_summary_human.csv}. Bot summaries are reported as sensitivity evidence rather than silently mixed
-into maintainer-behavior claims.
+primary population. In the centralized Phase I dataset, M3 cadence and M4 ownership/concentration are evaluated from
+\path{out/metrics_window_dev_human_all.csv} and \path{out/ownership_summary_human_all.csv}. Bot summaries are reported
+as sensitivity evidence rather than silently mixed into maintainer-behavior claims.
 
 \subsection{C1 Stability}
 \label{sec:criterion_stability}
@@ -61,16 +61,16 @@ incremental updates without full recomputation.
 \midrule
 C1 Stability &
 Window-level volatility, adjacent-window rank correlation, robustness to normalization choices. &
-\path{out/metrics_window_dev_normalized.csv}, \path{out/metrics_window_totals_human_normalized.csv}, \path{out/window_duration_flags.csv} \\
+\path{out/metrics_window_dev_human_normalized_all.csv}, \path{out/metrics_window_totals_human_normalized_all.csv}, \path{out/window_duration_flags_all.csv} \\
 C2 Interpretability &
 Structured rubric (semantic clarity, unit clarity, normalization clarity, tooling transparency). &
 Metric definitions plus extracted fields in \path{out/} artifacts \\
 C3 Gaming resistance &
 Attack-surface matrix and manipulation detectability checks under multi-metric reading. &
-\path{out/metrics_window_dev_human.csv}, \path{out/ownership_dev_shares_human.csv}, \path{out/bot_summary_by_project.csv} \\
+\path{out/metrics_window_dev_human_all.csv}, \path{out/ownership_dev_shares_human_all.csv}, \path{out/bot_summary_by_project_all.csv} \\
 C4 Long-term suitability &
 Informativeness over time, lifecycle robustness, and incremental update feasibility. &
-\path{out/loc_per_tag.csv}, \path{data/windows.csv}, feasibility rubric dimensions \\
+\path{out/loc_per_tag_all.csv}, \path{data/windows_all.csv}, feasibility rubric dimensions \\
 \bottomrule
 \end{tabularx}
 \caption{Operational mapping from methodology criteria to evidence sources.}

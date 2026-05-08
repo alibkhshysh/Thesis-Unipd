@@ -1,7 +1,0 @@
-[2026-05-02T16:15:11Z] input_rows=273
-[2026-05-02T16:15:11Z] unique_keys_after_clean=273
-[2026-05-02T16:15:11Z] duplicate_key_groups_merged=0
-[2026-05-02T16:15:11Z] merged_rows_count=0
-[2026-05-02T16:15:11Z] windows_source=E:\Thesis - Large Files\month2_round1\data\windows.csv
-[2026-05-02T16:15:11Z] output_dev_clean=E:\Thesis - Large Files\month2_round1\out\metrics_window_dev_clean.csv
-[2026-05-02T16:15:11Z] output_totals_clean=E:\Thesis - Large Files\month2_round1\out\metrics_window_totals_clean.csv

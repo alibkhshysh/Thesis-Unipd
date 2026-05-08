@@ -1,0 +1,11 @@
+[2026-05-08T20:13:05Z] full_loc_recompute=completed
+[2026-05-08T20:13:05Z] execution_mode=parallel_by_project
+[2026-05-08T20:13:05Z] worker_count=10
+[2026-05-08T20:13:05Z] projects=brew,click,curl,flask,gin,junit5,prettier,requests,tokio,urllib3
+[2026-05-08T20:13:05Z] started_utc=2026-05-08T20:09:14Z
+[2026-05-08T20:13:05Z] completed_utc=2026-05-08T20:13:05Z
+[2026-05-08T20:13:05Z] recomputed_rows=80
+[2026-05-08T20:13:05Z] official_rows=80
+[2026-05-08T20:13:05Z] mismatch_count=0
+[2026-05-08T20:13:05Z] nonempty_error_logs=0
+[2026-05-08T20:13:05Z] result=central_loc_per_tag_all_confirmed_exact_by_full_recompute

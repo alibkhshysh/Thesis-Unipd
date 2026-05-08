@@ -368,6 +368,7 @@ INPUT .\sections\month2_round1_dataset.tex
 INPUT .\sections\month2_round1_dataset.tex
 INPUT .\sections\month2_round1_dataset.tex
 INPUT sections\month2_round1_dataset.tex
+INPUT C:\Users\alibk\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\t1xtt.tfm
 INPUT C:\Users\alibk\AppData\Local\Programs\MiKTeX\fonts\vf\public\newtx\ntxmia.vf
 INPUT C:\Users\alibk\AppData\Local\Programs\MiKTeX\fonts\tfm\public\newtx\txmiaSTbb.tfm
 INPUT .\sections\month2_pipeline.tex
@@ -386,7 +387,6 @@ INPUT .\sections\month2_cleaning.tex
 INPUT .\sections\month2_cleaning.tex
 INPUT .\sections\month2_cleaning.tex
 INPUT sections\month2_cleaning.tex
-INPUT C:\Users\alibk\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\t1xtt.tfm
 INPUT C:\Users\alibk\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\t1xtt.tfm
 INPUT .\sections\month2_round1_summary_tables.tex
 INPUT .\sections\month2_round1_summary_tables.tex
@@ -408,9 +408,6 @@ INPUT .\sections\reproducibility_protocol.tex
 INPUT .\sections\reproducibility_protocol.tex
 INPUT .\sections\reproducibility_protocol.tex
 INPUT sections\reproducibility_protocol.tex
-INPUT C:\Users\alibk\AppData\Local\Programs\MiKTeX\fonts\vf\public\newtx\ntxsy.vf
-INPUT C:\Users\alibk\AppData\Local\Programs\MiKTeX\fonts\tfm\public\newtx\txsys.tfm
-INPUT C:\Users\alibk\AppData\Local\Programs\MiKTeX\fonts\tfm\public\newtx\txex-bar.tfm
 INPUT .\sections\threats_to_validity.tex
 INPUT .\sections\threats_to_validity.tex
 INPUT .\sections\threats_to_validity.tex

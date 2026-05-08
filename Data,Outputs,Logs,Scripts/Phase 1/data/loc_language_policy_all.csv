@@ -1,0 +1,11 @@
+project_id,primary_languages,counted_extensions,excluded_directory_policy,notes
+brew,Ruby/Shell,".rb, .rbi, .sh, .bash, .zsh","tracked files only; excludes .git, build/cache, dependency/vendor directories",M1 captures Homebrew Ruby and shell source files
+click,Python,.py,"tracked files only; excludes .git, build/cache, dependency/vendor directories",M1 captures Python package source files
+curl,C/C++/scripts,".c, .h, .cc, .cpp, .hpp, .py, .pl, .pm, .sh, .bash, .zsh","tracked files only; excludes .git, build/cache, dependency/vendor directories",M1 includes C/C++ source and tracked helper scripts
+flask,Python,.py,"tracked files only; excludes .git, build/cache, dependency/vendor directories",M1 captures Python package source files
+gin,Go,.go,"tracked files only; excludes .git, build/cache, dependency/vendor directories",M1 captures Go source files
+junit5,Java/Kotlin,".java, .kt, .kts","tracked files only; excludes .git, build/cache, dependency/vendor directories",M1 captures Java and Kotlin sources
+prettier,JavaScript/TypeScript,".js, .jsx, .ts, .tsx, .mjs, .cjs","tracked files only; excludes .git, build/cache, dependency/vendor directories",Snapshots and non-source assets are not counted
+requests,Python,.py,"tracked files only; excludes .git, build/cache, dependency/vendor directories",M1 captures Python package source files
+tokio,Rust,.rs,"tracked files only; excludes .git, build/cache, dependency/vendor directories",M1 captures Rust source files across workspace crates
+urllib3,Python,.py,"tracked files only; excludes .git, build/cache, dependency/vendor directories",M1 captures Python package source files

@@ -1,4 +1,0 @@
-author_email,author_name,developer_window_rows,project_count,window_count,total_commits,total_churn,projects,windows
-117423508+pre-commit-ci-lite[bot]@users.noreply.github.com,pre-commit-ci-lite[bot],4,1,4,6,11,click,click_W03;click_W05;click_W06;click_W07
-49699333+dependabot[bot]@users.noreply.github.com,dependabot[bot],10,4,10,123,870,click;flask;requests;urllib3,click_W03;flask_W04;requests_W02;requests_W06;requests_W07;urllib3_W01;urllib3_W02;urllib3_W03;urllib3_W04;urllib3_W07
-66853113+pre-commit-ci[bot]@users.noreply.github.com,pre-commit-ci[bot],4,2,4,14,58,click;flask,click_W01;click_W02;click_W03;flask_W04

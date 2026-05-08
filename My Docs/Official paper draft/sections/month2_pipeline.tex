@@ -1,22 +1,26 @@
 \section{Phase I: Metric Extraction Pipeline}
 \label{sec:phase1_pipeline}
 
-All candidate metrics M1--M4 are computed off-chain from Git history and tag windows.
-The extraction scripts are implemented as reproducible command-line programs that generate deterministic CSV outputs.
-The pipeline explicitly consumes the freeze artifacts \texttt{dataset\_freeze\_round1.csv}, \texttt{versions.csv}, and \texttt{windows.csv}.
+Candidate metrics M1--M4 are computed off-chain from Git history and frozen tag windows.
+The scripts are deterministic command-line programs: they consume declared CSV inputs and
+write CSV outputs without manual editing. The centralized execution consumes
+\path{data/dataset_freeze_all.csv}, \path{data/versions_all.csv}, and
+\path{data/windows_all.csv}. Pilot-specific files remain in the workspace for traceability,
+but the suffixed \texttt{\_all} artifacts are the final Phase I evidence base.
 
 \subsection{Primary CSV outputs}
 \label{sec:phase1_outputs}
 
 \begin{itemize}[leftmargin=*]
-  \item \texttt{loc\_per\_tag.csv}: per (project, tag) snapshot size (total, blank, comment, code lines).
-  \item \texttt{metrics\_window\_dev.csv}: per (project, window, developer) commits, added/deleted, churn, activity days, first/last committer timestamps.
-  \item \texttt{metrics\_window\_totals.csv}: per (project, window) totals and unique authors.
-  \item \texttt{metrics\_window\_dev\_clean.csv} and \texttt{metrics\_window\_totals\_clean.csv}: cleaned canonical datasets used for analysis.
-  \item \texttt{ownership\_dev\_shares\_clean.csv} and \texttt{ownership\_summary\_clean.csv}: ownership and concentration computed from the clean dataset.
-  \item Normalized metric outputs: \path{metrics_window_dev_normalized.csv} and \path{metrics_window_totals_normalized.csv}, with per-day and per-KLOC-day derived fields.
-  \item Window-duration outputs: \path{window_duration_flags.csv} and \path{window_duration_sensitivity_summary.csv}, with short-window flags and sensitivity thresholds.
-  \item Human-only and bot-sensitivity outputs: \path{metrics_window_dev_human.csv}, \path{metrics_window_totals_human.csv}, \path{ownership_summary_human.csv}, and \path{bot_summary_by_project.csv}.
+  \item \path{out/loc_per_tag_all.csv}: per (project, tag) snapshot size with total, blank, comment, and code lines.
+  \item \path{out/metrics_window_dev_all.csv}: per (project, window, developer) commits, added/deleted lines, churn, binary-file count, activity days, and first/last committer timestamps.
+  \item \path{out/metrics_window_totals_all.csv}: per (project, window) totals and unique-author counts.
+  \item \path{out/metrics_window_dev_clean_all.csv} and \path{out/metrics_window_totals_clean_all.csv}: validated clean datasets used as the all-account audit baseline.
+  \item \path{out/ownership_dev_shares_clean_all.csv} and \path{out/ownership_summary_clean_all.csv}: all-account ownership and concentration computed strictly from clean data.
+  \item \path{out/metrics_window_dev_human_all.csv}, \path{out/metrics_window_totals_human_all.csv}, and \path{out/ownership_summary_human_all.csv}: human-only M3/M4 analysis population.
+  \item \path{out/metrics_window_dev_human_normalized_all.csv} and \path{out/metrics_window_totals_human_normalized_all.csv}: duration-normalized human-only metrics.
+  \item \path{out/window_duration_flags_all.csv} and \path{out/window_duration_sensitivity_summary_all.csv}: short-window flags and sensitivity thresholds.
+  \item \path{out/bot_summary_by_project_all.csv}, \path{out/bot_summary_by_window_all.csv}, and \path{out/bot_identity_summary_all.csv}: automation impact summaries.
 \end{itemize}
 
 \subsection{Script-to-output mapping}
@@ -24,27 +28,29 @@ The pipeline explicitly consumes the freeze artifacts \texttt{dataset\_freeze\_r
 
 \begin{table}[H]
 \centering
-\footnotesize
-\renewcommand{\arraystretch}{1.15}
-\begin{tabularx}{\textwidth}{p{5.5cm}X}
+\scriptsize
+\renewcommand{\arraystretch}{1.12}
+\begin{tabularx}{\textwidth}{p{5.4cm}X}
 \toprule
-\textbf{Script} & \textbf{Primary output(s)} \\
+\textbf{Script} & \textbf{Primary role in the centralized run} \\
 \midrule
 \path{scripts/extract_window_metrics.py} &
-\path{metrics_window_dev.csv}, \path{metrics_window_totals.csv} \\
+Extracts M2/M3 base data from Git revision ranges and flags known automated identities. \\
 \path{scripts/compute_loc_per_tag.py} &
-\path{loc_per_tag.csv} \\
+Legacy Python-only M1 extractor retained for audit continuity with the pilot run. \\
+\path{scripts/compute_loc_per_tag_multilang.py} &
+Computes multi-language M1 snapshots for the expanded dataset using tracked source files. \\
 \path{scripts/clean_round1_metrics.py} &
-\path{metrics_window_dev_clean.csv}, \path{metrics_window_totals_clean.csv} \\
+Canonicalizes developer-window rows by \texttt{(project\_id, window\_id, author\_email)} and recomputes clean totals. \\
 \path{scripts/recompute_ownership_from_clean.py} &
-\path{ownership_dev_shares_clean.csv}, \path{ownership_summary_clean.csv} \\
-\path{scripts/compute_duration_normalized_metrics.py} &
-\path{metrics_window_dev_normalized.csv}, \path{metrics_window_totals_normalized.csv}, \path{window_duration_flags.csv} \\
+Computes clean ownership shares, top-1/top-3 concentration, and Gini values. \\
 \path{scripts/compute_bot_sensitivity_outputs.py} &
-\path{metrics_window_totals_human.csv}, \path{ownership_summary_human.csv}, \path{bot_summary_by_project.csv} \\
+Exports human-only tables and bot-sensitivity summaries while keeping all-account outputs for audit. \\
+\path{scripts/compute_duration_normalized_metrics.py} &
+Computes per-day and per-KLOC-day fields and marks short windows as \texttt{sensitivity\_only}. \\
 \bottomrule
 \end{tabularx}
-\caption{Executable mapping from pipeline scripts to canonical Initial Cohort outputs.}
+\caption{Executable mapping from Phase I scripts to centralized outputs.}
 \label{tab:script_mapping}
 \end{table}
 
@@ -52,52 +58,50 @@ The pipeline explicitly consumes the freeze artifacts \texttt{dataset\_freeze\_r
 \label{sec:phase1_metric_impl}
 
 \paragraph{M1 (LOC/SLOC).}
-For each frozen tag commit, we count Python \texttt{*.py} lines and classify lines into blank, comment, and code.
-Common non-source directories are excluded to preserve comparability.
+For each frozen tag commit, source files are counted and classified into blank, comment, and code lines. The centralized run
+uses a multi-language policy documented in \path{data/loc_language_policy_all.csv}; it counts tracked source files for
+the main languages of the ten repositories and excludes build, cache, dependency, and version-control directories. This keeps
+M1 comparable as a source-size indicator while avoiding generated or vendored material where possible.
 
 \paragraph{M2 (Churn).}
-For each window $(from\_tag\rightarrow to\_tag)$, we use Git numstat to sum lines added and deleted per developer,
-and define \texttt{churn} $=$ \texttt{added} $+$ \texttt{deleted}. Binary file changes are tracked via \texttt{binary\_file\_count}.
+For each window $(from\_tag\rightarrow to\_tag)$, Git \texttt{numstat} output is used to sum lines added and deleted per developer.
+Churn is defined as \texttt{added} $+$ \texttt{deleted}. Binary file changes are not assigned line counts, but they are retained
+through \texttt{binary\_file\_count}.
 
 \paragraph{M3 (Cadence).}
-Cadence is represented by commit counts per developer-window and activity-days per developer-window.
-We store first/last committer timestamps for optional temporal analyses. Human-only cadence outputs are the primary
-developer-behavior population; all-account cadence outputs are retained for audit and sensitivity analysis.
+Cadence is represented by commit counts, activity days, and first/last committer timestamps per developer-window. Human-only cadence
+outputs are the primary developer-behavior population. All-account cadence outputs are retained as an audit baseline because they
+describe total repository activity, including automated updates.
 
 \paragraph{M4 (Ownership and concentration).}
-We compute developer shares within each project-window:
+For each project-window, developer shares are computed as:
 \[
 share^{(churn)}_{d,w}=\frac{churn_{d,w}}{\sum_{d'}churn_{d',w}}, \quad
 share^{(commits)}_{d,w}=\frac{commits_{d,w}}{\sum_{d'}commits_{d',w}}.
 \]
-We derive top-1/top-3 shares and Gini concentration to characterize maintainership concentration.
-Because M4 represents human maintainership concentration, the primary M4 tables exclude rows flagged as automated accounts.
-All-account ownership outputs remain available to quantify the effect of this exclusion.
+The pipeline derives top-1/top-3 shares and Gini concentration values. Because M4 is intended to describe human maintainership
+concentration, the primary M4 outputs are the human-only tables. All-account M4 remains useful for audit and sensitivity analysis.
 
 \paragraph{Duration-normalized derived metrics.}
-Because release windows have uneven durations, the pipeline derives \texttt{commits\_per\_day},
-\texttt{churn\_per\_day}, and \texttt{churn\_per\_kloc\_day}. The normalization script also marks windows shorter
-than 1, 7, and 14 days. Windows shorter than 7 days are retained in the dataset but marked as
-\texttt{sensitivity\_only} for comparative analyses that are sensitive to release cadence.
+Release windows vary from less than one hour to more than one year. The pipeline therefore derives \texttt{commits\_per\_day},
+\texttt{churn\_per\_day}, and \texttt{churn\_per\_kloc\_day}. Windows shorter than seven days are retained for traceability but
+marked as \texttt{sensitivity\_only}. Phase II should not let these windows drive primary cadence conclusions.
 
 \paragraph{Bot-sensitivity derived metrics.}
-The bot-sensitivity script preserves the all-account clean tables and exports a parallel human-only population.
-This resolves the analysis population explicitly: M3 and M4 use human-only outputs as the primary evidence,
-while all-account outputs and bot summaries document automation effects.
+Automated accounts are explicitly labeled through \texttt{is\_bot}. The final centralized dataset flags six automation identities:
+\path{dependabot[bot]}, \path{renovate[bot]}, \path{pre-commit-ci[bot]}, \path{pre-commit-ci-lite[bot]},
+\path{autofix-ci[bot]}, and \path{BrewTestBot}. The bot-sensitivity outputs quantify their contribution and export a parallel
+human-only population for M3 and M4.
 
 \subsection{Error handling and traceability}
 \label{sec:phase1_error_trace}
 
 The extraction pipeline is fault-tolerant at repository-window granularity:
 \begin{itemize}[leftmargin=*]
-  \item Git command failures are appended to \texttt{logs/errors.log} and processing continues;
-  \item cleaning, ownership, duration-normalization, and bot-sensitivity scripts write structured run logs with row counts and validation status;
-  \item all derived tables are built from declared input files only (no manual edits).
+  \item Git command failures are appended to the corresponding \path{logs/*.log} file and processing continues where possible;
+  \item cleaning, ownership, duration-normalization, and bot-sensitivity scripts write structured logs with row counts and validation outcomes;
+  \item all derived tables are built from declared input files and script rules, not from manual spreadsheet edits.
 \end{itemize}
 
-This logging policy provides an audit trail suitable for re-execution and for thesis appendix verification.
-
-
-
-
-
+This gives the report a reproducible audit trail: a reader can follow the dataset from frozen repositories and commits to clean,
+human-only, normalized metric tables.

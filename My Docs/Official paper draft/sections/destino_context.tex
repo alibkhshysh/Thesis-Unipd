@@ -36,13 +36,13 @@ DESTINO PoC would need. The alignment is summarized in Table~\ref{tab:destino_al
 \textbf{DESTINO need} & \textbf{Phase I artifact or rule} & \textbf{Why it matters} \\
 \midrule
 Stable artifact identity &
-\path{data/dataset_freeze_round1.csv}, \path{data/versions.csv}, frozen commit hashes &
+\path{data/dataset_freeze_all.csv}, \path{data/versions_all.csv}, frozen commit hashes &
 Metric evidence can be tied to explicit projects, tags, and repository states. \\
 Replayable measurement interval &
-\path{data/windows.csv} &
+\path{data/windows_all.csv} &
 Each metric value has a deterministic release-window boundary. \\
 Compact metric evidence &
-\path{out/loc_per_tag.csv}, clean metric tables, normalized tables, human-only M3/M4 tables &
+\path{out/loc_per_tag_all.csv}, clean metric tables, normalized tables, human-only M3/M4 tables &
 The future contract can store selected values without storing raw repositories or diffs. \\
 Audit and validation evidence &
 \path{logs/*.log}, cleaning checks, duration flags, bot-sensitivity summaries &

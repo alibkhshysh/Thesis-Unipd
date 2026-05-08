@@ -1,0 +1,11 @@
+project_id,repo,storage_persistence,software_type_tags,cohort,notes
+flask,https://github.com/pallets/flask,High (GitHub),"web-framework, library",pilot,Round 1 pilot repository retained in centralized Phase 1 dataset
+requests,https://github.com/psf/requests,High (GitHub),"http-client, library",pilot,Round 1 pilot repository retained in centralized Phase 1 dataset
+urllib3,https://github.com/urllib3/urllib3,High (GitHub),"http-client, library",pilot,Round 1 pilot repository retained in centralized Phase 1 dataset
+click,https://github.com/pallets/click,High (GitHub),"cli-toolkit, library",pilot,Round 1 pilot repository retained in centralized Phase 1 dataset
+brew,https://github.com/Homebrew/brew,High (GitHub),"package-manager, cli-tool, ecosystem-infrastructure",extended,Extended cohort repository added for centralized Phase 1 dataset
+curl,https://github.com/curl/curl,High (GitHub),"network-transfer-tool, cli-tool, library",extended,Extended cohort repository added for centralized Phase 1 dataset
+gin,https://github.com/gin-gonic/gin,High (GitHub),"web-framework, http-framework, library",extended,Extended cohort repository added for centralized Phase 1 dataset
+junit5,https://github.com/junit-team/junit5,High (GitHub),"testing-framework, library",extended,Extended cohort repository added for centralized Phase 1 dataset
+prettier,https://github.com/prettier/prettier,High (GitHub),"code-formatter, cli-tool, developer-tool",extended,Extended cohort repository added for centralized Phase 1 dataset
+tokio,https://github.com/tokio-rs/tokio,High (GitHub),"async-runtime, concurrency-library, library",extended,Extended cohort repository added for centralized Phase 1 dataset

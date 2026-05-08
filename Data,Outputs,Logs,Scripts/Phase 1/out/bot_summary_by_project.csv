@@ -1,5 +1,0 @@
-project_id,developer_rows_all,developer_rows_human,developer_rows_bot,windows_with_bots,windows_where_bot_top_committer,total_commits_all,total_commits_human,total_commits_bot,bot_commit_share,total_churn_all,total_churn_human,total_churn_bot,bot_churn_share,bot_identities
-click,108,100,8,6,1,422,367,55,0.130332,29176,28901,275,0.009426,dependabot[bot];pre-commit-ci-lite[bot];pre-commit-ci[bot]
-flask,47,45,2,1,0,180,156,24,0.133333,13159,12935,224,0.017023,dependabot[bot];pre-commit-ci[bot]
-requests,62,59,3,3,2,152,125,27,0.177632,3277,3115,162,0.049435,dependabot[bot]
-urllib3,56,51,5,5,1,148,111,37,0.250000,12686,12408,278,0.021914,dependabot[bot]

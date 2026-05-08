@@ -2,7 +2,7 @@
 \contentsline {section}{\numberline {2}Introduction, Scope, and Research Roadmap}{6}{section.7}%
 \contentsline {section}{\numberline {3}Candidate Metrics (Shortlist)}{7}{section.11}%
 \contentsline {section}{\numberline {4}Methodology: Comparison Criteria}{7}{section.14}%
-\contentsline {subsection}{\numberline {4.1}Evaluation unit and normalization policy}{7}{subsection.15}%
+\contentsline {subsection}{\numberline {4.1}Evaluation unit and normalization policy}{8}{subsection.15}%
 \contentsline {subsection}{\numberline {4.2}C1 Stability}{8}{subsection.16}%
 \contentsline {subsection}{\numberline {4.3}C2 Interpretability}{8}{subsection.17}%
 \contentsline {subsection}{\numberline {4.4}C3 Resistance to gaming}{8}{subsection.18}%
@@ -30,44 +30,44 @@
 \contentsline {section}{\numberline {8}Phase I: Dataset Freeze and Version-Window Definition}{15}{section.66}%
 \contentsline {subsection}{\numberline {8.1}Repository Freeze}{15}{subsection.67}%
 \contentsline {subsection}{\numberline {8.2}Tag Freeze and Consecutive Windows}{15}{subsection.70}%
-\contentsline {section}{\numberline {9}Phase I: Metric Extraction Pipeline}{16}{section.75}%
-\contentsline {subsection}{\numberline {9.1}Primary CSV outputs}{16}{subsection.76}%
-\contentsline {subsection}{\numberline {9.2}Script-to-output mapping}{17}{subsection.77}%
-\contentsline {subsection}{\numberline {9.3}Metric definitions (implementation-level)}{17}{subsection.80}%
-\contentsline {paragraph}{M1 (LOC/SLOC).}{17}{section*.81}%
-\contentsline {paragraph}{M2 (Churn).}{17}{section*.82}%
-\contentsline {paragraph}{M3 (Cadence).}{17}{section*.83}%
-\contentsline {paragraph}{M4 (Ownership and concentration).}{17}{section*.84}%
-\contentsline {paragraph}{Duration-normalized derived metrics.}{17}{section*.85}%
-\contentsline {paragraph}{Bot-sensitivity derived metrics.}{17}{section*.86}%
-\contentsline {subsection}{\numberline {9.4}Error handling and traceability}{18}{subsection.87}%
-\contentsline {section}{\numberline {10}Phase I: Data Integrity Verification and Cleaning}{18}{section.88}%
-\contentsline {subsection}{\numberline {10.1}Sanity checks}{18}{subsection.89}%
-\contentsline {subsection}{\numberline {10.2}Canonical identity}{18}{subsection.90}%
-\contentsline {subsection}{\numberline {10.3}Bot labeling}{18}{subsection.91}%
-\contentsline {subsection}{\numberline {10.4}Known limitation: commit-date/tag-date drift}{18}{subsection.92}%
-\contentsline {subsection}{\numberline {10.5}Issue-resolution ledger}{19}{subsection.93}%
-\contentsline {section}{\numberline {11}Initial Cohort Extraction Summary (Phase I Deliverables)}{19}{section.96}%
-\contentsline {section}{\numberline {12}Detailed Descriptive Results for M1--M4 (Initial Cohort)}{20}{section.103}%
-\contentsline {subsection}{\numberline {12.1}M1 Snapshot size evolution (LOC/SLOC)}{20}{subsection.104}%
-\contentsline {subsection}{\numberline {12.2}M2 Churn and M3 cadence intensity by project}{20}{subsection.107}%
-\contentsline {subsection}{\numberline {12.3}Bot-sensitivity outputs}{21}{subsection.110}%
-\contentsline {subsection}{\numberline {12.4}Duration-normalized analysis outputs}{21}{subsection.113}%
-\contentsline {subsection}{\numberline {12.5}M3 Developer activity-day profile}{21}{subsection.118}%
-\contentsline {subsection}{\numberline {12.6}M4 Ownership and concentration profile}{22}{subsection.121}%
-\contentsline {section}{\numberline {13}Phase I Execution Ledger (Detailed, Step-Mapped)}{22}{section.126}%
-\contentsline {subsection}{\numberline {13.1}Cleaning and validation outcomes}{23}{subsection.129}%
-\contentsline {section}{\numberline {14}Reproducibility Protocol and Data Lineage}{24}{section.130}%
-\contentsline {subsection}{\numberline {14.1}Artifact layout}{24}{subsection.131}%
-\contentsline {subsection}{\numberline {14.2}Execution protocol}{24}{subsection.132}%
-\contentsline {subsection}{\numberline {14.3}Lineage checkpoints}{24}{subsection.139}%
-\contentsline {subsection}{\numberline {14.4}Automated validation evidence}{25}{subsection.142}%
-\contentsline {section}{\numberline {15}Threats to Validity}{25}{section.143}%
-\contentsline {subsection}{\numberline {15.1}Construct validity}{25}{subsection.144}%
-\contentsline {subsection}{\numberline {15.2}Internal validity}{25}{subsection.145}%
-\contentsline {subsection}{\numberline {15.3}External validity}{25}{subsection.146}%
-\contentsline {subsection}{\numberline {15.4}Conclusion validity}{25}{subsection.147}%
-\contentsline {section}{\numberline {16}Phase I Conclusion}{26}{section.148}%
-\contentsline {section}{\numberline {17}Planned Next Phase: Comparative Metric Evaluation}{26}{section.149}%
-\contentsline {subsection}{\numberline {17.1}Phase II execution plan}{26}{subsection.150}%
-\contentsline {subsection}{\numberline {17.2}Decision gate criteria}{26}{subsection.157}%
+\contentsline {section}{\numberline {9}Phase I: Metric Extraction Pipeline}{17}{section.77}%
+\contentsline {subsection}{\numberline {9.1}Primary CSV outputs}{17}{subsection.78}%
+\contentsline {subsection}{\numberline {9.2}Script-to-output mapping}{18}{subsection.79}%
+\contentsline {subsection}{\numberline {9.3}Metric definitions (implementation-level)}{18}{subsection.82}%
+\contentsline {paragraph}{M1 (LOC/SLOC).}{18}{section*.83}%
+\contentsline {paragraph}{M2 (Churn).}{18}{section*.84}%
+\contentsline {paragraph}{M3 (Cadence).}{18}{section*.85}%
+\contentsline {paragraph}{M4 (Ownership and concentration).}{18}{section*.86}%
+\contentsline {paragraph}{Duration-normalized derived metrics.}{18}{section*.87}%
+\contentsline {paragraph}{Bot-sensitivity derived metrics.}{18}{section*.88}%
+\contentsline {subsection}{\numberline {9.4}Error handling and traceability}{19}{subsection.89}%
+\contentsline {section}{\numberline {10}Phase I: Data Integrity Verification and Cleaning}{19}{section.90}%
+\contentsline {subsection}{\numberline {10.1}Sanity checks}{19}{subsection.91}%
+\contentsline {subsection}{\numberline {10.2}Canonical identity}{19}{subsection.92}%
+\contentsline {subsection}{\numberline {10.3}Bot labeling}{19}{subsection.93}%
+\contentsline {subsection}{\numberline {10.4}Known limitation: timestamp semantics}{20}{subsection.96}%
+\contentsline {subsection}{\numberline {10.5}Issue-resolution ledger}{20}{subsection.97}%
+\contentsline {section}{\numberline {11}Centralized Extraction Summary (Phase I Deliverables)}{20}{section.100}%
+\contentsline {section}{\numberline {12}Detailed Descriptive Results for M1--M4}{21}{section.107}%
+\contentsline {subsection}{\numberline {12.1}M1 Snapshot size evolution}{22}{subsection.108}%
+\contentsline {subsection}{\numberline {12.2}M2 churn and M3 cadence intensity}{22}{subsection.111}%
+\contentsline {subsection}{\numberline {12.3}Bot-sensitivity outputs}{22}{subsection.114}%
+\contentsline {subsection}{\numberline {12.4}Duration-normalized analysis outputs}{23}{subsection.117}%
+\contentsline {subsection}{\numberline {12.5}M3 developer activity-day profile}{23}{subsection.122}%
+\contentsline {subsection}{\numberline {12.6}M4 ownership and concentration profile}{24}{subsection.125}%
+\contentsline {section}{\numberline {13}Phase I Execution Ledger}{24}{section.128}%
+\contentsline {subsection}{\numberline {13.1}Cleaning and validation outcomes}{25}{subsection.131}%
+\contentsline {section}{\numberline {14}Reproducibility Protocol and Data Lineage}{26}{section.132}%
+\contentsline {subsection}{\numberline {14.1}Artifact layout}{26}{subsection.133}%
+\contentsline {subsection}{\numberline {14.2}Execution protocol}{26}{subsection.134}%
+\contentsline {subsection}{\numberline {14.3}Lineage checkpoints}{27}{subsection.145}%
+\contentsline {subsection}{\numberline {14.4}Automated validation evidence}{27}{subsection.148}%
+\contentsline {section}{\numberline {15}Threats to Validity}{28}{section.149}%
+\contentsline {subsection}{\numberline {15.1}Construct validity}{28}{subsection.150}%
+\contentsline {subsection}{\numberline {15.2}Internal validity}{28}{subsection.151}%
+\contentsline {subsection}{\numberline {15.3}External validity}{28}{subsection.152}%
+\contentsline {subsection}{\numberline {15.4}Conclusion validity}{28}{subsection.153}%
+\contentsline {section}{\numberline {16}Phase I Conclusion}{28}{section.154}%
+\contentsline {section}{\numberline {17}Planned Next Phase: Comparative Metric Evaluation}{29}{section.155}%
+\contentsline {subsection}{\numberline {17.1}Phase II execution plan}{29}{subsection.156}%
+\contentsline {subsection}{\numberline {17.2}Decision gate criteria}{29}{subsection.163}%

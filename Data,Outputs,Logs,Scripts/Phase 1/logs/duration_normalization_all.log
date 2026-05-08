@@ -1,0 +1,7 @@
+[2026-05-05T19:07:36Z] windows=70
+[2026-05-05T19:07:36Z] totals_rows=70
+[2026-05-05T19:07:36Z] dev_rows=1118
+[2026-05-05T19:07:36Z] <1 day count=9 windows=requests_W03;requests_W04;brew_W02;junit5_W02;junit5_W04;junit5_W06;prettier_W02;tokio_W01;tokio_W04
+[2026-05-05T19:07:36Z] <7 days count=22 windows=requests_W03;requests_W04;urllib3_W05;urllib3_W06;brew_W02;brew_W03;brew_W04;brew_W05;brew_W06;junit5_W02;junit5_W04;junit5_W06;prettier_W01;prettier_W02;prettier_W03;prettier_W05;prettier_W07;tokio_W01;tokio_W04;tokio_W05;tokio_W06;tokio_W07
+[2026-05-05T19:07:36Z] <14 days count=27 windows=click_W04;requests_W03;requests_W04;requests_W05;urllib3_W05;urllib3_W06;brew_W01;brew_W02;brew_W03;brew_W04;brew_W05;brew_W06;brew_W07;curl_W01;junit5_W02;junit5_W04;junit5_W06;prettier_W01;prettier_W02;prettier_W03;prettier_W05;prettier_W07;tokio_W01;tokio_W04;tokio_W05;tokio_W06;tokio_W07
+[2026-05-05T19:07:36Z] robust_primary_rule=exclude windows with duration_days < 7

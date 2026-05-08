@@ -6,21 +6,22 @@
 \contentsline {table}{\numberline {6}{\ignorespaces Feasibility dimensions with detailed scoring rules (D6--D10).}}{12}{table.46}%
 \contentsline {table}{\numberline {7}{\ignorespaces Feasibility rubric status table. All scores are deferred to Phase II comparative evaluation.}}{13}{table.52}%
 \contentsline {table}{\numberline {8}{\ignorespaces Metric-agnostic record shape for the future DESTINO PoC.}}{14}{table.57}%
-\contentsline {table}{\numberline {9}{\ignorespaces Frozen Initial Cohort dataset (\texttt {dataset\_freeze\_round1.csv}).}}{15}{table.69}%
-\contentsline {table}{\numberline {10}{\ignorespaces Initial Cohort version coverage extracted from \texttt {versions.csv} and \texttt {windows.csv}.}}{16}{table.72}%
-\contentsline {table}{\numberline {11}{\ignorespaces Window-duration statistics.}}{16}{table.74}%
-\contentsline {table}{\numberline {12}{\ignorespaces Executable mapping from pipeline scripts to canonical Initial Cohort outputs.}}{17}{table.79}%
-\contentsline {table}{\numberline {13}{\ignorespaces Initial Cohort issue ledger and implemented cleaning/validation actions.}}{19}{table.95}%
-\contentsline {table}{\numberline {14}{\ignorespaces Initial Cohort summary from cleaned datasets (commits/churn totals per project; bot rows flagged separately).}}{19}{table.98}%
-\contentsline {table}{\numberline {15}{\ignorespaces Initial Cohort global extraction totals from all-account and human-only clean outputs.}}{19}{table.100}%
-\contentsline {table}{\numberline {16}{\ignorespaces Snapshot size statistics (code lines) across the 8 frozen tags per project (M1).}}{20}{table.102}%
-\contentsline {table}{\numberline {17}{\ignorespaces M1 evolution across frozen tags (values from \texttt {out/loc\_per\_tag.csv}; first/last are chronological tag endpoints).}}{20}{table.106}%
-\contentsline {table}{\numberline {18}{\ignorespaces M2/M3 human-only project-level intensity.}}{20}{table.109}%
-\contentsline {table}{\numberline {19}{\ignorespaces Bot impact summary from \texttt {out/bot\_summary\_by\_project.csv}. Percentages are relative to all-account project totals.}}{21}{table.112}%
-\contentsline {table}{\numberline {20}{\ignorespaces Short-window sensitivity flags. Windows below seven days are retained but marked as \texttt {sensitivity\_only}.}}{21}{table.115}%
-\contentsline {table}{\numberline {21}{\ignorespaces Highest churn/day windows from \texttt {out/metrics\_window\_totals\_normalized.csv}. Very short windows can inflate rates and are explicitly flagged for sensitivity analysis.}}{21}{table.117}%
-\contentsline {table}{\numberline {22}{\ignorespaces M3 human-only activity profile.}}{21}{table.120}%
-\contentsline {table}{\numberline {23}{\ignorespaces M4 human-only share concentration means from \texttt {out/ownership\_summary\_human.csv}.}}{22}{table.123}%
-\contentsline {table}{\numberline {24}{\ignorespaces M4 human-only inequality indicators from \texttt {out/ownership\_summary\_human.csv}.}}{22}{table.125}%
-\contentsline {table}{\numberline {25}{\ignorespaces Detailed execution ledger for Phase I Initial Cohort pipeline operations.}}{23}{table.128}%
-\contentsline {table}{\numberline {26}{\ignorespaces Initial Cohort data lineage checkpoints used for reproducibility and auditing.}}{24}{table.141}%
+\contentsline {table}{\numberline {9}{\ignorespaces Centralized Phase I repository freeze.}}{15}{table.69}%
+\contentsline {table}{\numberline {10}{\ignorespaces Centralized version coverage by project.}}{16}{table.72}%
+\contentsline {table}{\numberline {11}{\ignorespaces Stable-tag rules for the centralized repositories.}}{16}{table.74}%
+\contentsline {table}{\numberline {12}{\ignorespaces Window-duration statistics.}}{16}{table.76}%
+\contentsline {table}{\numberline {13}{\ignorespaces Executable mapping from Phase I scripts to centralized outputs.}}{18}{table.81}%
+\contentsline {table}{\numberline {14}{\ignorespaces Project-level automation contribution from \texttt {out/bot\_summary\_by\_project\_all.csv}.}}{20}{table.95}%
+\contentsline {table}{\numberline {15}{\ignorespaces Centralized Phase I issue ledger and implemented validation actions.}}{20}{table.99}%
+\contentsline {table}{\numberline {16}{\ignorespaces Centralized project-level extraction summary from clean all-account and human-only outputs.}}{21}{table.102}%
+\contentsline {table}{\numberline {17}{\ignorespaces Centralized global extraction totals from all-account, human-only, and bot-only populations.}}{21}{table.104}%
+\contentsline {table}{\numberline {18}{\ignorespaces M1 snapshot-size statistics by project.}}{21}{table.106}%
+\contentsline {table}{\numberline {19}{\ignorespaces M1 code-line evolution across frozen tags. First and last values follow chronological tag order.}}{22}{table.110}%
+\contentsline {table}{\numberline {20}{\ignorespaces M2/M3 human-only intensity.}}{22}{table.113}%
+\contentsline {table}{\numberline {21}{\ignorespaces Automation impact summary. Percentages are relative to all-account project totals.}}{22}{table.116}%
+\contentsline {table}{\numberline {22}{\ignorespaces Short-window sensitivity flags. Windows below seven days are retained but marked as \texttt {sensitivity\_only}.}}{23}{table.119}%
+\contentsline {table}{\numberline {23}{\ignorespaces Highest human-only churn/day windows. Very short windows can dominate per-day rates, so they are not used as primary cadence evidence.}}{23}{table.121}%
+\contentsline {table}{\numberline {24}{\ignorespaces M3 human-only activity profile.}}{23}{table.124}%
+\contentsline {table}{\numberline {25}{\ignorespaces Mean human-only M4 concentration indicators.}}{24}{table.127}%
+\contentsline {table}{\numberline {26}{\ignorespaces Execution ledger for the centralized Phase I pipeline.}}{25}{table.130}%
+\contentsline {table}{\numberline {27}{\ignorespaces Centralized Phase I data lineage checkpoints used for reproducibility and auditing.}}{27}{table.147}%

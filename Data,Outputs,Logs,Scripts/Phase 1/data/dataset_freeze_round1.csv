@@ -1,5 +1,0 @@
-"project_id","repo","storage_persistence","software_type_tags","round","notes"
-"flask","https://github.com/pallets/flask","High (GitHub)","web-framework, library","1",""
-"requests","https://github.com/psf/requests","High (GitHub)","http-client, library","1",""
-"urllib3","https://github.com/urllib3/urllib3","High (GitHub)","http-client, library","1",""
-"click","https://github.com/pallets/click","High (GitHub)","cli-toolkit, library","1",""

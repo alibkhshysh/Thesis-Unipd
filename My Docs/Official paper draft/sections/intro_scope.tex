@@ -19,7 +19,7 @@ No proof-of-concept (PoC) metric is selected in this phase; metric selection is 
 The report is organized as follows:
 \begin{itemize}[leftmargin=*]
   \item Sections~\ref{sec:candidate_metrics}--\ref{sec:detailed_design_blueprint} define candidate metrics, comparison criteria, DESTINO alignment, feasibility scoring, and the future PoC integration boundary.
-  \item Sections~\ref{sec:phase1_dataset_curation}--\ref{sec:round1_summary} document dataset curation, extraction, cleaning, and descriptive outputs for the Initial Cohort.
+  \item Sections~\ref{sec:phase1_dataset_curation}--\ref{sec:round1_summary} document dataset curation, extraction, cleaning, and descriptive outputs for the centralized 10-repository Phase I dataset.
   \item Sections~\ref{sec:reproducibility}--\ref{sec:phase1_conclusion} provide reproducibility and validity considerations.
   \item Section~\ref{sec:phase2_plan} defines the comparative evaluation plan and decision gate for PoC metric selection.
 \end{itemize}
@@ -28,8 +28,9 @@ The report is organized as follows:
 
 \begin{itemize}[leftmargin=*]
   \item A shortlist of candidate metrics and operational comparison criteria.
-  \item A fully reproducible Initial-Cohort dataset (frozen repositories, tags, and consecutive windows) and extraction pipeline.
+  \item A fully reproducible 10-repository Phase I dataset with frozen repositories, tags, and consecutive windows.
   \item Cleaned, validated metric datasets (developer-window and window totals) and ownership/concentration statistics.
+  \item Explicit bot-sensitivity and short-window sensitivity outputs, so automation and release-cadence artifacts are visible rather than hidden.
   \item A detailed smart-contract feasibility rubric to support later PoC metric selection.
   \item A DESTINO-aligned evidence model showing how Phase I outputs map to a future metric-agnostic PoC.
 \end{itemize}

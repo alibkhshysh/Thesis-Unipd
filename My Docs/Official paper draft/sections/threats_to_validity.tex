@@ -4,36 +4,36 @@
 \subsection{Construct validity}
 \label{sec:construct_validity}
 
-M2 uses churn as a proxy for change magnitude, which does not directly encode semantic complexity or defect risk.
-M3 cadence features are sensitive to timestamp semantics; commit-date/tag-date drift is documented and treated as a robustness concern.
-Automated accounts can also inflate commit-frequency and ownership/cadence interpretations, so M3 and M4 use human-only
-outputs as the primary population and keep all-account outputs for sensitivity checks.
-To reduce construct ambiguity, the study keeps raw fields (added, deleted, commits, activity days) alongside derived indicators.
+M2 uses churn as a proxy for change magnitude, which does not directly encode semantic complexity,
+defect risk, or architectural importance. M3 cadence features are sensitive to timestamp semantics;
+commit-date and tag-date boundaries are therefore treated as robustness concerns rather than ignored.
+Automated accounts can inflate commit-frequency and ownership/cadence interpretations, so M3 and M4
+use human-only outputs as the primary population and keep all-account outputs for sensitivity checks.
+To reduce construct ambiguity, the study keeps raw fields such as added lines, deleted lines, commits,
+and activity days alongside derived indicators.
 
 \subsection{Internal validity}
 \label{sec:internal_validity}
 
-Potential extraction errors were mitigated by deterministic windows, explicit cleaning rules, and arithmetic checks
-(\texttt{churn} $=$ \texttt{added} $+$ \texttt{deleted}). Developer identity is canonicalized by email during extraction,
-window totals are recomputed and validated from clean developer rows, and bot-sensitivity outputs validate that all-account
-totals remain consistent before deriving human-only tables.
+Potential extraction errors were mitigated through deterministic windows, immutable commit hashes,
+explicit cleaning rules, and arithmetic checks such as \texttt{churn} $=$ \texttt{added} $+$ \texttt{deleted}.
+Developer identity is canonicalized by email during extraction and cleaning, window totals are recomputed
+from clean developer rows, and ownership summaries are regenerated from those same clean rows. Bot-sensitivity
+outputs also validate that all-account totals remain consistent before deriving human-only tables.
 
 \subsection{External validity}
 \label{sec:external_validity}
 
-The Initial Cohort includes four mature Python projects only, so generalization to other ecosystems is limited.
-This is intentional: Phase I focuses on pipeline correctness; the Extended Cohort adds six more repositories to test transferability
-across a larger and more heterogeneous sample.
+The final Phase I dataset is broader than the pilot because it covers ten repositories across Python, Ruby,
+C/C++, Go, Java/Kotlin, JavaScript/TypeScript, and Rust ecosystems. This improves transferability compared
+with the four-repository pilot, but it is still a curated open-source sample rather than a statistically
+representative sample of all software projects. Phase II should therefore report conclusions as evidence
+from this selected dataset, not as universal claims about every repository or ecosystem.
 
 \subsection{Conclusion validity}
 \label{sec:conclusion_validity}
 
-No inferential claims are made in Phase I. Comparative conclusions are deferred to Phase II and will be supported by
-explicit stability/ranking analyses and the predefined feasibility rubric. This sequencing reduces risk of premature
-metric selection bias.
-
-
-
-
-
-
+No inferential claims are made in Phase I. The current report validates the dataset, pipeline, and descriptive
+evidence only. Comparative conclusions are deferred to Phase II, where stability, interpretability, gaming
+resistance, long-term suitability, bot sensitivity, and short-window robustness will be evaluated together
+before any proof-of-concept metric is selected.

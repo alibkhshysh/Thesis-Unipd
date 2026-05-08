@@ -1,0 +1,7 @@
+[2026-05-05T19:03:36Z] input_rows=1118
+[2026-05-05T19:03:36Z] unique_keys_after_clean=1118
+[2026-05-05T19:03:36Z] duplicate_key_groups_merged=0
+[2026-05-05T19:03:36Z] merged_rows_count=0
+[2026-05-05T19:03:36Z] windows_source=E:\Thesis Unipd\Data,Outputs,Logs,Scripts\Phase 1\data\windows_all.csv
+[2026-05-05T19:03:36Z] output_dev_clean=E:\Thesis Unipd\Data,Outputs,Logs,Scripts\Phase 1\out\metrics_window_dev_clean_all.csv
+[2026-05-05T19:03:36Z] output_totals_clean=E:\Thesis Unipd\Data,Outputs,Logs,Scripts\Phase 1\out\metrics_window_totals_clean_all.csv

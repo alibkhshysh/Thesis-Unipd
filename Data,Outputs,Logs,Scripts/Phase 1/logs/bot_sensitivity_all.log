@@ -1,0 +1,16 @@
+[2026-05-05T19:04:26Z] input_file=E:\Thesis Unipd\Data,Outputs,Logs,Scripts\Phase 1\out\metrics_window_dev_clean_all.csv
+[2026-05-05T19:04:26Z] input_rows=1118
+[2026-05-05T19:04:26Z] human_rows=1063
+[2026-05-05T19:04:26Z] bot_rows=55
+[2026-05-05T19:04:26Z] windows=70
+[2026-05-05T19:04:26Z] windows_with_bots=42
+[2026-05-05T19:04:26Z] windows_where_bot_top_committer=9
+[2026-05-05T19:04:26Z] total_commits_all=9560
+[2026-05-05T19:04:26Z] total_commits_bot=999
+[2026-05-05T19:04:26Z] bot_commit_share=0.104498
+[2026-05-05T19:04:26Z] total_churn_all=2066059
+[2026-05-05T19:04:26Z] total_churn_bot=9294
+[2026-05-05T19:04:26Z] bot_churn_share=0.004498
+[2026-05-05T19:04:26Z] validation_all_account_total_mismatches=0
+[2026-05-05T19:04:26Z] primary_population_for_m3_m4=human_only
+[2026-05-05T19:04:26Z] all_account_outputs_retained_for_audit_and_sensitivity=True

@@ -1,7 +1,0 @@
-[2026-05-02T16:33:14Z] windows=28
-[2026-05-02T16:33:14Z] totals_rows=28
-[2026-05-02T16:33:14Z] dev_rows=273
-[2026-05-02T16:33:14Z] <1 day count=2 windows=requests_W03;requests_W04
-[2026-05-02T16:33:14Z] <7 days count=4 windows=requests_W03;requests_W04;urllib3_W05;urllib3_W06
-[2026-05-02T16:33:14Z] <14 days count=6 windows=click_W04;requests_W03;requests_W04;requests_W05;urllib3_W05;urllib3_W06
-[2026-05-02T16:33:14Z] robust_primary_rule=exclude windows with duration_days < 7
