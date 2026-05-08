@@ -1,0 +1,26 @@
+metric_id,metric_name,implementation_status,dimension_id,dimension,score,max_score,score_label,rationale
+M1,Snapshot size (LOC/SLOC),implemented,C3_D1,Manipulation difficulty,1,2,partial,Project size can be inflated by adding low-value code.
+M1,Snapshot size (LOC/SLOC),implemented,C3_D2,Manipulation cost,1,2,partial,"Inflating size requires code changes, but not necessarily useful changes."
+M1,Snapshot size (LOC/SLOC),implemented,C3_D3,Detectability from current evidence,1,2,partial,"Large size jumps are visible through LOC and churn, but intent is hard to infer."
+M1,Snapshot size (LOC/SLOC),implemented,C3_D4,Cross-metric consistency,1,2,partial,"Can be checked against churn and window duration, but weakly against developer value."
+M1,Snapshot size (LOC/SLOC),implemented,C3_D5,Residual-risk control,1,2,partial,"Safe as context or denominator, risky as a standalone reputation signal."
+M2,Patch complexity proxy (churn),implemented,C3_D1,Manipulation difficulty,1,2,partial,Churn can be increased through unnecessary rewrites or formatting-heavy changes.
+M2,Patch complexity proxy (churn),implemented,C3_D2,Manipulation cost,1,2,partial,Manipulation costs some repository activity but can be cheaper than meaningful maintenance.
+M2,Patch complexity proxy (churn),implemented,C3_D3,Detectability from current evidence,2,2,strong,High churn with weak commit cadence or concentrated ownership is visible in current outputs.
+M2,Patch complexity proxy (churn),implemented,C3_D4,Cross-metric consistency,2,2,strong,"Can be checked against M3 cadence, M4 concentration, LOC deltas, and short-window flags."
+M2,Patch complexity proxy (churn),implemented,C3_D5,Residual-risk control,1,2,partial,"Useful as effort evidence, but unsafe as a direct quality or reputation proxy alone."
+M3,Activity cadence,implemented,C3_D1,Manipulation difficulty,0,2,weak,Commit counts can be inflated by splitting work into many small commits.
+M3,Activity cadence,implemented,C3_D2,Manipulation cost,1,2,partial,"Sustained active days require some continuity, but commit splitting remains cheap."
+M3,Activity cadence,implemented,C3_D3,Detectability from current evidence,2,2,strong,Commit/churn imbalance and bot-sensitive rows are visible in current outputs.
+M3,Activity cadence,implemented,C3_D4,Cross-metric consistency,2,2,strong,"Can be checked against churn magnitude, active days, ownership shares, and bot summaries."
+M3,Activity cadence,implemented,C3_D5,Residual-risk control,1,2,partial,"Good for continuity evidence, but vulnerable if read without churn and ownership context."
+M4,Ownership / concentration,implemented,C3_D1,Manipulation difficulty,2,2,strong,Sustained ownership share is harder to fake than isolated commits or churn spikes.
+M4,Ownership / concentration,implemented,C3_D2,Manipulation cost,2,2,strong,Manipulation usually requires controlling a large share of project activity over a window.
+M4,Ownership / concentration,implemented,C3_D3,Detectability from current evidence,2,2,strong,Top-1/top-3 shares and Gini expose concentration spikes and dominance patterns.
+M4,Ownership / concentration,implemented,C3_D4,Cross-metric consistency,2,2,strong,"Can be checked against M2 churn, M3 cadence, bot flags, and developer-share rows."
+M4,Ownership / concentration,implemented,C3_D5,Residual-risk control,1,2,partial,"Residual risk remains for coordinated or review-light dominance, so it needs context."
+M5,Maintenance responsiveness,design_extension,C3_D1,Manipulation difficulty,1,2,partial,Fast shallow replies can improve apparent responsiveness without resolving issues.
+M5,Maintenance responsiveness,design_extension,C3_D2,Manipulation cost,1,2,partial,Manipulation requires interaction with issue/PR workflows but may not require code work.
+M5,Maintenance responsiveness,design_extension,C3_D3,Detectability from current evidence,0,2,weak,Current Phase I evidence does not include issue or pull-request event streams.
+M5,Maintenance responsiveness,design_extension,C3_D4,Cross-metric consistency,0,2,weak,Current artifacts cannot cross-check response quality or event severity.
+M5,Maintenance responsiveness,design_extension,C3_D5,Residual-risk control,1,2,partial,"Potentially useful later, but current evidence cannot control gaming risk."

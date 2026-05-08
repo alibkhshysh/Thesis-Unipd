@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1778274696.54401 "main.aux" "main.bbl" "main" 1778274700.37493 0
+["bibtex main"] 1778275972.20229 "main.aux" "main.bbl" "main" 1778275975.71213 0
   "./references.bib" 1771886476 3431 6a1ffdbf3569b24a53af11689b158f6d ""
   "C:/Users/alibk/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/plain.bst" 1291864736 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "main.aux" 1778274699 30641 35e2db5145e438c7c861ab5200ddfe93 "pdflatex"
+  "main.aux" 1778275974 33212 0700c35ae78a1b78faa673e3de0e7f20 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1778274697.03514 "main.tex" "main.pdf" "main" 1778274700.376 0
+["pdflatex"] 1778275972.59687 "main.tex" "main.pdf" "main" 1778275975.7129 0
   "C:/Users/alibk/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1776427513 199639 a3ec5557382bc75c1aa01a726d8e902b ""
   "C:/Users/alibk/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1770470182 13333486 f7c36b602e95ff806fabb53959de1fbf ""
   "C:/Users/alibk/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/newtx/ntx-ec-tlf.enc" 1736607166 2914 fdbc4a54b9bc76f4551b5303f2737d33 ""
@@ -152,13 +152,14 @@
   "figures/month3_c1/c1_rank_stability_by_metric.pdf" 1778273247 15374 f80a64822c5034d062c58f428d566a8b ""
   "figures/month3_c1/c1_volatility_by_metric.pdf" 1778273247 17136 fb5d13a3cf770133b7103c2c23c7049c ""
   "figures/month3_c2/c2_interpretability_scores.pdf" 1778274608 16364 725d74a0b693e4c46460a5af5c12d5b4 ""
-  "main.aux" 1778274699 30641 35e2db5145e438c7c861ab5200ddfe93 "pdflatex"
-  "main.bbl" 1778274696 2684 74ce64fe06686d8eb4c629621ca5aa99 "bibtex main"
-  "main.lof" 1778274699 688 9e22e8ba13a4808d6dac36867406226f "pdflatex"
-  "main.lot" 1778274699 4776 8f185784515c9c1e2f083f2c0b3eedde "pdflatex"
-  "main.out" 1778274699 14438 75415eaaf61c553d7cc0ca100538d110 "pdflatex"
-  "main.tex" 1778274635 2418 f8c7e1a8b739f2c511431d88698e7504 ""
-  "main.toc" 1778274699 7861 764741e1111533766eba0484bb3744ee "pdflatex"
+  "figures/month3_c3/c3_gaming_resistance_scores.pdf" 1778275880 16828 bba7ee3aa8bd111a7243c9104abdd5bd ""
+  "main.aux" 1778275974 33212 0700c35ae78a1b78faa673e3de0e7f20 "pdflatex"
+  "main.bbl" 1778275972 2684 74ce64fe06686d8eb4c629621ca5aa99 "bibtex main"
+  "main.lof" 1778275974 867 56bc91b7097ee9868d052a23b53db009 "pdflatex"
+  "main.lot" 1778275974 5256 7d47080622f539cf77728d39d19a8120 "pdflatex"
+  "main.out" 1778275974 15522 171430c26e04bde7e94663ab8074e73a "pdflatex"
+  "main.tex" 1778275907 2486 53098329177e740583e80faab3b7ebcc ""
+  "main.toc" 1778275974 8343 b15dce1594b30612eb3f869894b976ad "pdflatex"
   "sections/abbreviations.tex" 1778008403 1460 935c12e56c4ee91b2f3b9dfc33e6b738 ""
   "sections/candidate_metrics.tex" 1771886580 1835 aca6eb6b39175ae7b14c59bd043664cd ""
   "sections/destino_context.tex" 1778008431 3970 e05e7e64eb1ccd9e2f8ac6ade8b70b2c ""
@@ -174,8 +175,9 @@
   "sections/month2_round1_dataset.tex" 1778012138 6787 b830c96c162cbe6639929398412e4784 ""
   "sections/month2_round1_summary_tables.tex" 1778009149 3495 1e6c0ecf0c55f2bb999e081a52085092 ""
   "sections/month3_c1_stability.tex" 1778274685 7588 45283e4975cc3fbb03e7d3a675e52cbb ""
-  "sections/month3_c2_interpretability.tex" 1778274668 6070 bdc320ec829e6fea3295a467efc43b0b ""
-  "sections/next_steps_month3_plan.tex" 1778274677 2291 5ed6baab1d8f8c3204de4f9a464b9f04 ""
+  "sections/month3_c2_interpretability.tex" 1778275949 6070 014ba4031cd94999beac52a45e4a7ebe ""
+  "sections/month3_c3_gaming_resistance.tex" 1778275942 6453 e579b828297fdc09cd0c33beb0b1799d ""
+  "sections/next_steps_month3_plan.tex" 1778275962 2357 8f2971a051c6a0c2ed20573b7fe45df5 ""
   "sections/reproducibility_protocol.tex" 1778271626 6333 a9c51808a74ddcc1de826e45b647b73d ""
   "sections/threats_to_validity.tex" 1778008990 2384 6be8029ceb511cc9e96b153d58025f2b ""
   (generated)

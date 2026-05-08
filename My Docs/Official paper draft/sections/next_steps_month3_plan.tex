@@ -4,16 +4,16 @@
 Phase II compares the candidate metrics using the criteria defined in
 Section~\ref{sec:methodology_criteria}. The centralized Phase I artifacts are the evidence base,
 so this phase focuses on metric behavior rather than additional dataset construction.
-The first two criteria, C1 stability and C2 interpretability, are reported in
-Sections~\ref{sec:phase2_c1_stability} and~\ref{sec:phase2_c2_interpretability}. Only after
-the remaining comparative criteria are completed will the smart-contract feasibility rubric be applied
+The first three criteria, C1 stability, C2 interpretability, and C3 gaming resistance, are reported in
+Sections~\ref{sec:phase2_c1_stability},~\ref{sec:phase2_c2_interpretability}, and~\ref{sec:phase2_c3_gaming_resistance}.
+Only after the remaining comparative criterion is completed will the smart-contract feasibility rubric be applied
 and one metric selected for the baseline proof-of-concept implementation.
 
 \subsection{Phase II execution plan}
 \label{sec:phase2_execution}
 
 \begin{enumerate}[leftmargin=*]
-  \item Complete criterion evidence for C3--C4 using the clean, human-only, bot-sensitivity, and duration-normalized \texttt{\_all} outputs, building on the completed C1 and C2 passes.
+  \item Complete C4 long-term suitability evidence using the clean, human-only, bot-sensitivity, and duration-normalized \texttt{\_all} outputs, building on the completed C1--C3 passes.
   \item Report both full-dataset results and robust results that exclude windows marked \texttt{sensitivity\_only} where duration-sensitive metrics are evaluated.
   \item Compare metric behavior across projects, ecosystems, and release-window lengths without selecting a PoC metric prematurely.
   \item Score smart-contract feasibility dimensions for each candidate using the predefined rubric.

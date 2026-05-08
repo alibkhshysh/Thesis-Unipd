@@ -78,6 +78,11 @@
 \contentsline {subsection}{\numberline {18.1}Scoring protocol and artifacts}{32}{subsection.174}%
 \contentsline {subsection}{\numberline {18.2}C2 results}{33}{subsection.179}%
 \contentsline {subsection}{\numberline {18.3}C2 interpretation for the decision process}{34}{subsection.184}%
-\contentsline {section}{\numberline {19}Planned Next Phase: Comparative Metric Evaluation}{35}{section.185}%
-\contentsline {subsection}{\numberline {19.1}Phase II execution plan}{35}{subsection.186}%
-\contentsline {subsection}{\numberline {19.2}Decision gate criteria}{35}{subsection.193}%
+\contentsline {section}{\numberline {19}Phase II Step 3: C3 Gaming-Resistance Analysis}{35}{section.185}%
+\contentsline {subsection}{\numberline {19.1}Scoring protocol and artifacts}{35}{subsection.186}%
+\contentsline {subsection}{\numberline {19.2}Attack-surface summary}{35}{subsection.191}%
+\contentsline {subsection}{\numberline {19.3}C3 results}{36}{subsection.192}%
+\contentsline {subsection}{\numberline {19.4}C3 interpretation for the decision process}{36}{subsection.197}%
+\contentsline {section}{\numberline {20}Planned Next Phase: Comparative Metric Evaluation}{37}{section.198}%
+\contentsline {subsection}{\numberline {20.1}Phase II execution plan}{37}{subsection.199}%
+\contentsline {subsection}{\numberline {20.2}Decision gate criteria}{37}{subsection.206}%

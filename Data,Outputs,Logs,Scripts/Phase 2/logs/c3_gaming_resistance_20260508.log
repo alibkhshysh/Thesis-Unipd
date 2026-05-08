@@ -1,0 +1,8 @@
+[2026-05-08T21:31:20Z] c3_gaming_resistance_scoring=completed
+[2026-05-08T21:31:20Z] rubric_dimensions=5
+[2026-05-08T21:31:20Z] attack_surface_rows=10
+[2026-05-08T21:31:20Z] score_rows=25
+[2026-05-08T21:31:20Z] summary_rows=5
+[2026-05-08T21:31:20Z] implemented_metrics=M1,M2,M3,M4
+[2026-05-08T21:31:20Z] design_extension_metrics=M5
+[2026-05-08T21:31:20Z] result=derived_c3_gaming_resistance_tables_and_figure_written

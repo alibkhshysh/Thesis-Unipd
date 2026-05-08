@@ -1,0 +1,6 @@
+dimension_id,dimension,max_score,description
+C3_D1,Manipulation difficulty,2,How difficult it is to artificially improve the metric.
+C3_D2,Manipulation cost,2,How much real work or coordination manipulation requires.
+C3_D3,Detectability from current evidence,2,Whether manipulation can be flagged from existing Phase I artifacts.
+C3_D4,Cross-metric consistency,2,Whether the metric can be checked against other candidate signals.
+C3_D5,Residual-risk control,2,Whether remaining gaming risk is acceptable after safeguards.
