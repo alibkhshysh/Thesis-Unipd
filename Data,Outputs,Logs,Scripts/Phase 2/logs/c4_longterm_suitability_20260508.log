@@ -1,0 +1,14 @@
+[2026-05-08T21:44:27Z] c4_longterm_suitability_scoring=completed
+[2026-05-08T21:44:27Z] lifecycle_project_rows=10
+[2026-05-08T21:44:27Z] metric_evidence_rows=5
+[2026-05-08T21:44:27Z] rubric_dimensions=5
+[2026-05-08T21:44:27Z] score_rows=25
+[2026-05-08T21:44:27Z] summary_rows=5
+[2026-05-08T21:44:27Z] frozen_projects=10
+[2026-05-08T21:44:27Z] frozen_tags=80
+[2026-05-08T21:44:27Z] frozen_windows=70
+[2026-05-08T21:44:27Z] primary_windows=48
+[2026-05-08T21:44:27Z] sensitivity_only_windows=22
+[2026-05-08T21:44:27Z] implemented_metrics=M1,M2,M3,M4
+[2026-05-08T21:44:27Z] design_extension_metrics=M5
+[2026-05-08T21:44:27Z] result=derived_c4_longterm_tables_and_figure_written

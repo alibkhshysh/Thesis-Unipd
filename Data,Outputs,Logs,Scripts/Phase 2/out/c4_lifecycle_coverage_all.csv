@@ -1,0 +1,11 @@
+project_id,frozen_tags,release_windows,history_span_days,median_window_days,primary_windows,sensitivity_only_windows,total_human_commits,total_human_churn,median_endpoint_kloc
+brew,8,7,34.927,5.853,2,5,311,39565,216.756
+click,8,7,851.029,63.624,7,0,367,28901,14.570
+curl,8,7,336.003,55.973,7,0,3229,420253,222.338
+flask,8,7,872.605,110.230,7,0,156,12935,12.839
+gin,8,7,1362.881,160.939,7,0,295,20943,14.114
+junit5,8,7,208.142,31.271,4,3,3386,1455032,132.851
+prettier,8,7,138.558,4.935,2,5,76,8117,113.169
+requests,8,7,838.195,18.988,5,2,125,3115,8.302
+tokio,8,7,104.056,5.080,2,5,505,55496,92.647
+urllib3,8,7,482.235,68.958,5,2,111,12408,24.947

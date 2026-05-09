@@ -1,0 +1,6 @@
+dimension_id,dimension,max_score,description
+C4_D1,Historical coverage,2,Whether the current Phase I evidence covers the metric over all frozen projects and windows.
+C4_D2,Lifecycle robustness,2,"Whether the metric remains meaningful across growth, maintenance, and short-release phases."
+C4_D3,Incremental update feasibility,2,Whether the metric can be updated from a new tag or release window without recomputing full history.
+C4_D4,Compact audit record,2,"Whether long-term evidence can be stored as compact, hash-anchored records."
+C4_D5,Long-term reputation fit,2,Whether the metric remains useful for reputation reasoning over extended histories.

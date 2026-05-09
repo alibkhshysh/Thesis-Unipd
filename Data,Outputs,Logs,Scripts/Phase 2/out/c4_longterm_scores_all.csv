@@ -1,0 +1,26 @@
+metric_id,metric_name,implementation_status,dimension_id,dimension,score,max_score,score_label,rationale
+M1,Snapshot size (LOC/SLOC),implemented,C4_D1,Historical coverage,2,2,strong,The LOC/SLOC evidence covers every frozen tag in the ten-repository dataset.
+M1,Snapshot size (LOC/SLOC),implemented,C4_D2,Lifecycle robustness,1,2,partial,"Size remains useful as project context, but its meaning changes as projects mature."
+M1,Snapshot size (LOC/SLOC),implemented,C4_D3,Incremental update feasibility,2,2,strong,A new release only requires counting the new endpoint tag.
+M1,Snapshot size (LOC/SLOC),implemented,C4_D4,Compact audit record,2,2,strong,The stored record is compact: tag identity plus line-count fields.
+M1,Snapshot size (LOC/SLOC),implemented,C4_D5,Long-term reputation fit,0,2,weak,Size is not a developer-reputation signal by itself.
+M2,Patch complexity proxy (churn),implemented,C4_D1,Historical coverage,2,2,strong,Human-only churn evidence is available for all frozen release windows.
+M2,Patch complexity proxy (churn),implemented,C4_D2,Lifecycle robustness,1,2,partial,"Churn remains informative, but release style and refactoring cycles can change its interpretation."
+M2,Patch complexity proxy (churn),implemented,C4_D3,Incremental update feasibility,2,2,strong,A new window can be added from the diff between the previous and new release tag.
+M2,Patch complexity proxy (churn),implemented,C4_D4,Compact audit record,1,2,partial,"Aggregates are compact, but developer-level churn histories can grow with contributor count."
+M2,Patch complexity proxy (churn),implemented,C4_D5,Long-term reputation fit,1,2,partial,"It is a useful effort signal over time, but not a sufficient reputation measure alone."
+M3,Activity cadence,implemented,C4_D1,Historical coverage,2,2,strong,Human-only commit and active-day evidence covers all release windows.
+M3,Activity cadence,implemented,C4_D2,Lifecycle robustness,1,2,partial,"Cadence remains readable, but project activity naturally changes across lifecycle phases."
+M3,Activity cadence,implemented,C4_D3,Incremental update feasibility,2,2,strong,New commits and active days can be appended per new release window.
+M3,Activity cadence,implemented,C4_D4,Compact audit record,2,2,strong,"Counts, dates, and normalized rates are compact to store and audit."
+M3,Activity cadence,implemented,C4_D5,Long-term reputation fit,1,2,partial,"It helps explain continuity, but must be paired with quality and ownership context."
+M4,Ownership / concentration,implemented,C4_D1,Historical coverage,2,2,strong,Ownership summaries and developer-share rows are available for all release windows.
+M4,Ownership / concentration,implemented,C4_D2,Lifecycle robustness,2,2,strong,Relative shares remain meaningful across project size and lifecycle changes.
+M4,Ownership / concentration,implemented,C4_D3,Incremental update feasibility,1,2,partial,"A new window can be added incrementally, but identity and share distributions must be maintained."
+M4,Ownership / concentration,implemented,C4_D4,Compact audit record,1,2,partial,"Summary records are compact, while full developer-share evidence is larger."
+M4,Ownership / concentration,implemented,C4_D5,Long-term reputation fit,2,2,strong,Sustained ownership is directly relevant to long-term maintainer reputation.
+M5,Maintenance responsiveness,design_extension,C4_D1,Historical coverage,0,2,weak,The current dataset does not include issue or pull-request response events.
+M5,Maintenance responsiveness,design_extension,C4_D2,Lifecycle robustness,2,2,strong,Responsiveness would be meaningful across long maintenance histories if collected.
+M5,Maintenance responsiveness,design_extension,C4_D3,Incremental update feasibility,0,2,weak,No current event stream exists to update incrementally.
+M5,Maintenance responsiveness,design_extension,C4_D4,Compact audit record,0,2,weak,The compact record shape cannot be validated without event definitions and sampling rules.
+M5,Maintenance responsiveness,design_extension,C4_D5,Long-term reputation fit,2,2,strong,"Conceptually, responsiveness would fit long-term maintenance reputation."

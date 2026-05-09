@@ -1,0 +1,6 @@
+metric_id,metric_name,implementation_status,evidence_source,observed_projects,observed_records,analysis_unit,coverage_note
+M1,Snapshot size (LOC/SLOC),implemented,loc_per_tag_all.csv,10,80,project tag,all frozen tags
+M2,Patch complexity proxy (churn),implemented,metrics_window_dev_human_all.csv; metrics_window_totals_human_normalized_all.csv,10,1063,project window developer,all frozen human-only windows
+M3,Activity cadence,implemented,metrics_window_dev_human_all.csv; metrics_window_dev_human_normalized_all.csv,10,1063,project window developer,all frozen human-only windows
+M4,Ownership / concentration,implemented,ownership_dev_shares_human_all.csv; ownership_summary_human_all.csv,10,1063,project window developer share,all frozen human-only windows
+M5,Maintenance responsiveness,design_extension,not available in current Phase I artifacts,0,0,issue or pull-request event,not collected in current Phase I
