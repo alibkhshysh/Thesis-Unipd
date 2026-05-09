@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1778276818.92578 "main.aux" "main.bbl" "main" 1778276823.15803 0
+["bibtex main"] 1778328298.20015 "main.aux" "main.bbl" "main" 1778328302.65612 0
   "./references.bib" 1771886476 3431 6a1ffdbf3569b24a53af11689b158f6d ""
   "C:/Users/alibk/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/plain.bst" 1291864736 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "main.aux" 1778276821 35739 10bd5957c10628229f5fc44c756d1342 "pdflatex"
+  "main.aux" 1778328300 39267 a538c3cc7cc4ca03924591abc0bc7aee "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1778276819.43842 "main.tex" "main.pdf" "main" 1778276823.15892 0
+["pdflatex"] 1778328298.58343 "main.tex" "main.pdf" "main" 1778328302.65687 0
   "C:/Users/alibk/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1776427513 199639 a3ec5557382bc75c1aa01a726d8e902b ""
   "C:/Users/alibk/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1770470182 13333486 f7c36b602e95ff806fabb53959de1fbf ""
   "C:/Users/alibk/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/newtx/ntx-ec-tlf.enc" 1736607166 2914 fdbc4a54b9bc76f4551b5303f2737d33 ""
@@ -154,18 +154,20 @@
   "figures/month3_c2/c2_interpretability_scores.pdf" 1778274608 16364 725d74a0b693e4c46460a5af5c12d5b4 ""
   "figures/month3_c3/c3_gaming_resistance_scores.pdf" 1778275880 16828 bba7ee3aa8bd111a7243c9104abdd5bd ""
   "figures/month3_c4/c4_longterm_suitability_scores.pdf" 1778276667 16377 8b675731eab0e9f7dba5ab905d6b2cf4 ""
-  "main.aux" 1778276821 35739 10bd5957c10628229f5fc44c756d1342 "pdflatex"
-  "main.bbl" 1778276819 2684 74ce64fe06686d8eb4c629621ca5aa99 "bibtex main"
-  "main.lof" 1778276821 1053 ca071117f2bb955553c29981c815a384 "pdflatex"
-  "main.lot" 1778276821 5700 cdd6bd1d62abc3b4458a91a8d3dfb776 "pdflatex"
-  "main.out" 1778276821 16614 fd2a8eee3736c09ecd0cbd7ca631b12c "pdflatex"
-  "main.tex" 1778276778 2550 a230496f89aa246d677d220338a6f793 ""
-  "main.toc" 1778276821 8826 aed6a0260e1128be4adcb869cd310b0a "pdflatex"
+  "figures/month3_feasibility/feasibility_scores.pdf" 1778328165 16595 70f96e98ca46bfe8000eef8f7b20a928 ""
+  "figures/month3_feasibility/poc_candidate_readiness_scores.pdf" 1778328165 18535 564fef174016d29f7175db13b63920a3 ""
+  "main.aux" 1778328300 39267 a538c3cc7cc4ca03924591abc0bc7aee "pdflatex"
+  "main.bbl" 1778328298 2684 74ce64fe06686d8eb4c629621ca5aa99 "bibtex main"
+  "main.lof" 1778328300 1417 1e64538c187c9408de423f3beded9114 "pdflatex"
+  "main.lot" 1778328300 6424 76fbdba6a523cbe1dbf874d8b6ec1b65 "pdflatex"
+  "main.out" 1778328300 17680 ba8aeaab4efb2131a310d73f32fafbb8 "pdflatex"
+  "main.tex" 1778328245 2712 bb4c5050684952ffad3007228b29cb91 ""
+  "main.toc" 1778328300 9293 0840d12bc9d7be13c0070796d8d46829 "pdflatex"
   "sections/abbreviations.tex" 1778008403 1460 935c12e56c4ee91b2f3b9dfc33e6b738 ""
   "sections/candidate_metrics.tex" 1771886580 1835 aca6eb6b39175ae7b14c59bd043664cd ""
   "sections/destino_context.tex" 1778008431 3970 e05e7e64eb1ccd9e2f8ac6ade8b70b2c ""
   "sections/detailed_design_blueprint.tex" 1777747106 4857 5eededaa8226a0f0fb12ab3d9c169c14 ""
-  "sections/feasibility_rubric_full.tex" 1778254764 12610 621032ee71ebd4b59021bc541b97d5d9 ""
+  "sections/feasibility_rubric_full.tex" 1778328275 12715 c04c112316f71dd6b8ed7397771edf3b ""
   "sections/intro_scope.tex" 1778008413 2446 3dce37104f1f587aa9cab65969151756 ""
   "sections/methodology_criteria.tex" 1778009007 5413 16672568da1775ffd8f07218adb591a0 ""
   "sections/month2_cleaning.tex" 1778009097 5085 2a76fa5f9d361dc2e6c8ad0a6936b5e4 ""
@@ -178,8 +180,9 @@
   "sections/month3_c1_stability.tex" 1778274685 7588 45283e4975cc3fbb03e7d3a675e52cbb ""
   "sections/month3_c2_interpretability.tex" 1778275949 6070 014ba4031cd94999beac52a45e4a7ebe ""
   "sections/month3_c3_gaming_resistance.tex" 1778276783 6437 f5eaf898c5d5ed65cb179b1cfd3101b4 ""
-  "sections/month3_c4_longterm_suitability.tex" 1778276769 7566 e5cc1e905b1bd4f4b31221d1cf311bb3 ""
-  "sections/next_steps_month3_plan.tex" 1778276803 2110 d7ddcc14d5cca1468175d5013f011234 ""
+  "sections/month3_c4_longterm_suitability.tex" 1778328251 7551 f6019bcd37352e788d14e27d0d130a5d ""
+  "sections/month3_feasibility_scoring.tex" 1778328234 8535 95ff158119db11fea9500adaf6f48805 ""
+  "sections/next_steps_month3_plan.tex" 1778328266 2272 03197492967209401962a72d992d488e ""
   "sections/reproducibility_protocol.tex" 1778271626 6333 a9c51808a74ddcc1de826e45b647b73d ""
   "sections/threats_to_validity.tex" 1778008990 2384 6be8029ceb511cc9e96b153d58025f2b ""
   (generated)

@@ -1,0 +1,51 @@
+metric_id,metric_name,implementation_status,decision_role,dimension_id,dimension,score,max_score,score_label,exclusion_sensitive,rationale
+M1,Snapshot size (LOC/SLOC),implemented,context_only,D1,Determinism of computation,2,2,strong,True,Deterministic when the source-extension policy and tool version are pinned.
+M1,Snapshot size (LOC/SLOC),implemented,context_only,D2,Bounded on-chain computation,2,2,strong,False,The contract stores and checks commitments; line counting stays off-chain.
+M1,Snapshot size (LOC/SLOC),implemented,context_only,D3,Bounded on-chain storage growth,2,2,strong,False,"Only a compact line-count value, metadata, and evidence hash need to be stored."
+M1,Snapshot size (LOC/SLOC),implemented,context_only,D4,Update frequency feasibility,2,2,strong,True,A per-release update cadence is sufficient.
+M1,Snapshot size (LOC/SLOC),implemented,context_only,D5,External data/oracle dependence,2,2,strong,True,The input is the hash-pinned artifact rather than an unverifiable external service.
+M1,Snapshot size (LOC/SLOC),implemented,context_only,D6,Auditability and re-checking,2,2,strong,True,"Auditors can retrieve the artifact, verify the hash, and recompute the line count."
+M1,Snapshot size (LOC/SLOC),implemented,context_only,D7,Identity binding and provenance,1,2,partial,False,"The submission can be signed, but project size is not developer-specific attribution."
+M1,Snapshot size (LOC/SLOC),implemented,context_only,D8,Integrity of artifact linkage,2,2,strong,True,Artifact hash and version metadata provide a strong linkage path.
+M1,Snapshot size (LOC/SLOC),implemented,context_only,D9,Metric-value representation,2,2,strong,False,The metric is stored as bounded integer line counts or KLOC fixed-point values.
+M1,Snapshot size (LOC/SLOC),implemented,context_only,D10,Adversarial resilience,1,2,partial,False,"Size can be inflated with low-value code, so it is safe only as context."
+M2,Patch complexity proxy (churn),implemented,eligible_supporting_candidate,D1,Determinism of computation,2,2,strong,True,"Deterministic from frozen tags, hashes, diff policy, and tool version."
+M2,Patch complexity proxy (churn),implemented,eligible_supporting_candidate,D2,Bounded on-chain computation,2,2,strong,False,Diff computation remains off-chain; the contract records bounded values.
+M2,Patch complexity proxy (churn),implemented,eligible_supporting_candidate,D3,Bounded on-chain storage growth,1,2,partial,False,"Window totals are compact, but developer-level histories can grow with contributor count."
+M2,Patch complexity proxy (churn),implemented,eligible_supporting_candidate,D4,Update frequency feasibility,2,2,strong,True,Release-window updates avoid per-commit writes.
+M2,Patch complexity proxy (churn),implemented,eligible_supporting_candidate,D5,External data/oracle dependence,1,2,partial,True,"The metric needs release-window history and previous artifacts, but those inputs can be hash-anchored."
+M2,Patch complexity proxy (churn),implemented,eligible_supporting_candidate,D6,Auditability and re-checking,2,2,strong,True,Auditors can replay the window diff from pinned release evidence.
+M2,Patch complexity proxy (churn),implemented,eligible_supporting_candidate,D7,Identity binding and provenance,1,2,partial,False,Developer attribution depends on commit-author mapping and canonicalization rules.
+M2,Patch complexity proxy (churn),implemented,eligible_supporting_candidate,D8,Integrity of artifact linkage,2,2,strong,True,Frozen tags and artifact hashes give a strong integrity boundary.
+M2,Patch complexity proxy (churn),implemented,eligible_supporting_candidate,D9,Metric-value representation,2,2,strong,False,"Added, deleted, and churn values are integer counts; rates can be fixed-point."
+M2,Patch complexity proxy (churn),implemented,eligible_supporting_candidate,D10,Adversarial resilience,1,2,partial,False,"Artificial churn is possible, so safeguards from C3 remain necessary."
+M3,Activity cadence,implemented,eligible_candidate,D1,Determinism of computation,2,2,strong,True,"Deterministic from frozen window boundaries, commit timestamps, and bot-handling policy."
+M3,Activity cadence,implemented,eligible_candidate,D2,Bounded on-chain computation,2,2,strong,False,Commit traversal is off-chain; the contract stores only compact values.
+M3,Activity cadence,implemented,eligible_candidate,D3,Bounded on-chain storage growth,2,2,strong,False,"Commit counts, active-day counts, and normalized rates are compact records."
+M3,Activity cadence,implemented,eligible_candidate,D4,Update frequency feasibility,2,2,strong,True,Release-window batching avoids high-frequency per-commit ledger writes.
+M3,Activity cadence,implemented,eligible_candidate,D5,External data/oracle dependence,1,2,partial,True,"The metric depends on Git history, but the history can be pinned through archived evidence."
+M3,Activity cadence,implemented,eligible_candidate,D6,Auditability and re-checking,2,2,strong,True,Auditors can replay the commit-window extraction from the pinned repository evidence.
+M3,Activity cadence,implemented,eligible_candidate,D7,Identity binding and provenance,1,2,partial,False,Identity binding depends on author canonicalization and the submission identity model.
+M3,Activity cadence,implemented,eligible_candidate,D8,Integrity of artifact linkage,2,2,strong,True,"Frozen tags, hashes, and evidence reports support artifact linkage."
+M3,Activity cadence,implemented,eligible_candidate,D9,Metric-value representation,2,2,strong,False,Counts and per-day rates can be represented as integers or fixed-point values.
+M3,Activity cadence,implemented,eligible_candidate,D10,Adversarial resilience,1,2,partial,False,"Commit splitting is cheap, so cadence needs C3 safeguards."
+M4,Ownership / concentration,implemented,eligible_candidate,D1,Determinism of computation,2,2,strong,True,Deterministic when identity canonicalization and aggregation rules are pinned.
+M4,Ownership / concentration,implemented,eligible_candidate,D2,Bounded on-chain computation,2,2,strong,False,Share and Gini calculations stay off-chain; contract work is bounded record storage.
+M4,Ownership / concentration,implemented,eligible_candidate,D3,Bounded on-chain storage growth,1,2,partial,False,"Summary values are compact, but full developer-share evidence grows with contributors."
+M4,Ownership / concentration,implemented,eligible_candidate,D4,Update frequency feasibility,2,2,strong,True,Release-window updates are feasible and avoid per-event writes.
+M4,Ownership / concentration,implemented,eligible_candidate,D5,External data/oracle dependence,1,2,partial,True,"The metric needs Git history and identity canonicalization, but both can be documented and hash-anchored."
+M4,Ownership / concentration,implemented,eligible_candidate,D6,Auditability and re-checking,2,2,strong,True,Auditors can replay the ownership calculation from pinned release evidence and the canonicalization policy.
+M4,Ownership / concentration,implemented,eligible_candidate,D7,Identity binding and provenance,1,2,partial,False,Identity binding is the main caveat because commit authors and signed submitters may not always align.
+M4,Ownership / concentration,implemented,eligible_candidate,D8,Integrity of artifact linkage,2,2,strong,True,"Frozen tags, hashes, and evidence reports provide strong artifact linkage."
+M4,Ownership / concentration,implemented,eligible_candidate,D9,Metric-value representation,1,2,partial,False,Shares and Gini values require fixed-point scaling or numerator-denominator storage.
+M4,Ownership / concentration,implemented,eligible_candidate,D10,Adversarial resilience,2,2,strong,False,Sustained ownership is harder to manipulate than isolated churn or commit counts.
+M5,Maintenance responsiveness,design_extension,design_extension_excluded,D1,Determinism of computation,1,2,partial,True,"Determinism depends on defining event boundaries, response semantics, and workflow rules."
+M5,Maintenance responsiveness,design_extension,design_extension_excluded,D2,Bounded on-chain computation,2,2,strong,False,A hybrid design could keep event analysis off-chain and store compact values.
+M5,Maintenance responsiveness,design_extension,design_extension_excluded,D3,Bounded on-chain storage growth,1,2,partial,False,"Aggregates are compact, but raw event histories can grow quickly."
+M5,Maintenance responsiveness,design_extension,design_extension_excluded,D4,Update frequency feasibility,1,2,partial,True,"Issue and pull-request events can be batched, but they are more frequent than release windows."
+M5,Maintenance responsiveness,design_extension,design_extension_excluded,D5,External data/oracle dependence,0,2,weak,True,Current evidence would depend on external platform event data without a validated attestation model.
+M5,Maintenance responsiveness,design_extension,design_extension_excluded,D6,Auditability and re-checking,0,2,weak,True,The current dataset cannot support replay or re-checking for responsiveness.
+M5,Maintenance responsiveness,design_extension,design_extension_excluded,D7,Identity binding and provenance,1,2,partial,False,Platform identities would need mapping to developer submissions.
+M5,Maintenance responsiveness,design_extension,design_extension_excluded,D8,Integrity of artifact linkage,1,2,partial,True,Event artifact pinning is not yet specified.
+M5,Maintenance responsiveness,design_extension,design_extension_excluded,D9,Metric-value representation,2,2,strong,False,Response times can be stored as integer durations.
+M5,Maintenance responsiveness,design_extension,design_extension_excluded,D10,Adversarial resilience,1,2,partial,False,Fast superficial replies can game response-time metrics.

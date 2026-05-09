@@ -1,0 +1,11 @@
+dimension_id,dimension,max_score,exclusion_sensitive,description
+D1,Determinism of computation,2,True,"Whether the metric is deterministic given pinned artifacts, windows, tool versions, and parameters."
+D2,Bounded on-chain computation,2,False,Whether contract-side logic remains constant-time or otherwise tightly bounded.
+D3,Bounded on-chain storage growth,2,False,Whether on-chain state can stay compact as histories grow.
+D4,Update frequency feasibility,2,True,Whether updates can be made per release or batched window rather than high-frequency events.
+D5,External data/oracle dependence,2,True,Whether inputs are hash-anchored artifacts or signed attestations rather than unverifiable services.
+D6,Auditability and re-checking,2,True,Whether third parties can recompute and compare the metric from public committed evidence.
+D7,Identity binding and provenance,2,False,Whether metric evidence is bound to a stable developer identity and provenance path.
+D8,Integrity of artifact linkage,2,True,"Whether archive hashes, version identifiers, and evidence records prevent artifact substitution."
+D9,Metric-value representation,2,False,Whether the metric can be encoded as bounded integers or fixed-point values.
+D10,Adversarial resilience,2,False,Whether the metric resists low-cost manipulation in a public-ledger context.

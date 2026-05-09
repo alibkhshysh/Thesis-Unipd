@@ -6,18 +6,19 @@ Section~\ref{sec:methodology_criteria}. The centralized Phase I artifacts are th
 so this phase focuses on metric behavior rather than additional dataset construction.
 The four comparative criteria, C1 stability, C2 interpretability, C3 gaming resistance, and C4 long-term suitability,
 are reported in Sections~\ref{sec:phase2_c1_stability},~\ref{sec:phase2_c2_interpretability},
-\ref{sec:phase2_c3_gaming_resistance}, and~\ref{sec:phase2_c4_longterm_suitability}. The next step is to apply
-the smart-contract feasibility rubric and then select one metric for the baseline proof-of-concept implementation.
+\ref{sec:phase2_c3_gaming_resistance}, and~\ref{sec:phase2_c4_longterm_suitability}. The smart-contract
+feasibility pass is reported in Section~\ref{sec:phase2_feasibility_scoring}. The next step is to record the final
+metric-selection rationale and then instantiate the selected metric in the baseline proof-of-concept implementation.
 
 \subsection{Phase II execution plan}
 \label{sec:phase2_execution}
 
 \begin{enumerate}[leftmargin=*]
-  \item Combine the C1--C4 results into a single metric-comparison table.
-  \item Score smart-contract feasibility dimensions for each candidate using the predefined rubric.
-  \item Eliminate candidates that are not eligible for the baseline PoC, including design-extension metrics without current evidence.
-  \item Select exactly one PoC metric using the decision protocol in Section~\ref{sec:decision_protocol}.
+  \item Record the final PoC metric-selection rationale using the decision inputs in Section~\ref{sec:final_selection_inputs}.
+  \item Freeze the selected metric definition, analysis policy, value encoding, and evidence-hash fields.
   \item Instantiate the selected metric inside the DESTINO-aligned metric-record blueprint in Section~\ref{sec:detailed_design_blueprint}.
+  \item Implement the baseline PoC contract and the minimal off-chain verifier needed to submit one replayable metric record.
+  \item Test the PoC with one or more frozen release-window examples from the centralized Phase I dataset.
 \end{enumerate}
 
 \subsection{Decision gate criteria}

@@ -1,0 +1,9 @@
+[2026-05-09T12:02:45Z] smart_contract_feasibility_scoring=completed
+[2026-05-09T12:02:45Z] comparative_metric_rows=5
+[2026-05-09T12:02:45Z] feasibility_dimensions=10
+[2026-05-09T12:02:45Z] feasibility_score_rows=50
+[2026-05-09T12:02:45Z] feasibility_summary_rows=5
+[2026-05-09T12:02:45Z] decision_input_rows=5
+[2026-05-09T12:02:45Z] poc_eligible_metrics=M4,M3,M2
+[2026-05-09T12:02:45Z] preferred_for_final_selection_gate=M4
+[2026-05-09T12:02:45Z] result=derived_feasibility_and_decision_input_tables_written
