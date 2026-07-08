@@ -1,0 +1,9 @@
+policy_field,value,reason
+metric_formula,share_churn = developer_human_churn / window_total_human_churn,Measures the developer's relative ownership of changed lines in one release window.
+fixed_point_encoding,share_churn_ppm = round(share_churn * 1000000),Avoids floating point values in the PoC record while preserving six decimal places.
+population,human-only rows; bot rows excluded from primary metric,Developer reputation should not silently mix automation with human behavior.
+identity_key,"canonical author email, optionally hashed before on-chain storage",Matches the current Phase I identity-cleaning policy and avoids storing raw email on-chain.
+window_boundary,from_tag/to_tag and from_hash/to_hash from frozen windows_all.csv,Makes the metric replayable from immutable release-window evidence.
+evidence_hash,"hash of the off-chain evidence packet: input identifiers, analysis policy, numerator, denominator, encoded value, and supporting audit fields",Allows a verifier to recompute the value and compare it with the committed record.
+short_window_policy,retain sensitivity_only flag in the evidence packet,Short windows are valid audit evidence but require careful interpretation.
+supporting_checks,"M2 churn magnitude, M3 activity cadence, M4 top-1/top-3/Gini, bot summaries",Prevents the selected ownership share from being interpreted without context.

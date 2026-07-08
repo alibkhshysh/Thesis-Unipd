@@ -1,0 +1,7 @@
+reason_id,topic,evidence,decision_effect
+R1,Best eligible combined result,M4 ranks first among eligible candidates with combined readiness 8.075.,Select M4 as the baseline PoC metric family.
+R2,Reputation meaning,M4 measures relative developer ownership in a release window rather than only project size or raw activity.,Use developer churn ownership share as the concrete PoC value.
+R3,Gaming resistance,"M4 has C3 score 9/10, higher than M2 and M3.",Prefer M4 over metrics that can be inflated by simple churn spikes or commit splitting.
+R4,Long-term suitability,M4 has C4 score 8/10 and remains meaningful across project sizes through relative shares.,Treat M4 as suitable for incremental release-window records.
+R5,Feasibility,M4 has feasibility score 8.0/10 with no exclusion conditions.,"Use a hybrid implementation: off-chain computation, compact on-chain record."
+R6,Known caveat,M4 depends on identity canonicalization and share computation policy.,Store analysis policy and evidence hash; keep M2 and M3 as supporting audit signals.

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.2.7)  9 MAY 2026 16:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.2.7)  8 JUL 2026 09:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -837,9 +837,9 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 {C:/Users/alibk/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/alib
 k/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 14.4pt on input line 47.
+(Font)              scaled to size 14.4pt on input line 46.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 14.4pt on input line 47.
+(Font)              scaled to size 14.4pt on input line 46.
 
 (main.toc
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
@@ -892,11 +892,11 @@ LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
 (Font)              scaled to size 8.0pt on input line 5.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
 (Font)              scaled to size 6.1pt on input line 5.
- [2])
+ [2] [3])
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
- [3] (main.lot
+ [4] (main.lot
 LaTeX Font Info:    Trying to load font information for T1+ntxtt on input line 
 14.
 
@@ -910,15 +910,15 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-[4])
+[5])
 \tf@lot=\write5
 \openout5 = `main.lot'.
 
- [5] (main.lof)
+ [6] (main.lof)
 \tf@lof=\write6
 \openout6 = `main.lof'.
 
- [6] (sections/abbreviations.tex
+ [7] (sections/abbreviations.tex
 Underfull \hbox (badness 10000) in paragraph at lines 24--24
 []|\T1/ntxtlf/m/n/10.95 (+20) Centralized
  []
@@ -935,17 +935,17 @@ File: ts1ntxtlf.fd 2015/01/18 v1.0 fd file for TS1/ntxtlf
 LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
 (Font)              scaled to size 10.95pt on input line 11.
 
-[7{C:/Users/alibk/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/newtx/ntx-ot1-t
+[8{C:/Users/alibk/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/newtx/ntx-ot1-t
 lf.enc}{C:/Users/alibk/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/tex-gyre/q
 -ts1.enc}]) (sections/candidate_metrics.tex
 Underfull \hbox (badness 3679) in paragraph at lines 32--32
 []|\T1/ntxtlf/m/n/10.95 (+20) M1 Snap-shot size
  []
 
-) (sections/methodology_criteria.tex [8]
+) (sections/methodology_criteria.tex [9]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 9.0pt on input line 61.
- [9]) (sections/destino_context.tex
+ [10]) (sections/destino_context.tex
 Underfull \hbox (badness 2142) in paragraph at lines 54--54
 []|\T1/ntxtlf/m/n/9 (+20) Replayable mea-sure-ment
  []
@@ -955,13 +955,13 @@ Underfull \hbox (badness 6047) in paragraph at lines 54--54
 []|\T1/ntxtlf/m/n/9 (+20) Smart-contract se-lec-tion
  []
 
-[10]) (sections/feasibility_rubric_full.tex [11]
+[11]) (sections/feasibility_rubric_full.tex [12]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
 (Font)              scaled to size 10.95pt on input line 39.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 8.0pt on input line 68.
- [12] [13])
-(sections/detailed_design_blueprint.tex [14]
+ [13] [14])
+(sections/detailed_design_blueprint.tex [15]
 Underfull \hbox (badness 4217) in paragraph at lines 46--46
 []|\T1/ntxtt/m/n/9 projectId\T1/ntxtlf/m/n/9 (+20) , \T1/ntxtt/m/n/9 developerI
 d\T1/ntxtlf/m/n/9 (+20) , \T1/ntxtt/m/n/9 versionId\T1/ntxtlf/m/n/9 (+20) ,
@@ -985,7 +985,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 46--46
 h\T1/ntxtlf/m/n/9 (+20) ,
  []
 
-[15]) (sections/month2_round1_dataset.tex
+[16]) (sections/month2_round1_dataset.tex
 Underfull \hbox (badness 2343) in paragraph at lines 37--37
 []|\T1/ntxtlf/m/n/8 (+20) package-manager, cli-tool,
  []
@@ -1005,7 +1005,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 37--37
 []|\T1/ntxtlf/m/n/8 (+20) code-formatter, cli-tool,
  []
 
-[16]
+[17]
 
 LaTeX Warning: \verb may be unreliable inside tabularx on input line 106.
 
@@ -1014,7 +1014,7 @@ Overfull \hbox (1.21529pt too wide) in paragraph at lines 106--106
 []|[]\T1/ntxtt/m/n/8 ^tokio-\d +\.\d +\.\d +$| 
  []
 
-) (sections/month2_pipeline.tex [17]
+) (sections/month2_pipeline.tex [18]
 Underfull \hbox (badness 10000) in paragraph at lines 52--52
 []|\T1/ntxtlf/m/n/8 (+20) Canonicalizes developer-window rows by \T1/ntxtt/m/n/
 8 (project_id, window_id,
@@ -1026,17 +1026,17 @@ Underfull \hbox (badness 1715) in paragraph at lines 52--52
 ort win-dows as
  []
 
-[18]
+[19]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 6.1pt on input line 67.
- [19]) (sections/month2_cleaning.tex [20]
+ [20]) (sections/month2_cleaning.tex [21]
 Underfull \hbox (badness 3049) in paragraph at lines 96--96
 []|\T1/ntxtlf/m/n/9 (+20) Window to-tals com-pute unique au-thors from canon-i-
 cal
  []
 
-) (sections/month2_round1_summary_tables.tex [21])
-(sections/month2_detailed_results.tex [22] [23] [24])
+) (sections/month2_round1_summary_tables.tex [22])
+(sections/month2_detailed_results.tex [23] [24] [25])
 (sections/month2_execution_ledger.tex
 Underfull \hbox (badness 10000) in paragraph at lines 29--29
 []|\T1/ntxtlf/m/n/8 (+20) Extract raw developer-
@@ -1072,25 +1072,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 29--29
 []|\T1/ntxtlf/m/n/8 (+20) Remove su-per-seded ex-
  []
 
-[25]) (sections/reproducibility_protocol.tex [26] [27])
-(sections/threats_to_validity.tex [28]) (sections/month2_conclusion.tex)
-(sections/month3_c1_stability.tex [29] [30]
-<figures/month3_c1/c1_volatility_by_metric.pdf, id=805, 853.22621pt x 343.40585
+[26]) (sections/reproducibility_protocol.tex [27] [28])
+(sections/threats_to_validity.tex [29]) (sections/month2_conclusion.tex)
+(sections/month3_c1_stability.tex [30] [31]
+<figures/month3_c1/c1_volatility_by_metric.pdf, id=856, 853.22621pt x 343.40585
 pt>
 File: figures/month3_c1/c1_volatility_by_metric.pdf Graphic file (type pdf)
 <use figures/month3_c1/c1_volatility_by_metric.pdf>
 Package pdftex.def Info: figures/month3_c1/c1_volatility_by_metric.pdf  used on
  input line 88.
 (pdftex.def)             Requested size: 452.9679pt x 182.30814pt.
-<figures/month3_c1/c1_indexed_metric_trends.pdf, id=806, 823.6164pt x 754.09734
+<figures/month3_c1/c1_indexed_metric_trends.pdf, id=857, 823.6164pt x 754.09734
 pt>
 File: figures/month3_c1/c1_indexed_metric_trends.pdf Graphic file (type pdf)
 <use figures/month3_c1/c1_indexed_metric_trends.pdf>
 Package pdftex.def Info: figures/month3_c1/c1_indexed_metric_trends.pdf  used o
 n input line 95.
 (pdftex.def)             Requested size: 452.97784pt x 414.74332pt.
- [31 <./figures/month3_c1/c1_volatility_by_metric.pdf>]
-<figures/month3_c1/c1_rank_stability_by_metric.pdf, id=860, 606.78947pt x 338.3
+ [32 <./figures/month3_c1/c1_volatility_by_metric.pdf>]
+<figures/month3_c1/c1_rank_stability_by_metric.pdf, id=910, 606.78947pt x 338.3
 7973pt>
 File: figures/month3_c1/c1_rank_stability_by_metric.pdf Graphic file (type pdf)
 
@@ -1098,19 +1098,19 @@ File: figures/month3_c1/c1_rank_stability_by_metric.pdf Graphic file (type pdf)
 Package pdftex.def Info: figures/month3_c1/c1_rank_stability_by_metric.pdf  use
 d on input line 128.
 (pdftex.def)             Requested size: 371.43698pt x 207.13417pt.
- [32 <./figures/month3_c1/c1_indexed_metric_trends.pdf>])
-(sections/month3_c2_interpretability.tex [33 <./figures/month3_c1/c1_rank_stabi
+ [33 <./figures/month3_c1/c1_indexed_metric_trends.pdf>])
+(sections/month3_c2_interpretability.tex [34 <./figures/month3_c1/c1_rank_stabi
 lity_by_metric.pdf>]
-<figures/month3_c2/c2_interpretability_scores.pdf, id=1017, 643.28201pt x 337.8
+<figures/month3_c2/c2_interpretability_scores.pdf, id=1067, 643.28201pt x 337.8
 9111pt>
 File: figures/month3_c2/c2_interpretability_scores.pdf Graphic file (type pdf)
 <use figures/month3_c2/c2_interpretability_scores.pdf>
 Package pdftex.def Info: figures/month3_c2/c2_interpretability_scores.pdf  used
  on input line 79.
 (pdftex.def)             Requested size: 407.66833pt x 214.14084pt.
- [34]) (sections/month3_c3_gaming_resistance.tex [35 <./figures/month3_c2/c2_in
-terpretability_scores.pdf>] [36]
-<figures/month3_c3/c3_gaming_resistance_scores.pdf, id=1084, 643.28201pt x 337.
+ [35]) (sections/month3_c3_gaming_resistance.tex [36 <./figures/month3_c2/c2_in
+terpretability_scores.pdf>] [37]
+<figures/month3_c3/c3_gaming_resistance_scores.pdf, id=1135, 643.28201pt x 337.
 89111pt>
 File: figures/month3_c3/c3_gaming_resistance_scores.pdf Graphic file (type pdf)
 
@@ -1118,10 +1118,10 @@ File: figures/month3_c3/c3_gaming_resistance_scores.pdf Graphic file (type pdf)
 Package pdftex.def Info: figures/month3_c3/c3_gaming_resistance_scores.pdf  use
 d on input line 90.
 (pdftex.def)             Requested size: 407.66833pt x 214.14084pt.
- [37 <./figures/month3_c3/c3_gaming_resistance_scores.pdf>]) (sections/month3_c
+ [38 <./figures/month3_c3/c3_gaming_resistance_scores.pdf>]) (sections/month3_c
 4_longterm_suitability.tex
-[38]
-<figures/month3_c4/c4_longterm_suitability_scores.pdf, id=1147, 643.28201pt x 3
+[39]
+<figures/month3_c4/c4_longterm_suitability_scores.pdf, id=1197, 643.28201pt x 3
 37.89111pt>
 File: figures/month3_c4/c4_longterm_suitability_scores.pdf Graphic file (type p
 df)
@@ -1129,13 +1129,13 @@ df)
 Package pdftex.def Info: figures/month3_c4/c4_longterm_suitability_scores.pdf  
 used on input line 97.
 (pdftex.def)             Requested size: 407.66833pt x 214.14084pt.
- [39 <./figures/month3_c4/c4_longterm_suitability_scores.pdf>])
-(sections/month3_feasibility_scoring.tex [40]
+ [40 <./figures/month3_c4/c4_longterm_suitability_scores.pdf>])
+(sections/month3_feasibility_scoring.tex [41]
 Underfull \hbox (badness 10000) in paragraph at lines 63--63
 []|\T1/ntxtlf/m/n/8 (+20) Maintenance re-spon-sive-
  []
 
-<figures/month3_feasibility/feasibility_scores.pdf, id=1209, 643.28201pt x 337.
+<figures/month3_feasibility/feasibility_scores.pdf, id=1259, 643.28201pt x 337.
 89111pt>
 File: figures/month3_feasibility/feasibility_scores.pdf Graphic file (type pdf)
 
@@ -1143,8 +1143,8 @@ File: figures/month3_feasibility/feasibility_scores.pdf Graphic file (type pdf)
 Package pdftex.def Info: figures/month3_feasibility/feasibility_scores.pdf  use
 d on input line 98.
 (pdftex.def)             Requested size: 407.66833pt x 214.14084pt.
-[41]
-<figures/month3_feasibility/poc_candidate_readiness_scores.pdf, id=1216, 679.41
+[42]
+<figures/month3_feasibility/poc_candidate_readiness_scores.pdf, id=1266, 679.41
 702pt x 366.7991pt>
 File: figures/month3_feasibility/poc_candidate_readiness_scores.pdf Graphic fil
 e (type pdf)
@@ -1152,24 +1152,25 @@ e (type pdf)
 Package pdftex.def Info: figures/month3_feasibility/poc_candidate_readiness_sco
 res.pdf  used on input line 139.
 (pdftex.def)             Requested size: 416.72963pt x 224.98404pt.
- [42 <./figures/month3_feasibility/feasibility_scores.pdf>])
-(sections/next_steps_month3_plan.tex [43 <./figures/month3_feasibility/poc_cand
-idate_readiness_scores.pdf>]) (main.bbl) [44] (main.aux)
+ [43 <./figures/month3_feasibility/feasibility_scores.pdf>])
+(sections/month3_poc_metric_selection.tex [44 <./figures/month3_feasibility/poc
+_candidate_readiness_scores.pdf>] [45]) (sections/next_steps_month3_plan.tex
+[46]) (main.bbl [47]) [48] (main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: BA8AEAAB4EFB2131A310D73F32FAFBB8;17680.
+(rerunfilecheck)             Checksum: DB58040A9EA9390D35A098C2FF152EFB;19045.
  ) 
 Here is how much of TeX's memory you used:
- 17948 strings out of 467871
- 284914 string characters out of 5418377
- 736498 words of memory out of 5000000
- 45931 multiletter control sequences out of 15000+600000
- 727356 words of font info for 283 fonts, out of 8000000 for 9000
+ 18001 strings out of 467871
+ 286126 string characters out of 5418377
+ 737206 words of memory out of 5000000
+ 45955 multiletter control sequences out of 15000+600000
+ 727715 words of font info for 287 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,12n,79p,1003b,661s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,12n,79p,1003b,643s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/alibk/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/NewTXM
 I.pfb><C:/Users/alibk/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/Ne
 wTXMI7.pfb><C:/Users/alibk/AppData/Local/Programs/MiKTeX/fonts/type1/public/tex
@@ -1181,9 +1182,9 @@ e1/public/newtx/txsys.pfb><C:/Users/alibk/AppData/Local/Programs/MiKTeX/fonts/t
 ype1/public/newtx/ztmb.pfb><C:/Users/alibk/AppData/Local/Programs/MiKTeX/fonts/
 type1/public/newtx/ztmr.pfb><C:/Users/alibk/AppData/Local/Programs/MiKTeX/fonts
 /type1/public/newtx/ztmri.pfb>
-Output written on main.pdf (44 pages, 564844 bytes).
+Output written on main.pdf (48 pages, 581440 bytes).
 PDF statistics:
- 1469 PDF objects out of 1728 (max. 8388607)
- 291 named destinations out of 1000 (max. 500000)
- 40129 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 1538 PDF objects out of 1728 (max. 8388607)
+ 309 named destinations out of 1000 (max. 500000)
+ 40193 words of extra memory for PDF output out of 42996 (max. 10000000)
 

@@ -1,0 +1,9 @@
+[2026-07-08T07:48:23Z] poc_metric_selection_freeze=completed
+[2026-07-08T07:48:23Z] selected_metric_family=M4
+[2026-07-08T07:48:23Z] selected_signal_id=M4_developer_share_churn
+[2026-07-08T07:48:23Z] selection_rows=1
+[2026-07-08T07:48:23Z] rationale_rows=6
+[2026-07-08T07:48:23Z] policy_rows=8
+[2026-07-08T07:48:23Z] record_field_rows=13
+[2026-07-08T07:48:23Z] supporting_signal_rows=5
+[2026-07-08T07:48:23Z] result=derived_poc_metric_selection_artifacts_written

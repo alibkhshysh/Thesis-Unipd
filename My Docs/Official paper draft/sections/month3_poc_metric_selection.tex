@@ -1,0 +1,170 @@
+\section{Phase II Step 6: Final PoC Metric Selection}
+\label{sec:phase2_poc_metric_selection}
+
+The previous sections compared the candidate metrics under C1--C4 and then checked smart-contract feasibility.
+This section records the final selection decision for the baseline proof-of-concept. The selected metric is not
+chosen because it is the easiest metric to compute. It is chosen because it has the strongest overall tradeoff
+between reputation meaning, stability, gaming resistance, long-term suitability, and feasibility in the intended
+DESTINO-aligned hybrid architecture.
+
+\subsection{Selected metric}
+\label{sec:selected_metric_definition}
+
+The selected PoC metric is:
+
+\begin{quote}
+\textbf{M4 developer churn ownership share}: the share of human-only churn in a frozen release window that is
+attributed to one canonical developer.
+\end{quote}
+
+The concrete signal identifier is \texttt{M4\_developer\_share\_churn}. It is computed as:
+
+\[
+\texttt{share\_churn} =
+\frac{\texttt{developer\_human\_churn}}
+{\texttt{window\_total\_human\_churn}}
+\]
+
+In simple terms, if a release window contains 10,000 human-churn lines and one developer is responsible for
+2,500 of those churn lines, that developer's ownership share for that window is 0.25, or 25\%. The PoC should
+store this as a fixed-point integer rather than as a floating-point number:
+
+\[
+\texttt{share\_churn\_ppm} = round(\texttt{share\_churn} \times 1{,}000{,}000)
+\]
+
+This encoding stores six decimal places and avoids floating-point behavior inside the contract record.
+
+\subsection{Selection artifacts}
+\label{sec:poc_selection_artifacts}
+
+The selection is frozen in dedicated Phase II artifacts so the decision is reproducible and not only written in prose.
+
+\begin{table}[H]
+\centering
+\scriptsize
+\renewcommand{\arraystretch}{1.08}
+\begin{tabularx}{\textwidth}{p{5.7cm}rX}
+\toprule
+\textbf{Artifact} & \textbf{Rows} & \textbf{Role} \\
+\midrule
+\path{out/poc_metric_selection_all.csv} & 1 & Final selected metric family, concrete signal, scores, and source tables. \\
+\path{out/poc_metric_selection_rationale_all.csv} & 6 & Written reasons supporting the M4 selection. \\
+\path{out/poc_metric_analysis_policy_all.csv} & 8 & Formula, population rule, encoding rule, evidence-hash rule, and supporting checks. \\
+\path{out/poc_metric_record_fields_all.csv} & 13 & Proposed compact fields for the PoC metric record. \\
+\path{out/poc_metric_supporting_signals_all.csv} & 5 & Signals retained as context or audit support around the selected metric. \\
+\path{logs/poc_metric_selection_20260708.log} & 1 & Execution log for the metric-selection freeze. \\
+\bottomrule
+\end{tabularx}
+\caption{Final PoC metric-selection artifacts. Paths are relative to the Phase II analysis directory.}
+\label{tab:poc_selection_artifacts}
+\end{table}
+
+\subsection{Why M4 is selected}
+\label{sec:why_m4_selected}
+
+The selected metric comes from the M4 ownership/concentration family. The decision-input table ranked M4 first
+among eligible candidates after combining the empirical C1--C4 evidence with smart-contract feasibility. Its
+combined readiness score is 8.075. M3 activity cadence remains a strong alternative, with combined readiness
+7.750, and M2 churn remains useful supporting evidence, with combined readiness 7.100.
+
+\begin{table}[H]
+\centering
+\scriptsize
+\renewcommand{\arraystretch}{1.08}
+\begin{tabularx}{\textwidth}{p{1.0cm}p{3.5cm}cccccX}
+\toprule
+\textbf{ID} & \textbf{Metric} & \textbf{C1} & \textbf{C2} & \textbf{C3} & \textbf{C4} & \textbf{Feas.} & \textbf{Decision role} \\
+\midrule
+M4 & Ownership/concentration & 8.5 & 7 & 9 & 8 & 8.0 & Selected for the baseline PoC. \\
+M3 & Activity cadence & 6.0 & 9 & 6 & 8 & 8.5 & Eligible alternative; useful as supporting activity context. \\
+M2 & Churn & 4.0 & 8 & 7 & 7 & 8.0 & Eligible alternative; useful as supporting effort context. \\
+M1 & Snapshot size & 10.0 & 8 & 5 & 7 & 9.0 & Not selected because it is context only. \\
+M5 & Responsiveness & 0.0 & 6 & 3 & 4 & 5.0 & Not selected because current event evidence is absent. \\
+\bottomrule
+\end{tabularx}
+\caption{Selection decision inputs for the final PoC metric.}
+\label{tab:poc_selection_decision_inputs}
+\end{table}
+
+The main reasons are:
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Reputation meaning:} M4 measures relative responsibility in a release window, not only activity volume.
+  \item \textbf{Gaming resistance:} M4 scored 9/10 under C3, because sustained ownership is harder to fake than simple commit splitting.
+  \item \textbf{Long-term suitability:} M4 scored 8/10 under C4, because relative shares remain comparable across projects of different sizes.
+  \item \textbf{Feasibility:} M4 scored 8.0/10 under the smart-contract feasibility rubric and triggered no exclusion condition.
+  \item \textbf{Implementation boundary:} M4 can be computed off-chain and stored as a compact fixed-point record with an evidence hash.
+\end{itemize}
+
+\subsection{Analysis policy}
+\label{sec:selected_metric_policy}
+
+The selected metric must be interpreted with the same policies used in Phase I and Phase II:
+\begin{itemize}[leftmargin=*]
+  \item the release window must be one of the frozen \texttt{windows\_all.csv} intervals;
+  \item the developer identity must use the canonicalized author identity policy;
+  \item the primary population must be human-only, with bot rows excluded from the selected metric value;
+  \item the numerator is the developer's human-only churn in the window;
+  \item the denominator is the total human-only churn in the same window;
+  \item the fixed-point encoded value is \texttt{round(share\_churn * 1,000,000)};
+  \item the evidence packet must retain the analysis policy, source identifiers, numerator, denominator, encoded value, and supporting audit fields.
+\end{itemize}
+
+This policy is important because the value alone is not enough. A value of 250,000 only means 25\% ownership if
+the verifier also knows the exact window, population rule, identity rule, denominator, and encoding scale.
+
+\subsection{PoC record fields}
+\label{sec:selected_metric_record_fields}
+
+The baseline PoC record should store compact information and commitments, not raw repository data. The proposed
+record shape is shown below.
+
+\begin{table}[H]
+\centering
+\scriptsize
+\renewcommand{\arraystretch}{1.08}
+\begin{tabularx}{\textwidth}{p{3.2cm}p{2.4cm}X}
+\toprule
+\textbf{Field} & \textbf{Type idea} & \textbf{Role} \\
+\midrule
+\texttt{project\_id} & string/bytes32 & Frozen project identifier. \\
+\texttt{window\_id} & string/bytes32 & Frozen release-window identifier. \\
+\texttt{developer\_id\_hash} & bytes32 & Hash of the canonical developer identifier. \\
+\texttt{metric\_id} & string/bytes32 & \texttt{M4\_developer\_share\_churn}. \\
+\texttt{metric\_value\_ppm} & uint32/uint64 & Ownership share scaled by 1,000,000. \\
+\texttt{numerator\_churn} & uint64 & Developer human-only churn. \\
+\texttt{denominator\_churn} & uint64 & Total human-only window churn. \\
+\texttt{from\_commit\_hash} & bytes20/bytes32 & Frozen start commit hash. \\
+\texttt{to\_commit\_hash} & bytes20/bytes32 & Frozen end commit hash. \\
+\texttt{analysis\_policy\_hash} & bytes32 & Hash of extraction, identity, bot, and encoding policy. \\
+\texttt{evidence\_hash} & bytes32 & Hash of the replayable off-chain evidence packet. \\
+\texttt{storage\_persistence} & string/enum & Persistence reference from submission metadata. \\
+\texttt{recorded\_at} & uint64 & Record timestamp or block-time metadata. \\
+\bottomrule
+\end{tabularx}
+\caption{Proposed compact PoC record fields for the selected M4 metric.}
+\label{tab:selected_metric_record_fields}
+\end{table}
+
+\subsection{Supporting signals retained}
+\label{sec:selected_metric_supporting_signals}
+
+Selecting M4 does not mean the other implemented metrics are discarded. They remain useful as context and audit
+support:
+\begin{itemize}[leftmargin=*]
+  \item M1 endpoint KLOC remains project-size context and normalization support.
+  \item M2 developer churn shows the absolute amount of change behind an ownership share.
+  \item M3 activity cadence helps distinguish sustained activity from one isolated ownership spike.
+  \item M4 top-1/top-3/Gini summaries show whether the whole window is unusually concentrated.
+  \item Bot summaries document whether automation affected the surrounding activity.
+\end{itemize}
+
+The selected PoC metric is therefore a primary record value, not the only evidence used to interpret the record.
+
+\subsection{Decision boundary}
+\label{sec:selected_metric_decision_boundary}
+
+This section completes the metric-selection step. The next phase should implement the minimal PoC around this
+selected metric. The implementation should not add new metric definitions unless the selection gate is reopened.
+The correct next engineering target is to build a small contract/off-chain verifier pair that can submit one
+replayable \texttt{M4\_developer\_share\_churn} record from the frozen dataset.

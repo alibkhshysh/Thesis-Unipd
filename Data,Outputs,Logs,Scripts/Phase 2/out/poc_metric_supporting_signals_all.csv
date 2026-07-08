@@ -1,0 +1,6 @@
+signal_id,role,use_in_poc,reason
+M1_endpoint_kloc,context,not primary,Project size helps interpret ownership share but does not measure developer reputation alone.
+M2_developer_churn,supporting audit signal,off-chain evidence packet,Shows the absolute amount of change behind the ownership share.
+M3_developer_commits_or_active_days,supporting audit signal,off-chain evidence packet,Helps distinguish sustained activity from one isolated ownership spike.
+M4_top1_top3_gini_churn,window-level concentration context,off-chain evidence packet,Shows whether the whole release window is unusually concentrated.
+bot_summary_by_window,sensitivity audit signal,off-chain evidence packet,Documents whether automation affected the surrounding project activity.

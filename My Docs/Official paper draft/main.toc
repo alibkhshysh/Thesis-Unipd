@@ -1,98 +1,106 @@
-\contentsline {section}{\numberline {1}Abbreviations and Notation}{7}{section.4}%
-\contentsline {section}{\numberline {2}Introduction, Scope, and Research Roadmap}{7}{section.7}%
-\contentsline {section}{\numberline {3}Candidate Metrics (Shortlist)}{8}{section.11}%
-\contentsline {section}{\numberline {4}Methodology: Comparison Criteria}{8}{section.14}%
-\contentsline {subsection}{\numberline {4.1}Evaluation unit and normalization policy}{9}{subsection.15}%
-\contentsline {subsection}{\numberline {4.2}C1 Stability}{9}{subsection.16}%
-\contentsline {subsection}{\numberline {4.3}C2 Interpretability}{9}{subsection.17}%
-\contentsline {subsection}{\numberline {4.4}C3 Resistance to gaming}{9}{subsection.18}%
-\contentsline {subsection}{\numberline {4.5}C4 Long-term suitability}{9}{subsection.19}%
-\contentsline {subsection}{\numberline {4.6}Criterion-to-output mapping}{10}{subsection.20}%
-\contentsline {subsection}{\numberline {4.7}Decision protocol (predefined, not executed in Phase I)}{10}{subsection.23}%
-\contentsline {section}{\numberline {5}DESTINO Alignment and Evidence Boundary}{10}{section.28}%
-\contentsline {subsection}{\numberline {5.1}Implications for the Current Report}{11}{subsection.29}%
-\contentsline {section}{\numberline {6}Extended Feasibility Rubric (Detailed)}{11}{section.32}%
-\contentsline {subsection}{\numberline {6.1}Smart-Contract Feasibility Rubric}{11}{subsection.33}%
-\contentsline {subsubsection}{\numberline {6.1.1}Why feasibility must be a first-class criterion}{11}{subsubsection.34}%
-\contentsline {subsubsection}{\numberline {6.1.2}Definition: smart-contract feasibility}{12}{subsubsection.35}%
-\contentsline {subsubsection}{\numberline {6.1.3}Rubric structure and scoring}{12}{subsubsection.36}%
-\contentsline {paragraph}{How to use the rubric (procedure).}{12}{section*.37}%
-\contentsline {subsubsection}{\numberline {6.1.4}Feasibility dimensions (detailed)}{13}{subsubsection.42}%
-\contentsline {subsubsection}{\numberline {6.1.5}Evidence checklist per dimension (what you must document)}{13}{subsubsection.47}%
-\contentsline {subsubsection}{\numberline {6.1.6}Feasibility Exclusion Conditions}{14}{subsubsection.48}%
-\contentsline {subsubsection}{\numberline {6.1.7}How this rubric maps to the project evidence workflow}{14}{subsubsection.49}%
-\contentsline {subsubsection}{\numberline {6.1.8}How the rubric is applied to the five thesis candidates}{14}{subsubsection.50}%
-\contentsline {section}{\numberline {7}Future DESTINO PoC Integration Blueprint}{14}{section.53}%
-\contentsline {subsection}{\numberline {7.1}Design Objective and Boundary}{15}{subsection.54}%
-\contentsline {subsection}{\numberline {7.2}Metric-Agnostic Record Shape}{15}{subsection.55}%
-\contentsline {subsection}{\numberline {7.3}Transaction and Replay Flow}{15}{subsection.58}%
-\contentsline {subsection}{\numberline {7.4}How Phase I Outputs Support the Blueprint}{16}{subsection.65}%
-\contentsline {section}{\numberline {8}Phase I: Dataset Freeze and Version-Window Definition}{16}{section.66}%
-\contentsline {subsection}{\numberline {8.1}Repository Freeze}{16}{subsection.67}%
-\contentsline {subsection}{\numberline {8.2}Tag Freeze and Consecutive Windows}{16}{subsection.70}%
-\contentsline {section}{\numberline {9}Phase I: Metric Extraction Pipeline}{18}{section.77}%
-\contentsline {subsection}{\numberline {9.1}Primary CSV outputs}{18}{subsection.78}%
-\contentsline {subsection}{\numberline {9.2}Script-to-output mapping}{19}{subsection.79}%
-\contentsline {subsection}{\numberline {9.3}Metric definitions (implementation-level)}{19}{subsection.82}%
-\contentsline {paragraph}{M1 (LOC/SLOC).}{19}{section*.83}%
-\contentsline {paragraph}{M2 (Churn).}{19}{section*.84}%
-\contentsline {paragraph}{M3 (Cadence).}{19}{section*.85}%
-\contentsline {paragraph}{M4 (Ownership and concentration).}{19}{section*.86}%
-\contentsline {paragraph}{Duration-normalized derived metrics.}{19}{section*.87}%
-\contentsline {paragraph}{Bot-sensitivity derived metrics.}{19}{section*.88}%
-\contentsline {subsection}{\numberline {9.4}Error handling and traceability}{20}{subsection.89}%
-\contentsline {section}{\numberline {10}Phase I: Data Integrity Verification and Cleaning}{20}{section.90}%
-\contentsline {subsection}{\numberline {10.1}Sanity checks}{20}{subsection.91}%
-\contentsline {subsection}{\numberline {10.2}Canonical identity}{20}{subsection.92}%
-\contentsline {subsection}{\numberline {10.3}Bot labeling}{20}{subsection.93}%
-\contentsline {subsection}{\numberline {10.4}Known limitation: timestamp semantics}{21}{subsection.96}%
-\contentsline {subsection}{\numberline {10.5}Issue-resolution ledger}{21}{subsection.97}%
-\contentsline {section}{\numberline {11}Centralized Extraction Summary (Phase I Deliverables)}{21}{section.100}%
-\contentsline {section}{\numberline {12}Detailed Descriptive Results for M1--M4}{22}{section.107}%
-\contentsline {subsection}{\numberline {12.1}M1 Snapshot size evolution}{23}{subsection.108}%
-\contentsline {subsection}{\numberline {12.2}M2 churn and M3 cadence intensity}{23}{subsection.111}%
-\contentsline {subsection}{\numberline {12.3}Bot-sensitivity outputs}{23}{subsection.114}%
-\contentsline {subsection}{\numberline {12.4}Duration-normalized analysis outputs}{24}{subsection.117}%
-\contentsline {subsection}{\numberline {12.5}M3 developer activity-day profile}{24}{subsection.122}%
-\contentsline {subsection}{\numberline {12.6}M4 ownership and concentration profile}{25}{subsection.125}%
-\contentsline {section}{\numberline {13}Phase I Execution Ledger}{25}{section.128}%
-\contentsline {subsection}{\numberline {13.1}Cleaning and validation outcomes}{26}{subsection.131}%
-\contentsline {section}{\numberline {14}Reproducibility Protocol and Data Lineage}{27}{section.132}%
-\contentsline {subsection}{\numberline {14.1}Artifact layout}{27}{subsection.133}%
-\contentsline {subsection}{\numberline {14.2}Execution protocol}{27}{subsection.134}%
-\contentsline {subsection}{\numberline {14.3}Lineage checkpoints}{28}{subsection.145}%
-\contentsline {subsection}{\numberline {14.4}Automated validation evidence}{28}{subsection.148}%
-\contentsline {section}{\numberline {15}Threats to Validity}{29}{section.149}%
-\contentsline {subsection}{\numberline {15.1}Construct validity}{29}{subsection.150}%
-\contentsline {subsection}{\numberline {15.2}Internal validity}{29}{subsection.151}%
-\contentsline {subsection}{\numberline {15.3}External validity}{29}{subsection.152}%
-\contentsline {subsection}{\numberline {15.4}Conclusion validity}{29}{subsection.153}%
-\contentsline {section}{\numberline {16}Phase I Conclusion}{29}{section.154}%
-\contentsline {section}{\numberline {17}Phase II Step 1: C1 Stability Analysis}{30}{section.155}%
-\contentsline {subsection}{\numberline {17.1}Analysis inputs and generated artifacts}{30}{subsection.156}%
-\contentsline {subsection}{\numberline {17.2}Method}{30}{subsection.159}%
-\contentsline {subsection}{\numberline {17.3}Window-level stability results}{31}{subsection.160}%
-\contentsline {subsection}{\numberline {17.4}Developer-rank stability results}{32}{subsection.167}%
-\contentsline {subsection}{\numberline {17.5}C1 interpretation for the decision process}{33}{subsection.172}%
-\contentsline {section}{\numberline {18}Phase II Step 2: C2 Interpretability Analysis}{33}{section.173}%
-\contentsline {subsection}{\numberline {18.1}Scoring protocol and artifacts}{33}{subsection.174}%
-\contentsline {subsection}{\numberline {18.2}C2 results}{34}{subsection.179}%
-\contentsline {subsection}{\numberline {18.3}C2 interpretation for the decision process}{35}{subsection.184}%
-\contentsline {section}{\numberline {19}Phase II Step 3: C3 Gaming-Resistance Analysis}{36}{section.185}%
-\contentsline {subsection}{\numberline {19.1}Scoring protocol and artifacts}{36}{subsection.186}%
-\contentsline {subsection}{\numberline {19.2}Attack-surface summary}{36}{subsection.191}%
-\contentsline {subsection}{\numberline {19.3}C3 results}{37}{subsection.192}%
-\contentsline {subsection}{\numberline {19.4}C3 interpretation for the decision process}{37}{subsection.197}%
-\contentsline {section}{\numberline {20}Phase II Step 4: C4 Long-Term Suitability Analysis}{38}{section.198}%
-\contentsline {subsection}{\numberline {20.1}Scoring protocol and artifacts}{38}{subsection.199}%
-\contentsline {subsection}{\numberline {20.2}Historical coverage}{38}{subsection.204}%
-\contentsline {subsection}{\numberline {20.3}C4 results}{39}{subsection.205}%
-\contentsline {subsection}{\numberline {20.4}C4 interpretation for the decision process}{40}{subsection.210}%
-\contentsline {section}{\numberline {21}Phase II Step 5: Smart-Contract Feasibility Scoring}{40}{section.211}%
-\contentsline {subsection}{\numberline {21.1}Scoring protocol and artifacts}{40}{subsection.212}%
-\contentsline {subsection}{\numberline {21.2}Combined C1--C4 comparison}{41}{subsection.215}%
-\contentsline {subsection}{\numberline {21.3}Feasibility results}{41}{subsection.218}%
-\contentsline {subsection}{\numberline {21.4}Final selection inputs}{42}{subsection.223}%
-\contentsline {section}{\numberline {22}Planned Next Phase: Comparative Metric Evaluation}{43}{section.228}%
-\contentsline {subsection}{\numberline {22.1}Phase II execution plan}{43}{subsection.229}%
-\contentsline {subsection}{\numberline {22.2}Decision gate criteria}{43}{subsection.235}%
+\contentsline {section}{\numberline {1}Abbreviations and Notation}{8}{section.4}%
+\contentsline {section}{\numberline {2}Introduction, Scope, and Research Roadmap}{8}{section.7}%
+\contentsline {section}{\numberline {3}Candidate Metrics (Shortlist)}{9}{section.11}%
+\contentsline {section}{\numberline {4}Methodology: Comparison Criteria}{9}{section.14}%
+\contentsline {subsection}{\numberline {4.1}Evaluation unit and normalization policy}{10}{subsection.15}%
+\contentsline {subsection}{\numberline {4.2}C1 Stability}{10}{subsection.16}%
+\contentsline {subsection}{\numberline {4.3}C2 Interpretability}{10}{subsection.17}%
+\contentsline {subsection}{\numberline {4.4}C3 Resistance to gaming}{10}{subsection.18}%
+\contentsline {subsection}{\numberline {4.5}C4 Long-term suitability}{10}{subsection.19}%
+\contentsline {subsection}{\numberline {4.6}Criterion-to-output mapping}{11}{subsection.20}%
+\contentsline {subsection}{\numberline {4.7}Decision protocol (predefined, not executed in Phase I)}{11}{subsection.23}%
+\contentsline {section}{\numberline {5}DESTINO Alignment and Evidence Boundary}{11}{section.28}%
+\contentsline {subsection}{\numberline {5.1}Implications for the Current Report}{12}{subsection.29}%
+\contentsline {section}{\numberline {6}Extended Feasibility Rubric (Detailed)}{12}{section.32}%
+\contentsline {subsection}{\numberline {6.1}Smart-Contract Feasibility Rubric}{12}{subsection.33}%
+\contentsline {subsubsection}{\numberline {6.1.1}Why feasibility must be a first-class criterion}{12}{subsubsection.34}%
+\contentsline {subsubsection}{\numberline {6.1.2}Definition: smart-contract feasibility}{13}{subsubsection.35}%
+\contentsline {subsubsection}{\numberline {6.1.3}Rubric structure and scoring}{13}{subsubsection.36}%
+\contentsline {paragraph}{How to use the rubric (procedure).}{13}{section*.37}%
+\contentsline {subsubsection}{\numberline {6.1.4}Feasibility dimensions (detailed)}{14}{subsubsection.42}%
+\contentsline {subsubsection}{\numberline {6.1.5}Evidence checklist per dimension (what you must document)}{14}{subsubsection.47}%
+\contentsline {subsubsection}{\numberline {6.1.6}Feasibility Exclusion Conditions}{15}{subsubsection.48}%
+\contentsline {subsubsection}{\numberline {6.1.7}How this rubric maps to the project evidence workflow}{15}{subsubsection.49}%
+\contentsline {subsubsection}{\numberline {6.1.8}How the rubric is applied to the five thesis candidates}{15}{subsubsection.50}%
+\contentsline {section}{\numberline {7}Future DESTINO PoC Integration Blueprint}{15}{section.53}%
+\contentsline {subsection}{\numberline {7.1}Design Objective and Boundary}{16}{subsection.54}%
+\contentsline {subsection}{\numberline {7.2}Metric-Agnostic Record Shape}{16}{subsection.55}%
+\contentsline {subsection}{\numberline {7.3}Transaction and Replay Flow}{16}{subsection.58}%
+\contentsline {subsection}{\numberline {7.4}How Phase I Outputs Support the Blueprint}{17}{subsection.65}%
+\contentsline {section}{\numberline {8}Phase I: Dataset Freeze and Version-Window Definition}{17}{section.66}%
+\contentsline {subsection}{\numberline {8.1}Repository Freeze}{17}{subsection.67}%
+\contentsline {subsection}{\numberline {8.2}Tag Freeze and Consecutive Windows}{17}{subsection.70}%
+\contentsline {section}{\numberline {9}Phase I: Metric Extraction Pipeline}{19}{section.77}%
+\contentsline {subsection}{\numberline {9.1}Primary CSV outputs}{19}{subsection.78}%
+\contentsline {subsection}{\numberline {9.2}Script-to-output mapping}{20}{subsection.79}%
+\contentsline {subsection}{\numberline {9.3}Metric definitions (implementation-level)}{20}{subsection.82}%
+\contentsline {paragraph}{M1 (LOC/SLOC).}{20}{section*.83}%
+\contentsline {paragraph}{M2 (Churn).}{20}{section*.84}%
+\contentsline {paragraph}{M3 (Cadence).}{20}{section*.85}%
+\contentsline {paragraph}{M4 (Ownership and concentration).}{20}{section*.86}%
+\contentsline {paragraph}{Duration-normalized derived metrics.}{20}{section*.87}%
+\contentsline {paragraph}{Bot-sensitivity derived metrics.}{20}{section*.88}%
+\contentsline {subsection}{\numberline {9.4}Error handling and traceability}{21}{subsection.89}%
+\contentsline {section}{\numberline {10}Phase I: Data Integrity Verification and Cleaning}{21}{section.90}%
+\contentsline {subsection}{\numberline {10.1}Sanity checks}{21}{subsection.91}%
+\contentsline {subsection}{\numberline {10.2}Canonical identity}{21}{subsection.92}%
+\contentsline {subsection}{\numberline {10.3}Bot labeling}{21}{subsection.93}%
+\contentsline {subsection}{\numberline {10.4}Known limitation: timestamp semantics}{22}{subsection.96}%
+\contentsline {subsection}{\numberline {10.5}Issue-resolution ledger}{22}{subsection.97}%
+\contentsline {section}{\numberline {11}Centralized Extraction Summary (Phase I Deliverables)}{22}{section.100}%
+\contentsline {section}{\numberline {12}Detailed Descriptive Results for M1--M4}{23}{section.107}%
+\contentsline {subsection}{\numberline {12.1}M1 Snapshot size evolution}{24}{subsection.108}%
+\contentsline {subsection}{\numberline {12.2}M2 churn and M3 cadence intensity}{24}{subsection.111}%
+\contentsline {subsection}{\numberline {12.3}Bot-sensitivity outputs}{24}{subsection.114}%
+\contentsline {subsection}{\numberline {12.4}Duration-normalized analysis outputs}{25}{subsection.117}%
+\contentsline {subsection}{\numberline {12.5}M3 developer activity-day profile}{25}{subsection.122}%
+\contentsline {subsection}{\numberline {12.6}M4 ownership and concentration profile}{26}{subsection.125}%
+\contentsline {section}{\numberline {13}Phase I Execution Ledger}{26}{section.128}%
+\contentsline {subsection}{\numberline {13.1}Cleaning and validation outcomes}{27}{subsection.131}%
+\contentsline {section}{\numberline {14}Reproducibility Protocol and Data Lineage}{28}{section.132}%
+\contentsline {subsection}{\numberline {14.1}Artifact layout}{28}{subsection.133}%
+\contentsline {subsection}{\numberline {14.2}Execution protocol}{28}{subsection.134}%
+\contentsline {subsection}{\numberline {14.3}Lineage checkpoints}{29}{subsection.145}%
+\contentsline {subsection}{\numberline {14.4}Automated validation evidence}{29}{subsection.148}%
+\contentsline {section}{\numberline {15}Threats to Validity}{30}{section.149}%
+\contentsline {subsection}{\numberline {15.1}Construct validity}{30}{subsection.150}%
+\contentsline {subsection}{\numberline {15.2}Internal validity}{30}{subsection.151}%
+\contentsline {subsection}{\numberline {15.3}External validity}{30}{subsection.152}%
+\contentsline {subsection}{\numberline {15.4}Conclusion validity}{30}{subsection.153}%
+\contentsline {section}{\numberline {16}Phase I Conclusion}{30}{section.154}%
+\contentsline {section}{\numberline {17}Phase II Step 1: C1 Stability Analysis}{31}{section.155}%
+\contentsline {subsection}{\numberline {17.1}Analysis inputs and generated artifacts}{31}{subsection.156}%
+\contentsline {subsection}{\numberline {17.2}Method}{31}{subsection.159}%
+\contentsline {subsection}{\numberline {17.3}Window-level stability results}{32}{subsection.160}%
+\contentsline {subsection}{\numberline {17.4}Developer-rank stability results}{33}{subsection.167}%
+\contentsline {subsection}{\numberline {17.5}C1 interpretation for the decision process}{34}{subsection.172}%
+\contentsline {section}{\numberline {18}Phase II Step 2: C2 Interpretability Analysis}{34}{section.173}%
+\contentsline {subsection}{\numberline {18.1}Scoring protocol and artifacts}{34}{subsection.174}%
+\contentsline {subsection}{\numberline {18.2}C2 results}{35}{subsection.179}%
+\contentsline {subsection}{\numberline {18.3}C2 interpretation for the decision process}{36}{subsection.184}%
+\contentsline {section}{\numberline {19}Phase II Step 3: C3 Gaming-Resistance Analysis}{37}{section.185}%
+\contentsline {subsection}{\numberline {19.1}Scoring protocol and artifacts}{37}{subsection.186}%
+\contentsline {subsection}{\numberline {19.2}Attack-surface summary}{37}{subsection.191}%
+\contentsline {subsection}{\numberline {19.3}C3 results}{38}{subsection.192}%
+\contentsline {subsection}{\numberline {19.4}C3 interpretation for the decision process}{38}{subsection.197}%
+\contentsline {section}{\numberline {20}Phase II Step 4: C4 Long-Term Suitability Analysis}{39}{section.198}%
+\contentsline {subsection}{\numberline {20.1}Scoring protocol and artifacts}{39}{subsection.199}%
+\contentsline {subsection}{\numberline {20.2}Historical coverage}{39}{subsection.204}%
+\contentsline {subsection}{\numberline {20.3}C4 results}{40}{subsection.205}%
+\contentsline {subsection}{\numberline {20.4}C4 interpretation for the decision process}{41}{subsection.210}%
+\contentsline {section}{\numberline {21}Phase II Step 5: Smart-Contract Feasibility Scoring}{41}{section.211}%
+\contentsline {subsection}{\numberline {21.1}Scoring protocol and artifacts}{41}{subsection.212}%
+\contentsline {subsection}{\numberline {21.2}Combined C1--C4 comparison}{42}{subsection.215}%
+\contentsline {subsection}{\numberline {21.3}Feasibility results}{42}{subsection.218}%
+\contentsline {subsection}{\numberline {21.4}Final selection inputs}{43}{subsection.223}%
+\contentsline {section}{\numberline {22}Phase II Step 6: Final PoC Metric Selection}{44}{section.228}%
+\contentsline {subsection}{\numberline {22.1}Selected metric}{44}{subsection.229}%
+\contentsline {subsection}{\numberline {22.2}Selection artifacts}{45}{subsection.230}%
+\contentsline {subsection}{\numberline {22.3}Why M4 is selected}{45}{subsection.233}%
+\contentsline {subsection}{\numberline {22.4}Analysis policy}{45}{subsection.236}%
+\contentsline {subsection}{\numberline {22.5}PoC record fields}{46}{subsection.237}%
+\contentsline {subsection}{\numberline {22.6}Supporting signals retained}{46}{subsection.240}%
+\contentsline {subsection}{\numberline {22.7}Decision boundary}{47}{subsection.241}%
+\contentsline {section}{\numberline {23}Planned Next Phase: Baseline PoC Implementation}{47}{section.242}%
+\contentsline {subsection}{\numberline {23.1}Phase II execution plan}{47}{subsection.243}%
+\contentsline {subsection}{\numberline {23.2}Decision gate criteria}{47}{subsection.249}%

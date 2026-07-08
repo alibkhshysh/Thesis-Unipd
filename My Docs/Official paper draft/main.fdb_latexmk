@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex main"] 1778328298.20015 "main.aux" "main.bbl" "main" 1778335265.67502 0
+["bibtex main"] 1783497046.99254 "main.aux" "main.bbl" "main" 1783497053.34746 0
   "./references.bib" 1771886476 3431 6a1ffdbf3569b24a53af11689b158f6d ""
   "C:/Users/alibk/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/plain.bst" 1291864736 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "main.aux" 1778335264 39267 a538c3cc7cc4ca03924591abc0bc7aee "pdflatex"
+  "main.aux" 1783497051 42017 9d4a69f948fb2869a8f3f378c33e6f17 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1778335262.0022 "main.tex" "main.pdf" "main" 1778335265.67597 0
-  "C:/Users/alibk/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1776427513 199639 a3ec5557382bc75c1aa01a726d8e902b ""
+["pdflatex"] 1783497047.76061 "main.tex" "main.pdf" "main" 1783497053.34887 0
+  "C:/Users/alibk/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1779881693 202518 27a1c95229b1f65ab0f3db340595fde2 ""
   "C:/Users/alibk/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1770470182 13333486 f7c36b602e95ff806fabb53959de1fbf ""
   "C:/Users/alibk/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/newtx/ntx-ec-tlf.enc" 1736607166 2914 fdbc4a54b9bc76f4551b5303f2737d33 ""
   "C:/Users/alibk/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc" 1736607166 2083 60e36f8eac802fcaf19eabe2633b406e ""
@@ -156,13 +156,13 @@
   "figures/month3_c4/c4_longterm_suitability_scores.pdf" 1778276667 16377 8b675731eab0e9f7dba5ab905d6b2cf4 ""
   "figures/month3_feasibility/feasibility_scores.pdf" 1778328165 16595 70f96e98ca46bfe8000eef8f7b20a928 ""
   "figures/month3_feasibility/poc_candidate_readiness_scores.pdf" 1778328165 18535 564fef174016d29f7175db13b63920a3 ""
-  "main.aux" 1778335264 39267 a538c3cc7cc4ca03924591abc0bc7aee "pdflatex"
-  "main.bbl" 1778328298 2684 74ce64fe06686d8eb4c629621ca5aa99 "bibtex main"
-  "main.lof" 1778335264 1417 1e64538c187c9408de423f3beded9114 "pdflatex"
-  "main.lot" 1778335264 6424 76fbdba6a523cbe1dbf874d8b6ec1b65 "pdflatex"
-  "main.out" 1778335264 17680 ba8aeaab4efb2131a310d73f32fafbb8 "pdflatex"
-  "main.tex" 1778328245 2712 bb4c5050684952ffad3007228b29cb91 ""
-  "main.toc" 1778335264 9293 0840d12bc9d7be13c0070796d8d46829 "pdflatex"
+  "main.aux" 1783497051 42017 9d4a69f948fb2869a8f3f378c33e6f17 "pdflatex"
+  "main.bbl" 1783497047 2684 74ce64fe06686d8eb4c629621ca5aa99 "bibtex main"
+  "main.lof" 1783497051 1417 6309b6cc528cd2444a53f08b9d54b90d "pdflatex"
+  "main.lot" 1783497051 6845 f12b6b67b0997e7d2e0384dad5653fab "pdflatex"
+  "main.out" 1783497051 19045 db58040a9ea9390d35a098c2ff152efb "pdflatex"
+  "main.tex" 1783496982 2700 a332076f11247766a51eb42fd9727b05 ""
+  "main.toc" 1783497051 10003 aa85e25a519f0a3f280a13ea99ed23bd "pdflatex"
   "sections/abbreviations.tex" 1778008403 1460 935c12e56c4ee91b2f3b9dfc33e6b738 ""
   "sections/candidate_metrics.tex" 1771886580 1835 aca6eb6b39175ae7b14c59bd043664cd ""
   "sections/destino_context.tex" 1778008431 3970 e05e7e64eb1ccd9e2f8ac6ade8b70b2c ""
@@ -182,7 +182,8 @@
   "sections/month3_c3_gaming_resistance.tex" 1778335241 6601 fe7518c5703129932cdb07ca4d228964 ""
   "sections/month3_c4_longterm_suitability.tex" 1778335246 7719 f8c79cfc1b751d3b24a6721697728f4f ""
   "sections/month3_feasibility_scoring.tex" 1778335253 8753 ce54ae60b900fd0a96e3d97ff6eb6383 ""
-  "sections/next_steps_month3_plan.tex" 1778328266 2272 03197492967209401962a72d992d488e ""
+  "sections/month3_poc_metric_selection.tex" 1783496971 8941 e1058aa58a51f9688305848e82734f4a ""
+  "sections/next_steps_month3_plan.tex" 1783496999 2367 1d7a1cdef0b6e6b1e21ffc276fcb0f3e ""
   "sections/reproducibility_protocol.tex" 1778271626 6333 a9c51808a74ddcc1de826e45b647b73d ""
   "sections/threats_to_validity.tex" 1778008990 2384 6be8029ceb511cc9e96b153d58025f2b ""
   (generated)

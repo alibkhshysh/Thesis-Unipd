@@ -1,0 +1,14 @@
+field_name,suggested_type,role
+project_id,string or bytes32,Project identifier from the frozen dataset.
+window_id,string or bytes32,Frozen release-window identifier.
+developer_id_hash,bytes32,Hash of the canonical developer identifier used by the off-chain verifier.
+metric_id,string or bytes32,M4_developer_share_churn
+metric_value_ppm,uint32 or uint64,Fixed-point share_churn scaled by 1000000.
+numerator_churn,uint64,Developer human-only churn in the selected window.
+denominator_churn,uint64,Total human-only churn in the selected window.
+from_commit_hash,bytes20 or bytes32,Frozen start commit hash for the release window.
+to_commit_hash,bytes20 or bytes32,Frozen end commit hash for the release window.
+analysis_policy_hash,bytes32,"Hash of the declared extraction, identity, bot, and encoding policy."
+evidence_hash,bytes32,Hash of the replayable off-chain evidence packet.
+storage_persistence,string or enum,Persistence status/reference inherited from the submission metadata.
+recorded_at,uint64,Timestamp or block-time metadata for the PoC record.
