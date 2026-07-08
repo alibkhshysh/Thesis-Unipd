@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.2.7)  9 MAY 2026 14:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.2.7)  9 MAY 2026 16:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -944,7 +944,7 @@ Underfull \hbox (badness 3679) in paragraph at lines 32--32
 
 ) (sections/methodology_criteria.tex [8]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 9.0pt on input line 56.
+(Font)              scaled to size 9.0pt on input line 61.
  [9]) (sections/destino_context.tex
 Underfull \hbox (badness 2142) in paragraph at lines 54--54
 []|\T1/ntxtlf/m/n/9 (+20) Replayable mea-sure-ment
@@ -1075,14 +1075,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 29--29
 [25]) (sections/reproducibility_protocol.tex [26] [27])
 (sections/threats_to_validity.tex [28]) (sections/month2_conclusion.tex)
 (sections/month3_c1_stability.tex [29] [30]
-<figures/month3_c1/c1_volatility_by_metric.pdf, id=804, 853.22621pt x 343.40585
+<figures/month3_c1/c1_volatility_by_metric.pdf, id=805, 853.22621pt x 343.40585
 pt>
 File: figures/month3_c1/c1_volatility_by_metric.pdf Graphic file (type pdf)
 <use figures/month3_c1/c1_volatility_by_metric.pdf>
 Package pdftex.def Info: figures/month3_c1/c1_volatility_by_metric.pdf  used on
  input line 88.
 (pdftex.def)             Requested size: 452.9679pt x 182.30814pt.
-<figures/month3_c1/c1_indexed_metric_trends.pdf, id=805, 823.6164pt x 754.09734
+<figures/month3_c1/c1_indexed_metric_trends.pdf, id=806, 823.6164pt x 754.09734
 pt>
 File: figures/month3_c1/c1_indexed_metric_trends.pdf Graphic file (type pdf)
 <use figures/month3_c1/c1_indexed_metric_trends.pdf>
@@ -1090,7 +1090,7 @@ Package pdftex.def Info: figures/month3_c1/c1_indexed_metric_trends.pdf  used o
 n input line 95.
 (pdftex.def)             Requested size: 452.97784pt x 414.74332pt.
  [31 <./figures/month3_c1/c1_volatility_by_metric.pdf>]
-<figures/month3_c1/c1_rank_stability_by_metric.pdf, id=859, 606.78947pt x 338.3
+<figures/month3_c1/c1_rank_stability_by_metric.pdf, id=860, 606.78947pt x 338.3
 7973pt>
 File: figures/month3_c1/c1_rank_stability_by_metric.pdf Graphic file (type pdf)
 
@@ -1101,56 +1101,56 @@ d on input line 128.
  [32 <./figures/month3_c1/c1_indexed_metric_trends.pdf>])
 (sections/month3_c2_interpretability.tex [33 <./figures/month3_c1/c1_rank_stabi
 lity_by_metric.pdf>]
-<figures/month3_c2/c2_interpretability_scores.pdf, id=1016, 643.28201pt x 337.8
+<figures/month3_c2/c2_interpretability_scores.pdf, id=1017, 643.28201pt x 337.8
 9111pt>
 File: figures/month3_c2/c2_interpretability_scores.pdf Graphic file (type pdf)
 <use figures/month3_c2/c2_interpretability_scores.pdf>
 Package pdftex.def Info: figures/month3_c2/c2_interpretability_scores.pdf  used
- on input line 77.
+ on input line 79.
 (pdftex.def)             Requested size: 407.66833pt x 214.14084pt.
  [34]) (sections/month3_c3_gaming_resistance.tex [35 <./figures/month3_c2/c2_in
 terpretability_scores.pdf>] [36]
-<figures/month3_c3/c3_gaming_resistance_scores.pdf, id=1083, 643.28201pt x 337.
+<figures/month3_c3/c3_gaming_resistance_scores.pdf, id=1084, 643.28201pt x 337.
 89111pt>
 File: figures/month3_c3/c3_gaming_resistance_scores.pdf Graphic file (type pdf)
 
 <use figures/month3_c3/c3_gaming_resistance_scores.pdf>
 Package pdftex.def Info: figures/month3_c3/c3_gaming_resistance_scores.pdf  use
-d on input line 88.
+d on input line 90.
 (pdftex.def)             Requested size: 407.66833pt x 214.14084pt.
  [37 <./figures/month3_c3/c3_gaming_resistance_scores.pdf>]) (sections/month3_c
 4_longterm_suitability.tex
 [38]
-<figures/month3_c4/c4_longterm_suitability_scores.pdf, id=1146, 643.28201pt x 3
+<figures/month3_c4/c4_longterm_suitability_scores.pdf, id=1147, 643.28201pt x 3
 37.89111pt>
 File: figures/month3_c4/c4_longterm_suitability_scores.pdf Graphic file (type p
 df)
 <use figures/month3_c4/c4_longterm_suitability_scores.pdf>
 Package pdftex.def Info: figures/month3_c4/c4_longterm_suitability_scores.pdf  
-used on input line 95.
+used on input line 97.
 (pdftex.def)             Requested size: 407.66833pt x 214.14084pt.
  [39 <./figures/month3_c4/c4_longterm_suitability_scores.pdf>])
 (sections/month3_feasibility_scoring.tex [40]
-Underfull \hbox (badness 10000) in paragraph at lines 60--60
+Underfull \hbox (badness 10000) in paragraph at lines 63--63
 []|\T1/ntxtlf/m/n/8 (+20) Maintenance re-spon-sive-
  []
 
-<figures/month3_feasibility/feasibility_scores.pdf, id=1208, 643.28201pt x 337.
+<figures/month3_feasibility/feasibility_scores.pdf, id=1209, 643.28201pt x 337.
 89111pt>
 File: figures/month3_feasibility/feasibility_scores.pdf Graphic file (type pdf)
 
 <use figures/month3_feasibility/feasibility_scores.pdf>
 Package pdftex.def Info: figures/month3_feasibility/feasibility_scores.pdf  use
-d on input line 95.
+d on input line 98.
 (pdftex.def)             Requested size: 407.66833pt x 214.14084pt.
 [41]
-<figures/month3_feasibility/poc_candidate_readiness_scores.pdf, id=1215, 679.41
+<figures/month3_feasibility/poc_candidate_readiness_scores.pdf, id=1216, 679.41
 702pt x 366.7991pt>
 File: figures/month3_feasibility/poc_candidate_readiness_scores.pdf Graphic fil
 e (type pdf)
 <use figures/month3_feasibility/poc_candidate_readiness_scores.pdf>
 Package pdftex.def Info: figures/month3_feasibility/poc_candidate_readiness_sco
-res.pdf  used on input line 136.
+res.pdf  used on input line 139.
 (pdftex.def)             Requested size: 416.72963pt x 224.98404pt.
  [42 <./figures/month3_feasibility/feasibility_scores.pdf>])
 (sections/next_steps_month3_plan.tex [43 <./figures/month3_feasibility/poc_cand
@@ -1181,9 +1181,9 @@ e1/public/newtx/txsys.pfb><C:/Users/alibk/AppData/Local/Programs/MiKTeX/fonts/t
 ype1/public/newtx/ztmb.pfb><C:/Users/alibk/AppData/Local/Programs/MiKTeX/fonts/
 type1/public/newtx/ztmr.pfb><C:/Users/alibk/AppData/Local/Programs/MiKTeX/fonts
 /type1/public/newtx/ztmri.pfb>
-Output written on main.pdf (44 pages, 563581 bytes).
+Output written on main.pdf (44 pages, 564844 bytes).
 PDF statistics:
- 1468 PDF objects out of 1728 (max. 8388607)
+ 1469 PDF objects out of 1728 (max. 8388607)
  291 named destinations out of 1000 (max. 500000)
  40129 words of extra memory for PDF output out of 42996 (max. 10000000)
 

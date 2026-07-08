@@ -1,0 +1,681 @@
+\documentclass[aspectratio=169,11pt]{beamer}
+
+\usetheme{Madrid}
+\usecolortheme{default}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{xurl}
+
+\title[Thesis Progress]{Evidence-Based Developer Reputation for Open-Source Software}
+\subtitle{Progress presentation: from dataset construction to metric selection evidence}
+\author{Ali Bakhshayesh}
+\institute{University of Padova}
+\date{\today}
+
+\newcommand{\metric}[1]{\textbf{#1}}
+\newcommand{\smalltext}[1]{{\footnotesize #1}}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Purpose of This Presentation}
+  \begin{itemize}
+    \item Explain the thesis idea in simple language.
+    \item Show what has been built so far, starting from zero.
+    \item Explain how the dataset was created and cleaned.
+    \item Explain the candidate metrics and comparison criteria.
+    \item Show the current result: which metric is strongest for the PoC.
+    \item Clarify what still needs to be done next.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{The Big Picture}
+  The thesis is about a simple question:
+
+  \vspace{0.4cm}
+  \begin{block}{Main question}
+    Can we create a trustworthy developer-reputation signal from open-source software evidence?
+  \end{block}
+
+  \vspace{0.3cm}
+  In other words, we want to measure developer activity and responsibility using evidence that can be checked again later.
+\end{frame}
+
+\begin{frame}{Why Developer Reputation Matters}
+  Open-source projects often depend on many people:
+  \begin{itemize}
+    \item some people make small occasional changes;
+    \item some people maintain the project for a long time;
+    \item some people do large technical work;
+    \item some activity may come from bots or automation.
+  \end{itemize}
+
+  \vspace{0.3cm}
+  The challenge is to identify useful signals without making unfair or uncheckable claims.
+\end{frame}
+
+\begin{frame}{The DESTINO Context}
+  The thesis is connected to a DESTINO-style evidence workflow.
+
+  \vspace{0.2cm}
+  The idea is:
+  \begin{enumerate}
+    \item a developer submits software evidence;
+    \item the evidence is linked to a hash, so it cannot silently change;
+    \item metrics are computed from that evidence;
+    \item compact results are stored in a smart-contract style record;
+    \item another person can later replay the measurement and check the result.
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}{Important Design Choice}
+  We do \textbf{not} try to compute repository metrics directly inside a smart contract.
+
+  \vspace{0.3cm}
+  That would be too expensive and too complex because Git history analysis needs:
+  \begin{itemize}
+    \item repository traversal;
+    \item file and line counting;
+    \item commit and author analysis;
+    \item bot filtering;
+    \item normalization and validation.
+  \end{itemize}
+
+  \vspace{0.3cm}
+  Instead, we use a \textbf{hybrid design}: compute off-chain, store compact auditable results on-chain.
+\end{frame}
+
+\begin{frame}{The Thesis Workflow}
+  The work is organized in two main parts.
+
+  \vspace{0.3cm}
+  \begin{block}{Phase I: Build the evidence base}
+    Select repositories, freeze versions, build release windows, extract metrics, clean data, and validate outputs.
+  \end{block}
+
+  \begin{block}{Phase II: Compare candidate metrics}
+    Evaluate which metric is stable, understandable, resistant to gaming, useful long-term, and feasible for the PoC.
+  \end{block}
+\end{frame}
+
+\begin{frame}{Where We Started}
+  We first tested the workflow on a small pilot dataset.
+
+  \begin{itemize}
+    \item The pilot used 4 repositories.
+    \item The goal was to understand the extraction flow before scaling.
+    \item After the flow worked, we expanded the dataset.
+  \end{itemize}
+
+  \vspace{0.3cm}
+  This reduced risk: we tested the method first, then applied it to more projects.
+\end{frame}
+
+\begin{frame}{Dataset Expansion}
+  The dataset was expanded from the initial 4 repositories to 10 repositories.
+
+  \vspace{0.2cm}
+  Current repositories:
+  \begin{itemize}
+    \item \texttt{brew}, \texttt{click}, \texttt{curl}, \texttt{flask}, \texttt{gin}
+    \item \texttt{junit5}, \texttt{prettier}, \texttt{requests}, \texttt{tokio}, \texttt{urllib3}
+  \end{itemize}
+
+  \vspace{0.3cm}
+  All evidence is now centralized. We no longer depend on separate pilot-only or extended-only CSV files.
+\end{frame}
+
+\begin{frame}{What ``Dataset Freeze'' Means}
+  A dataset freeze means that we fixed the input projects before analysis.
+
+  \vspace{0.2cm}
+  For each repository we recorded:
+  \begin{itemize}
+    \item project identifier;
+    \item repository URL;
+    \item persistence status;
+    \item software-type tags;
+    \item inclusion metadata.
+  \end{itemize}
+
+  \vspace{0.3cm}
+  This is important because later results must be tied to a clear and fixed dataset.
+\end{frame}
+
+\begin{frame}{What ``Version Freeze'' Means}
+  For each repository, we selected the latest 8 stable semantic-version tags.
+
+  \vspace{0.2cm}
+  We excluded unstable release labels such as:
+  \begin{itemize}
+    \item alpha;
+    \item beta;
+    \item release candidate versions.
+  \end{itemize}
+
+  \vspace{0.3cm}
+  Each selected version is tied to an immutable commit hash. This means the exact code state can be checked again later.
+\end{frame}
+
+\begin{frame}{Release Windows}
+  After freezing versions, we built release windows.
+
+  \vspace{0.2cm}
+  A release window is the interval between two consecutive tags.
+
+  \vspace{0.3cm}
+  Example:
+  \begin{block}{Simple example}
+    Version 1.0.0 to Version 1.1.0 is one window.
+  \end{block}
+
+  \vspace{0.3cm}
+  We have:
+  \begin{itemize}
+    \item 10 repositories;
+    \item 8 frozen tags per repository;
+    \item 7 windows per repository;
+    \item 70 total release windows.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Why Release Windows Matter}
+  We do not only want to know what a project looks like at one moment.
+
+  \vspace{0.2cm}
+  We want to see what changed between two releases:
+  \begin{itemize}
+    \item how many commits happened;
+    \item how much code changed;
+    \item who contributed;
+    \item whether ownership was concentrated in one or a few developers.
+  \end{itemize}
+
+  \vspace{0.3cm}
+  This makes the analysis more useful for developer reputation.
+\end{frame}
+
+\begin{frame}{Candidate Metrics}
+  We studied five candidate metric families.
+
+  \begin{table}
+    \footnotesize
+    \begin{tabularx}{\textwidth}{p{1.0cm}p{3.7cm}X}
+      \toprule
+      ID & Metric & Simple meaning \\
+      \midrule
+      M1 & Snapshot size & How large the project is at a release tag. \\
+      M2 & Churn & How many lines were added or deleted in a release window. \\
+      M3 & Activity cadence & How often developers are active through commits and active days. \\
+      M4 & Ownership/concentration & How much of the work is done by top contributors. \\
+      M5 & Responsiveness & How quickly maintainers respond to issues or pull requests. \\
+      \bottomrule
+    \end{tabularx}
+  \end{table}
+\end{frame}
+
+\begin{frame}{Important Note About M5}
+  M5, maintenance responsiveness, is useful conceptually.
+
+  \vspace{0.3cm}
+  But it needs issue and pull-request event data.
+
+  \vspace{0.3cm}
+  Our current Phase I dataset focuses on:
+  \begin{itemize}
+    \item Git tags;
+    \item commits;
+    \item code changes;
+    \item developer identities in Git history.
+  \end{itemize}
+
+  \vspace{0.3cm}
+  Therefore, M5 is kept as a future extension, not as a current PoC candidate.
+\end{frame}
+
+\begin{frame}{Metric Extraction}
+  We extracted four implemented metric families from the frozen repositories:
+
+  \begin{itemize}
+    \item \metric{M1:} lines of code and source lines of code per frozen tag.
+    \item \metric{M2:} added lines, deleted lines, and total churn per window.
+    \item \metric{M3:} commits, active days, and activity rate.
+    \item \metric{M4:} ownership shares, top contributor shares, and Gini concentration.
+  \end{itemize}
+
+  \vspace{0.3cm}
+  These outputs form the empirical base for the later comparison.
+\end{frame}
+
+\begin{frame}{Cleaning Developer Identity}
+  Developer identity can be messy.
+
+  \vspace{0.2cm}
+  The same person may appear with different names, but the same email.
+
+  \vspace{0.3cm}
+  We canonicalized developer identity mainly by email. This makes developer-level metrics more consistent.
+
+  \vspace{0.3cm}
+  Cleaning result:
+  \begin{itemize}
+    \item clean rows remained stable;
+    \item duplicate groups merged: 0;
+    \item zero-commit windows: 0;
+    \item zero-churn windows: 0;
+    \item error log: empty.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Bot Handling}
+  Some repository activity comes from bots or automated accounts.
+
+  \vspace{0.2cm}
+  We did not silently mix bot activity with human developer behavior.
+
+  \vspace{0.3cm}
+  Instead:
+  \begin{itemize}
+    \item bot rows were flagged;
+    \item bot summaries were kept for audit;
+    \item main M3 and M4 evidence uses human-only outputs.
+  \end{itemize}
+
+  \vspace{0.3cm}
+  Bots were 15.85\% of commits but only 1.61\% of churn lines.
+\end{frame}
+
+\begin{frame}{Duration Normalization}
+  Release windows are not all the same length.
+
+  \vspace{0.2cm}
+  One project may release after 3 days, another after 6 months.
+
+  \vspace{0.3cm}
+  To compare fairly, we computed normalized values:
+  \begin{itemize}
+    \item commits per day;
+    \item churn per day;
+    \item churn per KLOC per day.
+  \end{itemize}
+
+  \vspace{0.3cm}
+  Very short windows are kept but flagged for sensitivity analysis.
+\end{frame}
+
+\begin{frame}{Centralized Evidence}
+  All important Phase I evidence is now centralized in \texttt{\_all} files.
+
+  \vspace{0.2cm}
+  Examples:
+  \begin{itemize}
+    \item \texttt{dataset\_freeze\_all.csv}
+    \item \texttt{versions\_all.csv}
+    \item \texttt{windows\_all.csv}
+    \item \texttt{metrics\_window\_dev\_human\_all.csv}
+    \item \texttt{ownership\_summary\_human\_all.csv}
+  \end{itemize}
+
+  \vspace{0.3cm}
+  This makes the project easier to reproduce and avoids duplicate parallel files.
+\end{frame}
+
+\begin{frame}{Phase I Result}
+  Phase I produced a clean, reproducible evidence base.
+
+  \vspace{0.3cm}
+  In simple terms:
+  \begin{itemize}
+    \item we know exactly which repositories are included;
+    \item we know exactly which versions were analyzed;
+    \item we know exactly which release windows were measured;
+    \item we extracted and cleaned the metric evidence;
+    \item we separated human activity from bot activity;
+    \item we normalized values so windows can be compared more fairly.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Why Phase II Was Needed}
+  After Phase I, we had metrics.
+
+  \vspace{0.3cm}
+  But we still needed to answer:
+  \begin{block}{Key question}
+    Which metric is best for a developer-reputation PoC?
+  \end{block}
+
+  \vspace{0.3cm}
+  A metric is not good just because it is easy to compute. It also needs to be stable, understandable, hard to manipulate, useful over time, and feasible for the target system.
+\end{frame}
+
+\begin{frame}{Phase II Criteria}
+  We compared the candidate metrics using four criteria.
+
+  \begin{table}
+    \footnotesize
+    \begin{tabularx}{\textwidth}{p{1.0cm}p{3.5cm}X}
+      \toprule
+      ID & Criterion & Simple question \\
+      \midrule
+      C1 & Stability & Does the metric behave consistently over time? \\
+      C2 & Interpretability & Can we explain the metric clearly? \\
+      C3 & Gaming resistance & Is the metric hard to manipulate? \\
+      C4 & Long-term suitability & Does it stay useful as history grows? \\
+      \bottomrule
+    \end{tabularx}
+  \end{table}
+\end{frame}
+
+\begin{frame}{Clarification: C1-C4 vs Feasibility}
+  There are two different evaluations.
+
+  \vspace{0.2cm}
+  \begin{block}{C1-C4}
+    These ask whether a metric is good as a reputation signal.
+  \end{block}
+
+  \begin{block}{Smart-contract feasibility}
+    This asks whether the metric can be implemented and audited safely in the PoC system.
+  \end{block}
+
+  \vspace{0.2cm}
+  C2, C3, and C4 each use five local dimensions. The feasibility rubric is separate and uses ten dimensions.
+\end{frame}
+
+\begin{frame}{C1: Stability}
+  C1 checked how stable the metrics are across release windows.
+
+  \vspace{0.2cm}
+  Main findings:
+  \begin{itemize}
+    \item M1 is very stable, but it is mostly project context.
+    \item M2 churn is informative but volatile.
+    \item M3 activity has useful rank continuity among recurring developers.
+    \item M4 concentration signals are more stable than raw activity.
+  \end{itemize}
+
+  \vspace{0.3cm}
+  C1 did not select the final metric. It produced the first evidence layer.
+\end{frame}
+
+\begin{frame}{C2: Interpretability}
+  C2 checked whether each metric is easy to explain.
+
+  \begin{table}
+    \footnotesize
+    \begin{tabular}{lcc}
+      \toprule
+      Metric & Score & Band \\
+      \midrule
+      M3 Activity cadence & 9/10 & High \\
+      M1 Snapshot size & 8/10 & High \\
+      M2 Churn & 8/10 & High \\
+      M4 Ownership/concentration & 7/10 & Medium \\
+      M5 Responsiveness & 6/10 & Medium \\
+      \bottomrule
+    \end{tabular}
+  \end{table}
+
+  \vspace{0.2cm}
+  Main message: M3 is easiest to explain, while M4 is meaningful but needs more explanation.
+\end{frame}
+
+\begin{frame}{C3: Gaming Resistance}
+  C3 checked how easy each metric is to manipulate.
+
+  \begin{table}
+    \footnotesize
+    \begin{tabular}{lcc}
+      \toprule
+      Metric & Score & Band \\
+      \midrule
+      M4 Ownership/concentration & 9/10 & High \\
+      M2 Churn & 7/10 & Medium \\
+      M3 Activity cadence & 6/10 & Medium \\
+      M1 Snapshot size & 5/10 & Medium \\
+      M5 Responsiveness & 3/10 & Low \\
+      \bottomrule
+    \end{tabular}
+  \end{table}
+
+  \vspace{0.2cm}
+  Main message: M4 is strongest because sustained ownership is harder to fake than simple commits or churn.
+\end{frame}
+
+\begin{frame}{C4: Long-Term Suitability}
+  C4 checked whether the metric remains useful as project history grows.
+
+  \begin{table}
+    \footnotesize
+    \begin{tabular}{lcc}
+      \toprule
+      Metric & Score & Band \\
+      \midrule
+      M3 Activity cadence & 8/10 & High \\
+      M4 Ownership/concentration & 8/10 & High \\
+      M1 Snapshot size & 7/10 & Medium \\
+      M2 Churn & 7/10 & Medium \\
+      M5 Responsiveness & 4/10 & Low \\
+      \bottomrule
+    \end{tabular}
+  \end{table}
+
+  \vspace{0.2cm}
+  Main message: M3 and M4 both work well over longer histories, but they mean different things.
+\end{frame}
+
+\begin{frame}{Combined C1-C4 Result}
+  After C1-C4, the strongest implemented reputation-oriented metric is M4.
+
+  \begin{table}
+    \footnotesize
+    \begin{tabular}{lcc}
+      \toprule
+      Metric & C1-C4 average & Role \\
+      \midrule
+      M4 Ownership/concentration & 8.13 & Strongest candidate \\
+      M1 Snapshot size & 7.50 & Context only \\
+      M3 Activity cadence & 7.25 & Eligible alternative \\
+      M2 Churn & 6.50 & Supporting signal \\
+      M5 Responsiveness & 3.25 & Future work \\
+      \bottomrule
+    \end{tabular}
+  \end{table}
+\end{frame}
+
+\begin{frame}{Smart-Contract Feasibility}
+  After comparing the metrics scientifically, we checked implementation feasibility.
+
+  \vspace{0.2cm}
+  The feasibility rubric asks whether a metric can be:
+  \begin{itemize}
+    \item computed deterministically;
+    \item stored compactly;
+    \item updated at a realistic frequency;
+    \item audited from hash-pinned evidence;
+    \item represented safely in a smart-contract record;
+    \item protected against simple manipulation.
+  \end{itemize}
+
+  \vspace{0.2cm}
+  This rubric has 10 dimensions, D1-D10.
+\end{frame}
+
+\begin{frame}{Feasibility Results}
+  \begin{table}
+    \footnotesize
+    \begin{tabular}{lccc}
+      \toprule
+      Metric & Score & Band & Status \\
+      \midrule
+      M1 Snapshot size & 18/20 & High & Context only \\
+      M2 Churn & 16/20 & High & Eligible \\
+      M3 Activity cadence & 17/20 & High & Eligible \\
+      M4 Ownership/concentration & 16/20 & High & Eligible \\
+      M5 Responsiveness & 10/20 & Medium & Excluded \\
+      \bottomrule
+    \end{tabular}
+  \end{table}
+
+  \vspace{0.2cm}
+  M1 is technically feasible, but it is not selected because size is not a developer-reputation metric by itself.
+\end{frame}
+
+\begin{frame}{Final Decision Inputs}
+  The final decision input combines empirical quality and feasibility.
+
+  \begin{table}
+    \footnotesize
+    \begin{tabular}{lccc}
+      \toprule
+      Metric & C1-C4 avg. & Feasibility & Combined \\
+      \midrule
+      M4 Ownership/concentration & 8.13 & 8.0 & 8.08 \\
+      M3 Activity cadence & 7.25 & 8.5 & 7.75 \\
+      M2 Churn & 6.50 & 8.0 & 7.10 \\
+      M1 Snapshot size & 7.50 & 9.0 & Context only \\
+      M5 Responsiveness & 3.25 & 5.0 & Excluded \\
+      \bottomrule
+    \end{tabular}
+  \end{table}
+
+  \vspace{0.2cm}
+  Current result: M4 is preferred for the final selection gate.
+\end{frame}
+
+\begin{frame}{Why M4 Is Currently the Best Candidate}
+  M4 measures ownership and concentration.
+
+  \vspace{0.2cm}
+  It is strong because:
+  \begin{itemize}
+    \item it is more reputation-oriented than project size;
+    \item it is less volatile than churn alone;
+    \item it is harder to game than simple commit counts;
+    \item it remains useful over longer histories;
+    \item it can be implemented in the hybrid PoC model.
+  \end{itemize}
+
+  \vspace{0.2cm}
+  Main caveat: identity handling must be explicit and auditable.
+\end{frame}
+
+\begin{frame}{How M2 and M3 Still Matter}
+  M4 should not be interpreted alone.
+
+  \vspace{0.2cm}
+  Supporting signals:
+  \begin{itemize}
+    \item \metric{M2 churn} checks whether ownership is backed by real code change.
+    \item \metric{M3 activity cadence} checks whether the developer is active over time.
+    \item \metric{M1 size} gives project context and normalization support.
+  \end{itemize}
+
+  \vspace{0.3cm}
+  The PoC may select one primary metric, but the analysis keeps the supporting evidence visible.
+\end{frame}
+
+\begin{frame}{What Has Been Committed}
+  The project is now versioned through Git.
+
+  \vspace{0.2cm}
+  Recent committed milestones:
+  \begin{itemize}
+    \item centralized Phase I ten-repository evidence;
+    \item C1 stability analysis;
+    \item C2 interpretability analysis;
+    \item C3 gaming-resistance analysis;
+    \item C4 long-term suitability analysis;
+    \item smart-contract feasibility scoring.
+  \end{itemize}
+
+  \vspace{0.2cm}
+  The branch is ahead of the remote repository because these local commits have not been pushed yet.
+\end{frame}
+
+\begin{frame}{What Is New After the Last Clarification}
+  The report now explicitly explains that:
+
+  \begin{itemize}
+    \item C2, C3, and C4 each use five criterion-specific dimensions.
+    \item The feasibility rubric is separate and uses ten dimensions.
+    \item These are two different computations with different purposes.
+  \end{itemize}
+
+  \vspace{0.3cm}
+  This was added to prevent confusion between \texttt{C2\_D1--C2\_D5} and feasibility \texttt{D1--D10}.
+\end{frame}
+
+\begin{frame}{Current State}
+  At this point:
+  \begin{itemize}
+    \item Phase I dataset construction is complete.
+    \item Metrics M1-M4 were extracted and cleaned.
+    \item Bot handling and duration normalization are documented.
+    \item Phase II C1-C4 comparison is complete.
+    \item Smart-contract feasibility scoring is complete.
+    \item M4 is the preferred candidate for the final PoC selection gate.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Next Step}
+  The next step is not another metric extraction step.
+
+  \vspace{0.3cm}
+  The next step is:
+  \begin{block}{Final metric selection rationale}
+    Officially record why M4 is selected as the baseline PoC metric, and define exactly how it will be represented in the PoC.
+  \end{block}
+
+  \vspace{0.3cm}
+  This should freeze:
+  \begin{itemize}
+    \item selected metric definition;
+    \item analysis policy;
+    \item value encoding;
+    \item evidence hash meaning;
+    \item smart-contract record fields.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{After Metric Selection}
+  After the final metric is selected, we can start the PoC implementation.
+
+  \vspace{0.2cm}
+  The PoC should include:
+  \begin{itemize}
+    \item a minimal smart-contract record structure;
+    \item a compact metric value;
+    \item an evidence hash;
+    \item a submission or registration flow;
+    \item an off-chain verifier that computes the selected metric;
+    \item one or more test examples from the frozen dataset.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Summary}
+  \begin{itemize}
+    \item We built a clean ten-repository evidence base.
+    \item We froze versions, windows, and commit hashes for reproducibility.
+    \item We extracted and cleaned M1-M4 metric evidence.
+    \item We evaluated the metrics using C1-C4.
+    \item We applied the smart-contract feasibility rubric.
+    \item The current strongest PoC candidate is M4 ownership/concentration.
+    \item The next step is to write the final selection rationale and then implement the PoC.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{One-Sentence Conclusion}
+  \begin{block}{Conclusion}
+    The project has moved from raw repository selection to a reproducible evidence base and a justified PoC candidate, with M4 ownership/concentration currently preferred because it gives the best tradeoff between reputation meaning, robustness, long-term usefulness, and implementation feasibility.
+  \end{block}
+\end{frame}
+
+\end{document}
