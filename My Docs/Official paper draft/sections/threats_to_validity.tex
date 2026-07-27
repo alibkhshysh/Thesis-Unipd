@@ -15,11 +15,21 @@ and activity days alongside derived indicators.
 \subsection{Internal validity}
 \label{sec:internal_validity}
 
-Potential extraction errors were mitigated through deterministic windows, immutable commit hashes,
+Potential extraction errors were mitigated through reproducible tag-chronological windows, immutable commit hashes,
 explicit cleaning rules, and arithmetic checks such as \texttt{churn} $=$ \texttt{added} $+$ \texttt{deleted}.
 Developer identity is canonicalized by email during extraction and cleaning, window totals are recomputed
 from clean developer rows, and ownership summaries are regenerated from those same clean rows. Bot-sensitivity
 outputs also validate that all-account totals remain consistent before deriving human-only tables.
+
+The original tag-date rule is deterministic but does not guarantee linear Git ancestry. A post-hoc audit found
+12 non-ancestral pairs containing 41.77\% of human commits and 71.55\% of human churn. The original analysis is
+retained as an exploratory baseline; the divergent pairs are excluded from the ancestry-only sensitivity analysis
+and from PoC eligibility. JUnit has no retained window in that subset, and only eight projects have enough retained
+primary windows for the primary sensitivity summary. This reduced sample is reported explicitly rather than treated
+as a corrected ten-project result.
+
+Email normalization does not resolve one person using multiple addresses and does not prove control of an address.
+The developer hash used by the PoC is therefore a pseudonymous technical identifier, not a verified civil identity.
 
 \subsection{External validity}
 \label{sec:external_validity}
@@ -27,13 +37,30 @@ outputs also validate that all-account totals remain consistent before deriving 
 The final Phase I dataset is broader than the pilot because it covers ten repositories across Python, Ruby,
 C/C++, Go, Java/Kotlin, JavaScript/TypeScript, and Rust ecosystems. This improves transferability compared
 with the four-repository pilot, but it is still a curated open-source sample rather than a statistically
-representative sample of all software projects. Phase II should therefore report conclusions as evidence
-from this selected dataset, not as universal claims about every repository or ecosystem.
+representative sample of all software projects. Conclusions are therefore reported as evidence from this selected
+dataset, not as universal claims about every repository or ecosystem. The baseline Fabric network is an educational
+two-organization test network and cannot support production-level claims about governance, availability, scale, or
+Byzantine resilience. The 34 chaincode tests establish local contract logic with deterministic Fabric-interface mocks. The
+subsequent live run adds evidence for two-peer endorsement, ordering, Gateway delivery, and persistent channel behavior on one
+single-host topology and one fixture; it does not establish performance, fault tolerance, or production generalizability.
 
 \subsection{Conclusion validity}
 \label{sec:conclusion_validity}
 
-No inferential claims are made in Phase I. The current report validates the dataset, pipeline, and descriptive
-evidence only. Comparative conclusions are deferred to Phase II, where stability, interpretability, gaming
-resistance, long-term suitability, bot sensitivity, and short-window robustness will be evaluated together
-before any proof-of-concept metric is selected.
+The C1 stability results are calculated from repository evidence. C2 interpretability, C3 gaming resistance, and
+most C4 long-term-suitability scores are structured author assessments encoded in reproducible rubrics; replaying a
+script reproduces those judgments but does not make them empirical measurements or independent ratings. The combined
+readiness score and its 60/40 weighting are therefore decision aids rather than inferential statistics.
+
+The supported conclusion is limited: under the thesis evaluation framework and ancestry-only sensitivity check, M4
+is a suitable implemented signal for the baseline PoC. The study does not establish that M4 is universally optimal,
+that it directly measures developer quality, or that gaming resistance is empirically proven. The selected individual
+developer share is related to, but not identical with, the aggregate Gini and top-one signals used in the window-level
+C1 score; low contributor overlap further limits longitudinal individual-level interpretation.
+
+Finally, the test-network run confirms that Fabric chaincode can authenticate the configured submitter, validate integer
+arithmetic, prevent duplicate state, and bind
+hash commitments. It cannot independently traverse Git, establish ancestry, validate bot classification, guarantee
+external artifact availability, or judge semantic code quality. These claims remain dependent on versioned off-chain
+verification and independent replay. The successful transaction therefore validates the implemented mechanism, not the
+semantic truth or universal usefulness of M4.

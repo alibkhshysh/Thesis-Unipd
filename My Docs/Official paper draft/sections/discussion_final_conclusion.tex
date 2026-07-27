@@ -1,0 +1,166 @@
+\section{Discussion and Final Conclusion}
+\label{sec:final_discussion_conclusion}
+
+This thesis asked which repository-derived indicators are sufficiently stable, interpretable, resistant to manipulation,
+and technically feasible to support a developer-reputation proof-of-concept. No single metric dominates every criterion.
+The evidence instead supports a layered result: M1 is the strongest size/context signal, M2 records change
+magnitude, M3 provides the clearest activity-continuity signal, and M4 provides the best overall trade-off for the baseline
+reputation-oriented PoC. Phase III then demonstrates how the selected M4 value can be made deterministic, replayable, and
+auditable across the off-chain/on-chain boundary.
+
+\subsection{Synthesis of the evidence}
+\label{sec:final_evidence_synthesis}
+
+The study combines four forms of evidence that should not be treated as interchangeable. First, Phase I provides empirical
+repository measurements from ten curated projects, 80 frozen tags, and 70 tag-chronological windows. Second, C1 calculates
+stability from those observations. Third, C2--C4 and the feasibility rubric encode transparent structured author assessments;
+their reproducibility preserves the stated judgments but does not convert them into measured facts or independent ratings.
+Fourth, Phase III supplies implementation evidence through deterministic replay, contract tests, authenticated network
+transactions, and independent inspection of committed channel data.
+
+This separation is necessary for interpreting the final decision. The 60/40 readiness weighting orders candidates within the
+declared thesis framework; it is not an inferential model. Likewise, a valid Fabric transaction demonstrates that the
+implemented authorization, arithmetic, endorsement, and state-transition rules operated as specified. It does not establish
+that churn is semantic quality or that an off-chain claim becomes true merely because it is committed to a ledger.
+
+\begin{table}[H]
+\centering
+\small
+\renewcommand{\arraystretch}{1.08}
+\begin{tabularx}{\textwidth}{p{1.1cm}p{4.5cm}X}
+\toprule
+\textbf{RQ} & \textbf{Most relevant evidence} & \textbf{Supported answer} \\
+\midrule
+RQ1 & Window CV, adjacent-window rank correlation, contributor overlap, short-window sensitivity, and ancestry-only sensitivity & M1 is the most stable context signal. Among behavior-oriented window signals, M4 concentration is least volatile; M3 has the strongest rank continuity among recurring developers. \\
+RQ2 & C2 and C3 structured rubrics, bot sensitivity, identity policy, and retained supporting fields & M3 is easiest to explain; M4 has the strongest assessed gaming-resistance profile, but neither is a direct quality measure and the gaming result is not an attack experiment. \\
+RQ3 & C1--C4 comparison, feasibility gate, deterministic replay, local contract tests, and live Fabric validation & M4 is the strongest eligible baseline PoC candidate under the declared framework and is implementable as replayable off-chain evidence plus a compact, validated ledger commitment. \\
+\bottomrule
+\end{tabularx}
+\caption{Thesis-level answers and their evidence boundaries.}
+\label{tab:final_rq_summary}
+\end{table}
+
+\subsection{Answer to RQ1: stability and comparability}
+\label{sec:final_rq1}
+
+RQ1 asks which indicators are stable across versions and comparable across projects. At window level, M1 endpoint KLOC is
+the most stable signal, with primary median CV 0.014, because project size changes gradually between releases. This makes M1
+valuable for context and normalization, but not as standalone developer-reputation evidence. Among behavior-oriented signals,
+M4 is the more stable family: primary median CV is 0.236 for top-one churn share and 0.329 for churn Gini, compared with
+0.608 for M3 commits/day and 0.890 for M2 churn/KLOC/day.
+
+The post-hoc ancestry result materially qualifies the original analysis. Twelve of the 70 tag-chronological windows are not
+linear ancestor-to-descendant intervals and contain 41.77\% of human commits and 71.55\% of human churn. Excluding them leaves
+58 eligible windows. The qualitative behavioral ordering is retained: ancestry-only primary median CV is 0.247 for M4
+top-one share, 0.351 for M4 Gini, 0.631 for M3, and 0.890 for M2. This supports retaining M4 for the engineering PoC, but the
+reduced eight-project primary summary cannot be presented as a corrected ten-project population.
+
+Developer-rank stability adds a different perspective. Among developers appearing in adjacent windows, M3 commits/day has
+the strongest primary median Spearman correlation (0.836), while M2 churn/day and M4 churn share both have 0.608. M2 and M4
+produce the same within-window ordering because dividing every developer's churn by the same window denominator changes the
+unit, not the rank. Moreover, the median common-developer share is only 0.172. The supported RQ1 answer is therefore
+conditional: M4 concentration is the least volatile behavior-oriented window signal, whereas M3 is the stronger continuity
+signal for the small recurring-developer subset. No result justifies treating one developer score as universally stable
+across changing contributor populations.
+
+\subsection{Answer to RQ2: interpretation and manipulation}
+\label{sec:final_rq2}
+
+RQ2 asks which indicators are understandable and robust against manipulation. Under C2, M3 receives 9/10 and is the clearest
+implemented reputation-adjacent signal. M1 and M2 each receive 8/10, while M4 receives 7/10 because ownership shares,
+concentration, canonical identity, and the denominator must all be explained together. Interpretability alone therefore
+would favor M3, not M4.
+
+The structured C3 assessment reverses that ordering: M4 receives 9/10, M2 7/10, M3 6/10, and M1 5/10. Sustained relative
+ownership was judged more difficult to manufacture than commit counts, which can be increased through splitting or
+automation. This is a reasoned rubric result, not empirical proof of gaming resistance. M4 can still be distorted through
+meaningless high-churn edits, dominance by one unusually large change, bot misclassification, email aliases, or spoofed
+identity metadata. The implementation improves detectability by retaining numerator, denominator, bot context, window
+commitments, and replayable Git evidence; it does not automatically decide whether the edits are valuable.
+
+The supported RQ2 answer is consequently a trade-off. M3 is the easiest to communicate but needs commit-splitting and bot
+safeguards. M4 is more demanding to explain but offers the strongest assessed reputation meaning and manipulation cost when
+its identity and evidence rules are explicit. M1, M2, and M3 should remain supporting context rather than being discarded:
+size frames the project, churn exposes the absolute work behind a share, and cadence distinguishes sustained activity from an
+isolated ownership spike.
+
+\subsection{Answer to RQ3: PoC selection and technical feasibility}
+\label{sec:final_rq3}
+
+RQ3 asks which indicator is the strongest PoC candidate under implementation constraints. M4 receives a C1--C4 comparison
+average of 8.125 and feasibility 16/20 (normalized to 8.0). Its weighted readiness score is 8.075, above eligible alternatives
+M3 at 7.750 and M2 at 7.100. M1's numerical readiness is high, but it is ineligible as a standalone reputation metric because
+it describes project context. M5 is excluded because the current dataset contains no issue or pull-request event stream from
+which responsiveness can be replayed.
+
+The implementation results support the feasibility part of this answer. Exact integer arithmetic independently checks all
+1,063 developer rows and 70 window summaries with zero failures. For the eligible \texttt{urllib3\_W03} fixture, independent
+Git extraction reproduces numerator 325, denominator 1,058, and 307,183 ppm. A standalone bundle supports fresh-repository
+replay; thirteen off-chain tests and an independent Git traversal confirm the extraction and commitment chain. The unchanged
+JavaScript contract then passes 34 local tests covering authorization, schema constraints, \texttt{BigInt} arithmetic,
+immutability, indexes, history, and events.
+
+The live network closes the remaining implementation gap. The package was installed on both peers and approved by both
+organizations, and the
+committed validation parameter was independently decoded as requiring both organizational peers. All 17 authenticated Gateway
+checks and all 47 independent network checks pass. The accepted Org1 transaction is committed with validation code 0 in block
+6, is read identically through both peers, appears in both indexes and history, and emits the expected event. Malformed JSON,
+a one-ppm mutation, an Org2 submission, a duplicate, and a temporary one-byte artifact modification are rejected through their
+respective on-chain or replay boundaries.
+
+The supported RQ3 answer is that M4 is feasible in a hybrid architecture, not that Git analysis should occur in chaincode.
+Git traversal, ancestry, bot classification, identity normalization, and aggregation remain off-chain; Fabric authenticates
+the configured submitter, recomputes the compact arithmetic, requires the declared endorsements, prevents overwrite, and binds
+the result to replayable evidence through hashes.
+
+\subsection{Implications for a DESTINO-aligned reputation system}
+\label{sec:final_implications}
+
+The main architectural implication is that a reputation system should preserve evidence layers instead of reducing activity
+to an opaque score. A compact ledger record can identify the project, window, pseudonymous subject, policy version, exact
+integer value, numerator, denominator, and evidence commitments. An auditor can then retrieve the matching artifact and
+reapply the same policy. This design makes disagreement inspectable: a party can challenge the artifact, extraction,
+identity rule, or interpretation without changing the already committed record.
+
+Policy versioning is equally important. Changing bot rules, identity linkage, release-window eligibility, or rounding creates
+a different measurement contract and should produce a new policy version rather than silently rewriting prior evidence. The
+ledger's role is therefore provenance, authorization, ordering, and immutability under configured governance. It is not an
+oracle for developer identity, semantic code quality, or the long-term availability of external artifacts.
+
+\subsection{Limitations and future work}
+\label{sec:final_future_work}
+
+The limitations in Section~\ref{sec:threats_validity} bound the conclusion. The ten repositories are curated rather than a
+statistical sample of all software ecosystems. The ancestry-only subset removes all JUnit windows and leaves only eight
+projects able to contribute to its primary stability summary. Email canonicalization is pseudonymous and does not resolve
+aliases or prove real-world identity. C2--C4 are structured author assessments without independent raters, and the 60/40
+weighting is a design choice. Finally, the Fabric evaluation uses one fixture, generated test identities, one peer per
+organization, one orderer, and no performance or fault experiment.
+
+The most valuable extensions would be to replay multiple eligible windows and developers, add issue and pull-request evidence
+for M5, evaluate explicit identity-linking governance, recruit independent raters for C2--C4, and conduct controlled gaming
+experiments. A production-oriented systems evaluation would additionally require multiple hosts, richer certificate
+governance, more peers and orderers, privacy controls, load measurements, failures, backup and recovery, and an externally
+durable artifact store. These extensions would broaden external validity; they are not required to change the completed
+baseline claim.
+
+\subsection{Final conclusion}
+\label{sec:final_conclusion}
+
+This thesis contributes a reproducible path from repository history to auditable ledger evidence. It constructs and validates
+a multi-project dataset, compares candidate indicators under explicit criteria, identifies and discloses a material
+release-window ancestry limitation, selects M4 without changing the frozen evidence, and implements the selected signal through deterministic
+off-chain verification and Hyperledger Fabric chaincode.
+
+Relative to the broad metric and assessment literature and the full DESTINO proposal, this contribution is intentionally
+focused. It complements the earlier general perspective by operationalizing one selected repository signal as an auditable
+evidence record; it does not claim to provide a universal developer-quality measure, a complete reputation model, or the
+complete DESTINO ecosystem.
+
+The final conclusion is deliberately bounded. Under the declared evaluation framework and ancestry-only eligibility gate,
+M4 developer churn ownership share is a suitable signal for the baseline DESTINO-aligned PoC. The implemented mechanism
+reproduces the selected fixture from Git, validates exact arithmetic and evidence commitments, and commits the resulting record
+through authenticated two-organization endorsement with independently confirmed channel state. This establishes a coherent,
+replayable, and testable PoC. It does not establish that M4 universally measures developer quality, that gaming resistance is
+empirically proven, or that the educational Fabric topology is production-ready. Within those limits, the research questions
+are answered and the baseline thesis objective is achieved.

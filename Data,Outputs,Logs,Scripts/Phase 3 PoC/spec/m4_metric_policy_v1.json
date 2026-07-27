@@ -1,0 +1,87 @@
+{
+  "policy_id": "M4_DEVELOPER_CHURN_SHARE_POLICY",
+  "policy_version": "1.0.0",
+  "status": "frozen_for_baseline_poc_after_posthoc_validation",
+  "metric": {
+    "metric_id": "M4_DEVELOPER_CHURN_SHARE",
+    "metric_family": "M4",
+    "metric_name": "Developer churn ownership share",
+    "meaning": "Relative share of human-authored textual line churn attributed to one canonical author email in one eligible Git release window.",
+    "claim_boundary": "A contribution/ownership evidence signal; not a complete or universal measure of developer quality, maintainability, trustworthiness, or reputation."
+  },
+  "window_policy": {
+    "range_semantics": "from_commit_exclusive_to_commit_inclusive",
+    "git_revision_expression": "FROM_COMMIT..TO_COMMIT",
+    "ancestry_requirement": "FROM_COMMIT must be an ancestor of TO_COMMIT",
+    "non_ancestral_action": "reject_for_baseline_poc",
+    "short_window_action": "allow, retain duration classification as contextual evidence",
+    "commit_hash_format": "40 lowercase hexadecimal characters"
+  },
+  "extraction_policy": {
+    "git_command_semantics": "git log --no-merges --numstat --pretty=format:COMMIT|%H|%ae|%an|%cI FROM_COMMIT..TO_COMMIT",
+    "merge_commits": "excluded",
+    "identity_email_source": "%ae author email",
+    "identity_name_source": "%an author name",
+    "timestamp_source": "%cI committer timestamp",
+    "timestamp_use_in_primary_metric": "none",
+    "path_scope": "all paths reported by git numstat; no source-language or directory filter",
+    "text_line_accounting": "numeric added and deleted numstat fields",
+    "binary_accounting": "a dash in either numstat count marks one binary-file change and contributes zero added, deleted, and churn lines",
+    "churn_definition": "added_text_lines + deleted_text_lines"
+  },
+  "population_policy": {
+    "primary_population": "human_only",
+    "bot_matching_inputs": [
+      "canonical author email",
+      "selected author display name"
+    ],
+    "bot_regex": "(\\[bot\\]|brewtestbot|dependabot|github-actions|pre-commit-ci|renovate|codecov|snyk|readthedocs)",
+    "bot_regex_flags": "case_insensitive",
+    "bot_action": "exclude identity row from numerator candidates and denominator",
+    "known_limitation": "The regex is a frozen heuristic and can produce false positives or false negatives."
+  },
+  "identity_policy": {
+    "canonical_identity": "trim(lowercase(author_email))",
+    "aggregation_scope": "all non-merge commits with the canonical email inside one project window",
+    "display_name_selection": "most frequent non-unknown author name for the canonical email in the window; lexical tie-break",
+    "display_name_in_metric_key": false,
+    "alias_resolution": "none beyond canonical email normalization",
+    "developer_id_hash_algorithm": "SHA-256",
+    "developer_id_hash_input": "UTF-8 bytes of domain separator m4-developer-id-v1 followed by one NUL byte and the canonical email",
+    "developer_id_hash_output": "64 lowercase hexadecimal characters",
+    "privacy_note": "This is pseudonymization, not anonymization; an unsalted email hash may be vulnerable to guessing."
+  },
+  "calculation_policy": {
+    "numerator": "sum of added_text_lines + deleted_text_lines for the selected human canonical identity in the eligible window",
+    "denominator": "sum of added_text_lines + deleted_text_lines over all human canonical identities in the same eligible window",
+    "exact_share": "numerator / denominator",
+    "denominator_requirement": "greater_than_zero",
+    "numerator_range": "0 <= numerator <= denominator",
+    "fixed_point_scale": 1000000,
+    "fixed_point_unit": "parts_per_million",
+    "rounding_mode": "round_to_nearest_ties_up_for_nonnegative_integers",
+    "integer_formula": "metric_value_ppm = (numerator * 1000000 + floor(denominator / 2)) // denominator",
+    "metric_value_range": "0 <= metric_value_ppm <= 1000000",
+    "sum_note": "Independently rounded developer ppm values are not required to sum to exactly 1000000."
+  },
+  "supporting_window_signals": {
+    "top1_share_churn": "maximum exact developer churn share in the window",
+    "gini_churn": "Gini coefficient over nonnegative human developer churn values using the frozen Phase I formula",
+    "ledger_role": "context and analysis support; not the primary per-developer ledger value"
+  },
+  "hash_policy": {
+    "canonical_json_profile": "UTF-8 JSON, object keys sorted lexicographically, no insignificant whitespace, no NaN or Infinity; all hashed numeric metric fields represented as integers",
+    "analysis_policy_hash": "SHA-256 of the canonicalized complete policy JSON",
+    "evidence_hash": "SHA-256 of the later versioned canonical evidence manifest",
+    "hash_output": "64 lowercase hexadecimal characters"
+  },
+  "eligibility_policy": {
+    "required_conditions": [
+      "window ancestry validation passes",
+      "denominator is greater than zero",
+      "developer and window arithmetic validations pass",
+      "frozen Phase I ownership cross-check passes"
+    ]
+  }
+}
+

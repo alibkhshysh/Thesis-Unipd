@@ -1,0 +1,106 @@
+\section{Phase III: Off-chain Verifier and Evidence Replay}
+\label{sec:phase3_offchain_verifier}
+
+The first implemented PoC boundary is the off-chain evidence path. It does not read a selected row from the frozen
+ownership CSV. Instead, it resolves the pinned Git tags, checks commit ancestry, traverses the release range, applies the
+frozen identity and bot policies, recomputes M4 using integer arithmetic, creates the evidence commitments, and emits the
+ledger submission defined by the frozen schema.
+
+\subsection{Standalone Git evidence artifact}
+\label{sec:phase3_git_bundle}
+
+The evidence builder creates a Git bundle version 2 containing both annotated tag refs, \texttt{2.4.0} and
+\texttt{2.5.0}. No prerequisite object is declared, so the artifact can populate a fresh repository without access to the
+original working copy. To test build determinism, the builder creates two bundles with single-thread packing and rejects the
+result unless their raw-byte SHA-256 values are identical.
+
+The resulting artifact is 7,206,262 bytes. Its SHA-256 is:
+
+\begin{center}
+\scriptsize
+\path{a41205eff782ce4af65f345e0afb97f16fd8677af215c7bdd06f460ce9602272}
+\end{center}
+
+The bundle remains a local PoC artifact under the declared \texttt{LOCAL\_POC} persistence class. The hash detects changed
+bytes but does not guarantee long-term availability.
+
+\subsection{Direct verifier result}
+\label{sec:phase3_verifier_result}
+
+The Python verifier follows the frozen Phase I extraction semantics, including non-merge \texttt{git log --numstat},
+lowercased and trimmed author email, most-frequent display-name selection with a lexical tie-break, regex bot exclusion,
+and zero textual churn for binary-file changes. It additionally fails closed on malformed Git output, tag/hash disagreement,
+failed ancestry, non-positive duration or denominator, fixture disagreement, schema error, and cross-contract mismatch.
+
+\begin{table}[H]
+\centering
+\small
+\renewcommand{\arraystretch}{1.08}
+\begin{tabular}{lr}
+\toprule
+\textbf{Verified quantity} & \textbf{Value} \\
+\midrule
+Tagger-time duration & 5,957,933 seconds \\
+Non-merge commits & 16 \\
+Human developers / commits & 9 / 14 \\
+Human added / deleted lines & 703 / 355 \\
+Human churn denominator & 1,058 \\
+Excluded bot identities / commits & 1 / 2 \\
+Excluded bot churn & 18 \\
+Binary-file changes & 0 \\
+Selected developer churn numerator & 325 \\
+Deterministic M4 value & 307,183 ppm \\
+Schema / fixture / cross-contract failures & 0 / 0 / 0 \\
+\bottomrule
+\end{tabular}
+\caption{Direct Git extraction and M4 verifier result for \texttt{urllib3\_W03}.}
+\label{tab:phase3_offchain_result}
+\end{table}
+
+The verifier writes the evidence manifest and ledger submission as UTF-8 canonical JSON without a trailing newline. The
+manifest contains no local path or generation time. The verifier source, manifest, and compact submission commitments are:
+
+\begin{table}[H]
+\centering
+\scriptsize
+\renewcommand{\arraystretch}{1.08}
+\begin{tabularx}{\textwidth}{p{3.5cm}X}
+\toprule
+\textbf{Committed object} & \textbf{SHA-256} \\
+\midrule
+Verifier source & \path{b4e8171dfe228aec96c8e67de526f037af253bc85bd502cc6bc5c96991aedb19} \\
+Evidence manifest & \path{df9e35adde01937b12da29eb21a3135268705d84168f9f1159a086b769d583ec} \\
+Ledger submission & \path{077e65f900aedc0f066cc01725a62f721c314a0932cdcd3b6f722c0c17a14fbe} \\
+\bottomrule
+\end{tabularx}
+\caption{Off-chain implementation commitments.}
+\label{tab:phase3_offchain_hashes}
+\end{table}
+
+\subsection{Fresh-bundle replay and independent traversal}
+\label{sec:phase3_offchain_replay}
+
+The replay check initializes an empty bare repository and fetches only the two tag refs from the bundle. Running the primary
+verifier in that repository reproduces four files byte-for-byte: the manifest, ledger submission, developer audit, and
+verification summary. Their hashes are unchanged across repeated complete pipeline runs.
+
+A second extraction route checks for a shared-parser error. It enumerates the 16 non-merge commits with \texttt{git rev-list},
+reads author metadata per commit, and accumulates each commit's changes with \texttt{git diff-tree --numstat}. This route does
+not use the verifier's \texttt{git log --numstat} parser. It independently matches every commit, developer, bot, added,
+deleted, churn, binary, numerator, denominator, and ppm field committed in the manifest.
+
+Thirteen automated tests pass. They cover the exhaustive ppm test from Section~\ref{sec:phase3_metric_freeze}, canonical
+serialization, identity normalization, bot and binary handling, generated-schema validation, the artifact--manifest--submission
+hash chain, and zero-failure summaries. Negative tests reject both an additional submission field and a one-ppm arithmetic
+mutation. Repeated execution checks nine generated files and logs with zero hash differences.
+
+\subsection{Interpretation and off-chain boundary}
+\label{sec:phase3_offchain_boundary_result}
+
+This step establishes deterministic extraction, calculation, serialization, commitment, and local replay for one ancestral
+fixture. It does not prove control of an author email, perfect bot identification, semantic value of churn, permanent bundle
+availability, or generalization beyond the evaluated windows. Section~\ref{sec:phase3_chaincode_unit} tests authorization,
+duplicate prevention, state, history, queries, and events at the contract-unit boundary; Section~\ref{sec:phase3_fabric_network}
+then evaluates endorsement, ordering, commit observation, authenticated rejection, and Gateway delivery. The bundle necessarily retains the repository's original author
+metadata; the pseudonymous developer hash limits the compact ledger subject field but does not anonymize the off-chain evidence
+artifact.

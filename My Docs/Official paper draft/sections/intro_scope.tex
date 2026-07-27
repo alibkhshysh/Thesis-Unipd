@@ -1,10 +1,36 @@
 \section{Introduction, Scope, and Research Roadmap}
 \label{sec:intro_scope}
 
-This thesis studies software-quality indicators as evidence for developer reputation systems.
-The objective of the current phase is methodological: construct a reproducible multi-project dataset,
-extract candidate metrics with transparent rules, and produce analysis-ready outputs for comparative evaluation.
-No proof-of-concept (PoC) metric is selected in this phase; metric selection is deferred to Phase II.
+This thesis studies repository-derived software indicators as evidence for developer reputation systems.
+The work constructs a reproducible multi-project dataset, extracts candidate metrics with transparent rules,
+compares their behavior and implementation suitability, and instantiates the selected signal in a hybrid
+permissioned-ledger design. Phase II selects M4 developer churn ownership share for the baseline proof-of-concept
+(PoC); Phase III freezes the deterministic calculation, evidence schemas, and Hyperledger Fabric trust boundary,
+implements and independently replays the off-chain verifier, locally validates the chaincode, and deploys the unchanged
+contract for authenticated two-organization Fabric integration testing.
+
+\subsection*{Positioning Relative to Prior Work and DESTINO}
+
+Prior research provides a broad foundation for software measurement and assessment. Software-metric surveys and
+maintainability studies organize candidate measures and examine how measurable properties evolve, while open-source
+software-selection research treats metrics as decision inputs rather than complete judgments of software or developer
+quality~\cite{timoteo_software_metrics_survey,kumar2012maintainability,kapllani2020maintainability,
+syedmohamad2026maintainability,li2022ossselection}. Complementary work addresses the collection and exchange of metric
+data, third-party software assessment, and the evaluation of reputation indicators under explicit threat
+scenarios~\cite{khomyakov2019metricssharing,remencius2016thirdparty,koutrouli2015reputation,schlosser2004reputation}.
+
+The original DESTINO proposal places these concerns within a broader decentralized ecosystem for evidence-based software
+developer reputation. Its envisioned scope includes multiple software-quality and maintenance evidence types, automated
+measurement, signed submissions, immutable ledger records, evidence discovery, and developer profiles~\cite{destinoProposal}.
+Implementing that complete ecosystem is outside the scope of this thesis.
+
+This work instead addresses a narrower systems-assurance question within the DESTINO vision: once a Git-derived reputation
+indicator has been compared with alternatives and selected, how can its calculation, evidence packaging, submission,
+ledger commitment, and independent replay be made deterministic and auditable? Phases I and II provide the comparative
+evidence and select M4; Phase III operationalizes M4 through a deterministic off-chain verifier and a compact, validated
+Fabric record. Authorization in this PoC controls who may submit M4 evidence; M4 is not used to grant or deny developer
+permissions. The broad prior literature and the focused implementation are therefore complementary: the former establishes
+the measurement and assessment landscape, while this thesis evaluates and validates one end-to-end evidence path within it.
 
 \subsection*{Research Questions}
 
@@ -18,19 +44,33 @@ No proof-of-concept (PoC) metric is selected in this phase; metric selection is 
 
 The report is organized as follows:
 \begin{itemize}[leftmargin=*]
-  \item Sections~\ref{sec:candidate_metrics}--\ref{sec:detailed_design_blueprint} define candidate metrics, comparison criteria, DESTINO alignment, feasibility scoring, and the future PoC integration boundary.
+  \item Sections~\ref{sec:candidate_metrics}--\ref{sec:detailed_design_blueprint} define candidate metrics, comparison criteria, DESTINO alignment, feasibility scoring, and the metric-agnostic PoC integration boundary.
   \item Sections~\ref{sec:phase1_dataset_curation}--\ref{sec:round1_summary} document dataset curation, extraction, cleaning, and descriptive outputs for the centralized 10-repository Phase I dataset.
-  \item Sections~\ref{sec:reproducibility}--\ref{sec:phase1_conclusion} provide reproducibility and validity considerations.
-  \item Section~\ref{sec:phase2_plan} defines the comparative evaluation plan and decision gate for PoC metric selection.
+  \item Sections~\ref{sec:reproducibility}--\ref{sec:phase1_conclusion} provide the Phase I reproducibility protocol and conclusion.
+  \item Sections~\ref{sec:phase2_c1_stability}--\ref{sec:phase2_poc_metric_selection} report the comparative evaluation,
+  post-hoc ancestry sensitivity check, feasibility gate, and M4 selection.
+  \item Sections~\ref{sec:phase3_poc_design}--\ref{sec:final_discussion_conclusion} freeze the concrete hybrid PoC design,
+  report the off-chain implementation and independent replay, validate the local chaincode implementation, and evaluate the live
+  Fabric test-network boundary. Sections~\ref{sec:threats_validity} and~\ref{sec:final_discussion_conclusion} then consolidate
+  validity limits, answer the research questions, and state the final conclusion.
 \end{itemize}
 
 \subsection*{Contributions}
 
 \begin{itemize}[leftmargin=*]
   \item A shortlist of candidate metrics and operational comparison criteria.
-  \item A fully reproducible 10-repository Phase I dataset with frozen repositories, tags, and consecutive windows.
+  \item A reproducible 10-repository Phase I dataset with frozen repositories, tags, and tag-chronological windows.
   \item Cleaned, validated metric datasets (developer-window and window totals) and ownership/concentration statistics.
   \item Explicit bot-sensitivity and short-window sensitivity outputs, so automation and release-cadence artifacts are visible rather than hidden.
-  \item A detailed smart-contract feasibility rubric to support later PoC metric selection.
-  \item A DESTINO-aligned evidence model showing how Phase I outputs map to a future metric-agnostic PoC.
+  \item A post-hoc ancestry audit and non-overwriting C1 sensitivity analysis that make parallel release-line effects explicit.
+  \item A transparent smart-contract feasibility rubric and frozen M4 selection with clearly separated empirical and structured-assessment evidence.
+  \item A versioned DESTINO-aligned PoC design comprising deterministic integer encoding, evidence and ledger schemas,
+  a two-organization Hyperledger Fabric topology, and an explicit replay/trust model.
+  \item A standalone Git evidence bundle and deterministic off-chain verifier whose canonical manifest and ledger submission
+  were reproduced byte-for-byte from a fresh repository and cross-checked through a second Git traversal.
+  \item A schema-constrained JavaScript Fabric contract that recomputes M4 with exact \texttt{BigInt} arithmetic, rejects
+  unauthorized or duplicate submissions, and passes 34 local state-transition and negative-case tests.
+  \item A reproducible two-organization Fabric deployment in which all 17 authenticated Gateway checks and 47 independent
+  network checks pass, including decoded two-peer endorsement, valid commit, peer-consistent reads, indexes, history, event
+  delivery, and negative cases.
 \end{itemize}

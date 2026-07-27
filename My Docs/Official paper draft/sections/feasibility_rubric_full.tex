@@ -8,10 +8,11 @@
 This thesis evaluates multiple candidate metrics for evidence-based developer reputation.
 However, the project explicitly requires that feasibility as a smart contract is considered as a
 selection criterion and that a proof-of-concept (PoC) is implemented for one chosen metric.
-The project scope further constrains the design by prescribing an evidence workflow where developers submit
-a signed form containing a link and a hash of an archive; the smart contract verifies the submission,
-retrieves and verifies the archive, computes metrics, writes to the ledger the form, metrics, tags, and
-a storage-persistence attribute, and signals a sibling search/index system for each new datapoint.
+The project scope further constrains the design through a conceptual evidence workflow where developers submit
+a signed form containing a link and a hash of an archive, the artifact and metric are verified, compact evidence is written
+to the ledger, and a sibling search/index system can observe each new data point. Because Fabric chaincode cannot retrieve an
+external archive or traverse Git, the implemented interpretation assigns retrieval and metric computation to a deterministic
+off-chain verifier and reserves bounded authorization, validation, commitment, state, and event operations for chaincode.
 Therefore, feasibility here is not a generic ``blockchain compatibility'' notion, but the practical
 ability to implement (or safely approximate) the required pipeline under smart-contract constraints
 while preserving auditability and integrity.
@@ -21,15 +22,15 @@ limits and throughput constraints, (ii) storage growth and distribution overhead
 in connecting on-chain logic to external services and data (oracle-style issues). These constraints
 make heavy computation and large state growth poor candidates for on-chain implementation, often
 motivating hybrid architectures in which bulk data remains off-chain and the chain stores commitments
-and compact metadata. Smart-contract ecosystems add further constraints: execution is costed (gas),
+and compact metadata~\cite{blockchainsurvey}. Smart-contract ecosystems add further constraints: execution is costed (gas),
 code and execution patterns are shaped by platform limits, and determinism is required.
 Empirical work on Solidity metrics shows that many metric distributions are truncated and exist in
 restricted ranges due to platform constraints, which supports treating feasibility as a distinct and
-non-trivial selection criterion rather than assuming traditional software metrics transfer unchanged
-\cite{blockchainsurvey,smartmetrics2023,scvulncomplexity}.
+non-trivial selection criterion rather than assuming traditional software metrics transfer
+unchanged~\cite{smartmetrics2023}.
 
 \subsubsection{Definition: smart-contract feasibility}
-We define \textbf{smart-contract feasibility} of a candidate metric as:
+This thesis defines the \textbf{smart-contract feasibility} of a candidate metric as:
 \begin{quote}
 The ability to compute, verify, and store a metric (or its verified output) within the defined evidence workflow
 with bounded on-chain computation and storage, minimal reliance on unverifiable external inputs, strong auditability
@@ -39,7 +40,7 @@ with bounded on-chain computation and storage, minimal reliance on unverifiable 
 This definition is intentionally \emph{architecture-aware}. A candidate can be feasible in one of two ways:
 \begin{itemize}[leftmargin=*]
   \item \textbf{On-chain computable feasibility:} the metric can be computed directly in the contract with small, bounded logic.
-  \item \textbf{Hybrid feasibility (recommended for PoC):} the metric is computed off-chain from a verified artifact (hash+link),
+  \item \textbf{Hybrid feasibility (recommended for the PoC):} the metric is computed off-chain from an artifact whose hash and link are verified,
   and the contract stores only compact metric values plus hash commitments to evidence/inputs to enable auditability.
 \end{itemize}
 The rubric below evaluates feasibility in a way that allows both patterns, while explicitly penalizing designs that
@@ -49,14 +50,14 @@ require unverifiable oracles, frequent high-throughput writes, or large on-chain
 Each metric receives a score on 10 dimensions, each scored in $\{0,1,2\}$ (0 = poor feasibility, 2 = strong feasibility).
 The rubric is used \textbf{only after} the multi-metric comparative analysis, to select the single PoC metric.
 
-\paragraph{How to use the rubric (procedure).}
+\paragraph{Rubric application procedure.}
 \begin{enumerate}[leftmargin=*]
-  \item For each candidate metric $M_i$, write a one-paragraph ``implementation story'':
-  what are inputs, what is computed, what is stored, how often updated, who attests.
+  \item For each candidate metric $M_i$, record a one-paragraph implementation account specifying the inputs,
+  computation, stored values, update frequency, and attesting party.
   \item Score each rubric dimension using the guidance below.
   \item Compute a total feasibility score and also record \emph{exclusion conditions} (dimensions where score = 0
   implies unacceptable risk for the PoC).
-  \item Select the PoC metric as the best trade-off between (i) empirical performance under C1--C4 and
+  \item Select the PoC metric as the best trade-off between (i) comparative performance under C1--C4 and
   (ii) feasibility score, with tie-breaking favoring determinism, auditability, and bounded cost.
 \end{enumerate}
 
@@ -129,7 +130,7 @@ D9. Metric-value representation (range + precision) & 0--2 &
 \textbf{1:} requires careful normalization/scale but feasible (e.g., store numerator/denominator separately).
 \textbf{0:} requires floating point or complex statistics not representable safely on-chain. \\
 
-D10. Adversarial resilience in a public ledger context & 0--2 &
+D10. Adversarial resilience in the configured ledger context & 0--2 &
 \textbf{2:} metric is hard/expensive to inflate without leaving detectable traces, especially with hash-anchored evidence.
 \textbf{1:} partially gameable but mitigations exist (normalization, batching, cross-check with other metrics in study).
 \textbf{0:} trivially gameable with low-cost manipulations (e.g., verbosity inflation) and weak detectability. \\
@@ -139,37 +140,37 @@ D10. Adversarial resilience in a public ledger context & 0--2 &
 \label{tab:feasibility_dimensions_cont}
 \end{table}
 
-\subsubsection{Evidence checklist per dimension (what you must document)}
+\subsubsection{Evidence checklist for each dimension}
 To keep feasibility rigorous and evidence-based, each dimension must be supported by explicit evidence:
 \begin{itemize}[leftmargin=*]
-  \item \textbf{D1 Determinism:} specify exact inputs (archive hash, link, version id), the window definition, and (for off-chain computation)
-  pin the tool version and configuration; describe how the PoC ensures the same artifact yields the same output.
-  \item \textbf{D2/D3 Cost bounds:} list the contract operations required per datapoint (comparisons, storage writes); argue boundedness.
-  \item \textbf{D4 Update frequency:} define update cadence (per release/time window). Explain why per-commit updates are avoided.
-  \item \textbf{D5 Oracle dependence:} list any off-chain sources beyond the archive; if any exist, state whether they are hash-anchored or signed attestations.
-  \item \textbf{D6 Auditability:} define the \emph{re-check protocol}: retrieve archive, verify hash, recompute metric, compare with ledger value.
-  \item \textbf{D7/D8 Provenance and linkage:} describe how the signed form + hash commitment prevents substitution of artifacts.
-  \item \textbf{D9 Representation:} define encoding (int, fixed-point, store numerator/denominator); describe overflow handling and normalization.
-  \item \textbf{D10 Adversarial model:} list low-cost manipulations and whether the system can detect them via evidence consistency.
+  \item \textbf{D1 Determinism:} exact inputs (archive hash, link, and version identifier), the window definition, and, for off-chain computation,
+  the pinned tool version and configuration; an explanation of how the PoC ensures that the same artifact yields the same output.
+  \item \textbf{D2/D3 Cost bounds:} the contract operations required per data point (comparisons and storage writes), together with a boundedness justification.
+  \item \textbf{D4 Update frequency:} the update cadence (per release or time window) and a justification for avoiding per-commit updates.
+  \item \textbf{D5 Oracle dependence:} any off-chain sources beyond the archive and, where applicable, whether they are hash-anchored or signed attestations.
+  \item \textbf{D6 Auditability:} the \emph{re-check protocol}: archive retrieval, hash verification, metric recomputation, and comparison with the ledger value.
+  \item \textbf{D7/D8 Provenance and linkage:} an explanation of how the signed form and hash commitment prevent artifact substitution.
+  \item \textbf{D9 Representation:} the encoding (integer, fixed-point, or separate numerator and denominator), overflow handling, and normalization.
+  \item \textbf{D10 Adversarial model:} low-cost manipulations and whether evidence-consistency checks can detect them.
 \end{itemize}
 
-\subsubsection{Feasibility Exclusion Conditions}
-Even if a metric is strong empirically, it is a weak PoC candidate if it triggers exclusion conditions:
+\subsubsection{Feasibility exclusion conditions}
+Even if a metric is strong in the comparison, it is a weak PoC candidate if it triggers exclusion conditions:
 \begin{itemize}[leftmargin=*]
   \item \textbf{Exclusion Condition A:} score 0 on D1 (non-deterministic), D6 (non-auditable), or D8 (artifact cannot be pinned).
   \item \textbf{Exclusion Condition B:} requires high-frequency updates (D4=0) that exceed realistic ledger throughput.
   \item \textbf{Exclusion Condition C:} depends on unverifiable external facts (D5=0) without a signed-attestation model.
 \end{itemize}
 
-\subsubsection{How this rubric maps to the project evidence workflow}
-The project workflow specifies a procedure where a smart contract:
-(i) checks the signature in the form, (ii) retrieves the archive from the link, (iii) checks signature and hash match,
-(iv) measures quality metrics, (v) writes form + metrics + tags + storage-persistence reference, and (vi) signals
-a sibling indexing system. The rubric operationalizes this in dimensions D1, D6, D7, and D8 (determinism, auditability,
-identity binding, artifact linkage), and constrains practical implementation via D2--D5 and D9 (bounded compute/storage,
-update frequency, oracle dependence, representation).
+\subsubsection{Mapping to the project evidence workflow}
+The conceptual project workflow comprises signature checking, archive retrieval, hash verification, metric measurement,
+ledger recording, and indexing notification. The rubric operationalizes this in dimensions D1, D6, D7, and D8
+(determinism, auditability, identity binding, artifact linkage), and constrains practical implementation via D2--D5 and D9
+(bounded compute/storage, update frequency, oracle dependence, representation). Section~\ref{sec:phase3_hybrid_boundary}
+records the implemented split: archive and Git operations are off-chain, whereas chaincode performs bounded validation,
+commitment, state, and event operations.
 
-\subsubsection{How the rubric is applied to the five thesis candidates}
+\subsubsection{Application to the five thesis candidates}
 \label{sec:rubric_template_apply}
 Table~\ref{tab:rubric_template} records the scoring shape used for each candidate. The actual scored application is reported
 after C1--C4 in Section~\ref{sec:phase2_feasibility_scoring}, where each dimension receives a value and rationale.
@@ -178,6 +179,7 @@ after C1--C4 in Section~\ref{sec:phase2_feasibility_scoring}, where each dimensi
 \centering
 \footnotesize
 \renewcommand{\arraystretch}{1.12}
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{lcccccccccc}
 \toprule
 Metric & D1 & D2 & D3 & D4 & D5 & D6 & D7 & D8 & D9 & D10 \\
@@ -189,6 +191,7 @@ M4 Ownership/concentration & N/A & N/A & N/A & N/A & N/A & N/A & N/A & N/A & N/A
 M5 Maintenance responsiveness (design ext.) & N/A & N/A & N/A & N/A & N/A & N/A & N/A & N/A & N/A & N/A \\
 \bottomrule
 \end{tabular}
+}
 \caption{Feasibility rubric scoring shape. Actual scores are reported in Section~\ref{sec:phase2_feasibility_scoring}.}
 \label{tab:rubric_template}
 \end{table}

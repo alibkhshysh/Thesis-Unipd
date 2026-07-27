@@ -1,0 +1,17 @@
+{
+  "name": "m4-fabric-gateway-integration",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Authenticated Fabric Gateway integration validation for m4evidence",
+  "main": "run_integration.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "integration": "node run_integration.js"
+  },
+  "dependencies": {
+    "@grpc/grpc-js": "1.14.4",
+    "@hyperledger/fabric-gateway": "1.10.1"
+  }
+}

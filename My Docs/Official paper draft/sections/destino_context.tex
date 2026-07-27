@@ -1,10 +1,20 @@
 \section{DESTINO Alignment and Evidence Boundary}
 \label{sec:destino_context}
 
-DESTINO is the reference deployment context for the thesis: software-quality evidence should support developer
-reputation claims through signed submissions, immutable records, and replayable verification. In this report, DESTINO is
-not treated as a reason to move all computation on-chain. Instead, it defines the evidence boundary that every candidate
-metric must satisfy before a proof-of-concept metric can be selected.
+The original DESTINO proposal is the reference deployment context for this thesis. It describes a broad decentralized
+ecosystem in which software-quality and maintenance evidence contributes to developer reputation through automated
+measurement, signed submissions, immutable ledger records, evidence storage and discovery, and developer-oriented
+profiles~\cite{destinoProposal}.
+
+This thesis intentionally implements a narrower part of that vision. It compares repository-derived candidate indicators,
+selects one signal for a baseline proof of concept, and evaluates whether its evidence can be calculated deterministically,
+submitted by an authorized party, committed with integrity protections, and independently replayed. It does not implement
+qualified electronic signatures, maintenance-response evidence, aggregated reputation profiles, public search services, or
+production governance. Those broader DESTINO elements remain outside the claims evaluated here.
+
+DESTINO is therefore not treated as a reason to move all computation on-chain. Instead, it defines an evidence boundary that
+every candidate metric must satisfy before a proof-of-concept metric can be selected. Within that boundary, authorization
+controls who may submit metric evidence; the selected metric does not itself grant or deny developer permissions.
 
 The working DESTINO-aligned evidence model has four parts:
 \begin{itemize}[leftmargin=*]
@@ -12,20 +22,20 @@ The working DESTINO-aligned evidence model has four parts:
   and a cryptographic commitment to the submitted artifact;
   \item an off-chain measurement pipeline that retrieves the committed artifact, verifies integrity, and computes the selected metric;
   \item compact on-chain records containing the submission reference, metric value, and evidence hash;
-  \item public auditability through replay: retrieve the same artifact, rerun the declared script/configuration, and compare the result
+  \item auditor-accessible replay: retrieve the same artifact, rerun the declared script and configuration, and compare the result
   with the committed metric record.
 \end{itemize}
 
 This boundary keeps expensive repository traversal, Git history analysis, and tabular validation off-chain, while the smart-contract
 layer stores only bounded metadata, commitments, and metric outputs. This matches common blockchain engineering constraints:
 large artifacts and unbounded loops are poor on-chain candidates, while hash commitments and compact records are auditable and
-storage-bounded \cite{blockchainsurvey}.
+storage-bounded~\cite{blockchainsurvey,smartmetrics2023}.
 
-\subsection{Implications for the Current Report}
+\subsection{Implications for This Thesis}
 \label{sec:destino_phase1_implications}
 
-The Phase I report is therefore not only a data-extraction report. It prepares the exact evidence artifacts that a later
-DESTINO PoC would need. The alignment is summarized in Table~\ref{tab:destino_alignment}.
+Phase I is therefore not solely a data-extraction phase. It prepares the evidence artifacts subsequently used by
+the DESTINO-aligned PoC. The alignment is summarized in Table~\ref{tab:destino_alignment}.
 
 \begin{table}[H]
 \centering
@@ -43,7 +53,7 @@ Replayable measurement interval &
 Each metric value has a deterministic release-window boundary. \\
 Compact metric evidence &
 \path{out/loc_per_tag_all.csv}, clean metric tables, normalized tables, human-only M3/M4 tables &
-The future contract can store selected values without storing raw repositories or diffs. \\
+The contract can store selected values without storing raw repositories or diffs. \\
 Audit and validation evidence &
 \path{logs/*.log}, cleaning checks, duration flags, bot-sensitivity summaries &
 A verifier can inspect how raw extraction became analysis-ready evidence. \\
@@ -56,10 +66,10 @@ The selected PoC metric must be empirically useful and feasible under bounded co
 \label{tab:destino_alignment}
 \end{table}
 
-Two current design decisions are especially important for DESTINO alignment. First, duration-normalized outputs and
+Two Phase I design decisions are especially important for DESTINO alignment. First, duration-normalized outputs and
 \texttt{sensitivity\_only} flags prevent release cadence artifacts from being silently recorded as comparable metric evidence.
 Second, human-only M3/M4 outputs prevent automated accounts from being interpreted as human maintainer behavior. The all-account
 tables remain useful as an audit trail, but the primary developer-behavior evidence is explicitly human-only.
 
-No PoC metric is selected in Phase I. DESTINO alignment at this stage means the pipeline produces evidence that can later be
-committed, audited, and scored; it does not mean that any current metric has already passed the comparative and feasibility gate.
+No PoC metric is selected within Phase I itself. At that phase boundary, DESTINO alignment means the pipeline produces evidence
+that can subsequently be committed, audited, and scored; Phase II performs the comparative and feasibility gate.

@@ -1,0 +1,45 @@
+{
+  "fixture_id": "urllib3_W03_top_contributor_v1",
+  "purpose": "Deterministic baseline PoC and integration-test fixture",
+  "selection_reason": "Ancestral primary window with nine human developers, one excluded bot identity, non-trivial ownership distribution, and moderate repository size.",
+  "policy_id": "M4_DEVELOPER_CHURN_SHARE_POLICY",
+  "policy_version": "1.0.0",
+  "analysis_policy_hash_sha256": "4e81843340041da45a13ebb742a0c5fdfebdf6c8f5e64a7d6629f58990b287a4",
+  "project_id": "urllib3",
+  "window_id": "urllib3_W03",
+  "from_tag": "2.4.0",
+  "to_tag": "2.5.0",
+  "from_commit_hash": "a5ff7ac3bbb8659e2ec3ed41dd43889f06a7d7bc",
+  "to_commit_hash": "aaab4eccc10c965897540b21e15f11859d0b62e7",
+  "ancestry_status": "ancestral",
+  "analysis_set": "primary",
+  "duration_days": "68.957558",
+  "human_population": {
+    "developers": 9,
+    "commits": 14,
+    "added": 703,
+    "deleted": 355,
+    "churn": 1058
+  },
+  "excluded_bot_context": {
+    "identities": 1,
+    "label": "dependabot[bot]",
+    "commits": 2,
+    "churn": 18
+  },
+  "selected_developer": {
+    "canonical_email_off_chain_only": "illia.volochii@gmail.com",
+    "developer_id_hash": "eaed488dac37a20eeadce46717abb4d78655633b3ffd07af79d532c4ce47185a",
+    "numerator_churn": 325,
+    "denominator_churn": 1058,
+    "exact_share_12dp": "0.307183364839",
+    "metric_value_ppm": 307183
+  },
+  "supporting_window_values": {
+    "top1_share_churn_12dp": "0.307183364839",
+    "gini_churn_12dp": "0.572778827977",
+    "sum_individually_rounded_ppm": 999999,
+    "ppm_sum_deviation_from_scale": -1
+  }
+}
+

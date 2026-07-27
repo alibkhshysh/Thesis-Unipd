@@ -1,0 +1,9 @@
+status=pass
+fixture_id=urllib3_W03_top_contributor_v1
+bundle_version=2
+included_refs=refs/tags/2.4.0,refs/tags/2.5.0
+standalone_history=true
+determinism_runs=2
+determinism_status=pass
+artifact_bytes=7206262
+artifact_sha256=a41205eff782ce4af65f345e0afb97f16fd8677af215c7bdd06f460ce9602272

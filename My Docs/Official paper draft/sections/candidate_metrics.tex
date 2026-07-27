@@ -1,10 +1,17 @@
 \section{Candidate Metrics (Shortlist)}
 \label{sec:candidate_metrics}
 
-We compare a minimal set of candidate indicator families that are (i) computable from versioned artifacts and Git history,
+This thesis compares a minimal set of candidate indicator families that are (i) computable from versioned artifacts and Git history,
 (ii) interpretable and comparable across heterogeneous projects, and (iii) compatible with hash-anchored evidence and compact
-on-chain storage. The shortlist is also informed by existing smart-contract metric and complexity literature
-\cite{smartmetrics2023,scvulncomplexity}. The comparative study evaluates all candidates; the PoC metric is selected only after evaluation.
+on-chain storage. Source-code measurement and open-source component-selection research motivate treating repository metrics as
+decision inputs rather than complete quality judgments~\cite{timoteo_software_metrics_survey,li2022ossselection}. Reputation-system
+research further motivates comparing multiple indicators under explicit threat scenarios~\cite{koutrouli2015reputation,schlosser2004reputation}.
+Research on metric-data infrastructures additionally treats collection, storage, and exchange as engineering concerns, while
+third-party assessment research shows that assessment objectives depend on the intended recipient and decision
+context~\cite{khomyakov2019metricssharing,remencius2016thirdparty}.
+Finally, smart-contract studies establish platform-specific measurement constraints and caution against treating one complexity
+metric as a direct proxy for software quality or vulnerability~\cite{smartmetrics2023,scvulncomplexity}. The comparative study
+evaluates all candidates; the PoC metric is selected only after evaluation.
 
 \begin{table}[H]
 \centering

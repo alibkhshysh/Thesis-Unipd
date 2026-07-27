@@ -1,0 +1,79 @@
+\section{Centralized Extraction Summary (Phase I Deliverables)}
+\label{sec:round1_summary}
+
+The centralized Phase I extraction spans 70 windows and produces 1{,}118 clean all-account developer-window rows after identity
+canonicalization. Aggregate all-account totals are 9{,}560 commits and 2{,}066{,}059 churn lines. The primary human-only
+population for M3/M4 contains 1{,}063 developer-window rows, 8{,}561 commits, and 2{,}056{,}765 churn lines.
+
+\begin{table}[H]
+\centering
+\scriptsize
+\renewcommand{\arraystretch}{1.12}
+\begin{tabular}{lrrrrr}
+\toprule
+\textbf{Project} & \textbf{Windows} & \textbf{All commits} & \textbf{All churn} & \textbf{Human commits} & \textbf{Human churn} \\
+\midrule
+brew     & 7 & 378   & 43{,}524    & 311   & 39{,}565 \\
+click    & 7 & 422   & 29{,}176    & 367   & 28{,}901 \\
+curl     & 7 & 3{,}356 & 421{,}663 & 3{,}229 & 420{,}253 \\
+flask    & 7 & 180   & 13{,}159    & 156   & 12{,}935 \\
+gin      & 7 & 395   & 22{,}079    & 295   & 20{,}943 \\
+junit5   & 7 & 3{,}942 & 1{,}456{,}803 & 3{,}386 & 1{,}455{,}032 \\
+prettier & 7 & 81    & 8{,}194     & 76    & 8{,}117 \\
+requests & 7 & 152   & 3{,}277     & 125   & 3{,}115 \\
+tokio    & 7 & 506   & 55{,}498    & 505   & 55{,}496 \\
+urllib3  & 7 & 148   & 12{,}686    & 111   & 12{,}408 \\
+\bottomrule
+\end{tabular}
+\caption{Centralized project-level extraction summary from clean all-account and human-only outputs.}
+\label{tab:round1_commit_churn_summary}
+\end{table}
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.15}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrr}
+\toprule
+\textbf{Scope} & \textbf{Windows} & \textbf{Developer rows} & \textbf{Total commits} & \textbf{Total churn} \\
+\midrule
+All accounts & 70 & 1{,}118 & 9{,}560 & 2{,}066{,}059 \\
+Human-only M3/M4 population & 70 & 1{,}063 & 8{,}561 & 2{,}056{,}765 \\
+Automated accounts only & 42 & 55 & 999 & 9{,}294 \\
+\bottomrule
+\end{tabular}
+}
+\caption{Centralized global extraction totals from all-account, human-only, and bot-only populations.}
+\label{tab:round1_global_totals}
+\end{table}
+
+For the automated-account row, the window count reports windows with at least one bot row.
+
+\begin{table}[H]
+\centering
+\scriptsize
+\renewcommand{\arraystretch}{1.12}
+\begin{tabular}{lrrrr}
+\toprule
+\textbf{Project} & \textbf{First code lines} & \textbf{Last code lines} & \textbf{Delta} & \textbf{Mean code lines} \\
+\midrule
+brew     & 213{,}073 & 220{,}989 & 7{,}916  & 217{,}077 \\
+click    & 13{,}454  & 16{,}504  & 3{,}050  & 14{,}691 \\
+curl     & 224{,}573 & 225{,}738 & 1{,}165  & 222{,}721 \\
+flask    & 12{,}586  & 12{,}977  & 391      & 12{,}816 \\
+gin      & 13{,}510  & 17{,}974  & 4{,}464  & 14{,}730 \\
+junit5   & 132{,}705 & 132{,}689 & -16      & 132{,}821 \\
+prettier & 112{,}668 & 113{,}217 & 549      & 113{,}035 \\
+requests & 7{,}964   & 8{,}412   & 448      & 8{,}257 \\
+tokio    & 86{,}219  & 95{,}257  & 9{,}038  & 92{,}097 \\
+urllib3  & 23{,}694  & 25{,}260  & 1{,}566  & 24{,}748 \\
+\bottomrule
+\end{tabular}
+\caption{M1 snapshot-size statistics by project.}
+\label{tab:round1_loc_stats}
+\end{table}
+
+The expanded dataset is intentionally heterogeneous. Large projects such as \texttt{junit5}, \texttt{curl}, and \texttt{brew}
+dominate absolute churn and line-count totals, while smaller libraries such as \texttt{requests}, \texttt{flask}, and
+\texttt{click} provide a continuity check against the pilot workflow. For this reason, Phase II should rely on normalized and
+within-project views when comparing candidate metric behavior.

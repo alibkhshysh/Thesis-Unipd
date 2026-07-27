@@ -1,20 +1,23 @@
-\section{Abbreviations and Notation}
 \label{sec:abbreviations}
 
-\begin{table}[H]
-\centering
-\renewcommand{\arraystretch}{1.15}
+\begin{center}
+\footnotesize
+\renewcommand{\arraystretch}{1.05}
 \begin{tabularx}{\textwidth}{p{2.6cm}X}
 \toprule
-\textbf{Term} & \textbf{Meaning in this report} \\
+\textbf{Term} & \textbf{Meaning in this thesis} \\
 \midrule
-PoC & Proof-of-concept smart-contract implementation (selected after Phase II only). \\
+PoC & Proof-of-concept hybrid verifier and permissioned-ledger implementation. \\
 DESTINO & Target evidence-based developer-reputation framework used to define the smart-contract evidence boundary. \\
+Fabric & Hyperledger Fabric permissioned distributed-ledger platform used for the baseline PoC. \\
+MSP & Membership Service Provider identity domain used by Fabric organizations. \\
+SHA-256 & Cryptographic hash used for policy, manifest, artifact, record, and pseudonymous identity commitments. \\
+ppm & Parts per million; fixed-point scale used for the M4 ledger value. \\
 LOC/SLOC & Total/source line counts used as snapshot-size indicators (M1). \\
 Churn & Added plus deleted lines in a window (M2). \\
 Cadence & Activity continuity over time (commits, active days, and gaps) (M3). \\
 Ownership concentration & Distribution of developer contribution shares (M4). \\
-Window & Consecutive tag interval $(T_k \rightarrow T_{k+1})$ in chronological order. \\
+Window & Adjacent tag-date pair $(T_k \rightarrow T_{k+1})$; PoC eligibility additionally requires Git ancestry. \\
 All-account & Metric population including both human and automated Git author identities. \\
 Human-only & Metric population excluding rows flagged as automated accounts via \texttt{is\_bot}. \\
 Pilot cohort & The first four repositories used to validate the workflow before expansion. \\
@@ -22,9 +25,7 @@ Extended cohort & Six additional repositories added to test the pipeline across 
 Centralized Phase I dataset & Final 10-repository dataset used as the Phase I evidence base. \\
 \bottomrule
 \end{tabularx}
-\caption{Abbreviations and working notation used throughout the report.}
-\label{tab:abbreviations}
-\end{table}
+\end{center}
 
 
 

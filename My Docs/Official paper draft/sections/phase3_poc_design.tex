@@ -1,0 +1,169 @@
+\section{Phase III: Deterministic M4 and Hybrid Fabric PoC Design}
+\label{sec:phase3_poc_design}
+
+Phase III begins by freezing the selected signal as an implementation contract before writing verifier or chaincode code.
+This avoids a common reproducibility failure in which the metric formula, rounding, evidence fields, and trust assumptions
+change during implementation. The phase adds only new artifacts under
+\path{Data,Outputs,Logs,Scripts/Phase 3 PoC/}; the Phase I, Phase II, and post-hoc inputs remain unchanged.
+
+\subsection{Versioned metric policy and arithmetic audit}
+\label{sec:phase3_metric_freeze}
+
+The implementation identifier is \path{M4_DEVELOPER_CHURN_SHARE}.
+The associated policy is \path{M4_DEVELOPER_CHURN_SHARE_POLICY}, version \texttt{1.0.0}.
+Its canonical policy SHA-256 is:
+
+\begin{center}
+\scriptsize
+\path{4e81843340041da45a13ebb742a0c5fdfebdf6c8f5e64a7d6629f58990b287a4}
+\end{center}
+
+The policy freezes the original extraction semantics: non-merge \texttt{git log --numstat} history, author email
+(\texttt{\%ae}) as the canonical identity source, case-insensitive regex bot exclusion, all changed paths without a
+source-language filter, and binary changes contributing zero textual churn. The PoC additionally requires linear Git
+ancestry and uses the exact integer ppm formula in Section~\ref{sec:selected_metric_definition}.
+
+An independent validator reconstructs developer churn, denominators, individual shares, top-one share, and Gini directly
+from the human developer table. It then checks the frozen ownership tables and the Phase II C1 source values.
+
+\begin{table}[H]
+\centering
+\small
+\renewcommand{\arraystretch}{1.08}
+\begin{tabular}{lr}
+\toprule
+\textbf{Validation quantity} & \textbf{Result} \\
+\midrule
+Developer rows checked & 1,063 \\
+Windows checked & 70 \\
+Ancestral/eligible PoC windows & 58 \\
+Developer rows in eligible windows & 848 \\
+Developer calculation failures & 0 \\
+Window-total failures & 0 \\
+Ownership-summary failures & 0 \\
+Phase II C1 source-value failures & 0 \\
+Zero-denominator windows & 0 \\
+\bottomrule
+\end{tabular}
+\caption{Deterministic M4 calculation audit.}
+\label{tab:m4_deterministic_audit}
+\end{table}
+
+The maximum discrepancy between exact rational values and the frozen six-decimal CSVs is
+$4.98168\times10^{-7}$ for individual shares, $4.92063\times10^{-7}$ for top-one share, and
+$4.95298\times10^{-7}$ for Gini. These values are below the expected half-unit at six decimal places. A second
+implementation checked all 1,063 ppm values, and an alternative pairwise Gini formula checked all 70 windows with no
+mismatch. Six automated policy tests include boundary cases, invalid inputs, a fixed fixture, and exhaustive comparison
+with decimal half-up rounding for denominators from 1 to 500.
+
+\subsection{Fabric platform profile}
+\label{sec:phase3_fabric_profile}
+
+The baseline freezes Hyperledger Fabric 2.5.15 from the 2.5 LTS line. The official Fabric test network is
+Docker-Compose based and contains two peer organizations and an ordering organization; its documentation explicitly
+positions it as an education and testing environment rather than a production
+template~\cite{fabricTestNetwork,fabricRelease2515}. JavaScript and TypeScript chaincode are supported by the documented deployment
+workflow~\cite{fabricDeployChaincode}. JavaScript is selected because the local environment already provides Node and Docker,
+while no Go toolchain is installed.
+
+The frozen network profile uses one peer for \texttt{Org1MSP}, one peer for \texttt{Org2MSP}, a single-node Raft orderer,
+channel \texttt{mychannel}, default GoLevelDB state, and JavaScript chaincode \texttt{m4evidence}. Fabric Node libraries are
+pinned at 2.5.8. Both organizations endorse writes, while \texttt{Org1MSP} is the authorized evidence submitter in the
+baseline scenario.
+
+\subsection{Off-chain/on-chain boundary}
+\label{sec:phase3_hybrid_boundary}
+
+\begin{table}[H]
+\centering
+\small
+\renewcommand{\arraystretch}{1.1}
+\begin{tabularx}{\textwidth}{p{2.7cm}X X}
+\toprule
+\textbf{Layer} & \textbf{Responsibilities} & \textbf{Explicit non-responsibilities} \\
+\midrule
+Off-chain verifier &
+Ancestry validation, Git extraction, email normalization, bot policy, integer M4 calculation, canonical manifest creation,
+and policy/artifact/manifest hashing. &
+Ledger ordering, endorsement, or durable consensus. \\
+Fabric chaincode &
+Submitter authorization, format/range validation, integer ppm recomputation, duplicate rejection, compact state/index writes,
+and event emission. &
+Repository access, ancestry replay, bot truth, semantic code quality, or external storage availability. \\
+Independent auditor &
+Retrieve the committed artifact, verify hashes, rerun the versioned verifier, and compare the result with the ledger. &
+Changing the policy while claiming to reproduce the same record. \\
+\bottomrule
+\end{tabularx}
+\caption{Hybrid PoC computation and trust boundary.}
+\label{tab:phase3_hybrid_boundary}
+\end{table}
+
+This boundary is central to the thesis claim. Fabric consensus establishes which endorsed record was committed; it does not
+make the off-chain Git analysis true. Evidence credibility comes from pinned inputs, deterministic open tooling, explicit
+policy versioning, hash commitments, authenticated submission, and independent replay.
+
+\subsection{Evidence and ledger schemas}
+\label{sec:phase3_schemas}
+
+Three JSON schemas separate deterministic evidence from transaction-derived metadata.
+
+\begin{table}[H]
+\centering
+\small
+\renewcommand{\arraystretch}{1.08}
+\begin{tabularx}{\textwidth}{p{3.6cm}X}
+\toprule
+\textbf{Schema} & \textbf{Purpose} \\
+\midrule
+\path{M4_EVIDENCE_MANIFEST} &
+Canonical replay description containing policy, repository, ancestral window, pseudonymous subject, extraction totals,
+integer calculation, evidence-artifact commitment, and verifier version/source commitment. \\
+\path{M4_LEDGER_SUBMISSION} &
+Compact client payload containing the fields required for chaincode validation. Numerator and denominator are decimal strings
+so JavaScript converts them directly to \texttt{BigInt} without precision loss. \\
+\path{M4_LEDGER_RECORD} &
+Validated submission plus deterministic record ID, Fabric submitter MSP and identity hash, transaction ID, transaction time,
+and immutable \texttt{ACTIVE} status. \\
+\bottomrule
+\end{tabularx}
+\caption{Versioned evidence and ledger schemas for the baseline PoC.}
+\label{tab:phase3_schemas}
+\end{table}
+
+Policy and manifest hashes use UTF-8 JSON with lexicographically sorted object keys, no insignificant whitespace, no
+non-finite numbers, and no trailing newline in the hashed bytes. Dynamic values such as Fabric transaction ID, submitter
+identity, and transaction time are excluded from the evidence manifest, so identical evidence produces identical manifest
+bytes. The manifest does not contain its own hash; that SHA-256 commitment is placed in the ledger submission.
+
+The chaincode derives a composite primary key from project, window, developer hash, metric, and policy version. It rejects an
+existing key rather than overwriting evidence. Secondary composite keys support project and developer queries without requiring
+CouchDB rich queries. A successful write emits \texttt{M4MetricEvidenceSubmitted}.
+
+\subsection{Trust model and residual threats}
+\label{sec:phase3_trust_model}
+
+The baseline authorizes \texttt{Org1MSP} as verifier/submitter and requires endorsement from both organizational peers. Org2
+therefore participates in ledger validation, but endorsement alone does not prove the numerator and denominator. An auditor
+must retrieve bytes matching the artifact hash and replay the matching policy/verifier version.
+
+Hash commitments detect changed bytes but do not guarantee availability. Canonical email hashing is pseudonymization rather
+than anonymization and does not prove real-world control of the email. The frozen bot regex remains heuristic. Churn can be
+inflated through meaningless edits, and the ledger makes such evidence replayable rather than automatically determining its
+semantic value. These limitations keep the result correctly framed as one auditable evidence signal, not a self-sufficient
+reputation verdict.
+
+\subsection{Baseline integration fixture}
+\label{sec:phase3_fixture}
+
+The first integration fixture is the ancestral \texttt{urllib3\_W03} window from tag 2.4.0 to 2.5.0. It belongs to the primary
+duration set, contains nine human developers, and exercises bot exclusion through one Dependabot identity. Human churn is
+1,058 lines. The selected top contributor has numerator 325, exact share $325/1058=0.307183364839\ldots$, and deterministic
+ledger value 307,183 ppm. The pinned fixture includes both 40-character commit hashes, the pseudonymous developer hash, policy
+hash, bot context, supporting Gini, and expected rounding result.
+
+The design validator checks all three schemas, local references, required fields, shared ledger constraints, policy constants,
+and fixture values. It reports zero failures and emits canonical hashes for the policy, design, and schemas. This completes the
+design gate used by the off-chain implementation in Section~\ref{sec:phase3_offchain_verifier}, the chaincode implementation
+in Section~\ref{sec:phase3_chaincode_unit}, and the network evaluation in Section~\ref{sec:phase3_fabric_network}; all were
+implemented against the same fixed contracts rather than evolving prose.

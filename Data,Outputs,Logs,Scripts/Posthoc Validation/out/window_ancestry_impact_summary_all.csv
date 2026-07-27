@@ -1,0 +1,2 @@
+total_projects,projects_with_non_ancestral_windows,total_windows,ancestral_windows,non_ancestral_windows,human_commits_all_windows,human_commits_non_ancestral_windows,human_commits_non_ancestral_pct,human_churn_all_windows,human_churn_non_ancestral_windows,human_churn_non_ancestral_pct
+10,5,70,58,12,8561,3576,41.770821,2056765,1471597,71.549107

@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+# Match the docker wrapper because network.sh prefers the docker-compose
+# command when Docker Desktop exposes both command forms.
+MSYS_NO_PATHCONV=1 MSYS2_ARG_CONV_EXCL='*' \
+  exec '/c/Program Files/Docker/Docker/resources/bin/docker.exe' compose "$@"

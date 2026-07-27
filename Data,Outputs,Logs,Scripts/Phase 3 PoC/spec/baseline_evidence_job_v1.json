@@ -1,0 +1,25 @@
+{
+  "schemaId": "M4_EVIDENCE_JOB",
+  "schemaVersion": "1.0.0",
+  "fixtureFile": "baseline_demo_case_v1.json",
+  "projectId": "urllib3",
+  "repositoryUrl": "https://github.com/urllib3/urllib3",
+  "windowId": "urllib3_W03",
+  "durationSource": "annotated_tag_tagger_time",
+  "expectedDurationSeconds": 5957933,
+  "artifact": {
+    "fileName": "urllib3_W03.git.bundle",
+    "mediaType": "application/vnd.git.bundle",
+    "storageReference": "artifacts/urllib3_W03.git.bundle",
+    "storagePersistence": "LOCAL_POC",
+    "bundleVersion": 2,
+    "includedRefs": [
+      "refs/tags/2.4.0",
+      "refs/tags/2.5.0"
+    ]
+  },
+  "verifier": {
+    "name": "m4-offchain-verifier",
+    "version": "1.0.0"
+  }
+}

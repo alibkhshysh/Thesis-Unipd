@@ -1,0 +1,93 @@
+\section{Phase III: Chaincode Implementation and Local Validation}
+\label{sec:phase3_chaincode_unit}
+
+The second implemented PoC boundary is the JavaScript \texttt{m4evidence} contract. It consumes the canonical submission
+produced in Section~\ref{sec:phase3_offchain_verifier}; it does not accept repository paths, raw commits, or client-supplied
+Fabric metadata. The implementation pins \texttt{fabric-contract-api} and \texttt{fabric-shim} at version 2.5.8 and exposes
+exactly six public transactions: submit, exists, read, history, query by project, and query by developer.
+
+\subsection{Validated state transition}
+\label{sec:phase3_chaincode_transition}
+
+\texttt{SubmitMetricEvidence} first permits only \texttt{Org1MSP} under the baseline policy. It requires the exact 19-field
+submission shape and validates all schema, metric, policy, identifier, Git-hash, SHA-256, persistence-class, and range
+constraints. The numerator and denominator arrive as canonical decimal strings and are converted directly to
+\texttt{BigInt}. The contract requires $0\leq n\leq d$, $d>0$, and independently recomputes
+
+\[
+\left\lfloor\frac{n\times1{,}000{,}000+\lfloor d/2\rfloor}{d}\right\rfloor.
+\]
+
+Thus, no numerator or denominator passes through JavaScript floating point. A mismatching submitted ppm value is rejected.
+The primary composite key contains project, window, developer hash, metric, and policy version; an existing key is rejected
+instead of overwritten. On success, the contract stores the exact 26-field record required by the frozen schema, writes
+project and developer secondary indexes, and emits \texttt{M4MetricEvidenceSubmitted}. The record identifier and submitter
+identifier are domain-separated SHA-256 values. The submitter MSP, client identity, transaction ID, and transaction timestamp
+come from the Fabric context rather than the client payload.
+
+\subsection{Local test result}
+\label{sec:phase3_chaincode_tests}
+
+The contract was executed against deterministic mocks implementing the Fabric state, composite-key, history, event,
+transaction, and client-identity interfaces. The canonical \texttt{urllib3\_W03} ledger submission was used as the positive
+fixture. Table~\ref{tab:phase3_chaincode_validation} summarizes the reproducible result.
+
+\begin{table}[H]
+\centering
+\small
+\renewcommand{\arraystretch}{1.08}
+\begin{tabular}{lr}
+\toprule
+\textbf{Validation quantity} & \textbf{Result} \\
+\midrule
+Public contract transactions & 6 \\
+Ledger-record required fields & 26 \\
+Node tests passed / total & 34 / 34 \\
+Failed / skipped tests & 0 / 0 \\
+Production dependency audit findings & 0 \\
+Packaged source files & 3 \\
+Unpacked chaincode package size & 15,053 bytes \\
+\bottomrule
+\end{tabular}
+\caption{Local \texttt{m4evidence} chaincode validation result.}
+\label{tab:phase3_chaincode_validation}
+\end{table}
+
+The tests check exact submission-to-record mappings; deterministic record and submitter hashes; state, index, and event
+writes; read, existence, history, and both index queries; immutable duplicate rejection; and \texttt{Org2MSP} rejection.
+Negative cases cover malformed JSON, missing or additional fields, invalid constants and hashes, non-canonical decimal
+strings, zero denominator, numerator above denominator, non-integer ppm, and a one-ppm mutation. Arithmetic boundary cases
+cover zero, one, one half, half-ppm upward rounding, and integers above \texttt{Number.MAX\_SAFE\_INTEGER}. The resulting
+record ID for the fixture is:
+
+\begin{center}
+\scriptsize
+\path{72ca9db25cfcd77fdbe95592a2b1b2debbf9bbf006a16a419dd97a31c7b57309}
+\end{center}
+
+The domain-separated chaincode source-set commitment and the dependency-lock commitment are:
+
+\begin{table}[H]
+\centering
+\scriptsize
+\renewcommand{\arraystretch}{1.08}
+\begin{tabularx}{\textwidth}{p{3.5cm}X}
+\toprule
+\textbf{Committed object} & \textbf{SHA-256} \\
+\midrule
+Chaincode source set & \path{9f41f699a0cd0c8db239c8ccdcf8b9ac3113ec65b26a9872b4015173a5b0d0be} \\
+Dependency lock file & \path{f16d29bd8ce1295b79a68313ad359c66bbb25f45cca2d13218a715ec8cfb20c0} \\
+\bottomrule
+\end{tabularx}
+\caption{Chaincode implementation commitments.}
+\label{tab:phase3_chaincode_hashes}
+\end{table}
+
+\subsection{Interpretation and network boundary}
+\label{sec:phase3_chaincode_boundary}
+
+These results establish that the implemented contract logic satisfies the frozen arithmetic and state-transition rules under
+the tested Fabric interfaces. They do not by themselves demonstrate peer agreement, two-organization endorsement, ordering,
+commit status, Gateway event delivery, or persistence in a running Fabric channel; those properties are evaluated with the
+unchanged package in Section~\ref{sec:phase3_fabric_network}. A syntactically valid but false evidence hash remains outside the
+chaincode's knowledge: an auditor must retrieve the artifact and replay the off-chain verifier.

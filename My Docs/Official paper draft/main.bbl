@@ -1,65 +1,592 @@
-\begin{thebibliography}{10}
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
 
-\bibitem{blockchainsurvey}
-Weichao Gao, William~G. Hatcher, and Wei Yu.
-\newblock A survey of blockchain: Techniques, applications, and challenges.
-\newblock In {\em Proceedings of the 27th International Conference on Computer
-  Communication and Networks (ICCCN)}, 2018.
 
-\bibitem{kapllani2020maintainability}
-Gerta Kapllani, Ilya Khomyakov, Ruzilya Mirgalimova, and Alberto Sillitti.
-\newblock An empirical analysis of the maintainability evolution of open source
-  systems.
-\newblock In {\em Open Source Systems}. Springer, 2020.
+\refsection{0}
+  \datalist[entry]{nty/global//global/global/global}
+    \entry{destinoProposal}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=eaeece3a75f25e9a848f2d0fdee8a337}{%
+           family={{Centre for Applied Software Engineering (CASE) and University of Padua (UNIPD)}},
+           familyi={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{eaeece3a75f25e9a848f2d0fdee8a337}
+      \strng{fullhash}{eaeece3a75f25e9a848f2d0fdee8a337}
+      \strng{fullhashraw}{eaeece3a75f25e9a848f2d0fdee8a337}
+      \strng{bibnamehash}{eaeece3a75f25e9a848f2d0fdee8a337}
+      \strng{authorbibnamehash}{eaeece3a75f25e9a848f2d0fdee8a337}
+      \strng{authornamehash}{eaeece3a75f25e9a848f2d0fdee8a337}
+      \strng{authorfullhash}{eaeece3a75f25e9a848f2d0fdee8a337}
+      \strng{authorfullhashraw}{eaeece3a75f25e9a848f2d0fdee8a337}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{TrustChain Third Open Call for Proposals}
+      \field{note}{Undated project proposal supplied as the thesis context}
+      \field{title}{{DESTINO}: Decentralized Ecosystems for Software Trustworthy {INtegratiOn}}
+    \endentry
+    \entry{blockchainsurvey}{inproceedings}{}{}
+      \name{author}{3}{}{%
+        {{hash=94604755f7a7f3773ae11dccc2f576a6}{%
+           family={Gao},
+           familyi={G\bibinitperiod},
+           given={Weichao},
+           giveni={W\bibinitperiod}}}%
+        {{hash=05a01945d0e3c086a7916695085378ee}{%
+           family={Hatcher},
+           familyi={H\bibinitperiod},
+           given={William\bibnamedelima G.},
+           giveni={W\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=306f61b972c01e5452d64353ce1974d6}{%
+           family={Yu},
+           familyi={Y\bibinitperiod},
+           given={Wei},
+           giveni={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{62aa5fb8e9f157d969092d7e48a61ab5}
+      \strng{fullhash}{62aa5fb8e9f157d969092d7e48a61ab5}
+      \strng{fullhashraw}{62aa5fb8e9f157d969092d7e48a61ab5}
+      \strng{bibnamehash}{62aa5fb8e9f157d969092d7e48a61ab5}
+      \strng{authorbibnamehash}{62aa5fb8e9f157d969092d7e48a61ab5}
+      \strng{authornamehash}{62aa5fb8e9f157d969092d7e48a61ab5}
+      \strng{authorfullhash}{62aa5fb8e9f157d969092d7e48a61ab5}
+      \strng{authorfullhashraw}{62aa5fb8e9f157d969092d7e48a61ab5}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 27th International Conference on Computer Communication and Networks (ICCCN)}
+      \field{title}{A Survey of Blockchain: Techniques, Applications, and Challenges}
+      \field{year}{2018}
+      \field{pages}{1\bibrangedash 11}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1109/ICCCN.2018.8487348
+      \endverb
+    \endentry
+    \entry{fabricDeployChaincode}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=ca15ffedc32ce5c4b2d9568eb778e65c}{%
+           family={{Hyperledger Fabric Project}},
+           familyi={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{ca15ffedc32ce5c4b2d9568eb778e65c}
+      \strng{fullhash}{ca15ffedc32ce5c4b2d9568eb778e65c}
+      \strng{fullhashraw}{ca15ffedc32ce5c4b2d9568eb778e65c}
+      \strng{bibnamehash}{ca15ffedc32ce5c4b2d9568eb778e65c}
+      \strng{authorbibnamehash}{ca15ffedc32ce5c4b2d9568eb778e65c}
+      \strng{authornamehash}{ca15ffedc32ce5c4b2d9568eb778e65c}
+      \strng{authorfullhash}{ca15ffedc32ce5c4b2d9568eb778e65c}
+      \strng{authorfullhashraw}{ca15ffedc32ce5c4b2d9568eb778e65c}
+      \field{extraname}{1}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Hyperledger Fabric Documentation, \url{https://hyperledger-fabric.readthedocs.io/en/latest/deploy_chaincode.html}}
+      \field{note}{Accessed 2026-07-26}
+      \field{title}{Deploying a Smart Contract to a Channel}
+      \field{year}{2026}
+    \endentry
+    \entry{fabricRelease2515}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=ca15ffedc32ce5c4b2d9568eb778e65c}{%
+           family={{Hyperledger Fabric Project}},
+           familyi={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{ca15ffedc32ce5c4b2d9568eb778e65c}
+      \strng{fullhash}{ca15ffedc32ce5c4b2d9568eb778e65c}
+      \strng{fullhashraw}{ca15ffedc32ce5c4b2d9568eb778e65c}
+      \strng{bibnamehash}{ca15ffedc32ce5c4b2d9568eb778e65c}
+      \strng{authorbibnamehash}{ca15ffedc32ce5c4b2d9568eb778e65c}
+      \strng{authornamehash}{ca15ffedc32ce5c4b2d9568eb778e65c}
+      \strng{authorfullhash}{ca15ffedc32ce5c4b2d9568eb778e65c}
+      \strng{authorfullhashraw}{ca15ffedc32ce5c4b2d9568eb778e65c}
+      \field{extraname}{2}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{GitHub release, \url{https://github.com/hyperledger/fabric/releases/tag/v2.5.15}}
+      \field{note}{Released 2026-02-23; accessed 2026-07-26}
+      \field{title}{Hyperledger Fabric v2.5.15 Release Notes}
+      \field{year}{2026}
+    \endentry
+    \entry{fabricTestNetwork}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=ca15ffedc32ce5c4b2d9568eb778e65c}{%
+           family={{Hyperledger Fabric Project}},
+           familyi={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{ca15ffedc32ce5c4b2d9568eb778e65c}
+      \strng{fullhash}{ca15ffedc32ce5c4b2d9568eb778e65c}
+      \strng{fullhashraw}{ca15ffedc32ce5c4b2d9568eb778e65c}
+      \strng{bibnamehash}{ca15ffedc32ce5c4b2d9568eb778e65c}
+      \strng{authorbibnamehash}{ca15ffedc32ce5c4b2d9568eb778e65c}
+      \strng{authornamehash}{ca15ffedc32ce5c4b2d9568eb778e65c}
+      \strng{authorfullhash}{ca15ffedc32ce5c4b2d9568eb778e65c}
+      \strng{authorfullhashraw}{ca15ffedc32ce5c4b2d9568eb778e65c}
+      \field{extraname}{3}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Hyperledger Fabric Documentation, \url{https://hyperledger-fabric.readthedocs.io/en/latest/test_network.html}}
+      \field{note}{Accessed 2026-07-26}
+      \field{title}{Using the Fabric Test Network}
+      \field{year}{2026}
+    \endentry
+    \entry{kapllani2020maintainability}{incollection}{}{}
+      \name{author}{4}{}{%
+        {{hash=db38a1118b9ab698cdec544c710474bd}{%
+           family={Kapllani},
+           familyi={K\bibinitperiod},
+           given={Gerta},
+           giveni={G\bibinitperiod}}}%
+        {{hash=56e30ad7fad3a293457eb23765e69268}{%
+           family={Khomyakov},
+           familyi={K\bibinitperiod},
+           given={Ilya},
+           giveni={I\bibinitperiod}}}%
+        {{hash=ed0f7120cdc978800a265f7319439bba}{%
+           family={Mirgalimova},
+           familyi={M\bibinitperiod},
+           given={Ruzilya},
+           giveni={R\bibinitperiod}}}%
+        {{hash=a053aa3678fe75655ee4195aad8d0006}{%
+           family={Sillitti},
+           familyi={S\bibinitperiod},
+           given={Alberto},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{c1f8cd7e1d627050e0208bc5e8987b6a}
+      \strng{fullhash}{c782eb0a81520144c3b6c9f4728fc007}
+      \strng{fullhashraw}{c782eb0a81520144c3b6c9f4728fc007}
+      \strng{bibnamehash}{c1f8cd7e1d627050e0208bc5e8987b6a}
+      \strng{authorbibnamehash}{c1f8cd7e1d627050e0208bc5e8987b6a}
+      \strng{authornamehash}{c1f8cd7e1d627050e0208bc5e8987b6a}
+      \strng{authorfullhash}{c782eb0a81520144c3b6c9f4728fc007}
+      \strng{authorfullhashraw}{c782eb0a81520144c3b6c9f4728fc007}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Open Source Systems}
+      \field{title}{An Empirical Analysis of the Maintainability Evolution of Open Source Systems}
+      \field{year}{2020}
+      \field{pages}{78\bibrangedash 86}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1007/978-3-030-47240-5_8
+      \endverb
+    \endentry
+    \entry{khomyakov2019metricssharing}{inproceedings}{}{}
+      \name{author}{2}{}{%
+        {{hash=56e30ad7fad3a293457eb23765e69268}{%
+           family={Khomyakov},
+           familyi={K\bibinitperiod},
+           given={Ilya},
+           giveni={I\bibinitperiod}}}%
+        {{hash=a053aa3678fe75655ee4195aad8d0006}{%
+           family={Sillitti},
+           familyi={S\bibinitperiod},
+           given={Alberto},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{033e6cbab53daefb71c7bfe819c198ee}
+      \strng{fullhash}{033e6cbab53daefb71c7bfe819c198ee}
+      \strng{fullhashraw}{033e6cbab53daefb71c7bfe819c198ee}
+      \strng{bibnamehash}{033e6cbab53daefb71c7bfe819c198ee}
+      \strng{authorbibnamehash}{033e6cbab53daefb71c7bfe819c198ee}
+      \strng{authornamehash}{033e6cbab53daefb71c7bfe819c198ee}
+      \strng{authorfullhash}{033e6cbab53daefb71c7bfe819c198ee}
+      \strng{authorfullhashraw}{033e6cbab53daefb71c7bfe819c198ee}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 34th ACM/SIGAPP Symposium on Applied Computing}
+      \field{title}{A Novel Approach for Collecting and Sharing Software Metrics Data}
+      \field{year}{2019}
+      \field{pages}{2164\bibrangedash 2167}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1145/3297280.3297625
+      \endverb
+    \endentry
+    \entry{koutrouli2015reputation}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=00c70383783ad2894f57e3eb31a07afe}{%
+           family={Koutrouli},
+           familyi={K\bibinitperiod},
+           given={Eleni},
+           giveni={E\bibinitperiod}}}%
+        {{hash=e4fd8a28f7417ade150e0b6fea6448ed}{%
+           family={Tsalgatidou},
+           familyi={T\bibinitperiod},
+           given={Aphrodite},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{3d37c688b36b8d14b86dddea4a3cd53b}
+      \strng{fullhash}{3d37c688b36b8d14b86dddea4a3cd53b}
+      \strng{fullhashraw}{3d37c688b36b8d14b86dddea4a3cd53b}
+      \strng{bibnamehash}{3d37c688b36b8d14b86dddea4a3cd53b}
+      \strng{authorbibnamehash}{3d37c688b36b8d14b86dddea4a3cd53b}
+      \strng{authornamehash}{3d37c688b36b8d14b86dddea4a3cd53b}
+      \strng{authorfullhash}{3d37c688b36b8d14b86dddea4a3cd53b}
+      \strng{authorfullhashraw}{3d37c688b36b8d14b86dddea4a3cd53b}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ACM Computing Surveys}
+      \field{number}{3}
+      \field{title}{Reputation Systems Evaluation Survey}
+      \field{volume}{48}
+      \field{year}{2015}
+      \field{pages}{35:1\bibrangedash 35:28}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1145/2835373
+      \endverb
+    \endentry
+    \entry{kumar2012maintainability}{inproceedings}{}{}
+      \name{author}{1}{}{%
+        {{hash=1baf43afb3ae84e9dabef58f047423a0}{%
+           family={Kumar},
+           familyi={K\bibinitperiod},
+           given={Balraj},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{1baf43afb3ae84e9dabef58f047423a0}
+      \strng{fullhash}{1baf43afb3ae84e9dabef58f047423a0}
+      \strng{fullhashraw}{1baf43afb3ae84e9dabef58f047423a0}
+      \strng{bibnamehash}{1baf43afb3ae84e9dabef58f047423a0}
+      \strng{authorbibnamehash}{1baf43afb3ae84e9dabef58f047423a0}
+      \strng{authornamehash}{1baf43afb3ae84e9dabef58f047423a0}
+      \strng{authorfullhash}{1baf43afb3ae84e9dabef58f047423a0}
+      \strng{authorfullhashraw}{1baf43afb3ae84e9dabef58f047423a0}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2012 International Conference on Computing Sciences}
+      \field{title}{A Survey of Key Factors Affecting Software Maintainability}
+      \field{year}{2012}
+      \verb{doi}
+      \verb 10.1109/ICCS.2012.5
+      \endverb
+    \endentry
+    \entry{li2022ossselection}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=a6b86154c32efdc6df26d990392dc07c}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Xiaozhou},
+           giveni={X\bibinitperiod}}}%
+        {{hash=f34eee2215343558748e8080f6ea356d}{%
+           family={Moreschini},
+           familyi={M\bibinitperiod},
+           given={Sergio},
+           giveni={S\bibinitperiod}}}%
+        {{hash=070032ef28f057f2f06b2a3879e3f70c}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Zheying},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=4d08ae1a3f71e9cc303d7cc0722f5186}{%
+           family={Taibi},
+           familyi={T\bibinitperiod},
+           given={Davide},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{359a3b687b8e4973ad0170a375289a33}
+      \strng{fullhash}{2c58c3963678a732864e0dc0995a2f7c}
+      \strng{fullhashraw}{2c58c3963678a732864e0dc0995a2f7c}
+      \strng{bibnamehash}{359a3b687b8e4973ad0170a375289a33}
+      \strng{authorbibnamehash}{359a3b687b8e4973ad0170a375289a33}
+      \strng{authornamehash}{359a3b687b8e4973ad0170a375289a33}
+      \strng{authorfullhash}{2c58c3963678a732864e0dc0995a2f7c}
+      \strng{authorfullhashraw}{2c58c3963678a732864e0dc0995a2f7c}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Systems and Software}
+      \field{title}{Exploring Factors and Metrics to Select Open Source Software Components for Integration: An Empirical Study}
+      \field{volume}{188}
+      \field{year}{2022}
+      \field{pages}{111255}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.jss.2022.111255
+      \endverb
+    \endentry
+    \entry{remencius2016thirdparty}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=ea761268fed5c0c164d26d4df0ef4c15}{%
+           family={Remencius},
+           familyi={R\bibinitperiod},
+           given={Tomas},
+           giveni={T\bibinitperiod}}}%
+        {{hash=a053aa3678fe75655ee4195aad8d0006}{%
+           family={Sillitti},
+           familyi={S\bibinitperiod},
+           given={Alberto},
+           giveni={A\bibinitperiod}}}%
+        {{hash=ba7122735918fedd33253326a25c2e66}{%
+           family={Succi},
+           familyi={S\bibinitperiod},
+           given={Giancarlo},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{a93b3558c540adde58063b2d10108a3b}
+      \strng{fullhash}{a93b3558c540adde58063b2d10108a3b}
+      \strng{fullhashraw}{a93b3558c540adde58063b2d10108a3b}
+      \strng{bibnamehash}{a93b3558c540adde58063b2d10108a3b}
+      \strng{authorbibnamehash}{a93b3558c540adde58063b2d10108a3b}
+      \strng{authornamehash}{a93b3558c540adde58063b2d10108a3b}
+      \strng{authorfullhash}{a93b3558c540adde58063b2d10108a3b}
+      \strng{authorfullhashraw}{a93b3558c540adde58063b2d10108a3b}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Information Sciences}
+      \field{title}{Assessment of Software Developed by a Third-Party: A Case Study and Comparison}
+      \field{volume}{328}
+      \field{year}{2016}
+      \field{pages}{237\bibrangedash 249}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1016/j.ins.2015.08.028
+      \endverb
+    \endentry
+    \entry{schlosser2004reputation}{misc}{}{}
+      \name{author}{3}{}{%
+        {{hash=dddef0c1e7c60296b342176a38442e84}{%
+           family={Schlosser},
+           familyi={S\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod}}}%
+        {{hash=b464c7884c1dae9b2e7096147f5ade8a}{%
+           family={Voss},
+           familyi={V\bibinitperiod},
+           given={Marco},
+           giveni={M\bibinitperiod}}}%
+        {{hash=02129b62629accfcac6740c1933f7586}{%
+           family={Brueckner},
+           familyi={B\bibinitperiod},
+           given={Lars},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{f0cd94790ca55710d43903433cbe7a13}
+      \strng{fullhash}{f0cd94790ca55710d43903433cbe7a13}
+      \strng{fullhashraw}{f0cd94790ca55710d43903433cbe7a13}
+      \strng{bibnamehash}{f0cd94790ca55710d43903433cbe7a13}
+      \strng{authorbibnamehash}{f0cd94790ca55710d43903433cbe7a13}
+      \strng{authornamehash}{f0cd94790ca55710d43903433cbe7a13}
+      \strng{authorfullhash}{f0cd94790ca55710d43903433cbe7a13}
+      \strng{authorfullhashraw}{f0cd94790ca55710d43903433cbe7a13}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Proceedings of the Workshop on Reputation in Agent Societies (RAS 2004)}
+      \field{note}{Local PDF copy in the ``Papers to read'' collection}
+      \field{title}{Comparing and Evaluating Metrics for Reputation Systems by Simulation}
+      \field{year}{2004}
+    \endentry
+    \entry{syedmohamad2026maintainability}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=42febad2e4314592694fc26fab401d0a}{%
+           family={Syed-Mohamad},
+           familyi={S\bibinithyphendelim M\bibinitperiod},
+           given={Sharifah\bibnamedelima Mashita},
+           giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=9ef0234eb4cbb9530380b43817b9a535}{%
+           family={Ngah},
+           familyi={N\bibinitperiod},
+           given={Amir},
+           giveni={A\bibinitperiod}}}%
+        {{hash=6747a23fa1aa6c1cfc7c51887b72b9b8}{%
+           family={Ali},
+           familyi={A\bibinitperiod},
+           given={Al-Fahim\bibnamedelima Mubarak},
+           giveni={A\bibinithyphendelim F\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=1b1cb2becb3233d30d1e75f029b4302f}{%
+           family={Keikhosrokiani},
+           familyi={K\bibinitperiod},
+           given={Pantea},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{d902bb38fc6ebd5d7d0c8906fc11ff00}
+      \strng{fullhash}{725939dd1d9fd99695716cd406d8bf07}
+      \strng{fullhashraw}{725939dd1d9fd99695716cd406d8bf07}
+      \strng{bibnamehash}{d902bb38fc6ebd5d7d0c8906fc11ff00}
+      \strng{authorbibnamehash}{d902bb38fc6ebd5d7d0c8906fc11ff00}
+      \strng{authornamehash}{d902bb38fc6ebd5d7d0c8906fc11ff00}
+      \strng{authorfullhash}{725939dd1d9fd99695716cd406d8bf07}
+      \strng{authorfullhashraw}{725939dd1d9fd99695716cd406d8bf07}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Advanced Research in Applied Sciences and Engineering Technology}
+      \field{number}{2}
+      \field{title}{Measuring Software Maintainability: An Analysis of Evolving Metrics across Development Paradigms}
+      \field{volume}{63}
+      \field{year}{2026}
+      \field{pages}{181\bibrangedash 195}
+      \range{pages}{15}
+      \verb{doi}
+      \verb 10.37934/araset.63.2.181195
+      \endverb
+    \endentry
+    \entry{scvulncomplexity}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=15f58af1b29a6810d3395430e8fadae8}{%
+           family={Tehrani},
+           familyi={T\bibinitperiod},
+           given={Masoud\bibnamedelima Jamshidiyan},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{15f58af1b29a6810d3395430e8fadae8}
+      \strng{fullhash}{15f58af1b29a6810d3395430e8fadae8}
+      \strng{fullhashraw}{15f58af1b29a6810d3395430e8fadae8}
+      \strng{bibnamehash}{15f58af1b29a6810d3395430e8fadae8}
+      \strng{authorbibnamehash}{15f58af1b29a6810d3395430e8fadae8}
+      \strng{authornamehash}{15f58af1b29a6810d3395430e8fadae8}
+      \strng{authorfullhash}{15f58af1b29a6810d3395430e8fadae8}
+      \strng{authorfullhashraw}{15f58af1b29a6810d3395430e8fadae8}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprinttype}{arxiv}
+      \field{howpublished}{arXiv preprint}
+      \field{note}{Version 4; revised 2026-01-23}
+      \field{title}{Assessing Vulnerability in Smart Contracts: The Role of Code Complexity Metrics in Security Analysis}
+      \field{year}{2024}
+      \verb{doi}
+      \verb 10.48550/arXiv.2411.17343
+      \endverb
+      \verb{eprint}
+      \verb 2411.17343
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2411.17343
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2411.17343
+      \endverb
+    \endentry
+    \entry{timoteo_software_metrics_survey}{misc}{}{}
+      \name{author}{4}{}{%
+        {{hash=f5d81be8699c4a22f1ab6ab0b6eab359}{%
+           family={Timóteo},
+           familyi={T\bibinitperiod},
+           given={Aline\bibnamedelima Lopes},
+           giveni={A\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=4ef2d7e713806fa9c447a4dba5ea0295}{%
+           family={Álvaro},
+           familyi={Á\bibinitperiod},
+           given={Alexandre},
+           giveni={A\bibinitperiod}}}%
+        {{hash=8a986e8bc4fb69923df0763fce8c7273}{%
+           family={Almeida},
+           familyi={A\bibinitperiod},
+           given={Eduardo\bibnamedelimb Santana\bibnamedelima de},
+           giveni={E\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim d\bibinitperiod}}}%
+        {{hash=fc18daf9e9838ebd873504381a51dc03}{%
+           family={Meira},
+           familyi={M\bibinitperiod},
+           given={Silvio\bibnamedelimb Romero\bibnamedelimb de\bibnamedelima Lemos},
+           giveni={S\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim d\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \strng{namehash}{01b888b7036aac450d8b9f91c3ae31bb}
+      \strng{fullhash}{d41e987d8659e2f656197bab77af718f}
+      \strng{fullhashraw}{d41e987d8659e2f656197bab77af718f}
+      \strng{bibnamehash}{01b888b7036aac450d8b9f91c3ae31bb}
+      \strng{authorbibnamehash}{01b888b7036aac450d8b9f91c3ae31bb}
+      \strng{authornamehash}{01b888b7036aac450d8b9f91c3ae31bb}
+      \strng{authorfullhash}{d41e987d8659e2f656197bab77af718f}
+      \strng{authorfullhashraw}{d41e987d8659e2f656197bab77af718f}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Survey manuscript}
+      \field{note}{Local PDF copy in the ``Papers to read'' collection}
+      \field{title}{Software Metrics: A Survey}
+      \field{year}{2008}
+    \endentry
+    \entry{smartmetrics2023}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=bc4bf97fbf9963d5e5c3aa0cac66202d}{%
+           family={Tonelli},
+           familyi={T\bibinitperiod},
+           given={Roberto},
+           giveni={R\bibinitperiod}}}%
+        {{hash=00fd7af456e44da2acaf702be4a8393c}{%
+           family={Pierro},
+           familyi={P\bibinitperiod},
+           given={Giuseppe\bibnamedelima Antonio},
+           giveni={G\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=751731f88b8e99a34a20f70c906cef2c}{%
+           family={Ortu},
+           familyi={O\bibinitperiod},
+           given={Marco},
+           giveni={M\bibinitperiod}}}%
+        {{hash=a577c0d4a52bb29e8b74046060639412}{%
+           family={Destefanis},
+           familyi={D\bibinitperiod},
+           given={Giuseppe},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{164172b8a022f89d094055488ffb0d4c}
+      \strng{fullhash}{b21435623c253d9328d3f213e613b75e}
+      \strng{fullhashraw}{b21435623c253d9328d3f213e613b75e}
+      \strng{bibnamehash}{164172b8a022f89d094055488ffb0d4c}
+      \strng{authorbibnamehash}{164172b8a022f89d094055488ffb0d4c}
+      \strng{authornamehash}{164172b8a022f89d094055488ffb0d4c}
+      \strng{authorfullhash}{b21435623c253d9328d3f213e613b75e}
+      \strng{authorfullhashraw}{b21435623c253d9328d3f213e613b75e}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{PLOS ONE}
+      \field{number}{4}
+      \field{title}{Smart Contracts Software Metrics: A First Study}
+      \field{volume}{18}
+      \field{year}{2023}
+      \field{pages}{e0281043}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1371/journal.pone.0281043
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
 
-\bibitem{koutrouli2015reputation}
-Eleni Koutrouli and Aphrodite Tsalgatidou.
-\newblock Reputation systems evaluation survey.
-\newblock {\em ACM Computing Surveys}, 48(3):35:1--35:28, 2015.
-
-\bibitem{kumar2012maintainability}
-Balraj Kumar.
-\newblock A survey of key factors affecting software maintainability.
-\newblock In {\em 2012 International Conference on Computing Sciences}, 2012.
-
-\bibitem{li2022ossselection}
-Xiaozhou Li, Sergio Moreschini, Zheying Zhang, and Davide Taibi.
-\newblock Exploring factors and metrics to select open source software
-  components for integration: An empirical study.
-\newblock {\em Journal of Systems and Software}, 188:111255, 2022.
-
-\bibitem{schlosser2004reputation}
-Andreas Schlosser, Marco Voss, and Lars Brueckner.
-\newblock Comparing and evaluating metrics for reputation systems by
-  simulation.
-\newblock Conference manuscript, 2004.
-\newblock Local PDF copy in the ``Papers to read'' collection.
-
-\bibitem{syedmohamad2026maintainability}
-Sharifah~Mashita Syed-Mohamad, Amir Ngah, Al-Fahim~Mubarak Ali, and Pantea
-  Keikhosrokiani.
-\newblock Measuring software maintainability: An analysis of evolving metrics
-  across development paradigms.
-\newblock {\em Journal of Advanced Research in Applied Sciences and Engineering
-  Technology}, 63(2):181--195, 2026.
-
-\bibitem{scvulncomplexity}
-Masoud~Jamshidiyan Tehrani.
-\newblock Assessing vulnerability in smart contracts: The role of code
-  complexity metrics in security analysis.
-\newblock arXiv preprint, 2026.
-\newblock arXiv:2411.17343v4.
-
-\bibitem{timoteo_software_metrics_survey}
-Aline~Lopes Tim{\'o}teo, Alexandre {\'A}lvaro, Eduardo Santana~de Almeida, and
-  Silvio Romero de~Lemos Meira.
-\newblock Software metrics: A survey.
-\newblock Survey manuscript.
-\newblock Local PDF copy in the ``Papers to read'' collection.
-
-\bibitem{smartmetrics2023}
-Roberto Tonelli, Giuseppe~Antonio Pierro, Marco Ortu, and Giuseppe Destefanis.
-\newblock Smart contracts software metrics: A first study.
-\newblock {\em PLOS ONE}, 18(2):e0281043, 2023.
-
-\end{thebibliography}

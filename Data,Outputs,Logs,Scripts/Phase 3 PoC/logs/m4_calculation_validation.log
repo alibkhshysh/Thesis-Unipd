@@ -1,0 +1,12 @@
+M4 deterministic calculation validation
+Policy: E:\Thesis Unipd\Data,Outputs,Logs,Scripts\Phase 3 PoC\spec\m4_metric_policy_v1.json
+Policy hash: 4e81843340041da45a13ebb742a0c5fdfebdf6c8f5e64a7d6629f58990b287a4
+Windows: 70
+Ancestral windows: 58
+Eligible PoC windows: 58
+Developer rows: 1063
+Developer validation failures: 0
+Window validation failures: 0
+M4 behavioral stability ordering retained: true
+Calculation conclusion supported: true
+Validation status: pass

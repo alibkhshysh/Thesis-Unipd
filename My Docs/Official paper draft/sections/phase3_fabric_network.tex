@@ -1,0 +1,125 @@
+\section{Phase III: Fabric Network Deployment and Integration Validation}
+\label{sec:phase3_fabric_network}
+
+The final implementation boundary deploys the unchanged \texttt{m4evidence} contract from
+Section~\ref{sec:phase3_chaincode_unit} and submits the canonical \texttt{urllib3\_W03} evidence from
+Section~\ref{sec:phase3_offchain_verifier} through an actual Fabric Gateway client. This step tests the properties
+that local contract mocks cannot establish: organizational approval and endorsement, ordering and commit status,
+authenticated identity handling, peer-visible state, channel history, and Gateway event delivery.
+
+\subsection{Frozen environment and deployment}
+\label{sec:phase3_fabric_deployment}
+
+The run used Fabric \texttt{v2.5.15} (commit \texttt{83c7930}) from the Fabric 2.5 LTS line, Fabric CA binaries
+\texttt{v1.5.17}, Docker Engine \texttt{29.4.3}, and Docker Compose \texttt{5.1.3}. The official
+\texttt{fabric-samples} test network was detached at commit
+\path{65592350d7d7c51b02c8a4d89383d4bbdcc45725}. Because the installer did not expose a matching
+\texttt{fabric-samples v2.5.15} tag, recording this commit avoids treating a moving sample branch as a frozen input.
+Fabric identities were generated locally with \texttt{cryptogen}; Fabric CA was installed as part of the frozen tool set
+but no CA service was used. This wording distinguishes configured X.509 MSP identities from CA enrollment.
+
+The topology contains \texttt{peer0.org1.example.com}, \texttt{peer0.org2.example.com}, and one Raft orderer. Both
+peers joined \texttt{mychannel}, using GoLevelDB. Four byte-checked runtime files were staged from the locally tested
+source and packaged for deployment. Table~\ref{tab:phase3_fabric_definition} records the committed definition.
+
+\begin{table}[H]
+\centering
+\small
+\renewcommand{\arraystretch}{1.08}
+\begin{tabularx}{\textwidth}{p{4.2cm}X}
+\toprule
+\textbf{Deployment property} & \textbf{Measured value} \\
+\midrule
+Chaincode name / version / sequence & \texttt{m4evidence} / \texttt{1.0} / \texttt{1} \\
+Package size / source files & 13,275 bytes / 4 \\
+Package SHA-256 & \path{5e767ab94efbb4a63b8958f44249b0c0c2d7cede71738593c813282f091fabb7} \\
+Organization approvals & \texttt{Org1MSP=true}; \texttt{Org2MSP=true} \\
+Endorsement policy & \texttt{AND('Org1MSP.peer','Org2MSP.peer')} \\
+Gateway / gRPC versions & \texttt{1.10.1} / \texttt{1.14.4} \\
+Production dependency findings & 0 \\
+\bottomrule
+\end{tabularx}
+\caption{Committed chaincode definition and client environment.}
+\label{tab:phase3_fabric_definition}
+\end{table}
+
+The validator queried the committed definition on both peers and decoded its binary validation parameter. It requires a
+threshold of two with the \texttt{Org1MSP PEER} and \texttt{Org2MSP PEER} principals. This check is stronger than
+matching only a displayed policy string. The package was installed on both peers with identifier
+\path{m4evidence_1.0:5e767ab94efbb4a63b8958f44249b0c0c2d7cede71738593c813282f091fabb7}.
+
+\subsection{Authenticated positive and negative paths}
+\label{sec:phase3_fabric_gateway_result}
+
+The Gateway client used the generated \texttt{User1} certificate and private key for each organization. The accepted
+proposal used the Org1 identity permitted by chaincode and explicitly requested endorsements from both organizations. The
+17 integration checks all passed; Table~\ref{tab:phase3_fabric_gateway_checks} groups them by purpose.
+
+\begin{table}[H]
+\centering
+\small
+\renewcommand{\arraystretch}{1.08}
+\begin{tabularx}{\textwidth}{p{3.6cm}Xr}
+\toprule
+\textbf{Group} & \textbf{Checks} & \textbf{Passed} \\
+\midrule
+Precondition and rejection & independent record ID, absent initial state, malformed JSON, one-ppm mutation, unauthorized Org2 submitter, and no state from rejected proposals & 6/6 \\
+Commit and event & valid Org1 commit, exact 26-field proposed record, Gateway event reception, and exact event payload & 4/4 \\
+Ledger observation & state existence, identical reads from both peers, project query, developer query, and exact history & 5/5 \\
+Immutability & duplicate rejection and preservation of original state & 2/2 \\
+\midrule
+Total & & 17/17 \\
+\bottomrule
+\end{tabularx}
+\caption{Authenticated Fabric Gateway integration checks.}
+\label{tab:phase3_fabric_gateway_checks}
+\end{table}
+
+Malformed JSON, the one-ppm mutation, and the Org2 submission failed during endorsement and created no state. After the
+valid commit, the project and developer indexes returned the same record, both peers returned byte-equivalent parsed state,
+and history contained the single expected update. A second valid submission was rejected and did not alter that state.
+
+\subsection{Committed transaction and independent validation}
+\label{sec:phase3_fabric_transaction}
+
+The accepted record retained the deterministic identifier already derived in the local tests:
+
+\begin{center}
+\scriptsize
+\path{72ca9db25cfcd77fdbe95592a2b1b2debbf9bbf006a16a419dd97a31c7b57309}.
+\end{center}
+
+Its transaction identifier is:
+
+\begin{center}
+\scriptsize
+\path{960e5630c0427ca7f74c87930b4611646c9e124969efb31b6514dca5c95be031}.
+\end{center}
+
+The transaction was committed in block 6 at \texttt{2026-07-26T13:21:13.565Z}; the channel height was seven after the
+run. The event name was \path{M4MetricEvidenceSubmitted}, and the canonical 26-field record SHA-256 was
+\path{0f6840a59706211533ac4e84987a26baf89dccce222f8b61ef22bd443ebe3d29}. An independent Python validator
+retrieved block 6 through each peer's local QSCC service, found the transaction, and confirmed validation code 0
+(\texttt{VALID}). Thus the result is not inferred only from a successful Gateway return.
+
+The independent validation passed all 47 environment, packaging, lifecycle, policy, Gateway-result, dependency, block, and
+artifact-integrity checks. As a separate replay negative case, it changed one byte in a temporary copy of the Git bundle. The
+copy's SHA-256 changed from
+\path{a41205eff782ce4af65f345e0afb97f16fd8677af215c7bdd06f460ce9602272} to
+\path{debeb80119a125f617cfdc5ec33537460ab07625a49592711d56601e2f203fdf}, and independent replay rejected it.
+The canonical bundle remained unchanged.
+
+\subsection{Interpretation and limits}
+\label{sec:phase3_fabric_interpretation}
+
+The network run confirms the implemented mechanism for one pinned evidence fixture: authenticated authorization, exact
+arithmetic validation, two-organization endorsement, immutable commit, consistent peer reads, queries, history, event
+delivery, and rejection paths work together on the frozen local topology. It does not show that the off-chain numerator and
+denominator are semantically true merely because Fabric committed them; that claim remains auditable through the artifact,
+policy, verifier, and hashes.
+
+The evaluation uses a single-host educational network, generated test identities, one orderer, one peer per organization,
+one fixture, and no load or fault experiment. It therefore supports a bounded proof-of-concept implementation claim, not production
+claims about throughput, scale, availability, certificate governance, privacy, or adversarial consensus. Exact commands,
+container-image digests, source/output commitments, and machine-readable results are retained in the Phase III
+\path{FABRIC_NETWORK_REPORT.md}, \path{fabric_runtime/README.md}, and \path{out/} evidence.

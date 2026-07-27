@@ -1,7 +1,7 @@
 \section{Methodology: Comparison Criteria}
 \label{sec:methodology_criteria}
 
-We compare candidates using four criteria: stability, interpretability, resistance to gaming, and long-term suitability.
+Candidates are compared using four criteria: stability, interpretability, resistance to gaming, and long-term suitability.
 The comparative phase (Phase II) applies these criteria uniformly to M1--M5 before any PoC metric decision.
 
 The scoring labels are local to each analysis step. C2, C3, and C4 each use five criterion-specific dimensions:
@@ -13,7 +13,7 @@ ten dimensions, D1--D10, in Section~\ref{sec:feasibility_rubric_full}.
 \label{sec:evaluation_unit}
 
 The primary analysis unit is \texttt{(project\_id, window\_id, developer)} for developer-level metrics and
-\texttt{(project\_id, window\_id)} for aggregate metrics. Because window durations and project sizes vary, the pipeline now
+\texttt{(project\_id, window\_id)} for aggregate metrics. Because window durations and project sizes vary, the pipeline
 produces both raw and normalized values:
 \begin{itemize}[leftmargin=*]
   \item per-day normalization for cadence-sensitive measures;
@@ -31,27 +31,31 @@ as sensitivity evidence rather than silently mixed into maintainer-behavior clai
 
 \subsection{C1 Stability}
 \label{sec:criterion_stability}
-Stability is evaluated across consecutive version windows. We measure volatility (e.g., dispersion across windows) and
+Stability is evaluated across consecutive version windows. The analysis measures volatility (e.g., dispersion across windows) and
 rank stability (e.g., correlation of developer rankings between adjacent windows). Cross-project comparison is performed
 after simple normalizations (e.g., per day or per KLOC) to reduce artifacts from project size and release cadence.
-Planned outputs include dispersion statistics, adjacent-window rank correlations, and sensitivity checks on timestamp semantics.
+The output set comprises dispersion statistics, adjacent-window rank correlations, and sensitivity checks on timestamp semantics.
 
 \subsection{C2 Interpretability}
 \label{sec:criterion_interpretability}
 Interpretability is assessed via semantic clarity (plain meaning), unit clarity (counts/shares/time), and normalization clarity.
 Metrics that require complex tooling or ambiguous definitions receive lower interpretability.
 
-\subsection{C3 Resistance to gaming}
+\subsection{C3 Resistance to Gaming}
 \label{sec:criterion_gaming}
-We analyze attack surfaces and manipulation cost per metric. Since single metrics can be misleading, we avoid strong causal claims
-and interpret gaming risks comparatively (e.g., commit-splitting inflates frequency but becomes detectable when churn remains low).
-The threat model follows common public-ledger constraints and manipulation tradeoffs discussed in blockchain and smart-contract studies
-\cite{blockchainsurvey,smartmetrics2023,scvulncomplexity}.
+The analysis examines attack surfaces and manipulation cost for each metric. Since individual metrics can be misleading, the interpretation avoids strong causal claims
+and treats gaming risks comparatively (e.g., commit-splitting inflates frequency but becomes detectable when churn remains low).
+The threat model follows reputation-system evaluation research that compares metric behavior under hostile-agent scenarios
+and other explicit attacks~\cite{koutrouli2015reputation,schlosser2004reputation}. Strong causal interpretations are avoided because
+code-complexity measures can be useful as complementary indicators without any single measure having a strong association with
+vulnerability~\cite{scvulncomplexity}.
 
-\subsection{C4 Long-term suitability}
+\subsection{C4 Long-Term Suitability}
 \label{sec:criterion_longterm}
-We assess whether each metric remains informative over long histories, across lifecycle phases, and whether it supports
-incremental updates without full recomputation.
+The assessment considers whether each metric remains informative over long histories and across lifecycle phases, and whether it supports
+incremental updates without full recomputation. This lifecycle emphasis follows maintainability research that treats changeability,
+evolution, and paradigm-sensitive measurement as distinct software-quality concerns
+~\cite{kumar2012maintainability,kapllani2020maintainability,syedmohamad2026maintainability}.
 
 \subsection{Criterion-to-output mapping}
 \label{sec:criterion_mapping}
@@ -62,7 +66,7 @@ incremental updates without full recomputation.
 \renewcommand{\arraystretch}{1.15}
 \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{1.8cm}>{\raggedright\arraybackslash}p{5.6cm}>{\raggedright\arraybackslash}X}
 \toprule
-\textbf{Criterion} & \textbf{Planned Phase II evidence} & \textbf{Primary data source(s)} \\
+\textbf{Criterion} & \textbf{Phase II evidence} & \textbf{Primary data sources} \\
 \midrule
 C1 Stability &
 Window-level volatility, adjacent-window rank correlation, robustness to normalization choices. &
@@ -90,7 +94,7 @@ The decision protocol is fixed before Phase II analysis:
   \item compute comparative evidence for all candidates under C1--C4;
   \item score smart-contract feasibility using the rubric in Section~\ref{sec:feasibility_rubric_full};
   \item eliminate any candidate that violates feasibility exclusion criteria;
-  \item select one PoC metric with the best overall tradeoff between empirical behavior and feasibility.
+  \item select one PoC metric with the best overall trade-off between comparative behavior and feasibility.
 \end{enumerate}
 No step of this decision protocol is executed in Phase I.
 

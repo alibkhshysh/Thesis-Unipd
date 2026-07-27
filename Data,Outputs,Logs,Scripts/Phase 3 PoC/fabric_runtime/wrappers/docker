@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# Git Bash otherwise rewrites Docker container paths such as /data into host
+# paths. Limit the opt-out to docker.exe so Fabric's Windows CLI binaries keep
+# their normal MSYS path conversion.
+MSYS_NO_PATHCONV=1 MSYS2_ARG_CONV_EXCL='*' \
+  exec '/c/Program Files/Docker/Docker/resources/bin/docker.exe' "$@"

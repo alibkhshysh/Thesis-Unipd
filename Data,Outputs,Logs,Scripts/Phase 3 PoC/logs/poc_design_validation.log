@@ -1,0 +1,10 @@
+M4 PoC design consistency validation
+Design: M4_HYBRID_FABRIC_POC 1.0.0
+Fabric target: 2.5.15
+Schemas checked: 3
+Schema reference failures: 0
+Schema required-property failures: 0
+Cross-schema constraint failures: 0
+Policy/design failures: 0
+Fixture failures: 0
+Validation status: pass

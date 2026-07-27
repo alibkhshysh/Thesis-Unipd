@@ -1,0 +1,293 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thesis.local/schemas/m4-evidence-manifest-v1.json",
+  "title": "M4 Evidence Manifest v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaId",
+    "schemaVersion",
+    "policy",
+    "project",
+    "window",
+    "subject",
+    "extraction",
+    "calculation",
+    "evidenceArtifact",
+    "verifier"
+  ],
+  "properties": {
+    "schemaId": {
+      "const": "M4_EVIDENCE_MANIFEST"
+    },
+    "schemaVersion": {
+      "const": "1.0.0"
+    },
+    "policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "policyId",
+        "policyVersion",
+        "analysisPolicyHash"
+      ],
+      "properties": {
+        "policyId": {
+          "const": "M4_DEVELOPER_CHURN_SHARE_POLICY"
+        },
+        "policyVersion": {
+          "const": "1.0.0"
+        },
+        "analysisPolicyHash": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "project": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "projectId",
+        "repositoryUrl"
+      ],
+      "properties": {
+        "projectId": {
+          "$ref": "#/$defs/identifier"
+        },
+        "repositoryUrl": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    },
+    "window": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "windowId",
+        "fromTag",
+        "toTag",
+        "fromCommitHash",
+        "toCommitHash",
+        "revisionExpression",
+        "ancestryVerified",
+        "analysisSet",
+        "durationSeconds"
+      ],
+      "properties": {
+        "windowId": {
+          "$ref": "#/$defs/identifier"
+        },
+        "fromTag": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "toTag": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "fromCommitHash": {
+          "$ref": "#/$defs/gitCommit"
+        },
+        "toCommitHash": {
+          "$ref": "#/$defs/gitCommit"
+        },
+        "revisionExpression": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 256
+        },
+        "ancestryVerified": {
+          "const": true
+        },
+        "analysisSet": {
+          "enum": [
+            "primary",
+            "sensitivity_only"
+          ]
+        },
+        "durationSeconds": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "subject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "developerIdHash"
+      ],
+      "properties": {
+        "developerIdHash": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "extraction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "vcs",
+        "mergeCommitsIncluded",
+        "identitySource",
+        "humanDevelopers",
+        "humanCommits",
+        "humanAdded",
+        "humanDeleted",
+        "humanChurn",
+        "excludedBotIdentities",
+        "excludedBotCommits",
+        "excludedBotChurn",
+        "binaryFileChanges"
+      ],
+      "properties": {
+        "vcs": {
+          "const": "git"
+        },
+        "mergeCommitsIncluded": {
+          "const": false
+        },
+        "identitySource": {
+          "const": "%ae"
+        },
+        "humanDevelopers": {
+          "$ref": "#/$defs/nonnegativeInteger"
+        },
+        "humanCommits": {
+          "$ref": "#/$defs/nonnegativeInteger"
+        },
+        "humanAdded": {
+          "$ref": "#/$defs/nonnegativeInteger"
+        },
+        "humanDeleted": {
+          "$ref": "#/$defs/nonnegativeInteger"
+        },
+        "humanChurn": {
+          "$ref": "#/$defs/nonnegativeInteger"
+        },
+        "excludedBotIdentities": {
+          "$ref": "#/$defs/nonnegativeInteger"
+        },
+        "excludedBotCommits": {
+          "$ref": "#/$defs/nonnegativeInteger"
+        },
+        "excludedBotChurn": {
+          "$ref": "#/$defs/nonnegativeInteger"
+        },
+        "binaryFileChanges": {
+          "$ref": "#/$defs/nonnegativeInteger"
+        }
+      }
+    },
+    "calculation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "metricId",
+        "metricVersion",
+        "numeratorChurn",
+        "denominatorChurn",
+        "scale",
+        "metricValuePpm"
+      ],
+      "properties": {
+        "metricId": {
+          "const": "M4_DEVELOPER_CHURN_SHARE"
+        },
+        "metricVersion": {
+          "const": "1.0.0"
+        },
+        "numeratorChurn": {
+          "$ref": "#/$defs/nonnegativeInteger"
+        },
+        "denominatorChurn": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "scale": {
+          "const": 1000000
+        },
+        "metricValuePpm": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1000000
+        }
+      }
+    },
+    "evidenceArtifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mediaType",
+        "sha256",
+        "storageReference",
+        "storagePersistence"
+      ],
+      "properties": {
+        "mediaType": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "storageReference": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2048
+        },
+        "storagePersistence": {
+          "enum": [
+            "LOCAL_POC",
+            "CONTENT_ADDRESSED",
+            "EXTERNAL_DURABLE"
+          ]
+        }
+      }
+    },
+    "verifier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "version",
+        "sourceSha256"
+      ],
+      "properties": {
+        "name": {
+          "const": "m4-offchain-verifier"
+        },
+        "version": {
+          "type": "string",
+          "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+        },
+        "sourceSha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "identifier": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9._:-]{1,128}$"
+    },
+    "gitCommit": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "nonnegativeInteger": {
+      "type": "integer",
+      "minimum": 0
+    }
+  }
+}
+

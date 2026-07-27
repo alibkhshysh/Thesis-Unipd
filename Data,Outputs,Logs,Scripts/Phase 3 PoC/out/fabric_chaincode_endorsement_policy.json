@@ -1,0 +1,15 @@
+{
+  "policyType": "signature",
+  "threshold": 2,
+  "principals": [
+    {
+      "mspId": "Org1MSP",
+      "role": "PEER"
+    },
+    {
+      "mspId": "Org2MSP",
+      "role": "PEER"
+    }
+  ],
+  "validationParameterBase64": "CiwSDBIKCAISAggAEgIIARoNEgsKB09yZzFNU1AQAxoNEgsKB09yZzJNU1AQAw=="
+}

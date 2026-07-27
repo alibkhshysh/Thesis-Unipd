@@ -1,86 +1,95 @@
-\documentclass[11pt,a4paper]{article}
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
 
-\usepackage[margin=1in]{geometry}
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage{newtxtext,newtxmath}
+\documentclass{DEIThesis}
+
 \usepackage{tabularx}
 \usepackage{booktabs}
+\usepackage{array}
 \usepackage{enumitem}
 \usepackage{microtype}
-\usepackage[hypertexnames=false]{hyperref}
 \usepackage{xurl}
 \usepackage{float}
 \usepackage{longtable}
-\usepackage{amsmath}
-\usepackage{graphicx}
 
-\setcounter{tocdepth}{2}
-\setcounter{secnumdepth}{3}
-\hypersetup{
-  hidelinks,
-  pdftitle={Master Thesis Technical Report - Phase I Dataset, Phase II Analysis, and PoC Metric Selection},
-  pdfauthor={Ali Bakhshayesh}
-}
+% Allow narrow thesis pages to absorb long technical identifiers without
+% changing the underlying wording or values.
+\setlength{\emergencystretch}{3em}
+\raggedbottom
+\AtBeginBibliography{\sloppy}
 
-\title{Master Thesis Technical Report: Phase I Dataset, Phase II Analysis, and PoC Metric Selection}
+\title{Git-Based Software Metrics for Evidence-Based Developer Reputation:\\
+Comparative Evaluation and Smart Contract Feasibility}
 \author{Ali Bakhshayesh}
-\date{\today}
+\studentId{2071502}
+\advisor{Prof. Mauro Migliardi}
+\coadvisor{}
+\coadvisorsUniversity{}
+\university{University of Padua}
+\department{Department of Information Engineering}
+\mastername{Computer Engineering}
+\academicYear{2025/2026}
+\graduationDate{10 September 2026}
+
+\begin{filecontents*}[overwrite]{\jobname.xmpdata}
+  \Title{Git-Based Software Metrics for Evidence-Based Developer Reputation: Comparative Evaluation and Smart Contract Feasibility}
+  \Author{Ali Bakhshayesh}
+  \Language{en}
+  \Keywords{software metrics\sep developer reputation\sep open-source software\sep Hyperledger Fabric\sep smart contracts\sep reproducibility}
+\end{filecontents*}
 
 \begin{document}
+
+% Front matter based on the supplied Computer Engineering MSc template.
+\pagenumbering{roman}
+\pagestyle{fancy}
 \maketitle
+\setfancyhf
+\setlength{\headwidth}{\textwidth}
 
-\begin{abstract}
-This report consolidates Phase I of the thesis and begins Phase II comparative evaluation.
-The Phase I dataset contains ten open-source repositories, each frozen at eight stable
-release tags and seven consecutive release windows. The report documents repository and
-version-window curation, metric extraction for M1--M4, cleaning and validation,
-bot-sensitivity handling, and duration-normalized outputs for uneven release windows.
-It then reports the Month 3 comparative analysis steps: C1 stability across release windows and
-projects, C2 interpretability, C3 gaming resistance, C4 long-term suitability, smart-contract
-feasibility scoring, and the final proof-of-concept (PoC) metric selection. The selected baseline
-PoC metric is M4 developer churn ownership share. Implementation remains the next phase.
-\end{abstract}
+\thispagestyle{empty}
+\input{frontmatter/abstract}
+\cleardoublepage
 
-\newpage
 \tableofcontents
-\newpage
-\listoftables
-\newpage
+\cleardoublepage
+
+\phantomsection
+\addcontentsline{toc}{chapter}{\listfigurename}
 \listoffigures
-\newpage
+\cleardoublepage
 
+\phantomsection
+\addcontentsline{toc}{chapter}{\listtablename}
+\listoftables
+
+\cleardoublepage
+\begingroup
+\let\cleardoublepage\relax
+\chapter*{Abbreviations and Notation}
+\phantomsection
+\addcontentsline{toc}{chapter}{Abbreviations and Notation}
+\markboth{Abbreviations and Notation}{Abbreviations and Notation}
 \input{sections/abbreviations}
-\input{sections/intro_scope}
-\input{sections/candidate_metrics}
-\input{sections/methodology_criteria}
-\input{sections/destino_context}
-\input{sections/feasibility_rubric_full}
-\input{sections/detailed_design_blueprint}
-\input{sections/month2_round1_dataset}
-\input{sections/month2_pipeline}
-\input{sections/month2_cleaning}
-\input{sections/month2_round1_summary_tables}
-\input{sections/month2_detailed_results}
-\input{sections/month2_execution_ledger}
-\input{sections/reproducibility_protocol}
-\input{sections/threats_to_validity}
-\input{sections/month2_conclusion}
-\input{sections/month3_c1_stability}
-\input{sections/month3_c2_interpretability}
-\input{sections/month3_c3_gaming_resistance}
-\input{sections/month3_c4_longterm_suitability}
-\input{sections/month3_feasibility_scoring}
-\input{sections/month3_poc_metric_selection}
-\input{sections/next_steps_month3_plan}
+\endgroup
+\cleardoublepage
 
+% Main manuscript.
+\mainmatter
+\pagestyle{fancy}
+\setfancyhf
+
+\include{chapters/01_introduction}
+\include{chapters/02_foundations_related_work}
+\include{chapters/03_research_methodology}
+\include{chapters/04_dataset_results}
+\include{chapters/05_comparative_evaluation}
+\include{chapters/06_poc_design_validation}
+\include{chapters/07_discussion_conclusions}
+
+% Preserve every bibliography entry while retaining explicit in-text citations.
+\cleardoublepage
 \nocite{*}
-\bibliographystyle{plain}
-\bibliography{references}
+\printbibliography[heading=bibintoc,title={References}]
 
 \end{document}
-
-
-
-
-

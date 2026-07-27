@@ -1,0 +1,84 @@
+\section{Post-hoc Release-Window Ancestry Validation}
+\label{sec:posthoc_ancestry_validation}
+
+The original freeze orders stable tags by tag date and forms adjacent chronological pairs. This rule is reproducible,
+but chronological adjacency does not guarantee Git ancestry when a project maintains parallel release lines or publishes
+backports. For a window represented by \texttt{FROM..TO}, the extracted commit set is a sequential development interval
+only if \texttt{FROM} is an ancestor of \texttt{TO}. The original artifacts are preserved, while this post-hoc check adds
+a separate validity and sensitivity layer.
+
+\subsection{Audit method and impact}
+\label{sec:ancestry_audit_method}
+
+All 70 frozen windows were checked with \texttt{git merge-base --is-ancestor}. Fifty-eight windows pass and 12 are
+non-ancestral. The affected set contains one Flask window, two Gin windows, all seven JUnit windows, one Prettier window,
+and one Tokio window. JUnit alternates between the 5.14 and 6.0 release lines, so none of its original adjacent tag-date
+pairs is retained in the ancestry-only subset.
+
+\begin{table}[H]
+\centering
+\small
+\renewcommand{\arraystretch}{1.08}
+\begin{tabular}{lr}
+\toprule
+\textbf{Audit quantity} & \textbf{Result} \\
+\midrule
+Frozen tag-chronological windows & 70 \\
+Ancestor-to-descendant windows & 58 \\
+Non-ancestral windows & 12 \\
+Projects with at least one non-ancestral window & 5 \\
+Human commits in non-ancestral windows & 3,576 / 8,561 (41.77\%) \\
+Human churn in non-ancestral windows & 1,471,597 / 2,056,765 (71.55\%) \\
+\bottomrule
+\end{tabular}
+\caption{Post-hoc Git ancestry audit and quantitative impact.}
+\label{tab:posthoc_ancestry_impact}
+\end{table}
+
+For a non-ancestral pair, \texttt{FROM..TO} is still a deterministic Git set difference, but it is not the development
+performed between two releases on one linear history. This distinction materially affects interpretation because the
+12 affected windows contain most of the original human churn. They are therefore excluded from the sensitivity analysis
+and from baseline PoC eligibility, rather than silently treated as ordinary release intervals.
+
+\subsection{Ancestry-only C1 sensitivity analysis}
+\label{sec:ancestry_c1_sensitivity}
+
+The sensitivity analysis imports the frozen official C1 implementation, so metric definitions, primary-window flags,
+coefficients of variation (CV), and volatility thresholds are unchanged. It filters only by the ancestry audit and writes
+new artifacts outside the Phase I and Phase II directories. Nine projects retain at least one window; eight projects retain
+at least two primary windows and can contribute to the primary cross-project summary.
+
+\begin{table}[H]
+\centering
+\scriptsize
+\renewcommand{\arraystretch}{1.08}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{p{3.7cm}rrrr}
+\toprule
+\textbf{Signal} & \textbf{Original primary CV} & \textbf{Ancestral primary CV} & \textbf{Original high-vol.} & \textbf{Ancestral high-vol.} \\
+\midrule
+M1 endpoint KLOC & 0.014392 & 0.014392 & 0/10 & 0/8 \\
+M2 churn/KLOC/day & 0.890454 & 0.890454 & 6/10 & 5/8 \\
+M3 commits/day & 0.607560 & 0.631179 & 4/10 & 3/8 \\
+M4 churn Gini & 0.328938 & 0.351228 & 2/10 & 1/8 \\
+M4 top-1 churn share & 0.235787 & 0.246522 & 1/10 & 0/8 \\
+\bottomrule
+\end{tabular}
+}
+\caption{Original and ancestry-only C1 window-stability results. High-volatility counts use only projects with at least two primary windows.}
+\label{tab:ancestry_c1_comparison}
+\end{table}
+
+M1 remains the most stable context signal but is not eligible as standalone developer-reputation evidence. Among the
+implemented behavioral candidates, the qualitative ordering is retained: both M4 window-concentration signals remain less
+volatile than M2 and M3. M4 top-one churn share remains within the frozen low-volatility threshold (CV $\leq 0.25$), while
+M4 churn Gini remains moderate. This result supports retaining M4 for the engineering PoC; it does not retroactively turn
+the 12 excluded windows into valid linear intervals or establish universal superiority.
+
+\subsection{Reproducibility artifacts}
+\label{sec:ancestry_artifacts}
+
+The additive package under \path{Data,Outputs,Logs,Scripts/Posthoc Validation/} contains the 70-row ancestry audit,
+per-project and global impact summaries, the 58-window/290-signal-row sensitivity dataset, the original-versus-sensitivity
+comparison, deterministic logs, and scripts. An identical rerun produced byte-identical CSV outputs. The original Phase I
+and Phase II artifacts remain unchanged and are retained as the documented baseline analysis.

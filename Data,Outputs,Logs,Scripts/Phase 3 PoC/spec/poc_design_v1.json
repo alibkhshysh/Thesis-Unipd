@@ -1,0 +1,97 @@
+{
+  "design_id": "M4_HYBRID_FABRIC_POC",
+  "design_version": "1.0.0",
+  "status": "frozen_before_implementation",
+  "platform": {
+    "framework": "Hyperledger Fabric",
+    "fabric_version": "2.5.15",
+    "release_channel": "LTS",
+    "network_profile": "fabric-samples test-network",
+    "organizations": [
+      "Org1MSP",
+      "Org2MSP"
+    ],
+    "peers_per_organization": 1,
+    "ordering_service": "single-node Raft",
+    "channel_name": "mychannel",
+    "state_database": "goleveldb",
+    "production_claim": false
+  },
+  "chaincode": {
+    "name": "m4evidence",
+    "language": "javascript",
+    "version": "1.0",
+    "sequence": 1,
+    "fabric_contract_api_version": "2.5.8",
+    "fabric_shim_version": "2.5.8",
+    "endorsement_policy": "AND('Org1MSP.peer','Org2MSP.peer')",
+    "allowed_submitter_msps": [
+      "Org1MSP"
+    ],
+    "records_are_immutable": true,
+    "functions": [
+      "SubmitMetricEvidence",
+      "MetricEvidenceExists",
+      "ReadMetricEvidence",
+      "GetMetricEvidenceHistory",
+      "QueryByProject",
+      "QueryByDeveloper"
+    ],
+    "events": [
+      "M4MetricEvidenceSubmitted"
+    ]
+  },
+  "off_chain": {
+    "language": "python",
+    "responsibilities": [
+      "verify from-commit ancestry",
+      "extract non-merge Git numstat evidence",
+      "normalize author email",
+      "apply the frozen bot policy",
+      "calculate integer M4 evidence",
+      "create a deterministic evidence manifest",
+      "hash the policy, artifact, and manifest",
+      "submit the compact ledger payload"
+    ]
+  },
+  "on_chain": {
+    "responsibilities": [
+      "authenticate the submitting Fabric identity",
+      "enforce the allowed submitter MSP policy",
+      "validate required identifiers and hash formats",
+      "validate numerator and denominator ranges",
+      "recompute metric_value_ppm with integer arithmetic",
+      "reject duplicate composite keys",
+      "store the compact immutable record",
+      "write project and developer secondary indexes",
+      "emit a submission event"
+    ],
+    "explicitly_not_verified": [
+      "Git commit ancestry",
+      "Git repository contents",
+      "bot classification truth",
+      "real-world control of an author email",
+      "semantic quality of the contributed changes",
+      "external artifact availability"
+    ]
+  },
+  "key_policy": {
+    "primary_composite_key_object_type": "m4record",
+    "primary_composite_key_attributes": [
+      "projectId",
+      "windowId",
+      "developerIdHash",
+      "metricId",
+      "policyVersion"
+    ],
+    "project_index_object_type": "m4project",
+    "developer_index_object_type": "m4developer",
+    "record_id_hash_domain": "m4-record-id-v1"
+  },
+  "schema_files": {
+    "evidence_manifest": "evidence_manifest_schema_v1.json",
+    "ledger_submission": "ledger_submission_schema_v1.json",
+    "ledger_record": "ledger_record_schema_v1.json"
+  }
+}
+

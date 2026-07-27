@@ -1,0 +1,8 @@
+status=pass
+source=E:\Thesis Unipd\Data,Outputs,Logs,Scripts\Phase 2\out\poc_candidate_decision_inputs_all.csv
+source_sha256=612eeaeff76a2f6110c0458d0fb1878cf416b82cca774cc1a8e7dbcdd416e053
+rows=5
+label_correction=C1-C4 empirical average -> C1-C4 comparison average
+reason=C1 is data-derived; C2-C4 are structured author assessments
+output=E:\Thesis Unipd\Data,Outputs,Logs,Scripts\Phase 3 PoC\out\poc_candidate_decision_inputs_corrected.pdf
+output_sha256=40e3756d793697d5b4b1032791bd8bd2b323a4ef8686e8dad2badca9deaf0de6

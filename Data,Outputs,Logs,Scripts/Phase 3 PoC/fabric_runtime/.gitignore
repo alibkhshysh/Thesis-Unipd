@@ -1,0 +1,4 @@
+# Recreated from the pinned installer command documented in the PoC report.
+fabric-samples/
+chaincode_source/
+staged_chaincode/

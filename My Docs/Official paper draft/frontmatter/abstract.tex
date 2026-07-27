@@ -1,0 +1,15 @@
+%!TEX root = ../main.tex
+
+\begin{singlespace}
+\begin{center}
+\bfseries Abstract
+\end{center}
+
+This thesis investigates whether Git-derived software metrics can support an evidence-based developer-reputation signal that is stable, interpretable, resistant to manipulation, and feasible within a smart-contract architecture. The empirical study constructs a reproducible dataset of ten open-source repositories, comprising 80 frozen release tags and 70 tag-chronological windows. It evaluates snapshot size, change magnitude, activity cadence, and ownership concentration through repository extraction, cleaning, bot-sensitivity analysis, duration normalization, and explicit comparison criteria.
+
+The comparative evaluation identifies M4 developer churn ownership share as the strongest eligible baseline proof-of-concept metric under the declared framework. A post-hoc Git ancestry audit identifies 12 non-ancestral windows and retains 58 windows for sensitivity analysis. The behavioral stability ordering continues to support M4 as the engineering choice, while the limitation is retained explicitly rather than used to overwrite the original evidence. The selected metric is then frozen using deterministic integer arithmetic, versioned policies, and explicit evidence and ledger schemas.
+
+The implementation adopts a hybrid trust boundary. Git retrieval, ancestry validation, identity normalization, bot classification, and metric extraction remain in a deterministic off-chain verifier, while Hyperledger Fabric chaincode performs bounded authorization, schema and arithmetic validation, immutable state commitment, indexing, history queries, and event emission. A standalone Git bundle and independent replay reproduce the selected fixture and its commitments byte-for-byte. All 34 local chaincode tests pass. Deployment to a two-organization Fabric test network subsequently passes all 17 authenticated Gateway checks and 47 independent network checks, with the accepted transaction independently confirmed as valid in block 6.
+
+The result is a coherent and replayable proof of concept. It demonstrates that M4 can be committed as compact, auditable ledger evidence under an explicit policy and governance boundary. It does not claim that churn universally measures developer quality, that gaming resistance is empirically proven, or that the educational Fabric topology is production-ready.
+\end{singlespace}

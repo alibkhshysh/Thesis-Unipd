@@ -1,0 +1,21 @@
+Post-hoc release-window ancestry audit
+Git version: git version 2.52.0.windows.1
+Phase I directory: E:\Thesis Unipd\Data,Outputs,Logs,Scripts\Phase 1
+Total windows: 70
+Ancestral windows: 58
+Non-ancestral windows: 12
+Human commits in non-ancestral windows: 3576 of 8561 (41.770821%)
+Human churn in non-ancestral windows: 1471597 of 2056765 (71.549107%)
+Non-ancestral windows:
+- flask/flask_W01 (3.0.0 -> 3.0.1)
+- gin/gin_W02 (v1.8.2 -> v1.9.0)
+- gin/gin_W06 (v1.10.1 -> v1.11.0)
+- junit5/junit5_W01 (r6.0.0 -> r5.14.1)
+- junit5/junit5_W02 (r5.14.1 -> r6.0.1)
+- junit5/junit5_W03 (r6.0.1 -> r5.14.2)
+- junit5/junit5_W04 (r5.14.2 -> r6.0.2)
+- junit5/junit5_W05 (r6.0.2 -> r5.14.3)
+- junit5/junit5_W06 (r5.14.3 -> r6.0.3)
+- junit5/junit5_W07 (r6.0.3 -> r5.14.4)
+- prettier/prettier_W05 (3.8.0 -> 3.8.1)
+- tokio/tokio_W03 (tokio-1.50.0 -> tokio-1.47.4)

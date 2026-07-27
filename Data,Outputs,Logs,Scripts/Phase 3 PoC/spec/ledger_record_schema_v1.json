@@ -1,0 +1,148 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thesis.local/schemas/m4-ledger-record-v1.json",
+  "title": "M4 Ledger Record v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "docType",
+    "recordId",
+    "schemaId",
+    "schemaVersion",
+    "projectId",
+    "windowId",
+    "developerIdHash",
+    "metricId",
+    "metricVersion",
+    "metricValuePpm",
+    "numeratorChurn",
+    "denominatorChurn",
+    "fromCommitHash",
+    "toCommitHash",
+    "policyId",
+    "policyVersion",
+    "analysisPolicyHash",
+    "evidenceManifestHash",
+    "evidenceArtifactHash",
+    "storageReference",
+    "storagePersistence",
+    "submitterMspId",
+    "submitterIdHash",
+    "transactionId",
+    "recordedAt",
+    "status"
+  ],
+  "properties": {
+    "docType": {
+      "const": "m4MetricEvidence"
+    },
+    "recordId": {
+      "$ref": "#/$defs/sha256"
+    },
+    "schemaId": {
+      "const": "M4_LEDGER_RECORD"
+    },
+    "schemaVersion": {
+      "const": "1.0.0"
+    },
+    "projectId": {
+      "$ref": "#/$defs/identifier"
+    },
+    "windowId": {
+      "$ref": "#/$defs/identifier"
+    },
+    "developerIdHash": {
+      "$ref": "#/$defs/sha256"
+    },
+    "metricId": {
+      "const": "M4_DEVELOPER_CHURN_SHARE"
+    },
+    "metricVersion": {
+      "const": "1.0.0"
+    },
+    "metricValuePpm": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 1000000
+    },
+    "numeratorChurn": {
+      "$ref": "#/$defs/uintDecimal"
+    },
+    "denominatorChurn": {
+      "$ref": "#/$defs/positiveUintDecimal"
+    },
+    "fromCommitHash": {
+      "$ref": "#/$defs/gitCommit"
+    },
+    "toCommitHash": {
+      "$ref": "#/$defs/gitCommit"
+    },
+    "policyId": {
+      "const": "M4_DEVELOPER_CHURN_SHARE_POLICY"
+    },
+    "policyVersion": {
+      "const": "1.0.0"
+    },
+    "analysisPolicyHash": {
+      "$ref": "#/$defs/sha256"
+    },
+    "evidenceManifestHash": {
+      "$ref": "#/$defs/sha256"
+    },
+    "evidenceArtifactHash": {
+      "$ref": "#/$defs/sha256"
+    },
+    "storageReference": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2048
+    },
+    "storagePersistence": {
+      "enum": [
+        "LOCAL_POC",
+        "CONTENT_ADDRESSED",
+        "EXTERNAL_DURABLE"
+      ]
+    },
+    "submitterMspId": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9._-]{1,64}$"
+    },
+    "submitterIdHash": {
+      "$ref": "#/$defs/sha256"
+    },
+    "transactionId": {
+      "$ref": "#/$defs/sha256"
+    },
+    "recordedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "status": {
+      "const": "ACTIVE"
+    }
+  },
+  "$defs": {
+    "identifier": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9._:-]{1,128}$"
+    },
+    "gitCommit": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "uintDecimal": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)$"
+    },
+    "positiveUintDecimal": {
+      "type": "string",
+      "pattern": "^[1-9][0-9]*$"
+    }
+  }
+}
+

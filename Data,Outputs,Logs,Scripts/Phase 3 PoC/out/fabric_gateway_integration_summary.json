@@ -1,0 +1,107 @@
+{
+  "validationId": "M4_FABRIC_GATEWAY_INTEGRATION_V1",
+  "validationStatus": "pass",
+  "checksTotal": 17,
+  "checksPassed": 17,
+  "channelName": "mychannel",
+  "chaincodeName": "m4evidence",
+  "submittingMspId": "Org1MSP",
+  "endorsingOrganizations": [
+    "Org1MSP",
+    "Org2MSP"
+  ],
+  "transactionId": "960e5630c0427ca7f74c87930b4611646c9e124969efb31b6514dca5c95be031",
+  "blockNumber": "6",
+  "recordId": "72ca9db25cfcd77fdbe95592a2b1b2debbf9bbf006a16a419dd97a31c7b57309",
+  "recordedAt": "2026-07-26T13:21:13.565Z",
+  "eventName": "M4MetricEvidenceSubmitted",
+  "submissionSha256": "077e65f900aedc0f066cc01725a62f721c314a0932cdcd3b6f722c0c17a14fbe",
+  "recordCanonicalSha256": "0f6840a59706211533ac4e84987a26baf89dccce222f8b61ef22bd443ebe3d29",
+  "checks": [
+    {
+      "checkId": "independent_record_id",
+      "status": "pass",
+      "detail": "72ca9db25cfcd77fdbe95592a2b1b2debbf9bbf006a16a419dd97a31c7b57309"
+    },
+    {
+      "checkId": "initial_state_absent",
+      "status": "pass",
+      "detail": "pass"
+    },
+    {
+      "checkId": "malformed_json_rejected",
+      "status": "pass",
+      "detail": "10 ABORTED: failed to endorse transaction, see attached details for more info | chaincode response 500, submissionJson is not valid JSON: Expected property name or '}' in JSON at position 1 (line 1 column 2) | failed to endorse transaction, see attached details for more info | EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info"
+    },
+    {
+      "checkId": "one_ppm_mutation_rejected",
+      "status": "pass",
+      "detail": "10 ABORTED: failed to endorse transaction, see attached details for more info | chaincode response 500, metricValuePpm arithmetic mismatch: expected 307183 | failed to endorse transaction, see attached details for more info | EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info"
+    },
+    {
+      "checkId": "org2_submitter_rejected",
+      "status": "pass",
+      "detail": "10 ABORTED: failed to endorse transaction, see attached details for more info | chaincode response 500, MSP Org2MSP is not authorized to submit M4 evidence | failed to endorse transaction, see attached details for more info | EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info"
+    },
+    {
+      "checkId": "negative_cases_created_no_state",
+      "status": "pass",
+      "detail": "pass"
+    },
+    {
+      "checkId": "submit_committed_valid",
+      "status": "pass",
+      "detail": "960e5630c0427ca7f74c87930b4611646c9e124969efb31b6514dca5c95be031"
+    },
+    {
+      "checkId": "gateway_chaincode_event_received",
+      "status": "pass",
+      "detail": "M4MetricEvidenceSubmitted"
+    },
+    {
+      "checkId": "proposal_record_exact_schema",
+      "status": "pass",
+      "detail": "pass"
+    },
+    {
+      "checkId": "event_payload_exact",
+      "status": "pass",
+      "detail": "pass"
+    },
+    {
+      "checkId": "committed_state_exists",
+      "status": "pass",
+      "detail": "pass"
+    },
+    {
+      "checkId": "both_peers_read_identical_record",
+      "status": "pass",
+      "detail": "pass"
+    },
+    {
+      "checkId": "project_index_query",
+      "status": "pass",
+      "detail": "pass"
+    },
+    {
+      "checkId": "developer_index_query",
+      "status": "pass",
+      "detail": "pass"
+    },
+    {
+      "checkId": "ledger_history_exact",
+      "status": "pass",
+      "detail": "pass"
+    },
+    {
+      "checkId": "duplicate_rejected",
+      "status": "pass",
+      "detail": "10 ABORTED: failed to endorse transaction, see attached details for more info | chaincode response 500, M4 evidence already exists for this composite identity | failed to endorse transaction, see attached details for more info | EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info"
+    },
+    {
+      "checkId": "duplicate_preserved_original_state",
+      "status": "pass",
+      "detail": "pass"
+    }
+  ]
+}

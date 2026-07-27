@@ -1,0 +1,10 @@
+C1 ancestry-only sensitivity analysis
+Official C1 implementation: E:\Thesis Unipd\Data,Outputs,Logs,Scripts\Phase 2\scripts\analyze_c1_stability.py
+Official Phase I and Phase II artifacts modified: false
+Ancestral windows included: 58
+Window-metric rows: 290
+Project-metric rows: 45
+Overall metric rows: 5
+Volatility thresholds: identical to frozen official C1 implementation
+Primary-window policy: identical to frozen official C1 implementation
+Result: separate sensitivity tables written

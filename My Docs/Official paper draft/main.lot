@@ -1,46 +1,65 @@
-\contentsline {table}{\numberline {1}{\ignorespaces Abbreviations and working notation used throughout the report.}}{8}{table.6}%
-\contentsline {table}{\numberline {2}{\ignorespaces Candidate shortlist. All metrics are computed and compared before selecting a single PoC metric.}}{9}{table.13}%
-\contentsline {table}{\numberline {3}{\ignorespaces Operational mapping from methodology criteria to evidence sources.}}{11}{table.22}%
-\contentsline {table}{\numberline {4}{\ignorespaces Alignment between DESTINO evidence requirements and current Phase I artifacts.}}{12}{table.31}%
-\contentsline {table}{\numberline {5}{\ignorespaces Feasibility dimensions with detailed scoring rules (D1--D5).}}{14}{table.44}%
-\contentsline {table}{\numberline {6}{\ignorespaces Feasibility dimensions with detailed scoring rules (D6--D10).}}{14}{table.46}%
-\contentsline {table}{\numberline {7}{\ignorespaces Feasibility rubric scoring shape. Actual scores are reported in Section~\ref {sec:phase2_feasibility_scoring}.}}{15}{table.52}%
-\contentsline {table}{\numberline {8}{\ignorespaces Metric-agnostic record shape for the future DESTINO PoC.}}{16}{table.57}%
-\contentsline {table}{\numberline {9}{\ignorespaces Centralized Phase I repository freeze.}}{17}{table.69}%
-\contentsline {table}{\numberline {10}{\ignorespaces Centralized version coverage by project.}}{18}{table.72}%
-\contentsline {table}{\numberline {11}{\ignorespaces Stable-tag rules for the centralized repositories.}}{18}{table.74}%
-\contentsline {table}{\numberline {12}{\ignorespaces Window-duration statistics.}}{18}{table.76}%
-\contentsline {table}{\numberline {13}{\ignorespaces Executable mapping from Phase I scripts to centralized outputs.}}{20}{table.81}%
-\contentsline {table}{\numberline {14}{\ignorespaces Project-level automation contribution from \texttt {out/bot\_summary\_by\_project\_all.csv}.}}{22}{table.95}%
-\contentsline {table}{\numberline {15}{\ignorespaces Centralized Phase I issue ledger and implemented validation actions.}}{22}{table.99}%
-\contentsline {table}{\numberline {16}{\ignorespaces Centralized project-level extraction summary from clean all-account and human-only outputs.}}{23}{table.102}%
-\contentsline {table}{\numberline {17}{\ignorespaces Centralized global extraction totals from all-account, human-only, and bot-only populations.}}{23}{table.104}%
-\contentsline {table}{\numberline {18}{\ignorespaces M1 snapshot-size statistics by project.}}{23}{table.106}%
-\contentsline {table}{\numberline {19}{\ignorespaces M1 code-line evolution across frozen tags. First and last values follow chronological tag order.}}{24}{table.110}%
-\contentsline {table}{\numberline {20}{\ignorespaces M2/M3 human-only intensity.}}{24}{table.113}%
-\contentsline {table}{\numberline {21}{\ignorespaces Automation impact summary. Percentages are relative to all-account project totals.}}{24}{table.116}%
-\contentsline {table}{\numberline {22}{\ignorespaces Short-window sensitivity flags. Windows below seven days are retained but marked as \texttt {sensitivity\_only}.}}{25}{table.119}%
-\contentsline {table}{\numberline {23}{\ignorespaces Highest human-only churn/day windows. Very short windows can dominate per-day rates, so they are not used as primary cadence evidence.}}{25}{table.121}%
-\contentsline {table}{\numberline {24}{\ignorespaces M3 human-only activity profile.}}{25}{table.124}%
-\contentsline {table}{\numberline {25}{\ignorespaces Mean human-only M4 concentration indicators.}}{26}{table.127}%
-\contentsline {table}{\numberline {26}{\ignorespaces Execution ledger for the centralized Phase I pipeline.}}{27}{table.130}%
-\contentsline {table}{\numberline {27}{\ignorespaces Centralized Phase I data lineage checkpoints used for reproducibility and auditing.}}{29}{table.147}%
-\contentsline {table}{\numberline {28}{\ignorespaces Phase II C1 stability artifacts. Paths are relative to the Phase II analysis directory.}}{31}{table.158}%
-\contentsline {table}{\numberline {29}{\ignorespaces C1 window-level volatility summary. CV is the coefficient of variation across project windows; ``primary'' excludes short windows marked \texttt {sensitivity\_only}.}}{32}{table.162}%
-\contentsline {table}{\numberline {30}{\ignorespaces C1 developer-rank stability summary across adjacent windows. Correlations use only developers appearing in both adjacent windows.}}{33}{table.169}%
-\contentsline {table}{\numberline {31}{\ignorespaces C2 interpretability rubric. Each dimension is scored from 0 to 2.}}{35}{table.176}%
-\contentsline {table}{\numberline {32}{\ignorespaces Phase II C2 interpretability artifacts. Paths are relative to the Phase II analysis directory.}}{35}{table.178}%
-\contentsline {table}{\numberline {33}{\ignorespaces C2 interpretability summary for the candidate metrics.}}{35}{table.181}%
-\contentsline {table}{\numberline {34}{\ignorespaces C3 gaming-resistance rubric. Each dimension is scored from 0 to 2, with higher scores meaning stronger resistance.}}{37}{table.188}%
-\contentsline {table}{\numberline {35}{\ignorespaces Phase II C3 gaming-resistance artifacts. Paths are relative to the Phase II analysis directory.}}{37}{table.190}%
-\contentsline {table}{\numberline {36}{\ignorespaces C3 gaming-resistance summary for the candidate metrics.}}{38}{table.194}%
-\contentsline {table}{\numberline {37}{\ignorespaces C4 long-term suitability rubric. Each dimension is scored from 0 to 2.}}{39}{table.201}%
-\contentsline {table}{\numberline {38}{\ignorespaces Phase II C4 long-term suitability artifacts. Paths are relative to the Phase II analysis directory.}}{39}{table.203}%
-\contentsline {table}{\numberline {39}{\ignorespaces C4 long-term suitability summary for the candidate metrics.}}{40}{table.207}%
-\contentsline {table}{\numberline {40}{\ignorespaces Smart-contract feasibility scoring artifacts. Paths are relative to the Phase II analysis directory.}}{41}{table.214}%
-\contentsline {table}{\numberline {41}{\ignorespaces Combined C1--C4 decision inputs. C1 is derived from primary high-volatility project counts; C2--C4 use the scored summaries from the previous sections.}}{42}{table.217}%
-\contentsline {table}{\numberline {42}{\ignorespaces Smart-contract feasibility summary. Exclusion labels follow Section~\ref {sec:feasibility_rubric_full}.}}{42}{table.220}%
-\contentsline {table}{\numberline {43}{\ignorespaces Final decision inputs before selecting the baseline PoC metric.}}{43}{table.225}%
-\contentsline {table}{\numberline {44}{\ignorespaces Final PoC metric-selection artifacts. Paths are relative to the Phase II analysis directory.}}{45}{table.232}%
-\contentsline {table}{\numberline {45}{\ignorespaces Selection decision inputs for the final PoC metric.}}{45}{table.235}%
-\contentsline {table}{\numberline {46}{\ignorespaces Proposed compact PoC record fields for the selected M4 metric.}}{46}{table.239}%
+\babel@toc {english}{}\relax 
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {2.1}{\ignorespaces Candidate shortlist. All metrics are computed and compared before selecting a single PoC metric.}}{6}{table.caption.8}%
+\contentsline {table}{\numberline {2.2}{\ignorespaces Alignment between DESTINO evidence requirements and current Phase I artifacts.}}{8}{table.caption.9}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {3.1}{\ignorespaces Operational mapping from methodology criteria to evidence sources.}}{11}{table.caption.10}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces Feasibility dimensions with detailed scoring rules (D1--D5).}}{14}{table.caption.11}%
+\contentsline {table}{\numberline {3.3}{\ignorespaces Feasibility dimensions with detailed scoring rules (D6--D10).}}{15}{table.caption.12}%
+\contentsline {table}{\numberline {3.4}{\ignorespaces Feasibility rubric scoring shape. Actual scores are reported in Section~\ref {sec:phase2_feasibility_scoring}.}}{17}{table.caption.13}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {4.1}{\ignorespaces Centralized Phase I repository freeze.}}{20}{table.caption.14}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces Centralized version coverage by project.}}{21}{table.caption.15}%
+\contentsline {table}{\numberline {4.3}{\ignorespaces Stable-tag rules for the centralized repositories.}}{21}{table.caption.16}%
+\contentsline {table}{\numberline {4.4}{\ignorespaces Window-duration statistics.}}{22}{table.caption.17}%
+\contentsline {table}{\numberline {4.5}{\ignorespaces Executable mapping from Phase I scripts to centralized outputs.}}{24}{table.caption.18}%
+\contentsline {table}{\numberline {4.6}{\ignorespaces Project-level automation contribution from \path {out/bot_summary_by_project_all.csv}.}}{27}{table.caption.19}%
+\contentsline {table}{\numberline {4.7}{\ignorespaces Centralized Phase I issue ledger and implemented validation actions.}}{28}{table.caption.20}%
+\contentsline {table}{\numberline {4.8}{\ignorespaces Centralized project-level extraction summary from clean all-account and human-only outputs.}}{29}{table.caption.21}%
+\contentsline {table}{\numberline {4.9}{\ignorespaces Centralized global extraction totals from all-account, human-only, and bot-only populations.}}{29}{table.caption.22}%
+\contentsline {table}{\numberline {4.10}{\ignorespaces M1 snapshot-size statistics by project.}}{29}{table.caption.23}%
+\contentsline {table}{\numberline {4.11}{\ignorespaces M1 code-line evolution across frozen tags. First and last values follow chronological tag order.}}{30}{table.caption.24}%
+\contentsline {table}{\numberline {4.12}{\ignorespaces M2/M3 human-only intensity.}}{31}{table.caption.25}%
+\contentsline {table}{\numberline {4.13}{\ignorespaces Automation impact summary. Percentages are relative to all-account project totals.}}{31}{table.caption.26}%
+\contentsline {table}{\numberline {4.14}{\ignorespaces Short-window sensitivity flags. Windows below seven days are retained but marked as \texttt {sensitivity\_only}.}}{32}{table.caption.27}%
+\contentsline {table}{\numberline {4.15}{\ignorespaces Highest human-only churn/day windows. Very short windows can dominate per-day rates, so they are not used as primary cadence evidence.}}{32}{table.caption.28}%
+\contentsline {table}{\numberline {4.16}{\ignorespaces M3 human-only activity profile.}}{33}{table.caption.29}%
+\contentsline {table}{\numberline {4.17}{\ignorespaces Mean human-only M4 concentration indicators.}}{33}{table.caption.30}%
+\contentsline {table}{\numberline {4.18}{\ignorespaces Execution ledger for the centralized Phase I pipeline.}}{35}{table.caption.31}%
+\contentsline {table}{\numberline {4.19}{\ignorespaces Centralized Phase I data lineage checkpoints used for reproducibility and auditing.}}{38}{table.caption.32}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {5.1}{\ignorespaces Phase II C1 stability artifacts. Paths are relative to the Phase II analysis directory.}}{42}{table.caption.33}%
+\contentsline {table}{\numberline {5.2}{\ignorespaces C1 window-level volatility summary. CV is the coefficient of variation across project windows; ``primary'' excludes short windows marked \texttt {sensitivity\_only}.}}{43}{table.caption.34}%
+\contentsline {table}{\numberline {5.3}{\ignorespaces C1 developer-rank stability summary across adjacent windows. Correlations use only developers appearing in both adjacent windows.}}{44}{table.caption.37}%
+\contentsline {table}{\numberline {5.4}{\ignorespaces Post-hoc Git ancestry audit and quantitative impact.}}{46}{table.caption.39}%
+\contentsline {table}{\numberline {5.5}{\ignorespaces Original and ancestry-only C1 window-stability results. High-volatility counts use only projects with at least two primary windows.}}{47}{table.caption.40}%
+\contentsline {table}{\numberline {5.6}{\ignorespaces C2 interpretability rubric. Each dimension is scored from 0 to 2.}}{48}{table.caption.41}%
+\contentsline {table}{\numberline {5.7}{\ignorespaces Phase II C2 interpretability artifacts. Paths are relative to the Phase II analysis directory.}}{49}{table.caption.42}%
+\contentsline {table}{\numberline {5.8}{\ignorespaces C2 interpretability summary for the candidate metrics.}}{49}{table.caption.43}%
+\contentsline {table}{\numberline {5.9}{\ignorespaces C3 gaming-resistance rubric. Each dimension is scored from 0 to 2, with higher scores meaning stronger resistance.}}{52}{table.caption.45}%
+\contentsline {table}{\numberline {5.10}{\ignorespaces Phase II C3 gaming-resistance artifacts. Paths are relative to the Phase II analysis directory.}}{52}{table.caption.46}%
+\contentsline {table}{\numberline {5.11}{\ignorespaces C3 gaming-resistance summary for the candidate metrics.}}{53}{table.caption.47}%
+\contentsline {table}{\numberline {5.12}{\ignorespaces C4 long-term suitability rubric. Each dimension is scored from 0 to 2.}}{55}{table.caption.49}%
+\contentsline {table}{\numberline {5.13}{\ignorespaces Phase II C4 long-term suitability artifacts. Paths are relative to the Phase II analysis directory.}}{55}{table.caption.50}%
+\contentsline {table}{\numberline {5.14}{\ignorespaces C4 long-term suitability summary for the candidate metrics.}}{56}{table.caption.51}%
+\contentsline {table}{\numberline {5.15}{\ignorespaces Smart-contract feasibility scoring artifacts. Paths are relative to the Phase II analysis directory.}}{59}{table.caption.53}%
+\contentsline {table}{\numberline {5.16}{\ignorespaces Combined C1--C4 decision inputs. C1 is derived from primary high-volatility project counts; C2--C4 use the scored summaries from the previous sections.}}{59}{table.caption.54}%
+\contentsline {table}{\numberline {5.17}{\ignorespaces Smart-contract feasibility summary. Exclusion labels follow Section~\ref {sec:feasibility_rubric_full}.}}{60}{table.caption.55}%
+\contentsline {table}{\numberline {5.18}{\ignorespaces Final decision inputs before selecting the baseline PoC metric.}}{62}{table.caption.57}%
+\contentsline {table}{\numberline {5.19}{\ignorespaces Final PoC metric-selection artifacts. Paths are relative to the Phase II analysis directory.}}{64}{table.caption.59}%
+\contentsline {table}{\numberline {5.20}{\ignorespaces Selection decision inputs for the final PoC metric.}}{64}{table.caption.60}%
+\contentsline {table}{\numberline {5.21}{\ignorespaces Selection-stage compact PoC record fields for the selected M4 metric.}}{66}{table.caption.61}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {6.1}{\ignorespaces Metric-agnostic record shape used during DESTINO PoC planning.}}{70}{table.caption.62}%
+\contentsline {table}{\numberline {6.2}{\ignorespaces Deterministic M4 calculation audit.}}{72}{table.caption.63}%
+\contentsline {table}{\numberline {6.3}{\ignorespaces Hybrid PoC computation and trust boundary.}}{74}{table.caption.64}%
+\contentsline {table}{\numberline {6.4}{\ignorespaces Versioned evidence and ledger schemas for the baseline PoC.}}{75}{table.caption.65}%
+\contentsline {table}{\numberline {6.5}{\ignorespaces Direct Git extraction and M4 verifier result for \texttt {urllib3\_W03}.}}{78}{table.caption.66}%
+\contentsline {table}{\numberline {6.6}{\ignorespaces Off-chain implementation commitments.}}{78}{table.caption.67}%
+\contentsline {table}{\numberline {6.7}{\ignorespaces Local \texttt {m4evidence} chaincode validation result.}}{81}{table.caption.68}%
+\contentsline {table}{\numberline {6.8}{\ignorespaces Chaincode implementation commitments.}}{81}{table.caption.69}%
+\contentsline {table}{\numberline {6.9}{\ignorespaces Committed chaincode definition and client environment.}}{83}{table.caption.70}%
+\contentsline {table}{\numberline {6.10}{\ignorespaces Authenticated Fabric Gateway integration checks.}}{84}{table.caption.71}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {7.1}{\ignorespaces Thesis-level answers and their evidence boundaries.}}{90}{table.caption.72}%

@@ -1,0 +1,19 @@
+\section{Phase I Conclusion}
+\label{sec:phase1_conclusion}
+
+Phase I is complete at the centralized dataset and pipeline level. The thesis now has:
+\begin{itemize}[leftmargin=*]
+  \item a frozen 10-repository dataset with cohort labels and repository metadata;
+  \item 80 frozen stable tags tied to immutable commit hashes;
+  \item 70 tag-chronological release windows for tag-to-tag measurement, later qualified by the ancestry audit;
+  \item extracted and cleaned developer-window metrics for M1--M4;
+  \item ownership and concentration outputs computed strictly from canonical clean data;
+  \item human-only M3/M4 outputs and bot-sensitivity summaries;
+  \item duration-normalized outputs and short-window sensitivity flags for uneven release windows;
+  \item validation logs showing arithmetic, identity, aggregation, and ownership consistency;
+  \item a DESTINO-aligned evidence boundary and a PoC integration blueprint later instantiated in Phase III.
+\end{itemize}
+
+Within Phase I, the work remains intentionally descriptive and methodological. No PoC metric is selected at this phase boundary.
+Selection is deferred to Phase II after comparative evaluation under the criteria in
+Section~\ref{sec:methodology_criteria} and feasibility scoring in Section~\ref{sec:feasibility_rubric_full}.
